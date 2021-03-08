@@ -78,6 +78,6 @@ i{
 header {
   width: 100%;
 }
-.fas{
+.fas:hover{
   cursor: pointer;
 }
