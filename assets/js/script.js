@@ -31,3 +31,22 @@ $(function(){
         
     });
 });
+/*----Retour à l'acceuil----*/
+$(function(){
+    $('.fas').click(function(){
+        $('.formInscription').hide();
+        $('.formConnexion').hide();
+        $('.btnConnexion').show();
+        $('.btnInscription').show();
+        $('.btn').removeClass('positionA');
+        $('.btnConnexion').removeClass('mr');
+        $('.btnInscription').removeClass('ml');
+        $('.btnConnexion').removeClass('transition-Y');
+        $('.btnInscription').removeClass('transition-Y');
+        $('.titreAccueil').removeClass('transitionY');
+        $('.slogan').removeClass('transitionY');
+        $('.titreAccueil').removeClass('transitionmin2-Y');
+        $('.slogan').removeClass('transitionmin2-Y');
+        $('.formInscription').removeClass('transitionmin-Y');
+    })
+})
