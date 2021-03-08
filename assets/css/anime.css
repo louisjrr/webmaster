@@ -1,16 +1,16 @@
 .transitionY {
-  transform: translateY(-100px);
-  transition: transform 0.5s ease-in;
+  transform: translateY(-75px);
+  transition: transform 0.4s ease-in;
 }
 .transition-Y {
   transform: translateY(200px);
-  transition: transform 0.5s ease-in;
+  transition: transform 0.4s ease-in;
 }
 .transitionmin2-Y {
-  transform: translateY(-100px);
-  transition: transform 0.5s ease-in;
+  transform: translateY(-75px);
+  transition: transform 0.4s ease-in;
 }
 .transitionmin-Y {
-  transform: translateY(-100px);
-  transition: transform 0.5s ease-in;
+  transform: translateY(-75px);
+  transition: transform 0.4s ease-in;
 }
