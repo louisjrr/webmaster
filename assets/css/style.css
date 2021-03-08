@@ -1,4 +1,4 @@
-body {
+.bodyConnexion {
   margin: 0;
   height: 100vh;
   display: flex;
@@ -80,4 +80,7 @@ header {
 }
 .fas:hover{
   cursor: pointer;
+}
+.logo{
+  width: 25%;
 }
