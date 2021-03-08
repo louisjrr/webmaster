@@ -21,5 +21,16 @@ $(function(){
         $('.titreAccueil').removeClass('transitionmin2-Y');
         $('.slogan').removeClass('transitionmin2-Y');
         $('.formConnexion').removeClass('transitionmin-Y');
+    });
+});
+/*----Click sur le menu burger----*/
+$(function(){
+    $('.mobile').click(function(){
+        $('.line1').toggleClass('mobileCrossP');
+        $('.line2').toggleClass('mobileCrossM');
+        $('.line3').toggleClass('d-none');
+        $('.line1').toggleClass('marginT');
+        $('.line2').toggleClass('marginO');
+        $('.collapse').toggleClass('d-block')
     })
-})
+});
