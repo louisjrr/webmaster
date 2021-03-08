@@ -28,7 +28,6 @@ $(function(){
         $('.btnInscription').hide();
         $('.formInscription').fadeIn(1500);
         $('.formInscription').toggleClass('transitionmin-Y');
-        
     });
 });
 /*----Retour à l'acceuil----*/
