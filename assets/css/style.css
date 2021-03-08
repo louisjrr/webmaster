@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("../images/bg_1.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+body h1 {
+  text-align: center;
+  margin: 0;
+  font-family: "Fascinate", cursive;
+  font-size: 50px;
+  color: rgb(63, 221, 143);
+}
+body h2 {
+  margin: 0;
+  color: rgb(255, 255, 255);
+}
+.present {
+  margin: auto 0;
+  z-index: 2;
+}
+.compte {
+  margin: 40px 0;
+  display: flex;
+  justify-content: center;
+}
+.compte button {
+  margin: 0 20px;
+}
+.shadow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(60, 60, 60, 0.7);
+  z-index: 1;
+}
+.btn-primary {
+  background-color: rgb(63, 221, 143);
+  border-color: rgb(63, 221, 143);
+}
+.btn-primary:hover {
+  background-color: rgb(58, 168, 113);
+  border-color: rgb(58, 168, 113);
+}
+fieldset{
+  border: solid white 2px;
+  border-radius: 3px;
+  padding: 10px 20px 15px 20px;
+}
+legend{
+  text-align: center;
+  width: auto;
+  color:white;
+}
+#login{
+  margin-bottom: 15px;
+}
+#password{
+  margin-bottom: 15px;
+}
+.btnConnexionF{
+  background-color: rgb(63, 221, 143);
+  border: none;
+}
+.btnConnexionF:hover{
+  color: white;
+  background-color: rgb(58, 168, 113);
+}
+

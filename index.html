@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Needs.com</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fascinate&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/vendors/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/anime.css">
+</head>
+<body>
+    <div class="shadow"></div>
+    <div class="present">
+        <h1 class="titreAccueil">Needs.com</h1>
+        <h2 class="slogan">Le site N°1 de recherche de stages</h2>
+        <div class="compte">
+            <button type="button" class="btn btn-outline-light btn-lg btnConnexion" >Connexion</button>
+            <button type="button" class="btn btn-primary btn-lg btnInscription">Inscription</button>
+            <form class="formConnexion" method="post">
+                <fieldset>
+                    <legend>Connexion</legend>
+                    <input type="text" id="login" name="login" placeholder="Identifiant"><br>
+                    <input type="text" id="password" name="login" placeholder="Mot de passe"><br>
+                    <button type="button" class="btn btn-outline-light btn-lg btnConnexionF" >Connexion</button>
+                </fieldset>
+            </form>
+            <form class="formInscription" method="post">
+                <fieldset>
+                    <legend>Inscription</legend>
+                    <select name="Profil" id="Profil">
+                        <option disabled selected value>Type de profil</option>
+                        <option value="Admin">Administrateur</option>
+                        <option value="Pilote">Pilote de promo</option>
+                        <option value="Délégué">Délégué</option>
+                        <option value="étudiant">Etudiant</option>
+                    </select><br><br>
+                    <input type="text" name="Prénom" id="Prénom" placeholder="Prénom"><br>
+                    <input type="text" name="Nom" id="Nom" placeholder="Nom"><br>
+                    <label for="Sexe">Genre</label><br>
+                    <input type="radio" name="Genre" required>
+                    <label for="">Homme</label>
+                    <input type="radio" name="Genre" required>
+                    <label for="">Femme</label>
+                </fieldset>
+        </div>
+    </div>
+    <script type='text/javascript' src='./assets/vendors/jquery/jquery-ui.min.js'></script>
+    <script type="text/javascript" src="./assets/js/script.js" ></script>
+</body>
+</html>
