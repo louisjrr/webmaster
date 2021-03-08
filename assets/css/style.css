@@ -48,33 +48,30 @@ body h2 {
   background-color: rgb(58, 168, 113);
   border-color: rgb(58, 168, 113);
 }
-fieldset{
+fieldset {
   border: solid white 2px;
   border-radius: 3px;
   padding: 10px 20px 15px 20px;
 }
-legend{
+legend {
   text-align: center;
   width: auto;
-  color:white;
+  color: white;
 }
-#login{
+#login {
   margin-bottom: 15px;
 }
-#password{
+#password {
   margin-bottom: 15px;
 }
-.btnConnexionF{
+.btnConnexionF {
   background-color: rgb(63, 221, 143);
   border: none;
 }
-.btnConnexionF:hover{
+.btnConnexionF:hover {
   color: white;
   background-color: rgb(58, 168, 113);
 }
 header{
-  z-index: 2;
-  position: fixed;
   width: 100%;
 }
-
