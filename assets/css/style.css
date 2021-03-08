@@ -72,4 +72,9 @@ legend{
   color: white;
   background-color: rgb(58, 168, 113);
 }
+header{
+  z-index: 2;
+  position: fixed;
+  width: 100%;
+}
 
