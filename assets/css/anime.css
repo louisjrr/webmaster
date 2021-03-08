@@ -1,16 +1,16 @@
-.transitionY{
-    transform: translateY(-150px);
-    transition:  transform 0.5s ease-in;
+.transitionY {
+  transform: translateY(-100px);
+  transition: transform 0.5s ease-in;
 }
-.transition-Y{
-    transform: translateY(200px);
-    transition:  transform 0.5s ease-in;
+.transition-Y {
+  transform: translateY(200px);
+  transition: transform 0.5s ease-in;
 }
-.transitionmin2-Y{
-    transform: translateY(-150px);
-    transition:  transform 0.5s ease-in;
+.transitionmin2-Y {
+  transform: translateY(-100px);
+  transition: transform 0.5s ease-in;
 }
-.transitionmin-Y{
-    transform: translateY(-100px);
-    transition:  transform 0.5s ease-in;
+.transitionmin-Y {
+  transform: translateY(-100px);
+  transition: transform 0.5s ease-in;
 }
