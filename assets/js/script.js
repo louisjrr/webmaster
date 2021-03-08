@@ -34,3 +34,10 @@ $(function(){
         $('.collapse').toggleClass('d-block')
     })
 });
+/*----Wishlist Add and Remove----*/
+$(function(){
+    $('.fa-heart').on('click',function(){
+        $(this).toggleClass('far');
+        $(this).toggleClass('fas');
+    })
+})
