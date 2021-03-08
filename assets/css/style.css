@@ -127,8 +127,14 @@ header {
   width: 40%;
   height: 100%;
   margin: 0 auto;
-  border-radius: 50px;
+  border-radius: 25px;
   background-color: black;
   position: relative;
   text-align: center;
+}
+.stage i {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 20px;
 }
