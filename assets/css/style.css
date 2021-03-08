@@ -72,9 +72,12 @@ legend {
   color: white;
   background-color: rgb(58, 168, 113);
 }
-i {
+i{
   color: white;
 }
 header {
   width: 100%;
+}
+.fas:hover{
+  cursor: pointer;
 }
