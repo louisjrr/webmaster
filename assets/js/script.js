@@ -36,9 +36,16 @@ $(function(){
 });
 /*----Wishlist Add and Remove----*/
 $(function(){
-    $('.fa-heart').on('click',function(){
-        $(this).toggleClass('far');
-        $(this).toggleClass('fas');
+    $('.fas').on('click',function(){
+        $(this).addClass('far');
+        $(this).removeClass('fas');
+        console.log('Remove of wishList')
     })
 })
-
+$(function(){
+    $('.far').on('click',function(){
+        $(this).addClass('fas');
+        $(this).removeClass('far');
+        console.log('Add to wishList')
+    })
+})

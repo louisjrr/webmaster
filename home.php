@@ -26,10 +26,10 @@
                     <div class="collapse navbar-collapse" id="navbarResponsive">
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="index.php">Home</a>
+                                <a class="nav-link" href="home.php">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Account</a>
+                                <a class="nav-link" href="account.php">Account</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Avis</a>
@@ -45,7 +45,7 @@
                 <form class="form-inline my-2 my-lg-0">
                     <div class="recherche-barr">
                         <input class="recherche-input" type="search" placeholder="Recherche" aria-label="Search">
-                        <a href="#" class="recherche-icone">
+                        <a class="recherche-icone">
                             <i class="fas fa-search"></i>
                         </a>
                     </div>

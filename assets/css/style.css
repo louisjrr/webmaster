@@ -141,3 +141,32 @@ header {
   font-size: 20px;
   color: black;
 }
+a.nav-link {
+  position: relative;
+}
+a.nav-link:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(58, 168, 113);
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+a.nav-link:hover:before {
+  visibility: visible;
+  width: 100%;
+}
+.col-md-8 {
+  border: black 3px solid;
+  height: 500px;
+  border-radius: 25px;
+}
+.col-md-3 {
+  border: black 3px solid;
+  height: 500px;
+  border-radius: 25px;
+  text-align: center;
+}
