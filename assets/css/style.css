@@ -98,12 +98,14 @@ header {
   margin-bottom: auto;
   margin-top: auto;
   background-color: rgb(58, 168, 113);
+  border-radius: 5px;
 }
 .recherche-input {
   border: 0;
   line-height: 37px;
   padding: 0 10px;
   width: 400px;
+  border-radius: 2px;
 }
 .recherche-icone {
   height: 40px;
