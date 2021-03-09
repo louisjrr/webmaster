@@ -39,6 +39,11 @@ $(function(){
     $('.fa-heart').on('click',function(){
         $(this).toggleClass('far');
         $(this).toggleClass('fas');
+        if($(this).hasClass("fas")){
+            console.log('add to WishList')
+        }else{
+            console.log('remove of WishList')
+        }
     })
 })
 
