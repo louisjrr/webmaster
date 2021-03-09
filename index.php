@@ -43,7 +43,7 @@ function CloseCon($conn)
                     <legend>Connexion</legend>
                     <input type="text" id="login" name="login" placeholder="Identifiant"><br>
                     <input type="password" id="password" name="password" placeholder="Mot de passe"><br>
-                    <button type="submit" class="btn btn-outline-light btn-lg btnConnexionF" >Connexion</button>
+                    <button type="submit" class="btn btn-outline-light btn-lg btnConnexionF" onclick="connect()" >Connexion</button>
                 </fieldset>
             </form><br>
             <?php
@@ -59,8 +59,28 @@ function CloseCon($conn)
                         $db = mysqli_connect($db_host, $db_root, $db_pass, $db_name, $db_port) or die('peut pas se co');
                     }
                     /*----Elimination de toute les attaque de type SQL Injection et XSS----*/
-                    $username = mysqli_real_escape_string($db,htmlspecialchars($_POST['username'])); 
+                    $username = mysqli_real_escape_string($db,htmlspecialchars($_POST['login'])); 
                     $password = mysqli_real_escape_string($db,htmlspecialchars($_POST['password']));
+                    function connect(){
+                        if($username !=="" && $password !=="")
+                        {
+                        $requete="SELECT idutilisateur FROM utilisateurs WHERE mail ='$username'";
+                        $reponse = mysqli_query($db, $requete);
+                        if (mysqli_num_rows($reponse) == 1){
+                            $requete ="SELECT mdp FROM utilisateurs WHERE mail ='$username'";
+                            $reponse = mysqli_query($db, $requete);
+                            if($_POST['password'] == $reponse){
+                                header("Location: http://localhost/www/webmaster/home.php");
+                            }
+                        }
+                        else{
+                            echo "<script language=javascript>
+                                console.log('non connecté');
+                            </script>";
+                        }
+                        }
+                    }
+                    
                 ?>
         </div>
     </div>
