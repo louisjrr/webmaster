@@ -26,6 +26,13 @@
             if($_POST['password'] == $row['mdp']){
                 header("Location: http://localhost/www/webmaster/home.php");
             }
+            else{
+                header("Location: http://localhost/www/webmaster/index.php");
+                exit();
+                echo "<script language=javascript>
+                    var a = alert('Incorrect password');
+                </script>";
+            }
         }
         else{
             echo "<script language=javascript>
