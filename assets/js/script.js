@@ -10,7 +10,7 @@ $(function(){
         $('.formConnexion').addClass('transitionmin-Y');
     });
 });
-/*----Retour à l'acceuil----*/
+/*----Retour à l'accueil----*/
 $(function(){
     $('.fas').click(function(){
         $('.formConnexion').hide();
