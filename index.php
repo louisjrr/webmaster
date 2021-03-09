@@ -11,6 +11,25 @@
     <link rel="stylesheet" href="./assets/css/anime.css">
     <script src="https://kit.fontawesome.com/0c87a70838.js"></script>
 </head>
+<?php
+function OpenCon()
+ {
+ $dbhost = "localhost";
+ $dbuser = "root";
+ $dbpass = "";
+ $db = "webmaster";
+ $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
+ return $conn;
+ }
+ 
+ $sql= mysqli_query(OpenCon(),"SELECT NOM_ROLE FROM roles WHERE IDAUTORISATION = '2'");
+ $result = mysqli_fetch_assoc($sql);
+ print_r($result);
+function CloseCon($conn)
+ {
+ $conn -> close();
+ }
+?>
 <body class="bodyConnexion">
     <div class="shadow"></div>
     <div class="present">
