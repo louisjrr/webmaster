@@ -41,3 +41,4 @@ $(function(){
         $(this).toggleClass('fas');
     })
 })
+
