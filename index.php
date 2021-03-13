@@ -22,10 +22,8 @@ function OpenCon()
  return $conn;
  }
  
- $sql= mysqli_query(OpenCon(),"SELECT NOM_ROLE FROM roles WHERE IDAUTORISATION = '2'");
- $result = mysqli_fetch_assoc($sql);
- print_r($result);
-function CloseCon($conn)
+ $sql= mysqli_query(OpenCon(),"SELECT idutilisateur FROM utilisateurs WHERE mail ='mhabrioux@cesi.fr'");
+ function CloseCon($conn)
  {
  $conn -> close();
  }
@@ -36,17 +34,7 @@ function CloseCon($conn)
         <h1 class="titreAccueil">Needs.com</h1>
         <h2 class="slogan">Le site N°1 de recherche de stages</h2>
         <div class="compte">
-            <button type="button" class="btn btn-outline-light btn-lg btnConnexion" >Connexion</button>
-            <form class="formConnexion" method="post">
-                <i class="fas fa-arrow-left"></i>
-                <fieldset>
-                    <legend>Connexion</legend>
-                    <input type="text" id="login" name="login" placeholder="Identifiant"><br>
-                    <input type="password" id="password" name="password" placeholder="Mot de passe"><br>
-                    <button type="submit" class="btn btn-outline-light btn-lg btnConnexionF" onclick="connect()" >Connexion</button>
-                </fieldset>
-            </form><br>
-            <?php
+        <?php
                     session_start();
                     if(isset($_POST['login']) && isset($_POST['password']))
                     {
@@ -59,18 +47,16 @@ function CloseCon($conn)
                         $db = mysqli_connect($db_host, $db_root, $db_pass, $db_name, $db_port) or die('peut pas se co');
                     }
                     /*----Elimination de toute les attaque de type SQL Injection et XSS----*/
-                    $username = mysqli_real_escape_string($db,htmlspecialchars($_POST['login'])); 
-                    $password = mysqli_real_escape_string($db,htmlspecialchars($_POST['password']));
                     function connect(){
-                        if($username !=="" && $password !=="")
-                        {
+                        if($username !=="" && $password !==""){
                         $requete="SELECT idutilisateur FROM utilisateurs WHERE mail ='$username'";
                         $reponse = mysqli_query($db, $requete);
                         if (mysqli_num_rows($reponse) == 1){
                             $requete ="SELECT mdp FROM utilisateurs WHERE mail ='$username'";
                             $reponse = mysqli_query($db, $requete);
-                            if($_POST['password'] == $reponse){
-                                header("Location: http://localhost/www/webmaster/home.php");
+                        if($_POST['password'] == $reponse[0]){
+                                header("Location : http://localhost/www/webmaster/home.php");
+                                Exit();
                             }
                         }
                         else{
@@ -82,6 +68,16 @@ function CloseCon($conn)
                     }
                     
                 ?>
+            <button type="button" class="btn btn-outline-light btn-lg btnConnexion" onclick=connect()>Connexion</button>
+            <form class="formConnexion" method="post">
+                <i class="fas fa-arrow-left"></i>
+                <fieldset>
+                    <legend>Connexion</legend>
+                    <input type="text" id="login" name="login" placeholder="Identifiant"><br>
+                    <input type="password" id="password" name="password" placeholder="Mot de passe"><br>
+                    <button type="submit" class="btn btn-outline-light btn-lg btnConnexionF" onclick="connect()" >Connexion</button>
+                </fieldset>
+            </form><br>
         </div>
     </div>
     <script type='text/javascript' src='./assets/vendors/jquery/jquery-ui.min.js'></script>
