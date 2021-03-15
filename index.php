@@ -11,27 +11,6 @@
     <link rel="stylesheet" href="./assets/css/anime.css">
     <script src="https://kit.fontawesome.com/0c87a70838.js"></script>
 </head>
-<<<<<<< HEAD
-
-=======
-<?php
-function OpenCon()
- {
- $dbhost = "localhost";
- $dbuser = "root";
- $dbpass = "";
- $db = "webmaster";
- $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
- return $conn;
- }
- 
- $sql= mysqli_query(OpenCon(),"SELECT idutilisateur FROM utilisateurs WHERE mail ='mhabrioux@cesi.fr'");
- function CloseCon($conn)
- {
- $conn -> close();
- }
-?>
->>>>>>> 26f3508f4d602da0de01392a20c489971fe304c8
 <body class="bodyConnexion">
     <div class="shadow"></div>
     <div class="present">
