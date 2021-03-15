@@ -18,14 +18,21 @@
         <h1 class="titreAccueil">Needs.com</h1>
         <h2 class="slogan">Le site N°1 de recherche de stages</h2>
         <div class="compte">
-            <button type="button" class="btn btn-outline-light btn-lg btnConnexion" >Connexion</button>
-            <form class="formConnexion" method="post" action="login.php">
-                <i class="fas fa-arrow-left"></i>
+            <form class="formInscription" method="post" action="login.php">
                 <fieldset>
-                    <legend>Connexion</legend>
-                    <input type="text" id="login" name="login" placeholder="Identifiant"><br>
-                    <input type="password" id="password" name="password" placeholder="Mot de passe"><br>
-                    <button type="submit" name="submit" class="btn btn-outline-light btn-lg btnConnexionF" onclick="connect()" >Connexion</button>
+                    <legend>Register</legend>
+
+                    <label for='permission' class="labelPermission">Choose the permission</label><br>
+                    <select id='permission'>
+                        <option value='student'>student</option>
+                        <option value='delegate'>delegate</option>
+                        <option value='tutor'>tutor</option>
+                    </select><br>
+                    <input type="text" placeholder='First name' class='textBox'><br>
+                    <input type="text" placeholder='Last name' class='textBox'><br>
+                    <input type="text" placeholder='Campus' class='textBox'><br>
+                    <input type="text" placeholder='Promotion' class='textBox'><br>
+                    <button type="submit" name="submit" class="btn btn-outline-light btn-lg btnInscription" onclick="connect()" >Register</button>
                 </fieldset>
             </form><br>
             

@@ -66,6 +66,10 @@ legend {
 #password {
   margin-bottom: 15px;
 }
+#permission{
+  margin-bottom: 15px;
+  text-align: center;
+}
 .btnConnexionF {
   background-color: rgb(63, 221, 143);
   border: none;
@@ -171,4 +175,14 @@ a.nav-link:hover:before {
 }
 .nav-item {
   padding-right: 5px;
+}
+.labelPermission{
+  color: white;
+}
+.btnInscription{
+  background-color: rgb(58, 168, 113);
+  border-color: rgb(58, 168, 113);
+}
+.textBox{
+  margin-bottom: 15px;
 }
