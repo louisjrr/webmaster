@@ -17,42 +17,8 @@
         <h1 class="titreAccueil">Needs.com</h1>
         <h2 class="slogan">Le site N°1 de recherche de stages</h2>
         <div class="compte">
-        <?php
-                    session_start();
-                    if(isset($_POST['login']) && isset($_POST['password']))
-                    {
-                        /*----Connexion à la BDD----*/
-                        $db_root = 'root';
-                        $db_pass = '';
-                        $db_name = 'webmaster';
-                        $db_host = 'localhost';
-                        $db_port = 3306;
-                        $db = mysqli_connect($db_host, $db_root, $db_pass, $db_name, $db_port) or die('peut pas se co');
-                    }
-                    /*----Elimination de toute les attaque de type SQL Injection et XSS----*/
-                    function connect(){
-                        if($username !=="" && $password !==""){
-                        $requete="SELECT idutilisateur FROM utilisateurs WHERE mail ='$username'";
-                        $reponse = mysqli_query($db, $requete);
-                        if (mysqli_num_rows($reponse) == 1){
-                            $requete ="SELECT mdp FROM utilisateurs WHERE mail ='$username'";
-                            $reponse = mysqli_query($db, $requete);
-                        if($_POST['password'] == $reponse[0]){
-                                header("Location : http://localhost/www/webmaster/home.php");
-                                Exit();
-                            }
-                        }
-                        else{
-                            echo "<script language=javascript>
-                                console.log('non connecté');
-                            </script>";
-                        }
-                        }
-                    }
-                    
-                ?>
             <button type="button" class="btn btn-outline-light btn-lg btnConnexion" onclick=connect()>Connexion</button>
-            <form class="formConnexion" method="post">
+            <form class="formConnexion" method="post" action='login.php'>
                 <i class="fas fa-arrow-left"></i>
                 <fieldset>
                     <legend>Connexion</legend>

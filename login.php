@@ -1,15 +1,5 @@
 <?php
-    session_start();
-    if(isset($_POST['login']) && isset($_POST['password']) && isset($_POST['submit']))
-    {
-        /*----Connexion à la BDD----*/
-        $db_root = 'root';
-        $db_pass = '';
-        $db_name = 'webmaster';
-        $db_host = 'localhost';
-        $db_port = 3306;
-        $db = mysqli_connect($db_host, $db_root, $db_pass, $db_name, $db_port) or die('peut pas se co');
-    }
+    include 'database.php';
     /*----Elimination de toute les attaque de type SQL Injection et XSS----*/
     $username = mysqli_real_escape_string($db,htmlspecialchars($_POST['login'])); 
     $password = mysqli_real_escape_string($db,htmlspecialchars($_POST['password']));
