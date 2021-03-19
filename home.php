@@ -16,11 +16,11 @@
         <div class="stock">
             <div class="stages">
                 <div class="stage">
-                    <h2>Stage N°1</h2>
+                    <h2><?php include "stages.php"; titre() ?></h2>
                     <i class="far fa-heart"></i>
                 </div>
                 <div class="stage">
-                    <h2>Stage N°2</h2>
+                    <h2><?php include "stages.php";titre() ?></h2>
                     <i class="far fa-heart"></i>
                 </div>
                 <div class="stage">
