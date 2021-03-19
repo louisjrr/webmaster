@@ -217,6 +217,7 @@ i {
 
 .stage p {
   visibility: hidden;
+  position: absolute;
 }
 
 .affichage {
