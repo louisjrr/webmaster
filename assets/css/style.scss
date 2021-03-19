@@ -42,7 +42,7 @@ body h2 {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgb(60, 60, 60, 0.7);
+  background-color: rgba(60, 60, 60, 0.7);
   z-index: 1;
 }
 .btn-primary {
@@ -69,7 +69,7 @@ legend {
 #password {
   margin-bottom: 15px;
 }
-#permission{
+#permission {
   margin-bottom: 15px;
   text-align: center;
 }
@@ -124,21 +124,32 @@ i {
 .navbar-brand {
   margin: 0 0 0 0;
 }
-.stages {
-  width: 100%;
-  height: 250px;
-  margin-top: 10px;
+.stock {
   display: flex;
 }
-.stage {
+.stages {
   width: 40%;
-  height: 100%;
-  margin: 0 auto;
+  height: 75vh;
+  margin-top: 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.stages::-webkit-scrollbar {
+  display: none;
+}
+.stage {
+  width: 90%;
+  height: 40%;
+  margin: 10px auto;
   border-radius: 25px;
   position: relative;
   text-align: center;
   border: black 3px solid;
   color: black;
+}
+.stage:hover {
+  border: $green 3px solid;
+  box-shadow: 0 0 1em rgba(60, 60, 60, 0.7);
 }
 .stage i {
   position: absolute;
@@ -146,6 +157,12 @@ i {
   top: 10px;
   font-size: 20px;
   color: black;
+}
+.affichage {
+  background-color: green;
+  width: 60%;
+  height: 75vh;
+  margin: 20px;
 }
 a.nav-link {
   position: relative;
@@ -179,19 +196,19 @@ a.nav-link:hover:before {
 .nav-item {
   padding-right: 5px;
 }
-.labelPermission{
+.labelPermission {
   color: white;
 }
-.btnInscription{
+.btnInscription {
   background-color: $green;
   border-color: $green;
 }
-.btnInscription:hover{
+.btnInscription:hover {
   background-color: $greenHover;
   border-color: $greenHover;
   color: white;
 }
-.textBox{
+.textBox {
   margin-bottom: 15px;
 }
 /*----page de délégation des droits----*/
@@ -254,31 +271,34 @@ a.nav-link:hover:before {
   transform: translateY(-75px);
   transition: transform 0.4s ease-in;
 }
-.mobile div{
-    width: 30px;
-    height: 3px;
-    margin: 5px;
-    border-radius: 5px;
+.mobile div {
+  width: 30px;
+  height: 3px;
+  margin: 5px;
+  border-radius: 5px;
 }
-.mobileCrossP{
-    transform: rotate(45deg);
-    transition: transform 0.2s ease-in;
+.mobileCrossP {
+  transform: rotate(45deg);
+  transition: transform 0.2s ease-in;
 }
-.mobileCrossM{
-    transform: rotate(-45deg);
-    transition: transform 0.2s ease-in;
+.mobileCrossM {
+  transform: rotate(-45deg);
+  transition: transform 0.2s ease-in;
 }
-.marginB{
-    position: absolute;
-    margin-bottom: 200px;
+.marginB {
+  position: absolute;
+  margin-bottom: 200px;
 }
-.marginT{
-    position: absolute;
-    margin-top: 200px;
+.marginT {
+  position: absolute;
+  margin-top: 200px;
 }
 
 /*----partie responsive----*/
 
-@media screen and (max-width:(576px)){}
-@media screen and (max-width:(768px)){}
-@media screen and (max-width:(992px)){}
+@media screen and (max-width: (576px)) {
+}
+@media screen and (max-width: (768px)) {
+}
+@media screen and (max-width: (992px)) {
+}

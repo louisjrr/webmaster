@@ -2,9 +2,16 @@
 .bodyConnexion {
   margin: 0;
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-image: url("../images/bg_1.jpg");
   background-size: cover;
 }
@@ -32,8 +39,12 @@ body h2 {
 
 .compte {
   margin: 40px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .compte button {
@@ -109,9 +120,15 @@ i {
   background-color: #eeeeee;
   border: 1px solid #dddddd;
   padding: 10px 10px 10px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .recherche-barr {
@@ -133,9 +150,15 @@ i {
   height: 40px;
   width: 40px;
   float: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-radius: 50%;
   color: white;
 }
@@ -144,22 +167,39 @@ i {
   margin: 0 0 0 0;
 }
 
-.stages {
-  width: 100%;
-  height: 250px;
-  margin-top: 10px;
+.stock {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
-.stage {
+.stages {
   width: 40%;
-  height: 100%;
-  margin: 0 auto;
+  height: 75vh;
+  margin-top: 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.stages::-webkit-scrollbar {
+  display: none;
+}
+
+.stage {
+  width: 90%;
+  height: 40%;
+  margin: 10px auto;
   border-radius: 25px;
   position: relative;
   text-align: center;
   border: black 3px solid;
   color: black;
+}
+
+.stage:hover {
+  border: #3fdd8f 3px solid;
+  -webkit-box-shadow: 0 0 1em rgba(60, 60, 60, 0.7);
+          box-shadow: 0 0 1em rgba(60, 60, 60, 0.7);
 }
 
 .stage i {
@@ -168,6 +208,13 @@ i {
   top: 10px;
   font-size: 20px;
   color: black;
+}
+
+.affichage {
+  background-color: green;
+  width: 60%;
+  height: 75vh;
+  margin: 20px;
 }
 
 a.nav-link {
@@ -183,6 +230,7 @@ a.nav-link:before {
   left: 0;
   background-color: #3aa871;
   visibility: hidden;
+  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
@@ -271,23 +319,39 @@ a.nav-link:hover:before {
 
 /*----Partie animation----*/
 .transitionY {
-  transform: translateY(-75px);
+  -webkit-transform: translateY(-75px);
+          transform: translateY(-75px);
+  -webkit-transition: -webkit-transform 0.4s ease-in;
+  transition: -webkit-transform 0.4s ease-in;
   transition: transform 0.4s ease-in;
+  transition: transform 0.4s ease-in, -webkit-transform 0.4s ease-in;
 }
 
 .transition-Y {
-  transform: translateY(200px);
+  -webkit-transform: translateY(200px);
+          transform: translateY(200px);
+  -webkit-transition: -webkit-transform 0.4s ease-in;
+  transition: -webkit-transform 0.4s ease-in;
   transition: transform 0.4s ease-in;
+  transition: transform 0.4s ease-in, -webkit-transform 0.4s ease-in;
 }
 
 .transitionmin2-Y {
-  transform: translateY(-75px);
+  -webkit-transform: translateY(-75px);
+          transform: translateY(-75px);
+  -webkit-transition: -webkit-transform 0.4s ease-in;
+  transition: -webkit-transform 0.4s ease-in;
   transition: transform 0.4s ease-in;
+  transition: transform 0.4s ease-in, -webkit-transform 0.4s ease-in;
 }
 
 .transitionmin-Y {
-  transform: translateY(-75px);
+  -webkit-transform: translateY(-75px);
+          transform: translateY(-75px);
+  -webkit-transition: -webkit-transform 0.4s ease-in;
+  transition: -webkit-transform 0.4s ease-in;
   transition: transform 0.4s ease-in;
+  transition: transform 0.4s ease-in, -webkit-transform 0.4s ease-in;
 }
 
 .mobile div {
@@ -298,13 +362,21 @@ a.nav-link:hover:before {
 }
 
 .mobileCrossP {
-  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transition: -webkit-transform 0.2s ease-in;
+  transition: -webkit-transform 0.2s ease-in;
   transition: transform 0.2s ease-in;
+  transition: transform 0.2s ease-in, -webkit-transform 0.2s ease-in;
 }
 
 .mobileCrossM {
-  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transition: -webkit-transform 0.2s ease-in;
+  transition: -webkit-transform 0.2s ease-in;
   transition: transform 0.2s ease-in;
+  transition: transform 0.2s ease-in, -webkit-transform 0.2s ease-in;
 }
 
 .marginB {
@@ -317,4 +389,5 @@ a.nav-link:hover:before {
   margin-top: 200px;
 }
 
-/*----partie responsive----*//*# sourceMappingURL=style.css.map */
+/*----partie responsive----*/
+/*# sourceMappingURL=style.css.map */
