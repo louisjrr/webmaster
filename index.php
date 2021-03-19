@@ -17,7 +17,7 @@
         <h2 class="slogan">Le site N°1 de recherche de stages</h2>
         <div class="compte">
             <button type="button" class="btn btn-outline-light btn-lg btnConnexion" onclick=connect()>Connexion</button>
-            <form class="formConnexion" method="post">
+            <form class="formConnexion" method="post" action='login.php'>
                 <i class="fas fa-arrow-left"></i>
                 <fieldset>
                     <legend>Connexion</legend>
@@ -28,7 +28,6 @@
             </form><br>
         </div>
     </div>
-    <?php include 'login.php'; ?>
     <script type='text/javascript' src='./assets/vendors/jquery/jquery-ui.min.js'></script>
     <script type="text/javascript" src="./assets/js/script.js" ></script>
 </body>

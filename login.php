@@ -38,19 +38,22 @@
             $requestLogin->execute(array('username' => $_POST['login']));
             $infoUser = $requestLogin->fetch();
 
-            $verifPassword = password_verify($_POST['password'], $infoUser['mdp']);
-
             if(!$infoUser){
                 echo 'mauvais identifiant ou mot de passe!';
             }
             else{
-                if($verifPassword){
+                if($_POST['password'] == $infoUser['mdp']){
+                    header('Location: home.php');
                     session_start();
                     $_SESSION['id'] = $infoUser['idutilisateur'];
                     echo 'Vous êtes connecté !';
+                    exit();
                 }
                 else{
                     echo 'mauvais identifiant ou mot de passe!';
+                    echo $_POST['password'];
+                    echo $infoUser['mdp'];
+                    echo $infoUser['idutilisateur'];
                 }
             }
         }
