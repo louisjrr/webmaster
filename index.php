@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Fascinate&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/vendors/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/anime.css">
     <script src="https://kit.fontawesome.com/0c87a70838.js"></script>
 </head>
 <body class="bodyConnexion">
@@ -33,3 +32,4 @@
     <script type="text/javascript" src="./assets/js/script.js" ></script>
 </body>
 </html>
+

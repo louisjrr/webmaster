@@ -1,3 +1,6 @@
+$green: #3fdd8f;
+$greenHover: #3aa871;
+
 .bodyConnexion {
   margin: 0;
   height: 100vh;
@@ -5,104 +8,88 @@
   flex-direction: column;
   align-items: center;
   background-image: url("../images/bg_1.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
 }
-
 body h1 {
   text-align: center;
   margin: 0;
   font-family: "Fascinate", cursive;
   font-size: 50px;
-  color: #3fdd8f;
+  color: $green;
 }
-
 body h2 {
   margin: 0;
 }
-
 .present {
   margin: auto 0;
   z-index: 2;
 }
-
 .slogan {
-  color: white;
+  color: rgb(255, 255, 255);
 }
-
 .compte {
   margin: 40px 0;
   display: flex;
   justify-content: center;
 }
-
 .compte button {
   margin: 0 20px;
 }
-
 .shadow {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(60, 60, 60, 0.7);
+  background-color: rgb(60, 60, 60, 0.7);
   z-index: 1;
 }
-
 .btn-primary {
-  background-color: #3fdd8f;
-  border-color: #3fdd8f;
+  background-color: $green;
+  border-color: $green;
 }
-
 .btn-primary:hover {
-  background-color: #3aa871;
-  border-color: #3aa871;
+  background-color: $greenHover;
+  border-color: $greenHover;
 }
-
 fieldset {
   border: solid white 2px;
   border-radius: 3px;
   padding: 10px 20px 15px 20px;
 }
-
 legend {
   text-align: center;
   width: auto;
   color: white;
 }
-
 #login {
   margin-bottom: 15px;
 }
-
 #password {
   margin-bottom: 15px;
 }
-#permission {
+#permission{
   margin-bottom: 15px;
   text-align: center;
 }
-
 .btnConnexionF {
-  background-color: #3fdd8f;
+  background-color: $green;
   border: none;
 }
-
 .btnConnexionF:hover {
   color: white;
-  background-color: #3aa871;
+  background-color: $greenHover;
 }
-
 i {
   color: white;
 }
-
 .fas:hover {
   cursor: pointer;
 }
-
 .logo {
   width: 100px;
 }
-
 .recherche_p {
   background-color: #eeeeee;
   border: 1px solid #dddddd;
@@ -111,14 +98,12 @@ i {
   justify-content: center;
   align-items: center;
 }
-
 .recherche-barr {
   margin-bottom: auto;
   margin-top: auto;
-  background-color: #3fdd8f;
+  background-color: $green;
   border-radius: 5px;
 }
-
 .recherche-input {
   border: 0;
   line-height: 37px;
@@ -126,7 +111,6 @@ i {
   width: 400px;
   border-radius: 2px;
 }
-
 .recherche-icone {
   height: 40px;
   width: 40px;
@@ -137,18 +121,15 @@ i {
   border-radius: 50%;
   color: white;
 }
-
 .navbar-brand {
   margin: 0 0 0 0;
 }
-
 .stages {
   width: 100%;
   height: 250px;
   margin-top: 10px;
   display: flex;
 }
-
 .stage {
   width: 40%;
   height: 100%;
@@ -159,7 +140,6 @@ i {
   border: black 3px solid;
   color: black;
 }
-
 .stage i {
   position: absolute;
   right: 10px;
@@ -167,11 +147,9 @@ i {
   font-size: 20px;
   color: black;
 }
-
 a.nav-link {
   position: relative;
 }
-
 a.nav-link:before {
   content: "";
   position: absolute;
@@ -179,98 +157,87 @@ a.nav-link:before {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #3aa871;
+  background-color: $greenHover;
   visibility: hidden;
   transition: all 0.3s ease-in-out;
 }
-
 a.nav-link:hover:before {
   visibility: visible;
   width: 100%;
 }
-
 .col-md-8 {
   border: black 3px solid;
   height: 500px;
   border-radius: 25px;
 }
-
 .col-md-3 {
   border: black 3px solid;
   height: 500px;
   border-radius: 25px;
   text-align: center;
 }
-
 .nav-item {
   padding-right: 5px;
 }
-
-.labelPermission {
+.labelPermission{
   color: white;
 }
-
-.btnInscription {
-  background-color: #3fdd8f;
-  border-color: #3fdd8f;
+.btnInscription{
+  background-color: $green;
+  border-color: $green;
 }
-
-.btnInscription:hover {
-  background-color: #3aa871;
-  border-color: #3aa871;
+.btnInscription:hover{
+  background-color: $greenHover;
+  border-color: $greenHover;
   color: white;
 }
-
-.textBox {
+.textBox{
   margin-bottom: 15px;
 }
 
 /*----Partie animation----*/
+
 .transitionY {
   transform: translateY(-75px);
   transition: transform 0.4s ease-in;
 }
-
 .transition-Y {
   transform: translateY(200px);
   transition: transform 0.4s ease-in;
 }
-
 .transitionmin2-Y {
   transform: translateY(-75px);
   transition: transform 0.4s ease-in;
 }
-
 .transitionmin-Y {
   transform: translateY(-75px);
   transition: transform 0.4s ease-in;
 }
-
-.mobile div {
-  width: 30px;
-  height: 3px;
-  margin: 5px;
-  border-radius: 5px;
+.mobile div{
+    width: 30px;
+    height: 3px;
+    margin: 5px;
+    border-radius: 5px;
+}
+.mobileCrossP{
+    transform: rotate(45deg);
+    transition: transform 0.2s ease-in;
+}
+.mobileCrossM{
+    transform: rotate(-45deg);
+    transition: transform 0.2s ease-in;
+}
+.marginB{
+    position: absolute;
+    margin-bottom: 200px;
+}
+.marginT{
+    position: absolute;
+    margin-top: 200px;
 }
 
-.mobileCrossP {
-  transform: rotate(45deg);
-  transition: transform 0.2s ease-in;
-}
+/*----partie responsive----*/
 
-.mobileCrossM {
-  transform: rotate(-45deg);
-  transition: transform 0.2s ease-in;
-}
-
-.marginB {
-  position: absolute;
-  margin-bottom: 200px;
-}
-
-.marginT {
-  position: absolute;
-  margin-top: 200px;
-}
-
-/*----partie responsive----*/ /*# sourceMappingURL=style.css.map */
+@media screen and (max-width:(576px)){}
+@media screen and (max-width:(768px)){}
+@media screen and (max-width:(992px)){}
