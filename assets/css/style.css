@@ -66,7 +66,7 @@ legend {
 #password {
   margin-bottom: 15px;
 }
-#permission{
+#permission {
   margin-bottom: 15px;
   text-align: center;
 }
@@ -176,18 +176,18 @@ a.nav-link:hover:before {
 .nav-item {
   padding-right: 5px;
 }
-.labelPermission{
+.labelPermission {
   color: white;
 }
-.btnInscription{
+.btnInscription {
   background-color: rgb(63, 221, 143);
   border-color: rgb(63, 221, 143);
 }
-.btnInscription:hover{
+.btnInscription:hover {
   background-color: rgb(58, 168, 113);
   border-color: rgb(58, 168, 113);
   color: white;
 }
-.textBox{
+.textBox {
   margin-bottom: 15px;
 }
