@@ -36,7 +36,7 @@ $(function(){
 });
 /*----Wishlist Add and Remove----*/
 $(function(){
-    $('.fa-heart').on('click',function(){
+    $('.fa-heart').click(function(){
         $(this).toggleClass('far');
         $(this).toggleClass('fas');
         if($(this).hasClass("fas")){
@@ -46,6 +46,11 @@ $(function(){
         }
     })
 })
-
-
-
+/*----Wishlist Add and Remove----*/
+$(function(){
+    $('.stage').click(function(){
+        const titre = $(this).find('.titre').html()
+        const description = $(this).find('.description').html()
+        $('.affichage').html("<h2>" + titre + "</h2><br><p>"+ description +"</p>")
+    })
+})

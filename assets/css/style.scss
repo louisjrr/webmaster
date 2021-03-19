@@ -158,11 +158,20 @@ i {
   font-size: 20px;
   color: black;
 }
+.stage h2 {
+  max-width: 85%;
+  margin: 0 auto;
+}
+.stage p {
+  visibility: hidden;
+}
 .affichage {
-  background-color: green;
   width: 60%;
   height: 75vh;
   margin: 20px;
+}
+.affichage h2 {
+  text-decoration: underline $green;
 }
 a.nav-link {
   position: relative;
@@ -212,7 +221,7 @@ a.nav-link:hover:before {
   margin-bottom: 15px;
 }
 /*----page de délégation des droits----*/
-.bodyDroits{
+.bodyDroits {
   margin: 0;
   height: 100vh;
   display: flex;
@@ -224,26 +233,26 @@ a.nav-link:hover:before {
   -o-background-size: cover;
   background-size: cover;
 }
-.block{
+.block {
   margin: auto 0;
   z-index: 2;
   background-color: white;
   text-align: center;
   padding: 30px 30px 30px 30px;
-  border-radius: 3px ;
+  border-radius: 3px;
 }
-.block h3{
+.block h3 {
   padding: 5px 15px 5px 15px;
 }
-.btnDroits{
+.btnDroits {
   background-color: $green;
   color: white;
 }
-.btnDroits:hover{
+.btnDroits:hover {
   background-color: $greenHover;
   color: white;
 }
-.block hr{
+.block hr {
   color: black;
   background-color: black;
   width: 100%;
@@ -251,7 +260,6 @@ a.nav-link:hover:before {
   opacity: 50%;
   margin-bottom: 30px;
 }
-
 
 /*----Partie animation----*/
 
