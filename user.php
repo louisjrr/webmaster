@@ -11,7 +11,8 @@
      private $adresse;
  }
 
- class stutend extends user{
-    
- }
+ class stutend extends user{}
+ class delegate extends user{}
+ class tutor extends user{}
+ class admin extends user{}
 ?>
