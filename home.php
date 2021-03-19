@@ -13,24 +13,31 @@
     </head>
     <body>
         <?php include 'header.php'; ?>
-        <div class="stages">
-            <div class="stage">
-                <h2>Stage N°1</h2>
-                <i class="far fa-heart"></i>
+        <div class="stock">
+            <div class="stages">
+                <div class="stage">
+                    <h2>Stage N°1</h2>
+                    <i class="far fa-heart"></i>
+                </div>
+                <div class="stage">
+                    <h2>Stage N°2</h2>
+                    <i class="far fa-heart"></i>
+                </div>
+                <div class="stage">
+                    <h2>Stage N°3</h2>
+                    <i class="far fa-heart"></i>
+                </div>
+                <div class="stage">
+                    <h2>Stage N°4</h2>
+                    <i class="far fa-heart"></i>
+                </div>
+                <div class="stage">
+                    <h2>Stage N°5</h2>
+                    <i class="far fa-heart"></i>
+                </div>
             </div>
-            <div class="stage">
-                <h2>Stage N°2</h2>
-                <i class="far fa-heart"></i>
-            </div>
-        </div>
-        <div class="stages">
-            <div class="stage">
-                <h2>Stage N°3</h2>
-                <i class="far fa-heart"></i>
-            </div>
-            <div class="stage">
-                <h2>Stage N°4</h2>
-                <i class="far fa-heart"></i>
+            <div class="affichage">
+                <p>test</p>
             </div>
         </div>
         <script type='text/javascript' src='./assets/vendors/jquery/jquery-ui.min.js'></script>
