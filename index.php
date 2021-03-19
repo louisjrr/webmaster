@@ -23,13 +23,13 @@
                     <legend>Connexion</legend>
                     <input type="text" id="login" name="login" placeholder="Identifiant"><br>
                     <input type="password" id="password" name="password" placeholder="Mot de passe"><br>
-                    <button type="submit" class="btn btn-outline-light btn-lg btnConnexionF" onclick="connect()" >Connexion</button>
+                    <button type="submit" class="btn btn-outline-light btn-lg btnConnexionF" name="connectLogin" >Connexion</button>
                 </fieldset>
             </form><br>
         </div>
     </div>
+    <?php include 'login.php'; ?>
     <script type='text/javascript' src='./assets/vendors/jquery/jquery-ui.min.js'></script>
     <script type="text/javascript" src="./assets/js/script.js" ></script>
 </body>
 </html>
-

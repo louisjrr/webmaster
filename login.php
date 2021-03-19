@@ -1,7 +1,8 @@
 <?php
-    include 'database.php';
+ include 'database.php';
+ 
     /*----Elimination de toute les attaque de type SQL Injection et XSS----*/
-    $username = mysqli_real_escape_string($db,htmlspecialchars($_POST['login'])); 
+   /* $username = mysqli_real_escape_string($db,htmlspecialchars($_POST['login'])); 
     $password = mysqli_real_escape_string($db,htmlspecialchars($_POST['password']));
 
 
@@ -28,6 +29,30 @@
             echo "<script language=javascript>
                 console.log('non connecté');
             </script>";
+        }
+    }*/
+
+    if(isset($_POST['connectLogin'])){
+        if($_POST['login'] !=="" && $_POST['password'] !==""){
+            $requestLogin = $db->prepare('SELECT idutilisateur, mdp FROM utilisateurs WHERE mail = :username');
+            $requestLogin->execute(array('possesseur' => $_POST['login']));
+            $infoUser = $requestLogin->fetch();
+
+            $verifPassword = password_verify($_POST['password'], $infoUser['mdp']);
+
+            if(!$infoUser){
+                echo 'mauvais identifiant ou mot de passe!';
+            }
+            else{
+                if($verifPassword){
+                    session_start();
+                    $_SESSION['id'] = $resultat['idutilisateur'];
+                    echo 'Vous êtes connecté !';
+                }
+                else{
+                    echo 'mauvais identifiant ou mot de passe!';
+                }
+            }
         }
     }
             
