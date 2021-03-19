@@ -51,9 +51,6 @@
                 }
                 else{
                     echo 'mauvais identifiant ou mot de passe!';
-                    echo $_POST['password'];
-                    echo $infoUser['mdp'];
-                    echo $infoUser['idutilisateur'];
                 }
             }
         }
