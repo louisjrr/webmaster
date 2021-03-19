@@ -13,7 +13,7 @@
             $query ="SELECT mdp FROM utilisateurs WHERE mail ='$username'";
             $result = mysqli_query($db, $query);
             $row = $result->fetch_assoc();
-            if($_POST['password'] == $row['mdp']){
+            if($_POST['password'] == $row['mdp']){  
                 header("Location: http://localhost/www/webmaster/home.php");
             }
             else{
