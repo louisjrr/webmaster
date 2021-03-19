@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .bodyConnexion {
   margin: 0;
   height: 100vh;
@@ -143,22 +144,36 @@ i {
   margin: 0 0 0 0;
 }
 
-.stages {
-  width: 100%;
-  height: 250px;
-  margin-top: 10px;
+.stock {
   display: flex;
 }
 
-.stage {
+.stages {
   width: 40%;
-  height: 100%;
-  margin: 0 auto;
+  height: 75vh;
+  margin-top: 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.stages::-webkit-scrollbar {
+  display: none;
+}
+
+.stage {
+  width: 90%;
+  height: 40%;
+  margin: 10px auto;
   border-radius: 25px;
   position: relative;
   text-align: center;
   border: black 3px solid;
   color: black;
+}
+
+.stage:hover {
+  border: #3fdd8f 3px solid;
+  box-shadow: 0 0 1em rgba(60, 60, 60, 0.7);
 }
 
 .stage i {
@@ -167,6 +182,13 @@ i {
   top: 10px;
   font-size: 20px;
   color: black;
+}
+
+.affichage {
+  background-color: green;
+  width: 60%;
+  height: 75vh;
+  margin: 20px;
 }
 
 a.nav-link {
@@ -224,6 +246,48 @@ a.nav-link:hover:before {
 
 .textBox {
   margin-bottom: 15px;
+}
+
+/*----page de délégation des droits----*/
+.bodyDroits {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("../images/bg_1.jpg");
+  background-size: cover;
+}
+
+.block {
+  margin: auto 0;
+  z-index: 2;
+  background-color: white;
+  text-align: center;
+  padding: 30px 30px 30px 30px;
+  border-radius: 3px;
+}
+
+.block h3 {
+  padding: 5px 15px 5px 15px;
+}
+
+.btnDroits {
+  background-color: #3fdd8f;
+  color: white;
+}
+
+.btnDroits:hover {
+  background-color: #3aa871;
+  color: white;
+}
+
+.block hr {
+  color: black;
+  background-color: black;
+  width: 100%;
+  height: 1px;
+  opacity: 50%;
+  margin-bottom: 30px;
 }
 
 /*----Partie animation----*/
