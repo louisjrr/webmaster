@@ -3,10 +3,15 @@
     
     function titre(){
         include 'database.php';
-        $request = $db->query('SELECT intitule_offre,description FROM offres_de_stage');
+        $request = $db->query('SELECT intitule_offre,description,identreprise FROM offres_de_stage');
         $infoUser = $request->fetchAll();
         foreach($infoUser as $n){
-            echo '<div class="stage"><h2 class="titre">'.$n["intitule_offre"].'</h2><i class="far fa-heart"></i><br><p class="description">'.$n['description'].'</p></div>';
+            echo '<div class="stage"><h2 class="titre">'.$n["intitule_offre"].'</h2><i class="far fa-heart"></i><p class="description">'.$n['description'].'</p>';
+            $request2 = $db->query('SELECT nom_entreprise FROM entreprises WHERE identreprise = '.$n["identreprise"].'');
+            $nom = $request2->fetchAll();
+            foreach($nom as $m){
+            echo '<br><h5 class="entreprise">'.$m["nom_entreprise"].'</h5></div>';
+            }
         }
     };
     
