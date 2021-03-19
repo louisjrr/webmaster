@@ -17,7 +17,7 @@
         <h2 class="slogan">Le site N°1 de recherche de stages</h2>
         <div class="compte">
             <button type="button" class="btn btn-outline-light btn-lg btnConnexion" onclick=connect()>Connexion</button>
-            <form class="formConnexion" method="post" action='login.php'>
+            <form class="formConnexion" method="post">
                 <i class="fas fa-arrow-left"></i>
                 <fieldset>
                     <legend>Connexion</legend>
