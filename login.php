@@ -35,19 +35,19 @@
     if(isset($_POST['connectLogin'])){
         if($_POST['login'] !=="" && $_POST['password'] !==""){
             $requestLogin = $db->prepare('SELECT idutilisateur, mdp FROM utilisateurs WHERE mail = :username');
-            $requestLogin->execute(array('possesseur' => $_POST['login']));
+            $requestLogin->execute(array('username' => $_POST['login']));
             $infoUser = $requestLogin->fetch();
-
-            $verifPassword = password_verify($_POST['password'], $infoUser['mdp']);
 
             if(!$infoUser){
                 echo 'mauvais identifiant ou mot de passe!';
             }
             else{
-                if($verifPassword){
+                if($_POST['password'] == $infoUser['mdp']){
+                    header('Location: home.php');
                     session_start();
-                    $_SESSION['id'] = $resultat['idutilisateur'];
+                    $_SESSION['id'] = $infoUser['idutilisateur'];
                     echo 'Vous êtes connecté !';
+                    exit();
                 }
                 else{
                     echo 'mauvais identifiant ou mot de passe!';
