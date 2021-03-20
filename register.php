@@ -23,15 +23,53 @@
                     <legend>Register</legend>
 
                     <label for='permission' class="labelPermission">Choose the permission</label><br>
-                    <select id='permission'>
+                    <select id='permission' name='role'>
                         <option value='student'>student</option>
                         <option value='delegate'>delegate</option>
                         <option value='tutor'>tutor</option>
+                        <option value='admin'>admin</option>
                     </select><br>
-                    <input type="text" placeholder='First name' class='textBox'><br>
-                    <input type="text" placeholder='Last name' class='textBox'><br>
-                    <input type="text" placeholder='Campus' class='textBox'><br>
-                    <input type="text" placeholder='Promotion' class='textBox'><br>
+                    <input type="text" placeholder='First name' class='textBox' name='Fname'><br>
+                    <input type="text" placeholder='Last name' class='textBox' name='Lname'><br>
+                    <input type="date" placeholder='Birthdate' class='textBox' name='birthdate'><br>
+                    <input type="text" placeholder='city' class='textBox' name='city'><br>
+                    <input type="Email" placeholder='Email' class='textBox' name='mail'><br>
+                    <input type="password" placeholder='Password' class='textBox' name='password'><br>
+                    <select id='centres' name='campus'>
+                        <option value="1">Rouen</option>
+                        <option value="2">Nanterre</option>
+                        <option value="3">Arras</option>
+                        <option value="4">Caen</option>
+                        <option value="5">Bordeaux</option>
+                        <option value="6">Lyon</option>
+                        <option value="7">Toulouse</option>
+                        <option value="8">Orléans</option>
+                        <option value="9">Lille</option>
+                        <option value="10">Brest</option>
+                        <option value="11">Saint-Nazaire</option>
+                        <option value="12">Le Mans</option>
+                        <option value="13">Reims</option>
+                        <option value="14">Nancy</option>
+                        <option value="15">Strasbourg</option>
+                        <option value="16">Dijon</option>
+                        <option value="17">Grenoble</option>
+                        <option value="18">Nice</option>
+                        <option value="19">Aix-en-Provence</option>
+                        <option value="20">Montpelier</option>
+                        <option value="21">Pau</option>
+                        <option value="22">Angoulême</option>
+                        <option value="23">La Rochelle</option>
+                        <option value="24">Châteauroux</option>
+                        <option value="25">Nantes</option>
+                    </select>
+                    <label></label>
+                    <select id='promotion' name='promotion'>
+                        <option value="1">A1</option>
+                        <option value="2">A2</option>
+                        <option value="A3">A3</option>
+                        <option value="A4">A4</option>
+                        <option value="A5">A5</option>
+                    </select></br></br>
                     <button type="submit" name="submit" class="btn btn-outline-light btn-lg btnInscription" onclick="connect()" >Register</button>
                 </fieldset>
             </form><br>

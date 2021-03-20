@@ -11,8 +11,9 @@
     <script src="https://kit.fontawesome.com/0c87a70838.js"></script>
 </head>
 <body class="bodyDroits">
+    <div class="shadow"></div>
     <section>
-        <form>
+        <form class="rightForm">
         <div class="block">
             <h3>Delegate permission :</h3>
             <hr>
