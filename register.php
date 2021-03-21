@@ -19,6 +19,7 @@
         <h2 class="slogan">Le site N°1 de recherche de stages</h2>
         <div class="compte">
             <form class="formInscription" method="post" action="user.php">
+                <i class="fas fa-arrow-left btnBack"></i>
                 <fieldset>
                     <legend>Register</legend>
 

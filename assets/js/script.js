@@ -55,3 +55,9 @@ $(function(){
         $('.affichage').html("<h2>" + titre + "</h2><br><h4>Stage proposé par : "+ entreprise +"</h4><br><p>"+ description +"</p><br><br><h4>Merci d'ajouter ton CV et ta lettre de motivation ci-dessous :</h4><form method='POST'><input type='file' files multiple><br><br><input type=submit>")
     })
 })
+/*----Bouton de retour en arrière----*/
+$(function(){
+    $('.btnBack').click(function(){
+        window.history.back();
+    })
+});

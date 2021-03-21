@@ -11,69 +11,72 @@
     <script src="https://kit.fontawesome.com/0c87a70838.js"></script>
 </head>
 <body class="bodyDroits">
-    <div class="shadow"></div>
+    <!--<div class="shadow"></div>-->
     <section>
         <form class="rightForm">
-        <div class="block">
-            <h3>Delegate permission :</h3>
-            <hr>
-            <div class="checkbox">
-                <label>SFx2</label>
-                <input type="checkbox">
-                <label>SFx3</label>
-                <input type="checkbox">
-                <label>SFx4</label>
-                <input type="checkbox">
-                <label>SFx5</label>
-                <input type="checkbox">
-                <label>SFx6</label>
-                <input type="checkbox"></br>
-                <label>SFx7</label>
-                <input type="checkbox">
-                <label>SFx8</label>
-                <input type="checkbox">
-                <label>SFx9</label>
-                <input type="checkbox">
-                <label>SFx10</label>
-                <input type="checkbox">
-                <label>SFx11</label>
-                <input type="checkbox"></br>
-                <label>SFx12</label>
-                <input type="checkbox">
-                <label>SFx13</label>
-                <input type="checkbox">
-                <label>SFx14</label>
-                <input type="checkbox">
-                <label>SFx15</label>
-                <input type="checkbox">
-                <label>SFx16</label>
-                <input type="checkbox"></br>
-                <label>SFx17</label>
-                <input type="checkbox">
-                <label>SFx18</label>
-                <input type="checkbox">
-                <label>SFx19</label>
-                <input type="checkbox">
-                <label>SFx20</label>
-                <input type="checkbox">
-                <label>SFx22</label>
-                <input type="checkbox"></br>
-                <label>SFx23</label>
-                <input type="checkbox">
-                <label>SFx24</label>
-                <input type="checkbox">
-                <label>SFx25</label>
-                <input type="checkbox">
-                <label>SFx26</label>
-                <input type="checkbox">
-                <label>SFx32</label>
-                <input type="checkbox"></br>
-                <label>SFx33</label>
-                <input type="checkbox">
+            <i class="fas fa-arrow-left btnBack"></i>
+            <div class="block">
+                <h3>Delegate permission :</h3>
+                <hr>
+                <div class="checkbox">
+                    <label>SFx2</label>
+                    <input type="checkbox">
+                    <label>SFx3</label>
+                    <input type="checkbox">
+                    <label>SFx4</label>
+                    <input type="checkbox">
+                    <label>SFx5</label>
+                    <input type="checkbox">
+                    <label>SFx6</label>
+                    <input type="checkbox"></br>
+                    <label>SFx7</label>
+                    <input type="checkbox">
+                    <label>SFx8</label>
+                    <input type="checkbox">
+                    <label>SFx9</label>
+                    <input type="checkbox">
+                    <label>SFx10</label>
+                    <input type="checkbox">
+                    <label>SFx11</label>
+                    <input type="checkbox"></br>
+                    <label>SFx12</label>
+                    <input type="checkbox">
+                    <label>SFx13</label>
+                    <input type="checkbox">
+                    <label>SFx14</label>
+                    <input type="checkbox">
+                    <label>SFx15</label>
+                    <input type="checkbox">
+                    <label>SFx16</label>
+                    <input type="checkbox"></br>
+                    <label>SFx17</label>
+                    <input type="checkbox">
+                    <label>SFx18</label>
+                    <input type="checkbox">
+                    <label>SFx19</label>
+                    <input type="checkbox">
+                    <label>SFx20</label>
+                    <input type="checkbox">
+                    <label>SFx22</label>
+                    <input type="checkbox"></br>
+                    <label>SFx23</label>
+                    <input type="checkbox">
+                    <label>SFx24</label>
+                    <input type="checkbox">
+                    <label>SFx25</label>
+                    <input type="checkbox">
+                    <label>SFx26</label>
+                    <input type="checkbox">
+                    <label>SFx32</label>
+                    <input type="checkbox"></br>
+                    <label>SFx33</label>
+                    <input type="checkbox">
+                </div>
+                <button type='submit' class='btnDroits btn-outline-light btn-lg'>Select</button>
             </div>
-            <button type='submit' class='btnDroits btn-outline-light btn-lg'>Select</button>
-        </div>
         </form>
     </section>
+    <script type='text/javascript' src='./assets/vendors/jquery/jquery-ui.min.js'></script>
+    <script type="text/javascript" src="./assets/js/script.js" ></script>
 </body>
 </html>
