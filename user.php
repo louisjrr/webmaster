@@ -1,5 +1,5 @@
 <?php
-
+ include 'database.php';
  abstract class User{
      protected $idRole;
      private $mail;
@@ -14,7 +14,7 @@
         include 'database.php';
         echo $idRole, $mail, $password, $Lname, $Fname, $age, $adresse;
         echo "</br>";
-        $query = $db->query("INSERT INTO utilisateurs (idrole, mail, mdp, nom, prenom, age, adresse) VALUES ('$idRole', '$mail', '$password', '$Lname', '$Fname', '$age', '$adresse')");
+        $query = $db->query("INSERT INTO utilisateurs (idrole, mail, mdp, nom, prenom, age, adresse, visible) VALUES ('$idRole', '$mail', '$password', '$Lname', '$Fname', '$age', '$adresse', 1)");
         $response = $db->query("SELECT MAX(idutilisateur) FROM utilisateurs");
         $idMax = $response->fetch(PDO::FETCH_NUM);
         echo $idMax[0];
@@ -81,7 +81,18 @@
        return $age - 1; 
    } 
    return $age; 
-    }   
+    }
+
+    /*----Redirection vers la page de connexion si l'adresse mail existe déja----*/ 
+    $testMail = $_POST['mail'];
+    $query = $db->query("SELECT idutilisateur FROM utilisateurs WHERE mail ='$testMail'");
+    $response = $query->fetch(PDO::FETCH_NUM);
+    echo $response;
+    if($response[0] > 0){
+        header("Location:http://localhost/www/webmaster/register.php");
+        exit();
+    }
+    
 
 
  switch($_POST['promotion']){
