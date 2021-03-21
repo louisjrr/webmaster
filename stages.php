@@ -25,4 +25,11 @@
             echo '<p>'.$n["idoffre"].'</p>';
         }
     };
+
+    function research($value){
+        include 'database.php';
+        $request = $db->query('SELECT intitule_offre,description,identreprise FROM offres_de_stage LIKE '+$value+'% ');
+        $infoUser = $request->fetchAll();
+
+    }
 ?>
