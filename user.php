@@ -12,13 +12,12 @@
 
      public function addUser($idRole, $mail, $password, $Lname, $Fname, $age, $adresse, $idCampus, $idPromo){
         include 'database.php';
-        echo $idRole, $mail, $password, $Lname, $Fname, $age, $adresse;
-        echo "</br>";
         $query = $db->query("INSERT INTO utilisateurs (idrole, mail, mdp, nom, prenom, age, adresse, visible) VALUES ('$idRole', '$mail', '$password', '$Lname', '$Fname', '$age', '$adresse', 1)");
         $response = $db->query("SELECT MAX(idutilisateur) FROM utilisateurs");
         $idMax = $response->fetch(PDO::FETCH_NUM);
-        echo $idMax[0];
         $query = $db->query("INSERT INTO etudier_a (idutilisateur, idcentre) VALUES ('$idMax[0]', '$idCampus')");
+        $response = $db->query("SELECT MAX(idutilisateur) FROM utilisateurs");
+        $idMax = $response->fetch(PDO::FETCH_NUM);
         $query = $db->query("INSERT INTO faire_partie_ou_encadrer (idutilisateur, idpromotion) VALUES ('$idMax[0]', '$idPromo')");
      }
  }

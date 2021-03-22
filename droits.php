@@ -13,14 +13,14 @@
 <body class="bodyDroits">
     <!--<div class="shadow"></div>-->
     <section>
-        <form class="rightForm">
+        <form class="rightForm" method="post" action="delegate.php">
             <i class="fas fa-arrow-left btnBack"></i>
             <div class="block">
                 <h3>Delegate permission :</h3>
                 <hr>
                 <div class="checkbox">
                     <label>SFx2</label>
-                    <input type="checkbox">
+                    <input type="checkbox" name="SFx2">
                     <label>SFx3</label>
                     <input type="checkbox">
                     <label>SFx4</label>
