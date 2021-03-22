@@ -174,6 +174,48 @@ i {
 .affichage h2 {
   text-decoration: underline $green;
 }
+.create-stage {
+  width: 90%;
+  margin: 0 auto;
+}
+.titre-stage {
+  text-decoration: underline $green;
+  margin-bottom: 20px;
+}
+.form-stage {
+  border: solid black;
+  height: 80vh;
+  display: flex;
+  flex-direction: row;
+}
+.form-stage input {
+  margin: 20px;
+  width: 250px;
+  padding: 10px;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.column input {
+  margin: auto 0;
+}
+.column textarea {
+  margin: auto 0;
+}
+.two input[name="compétences"] {
+  width: 500px;
+  height: 150px;
+}
+.listing {
+  width: 500px;
+  height: 40vh;
+  margin-top: 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 0;
+}
 a.nav-link {
   position: relative;
 }

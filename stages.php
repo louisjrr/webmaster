@@ -40,4 +40,13 @@
             }
         }
     }
+
+    function competences(){
+        include 'database.php';
+        $request = $db->query('SELECT nom_competence FROM competences ORDER BY nom_competence ASC');
+        $infoUser = $request->fetchAll();
+        foreach($infoUser as $n){
+            echo '<input type="checkbox" value="'.$n["nom_competence"].'"></input><label>'.$n["nom_competence"].'</label>';
+        }
+    }
 ?>

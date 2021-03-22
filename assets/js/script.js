@@ -52,7 +52,7 @@ $(function(){
         const titre = $(this).find('.titre').html()
         const description = $(this).find('.description').html()
         const entreprise = $(this).find('.entreprise').html()
-        $('.affichage').html("<h2>" + titre + "</h2><br><h4>Stage proposé par : "+ entreprise +"</h4><br><p>"+ description +"</p><br><br><h4>Merci d'ajouter ton CV et ta lettre de motivation ci-dessous :</h4><form method='POST'><input type='file' files multiple><br><br><input type=submit>")
+        $('.affichage').html("<h2>" + titre + "</h2><br><h4>Stage proposé par : "+ entreprise +"</h4><br><p>"+ description +"</p><br><br><h4>Merci d'ajouter ton CV et ta lettre de motivation ci-dessous :</h4><form method='POST'><input type='file' files multiple required><br><br><input type=submit>")
     })
 })
 /*----Bouton de retour en arrière----*/
@@ -65,5 +65,14 @@ $(function(){
 $(function(){
     $('.recherche-icone').click(function(){
         $('.form-inline').submit()
+    })
+})
+/*----Ajout d'une compétence dans offre de stage----*/
+$(function(){
+    $('.add').click(function(){
+        if($('.allcompt').val()!=""){
+            $('.listing').append($('.allcompt').val() + "; ")
+            $('.allcompt').val("")
+        }
     })
 })

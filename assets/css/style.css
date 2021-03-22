@@ -231,6 +231,68 @@ i {
           text-decoration: underline #3fdd8f;
 }
 
+.create-stage {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.titre-stage {
+  -webkit-text-decoration: underline #3fdd8f;
+          text-decoration: underline #3fdd8f;
+  margin-bottom: 20px;
+}
+
+.form-stage {
+  border: solid black;
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.form-stage input {
+  margin: 20px;
+  width: 250px;
+  padding: 10px;
+}
+
+.column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 auto;
+}
+
+.column input {
+  margin: auto 0;
+}
+
+.column textarea {
+  margin: auto 0;
+}
+
+.two input[name="compétences"] {
+  width: 500px;
+  height: 150px;
+}
+
+.listing {
+  width: 500px;
+  height: 40vh;
+  margin-top: 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 0;
+}
+
 a.nav-link {
   position: relative;
 }
