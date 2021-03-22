@@ -42,6 +42,7 @@
     }
     if(isset($_POST['stage'])){
         add($_POST['entreprise'],$_POST['titre_stage'],$_POST['description'],$_POST['nb_place']);
-        $_POST['stage']=NULL;
+        header('Location:http://localhost/www/webmaster/home.php');
+        die();
     }
 ?>

@@ -16,7 +16,7 @@
     <?php include 'header.php';?>
     <div class="create-stage">
         <h2 class=titre-stage>Add New Internship offer</h2>
-        <form method='POST' action='home.php'>
+        <form method='POST' action='addOffre.php'>
             <fieldset class='form-stage'>
                 <div class="column one">
                     <input type="text" name="entreprise" placeholder="Nom de l'entreprise" required>
