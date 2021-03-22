@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,18 +39,24 @@
                 </div>
             </div>
         </nav>
+        </header>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-8"></div>
-                <div class="col-md-1"></div>
+                <div id="accountAffiche" class="col-md-8">
+                    <?php include('./php_pur/accountGauche.php'); ?>
+                </div>
+                <div class="col-md-1"> </div> <!-- pour espacer en bootstrap-->
                 <div class="col-md-3">
-                    <h2>My Profil</h2>
+                    <form method="post">
+                     <button type = "submit" name="infogenerales"  class="infoGeneralesButton">My Profil</button>
+                     <button type = "submit" name="wishlist"  class="infoGeneralesButton">Ma wishlist</button> 
+                    </form>
                 </div> 
             </div>
         </div>
-    </header>
 
     <p><a href="register.php">Create a account</a></p>
     <script type='text/javascript' src='./assets/vendors/jquery/jquery-ui.min.js'></script>
     <script type="text/javascript" src="./assets/js/script.js" ></script>
+    <script type="text/javascript" src="./assets/js/scriptAccount.js" ></script>
 </body>
