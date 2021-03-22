@@ -90,7 +90,7 @@
     echo $response;
     if($response[0] > 0){
         header("Location:http://localhost/www/webmaster/register.php");
-        exit();
+        exit;
     }
     
 
@@ -131,11 +131,11 @@
         break;
      case "delegate":
         header("Location:http://localhost/www/webmaster/droits.php");
-        exit();
+        exit;
         break;
  }
 
  header("Location: http://localhost/www/webmaster/index.php");
- exit();
+ exit;
  
 ?> 
