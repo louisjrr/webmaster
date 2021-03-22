@@ -23,6 +23,7 @@
  }
  class Admin extends User{
     public $idRole = 1;
+    public $right = "11111111111111111111111111111111111";
 
     function __construct($mail, $password, $Lname, $Fname, $age, $adresse){
        $this->mail = $mail;
@@ -36,6 +37,7 @@
     
  class Tutor extends User{
     public $idRole = 2;
+    public $right = "11111111111100001111111111000001100";
 
     function __construct($mail, $password, $Lname, $Fname, $age, $adresse){
         $this->mail = $mail;
@@ -49,6 +51,7 @@
 
  class Student extends User{
      public $idRole = 3;
+     public $right = "11111111000100000000000000111110010";
 
      function __construct($mail, $password, $Lname, $Fname, $age, $adresse){
          $this->mail = $mail;

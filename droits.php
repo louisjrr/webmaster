@@ -22,55 +22,55 @@
                     <label>SFx2</label>
                     <input type="checkbox" name="SFx2">
                     <label>SFx3</label>
-                    <input type="checkbox">
+                    <input type="checkbox" name="SFx3">
                     <label>SFx4</label>
-                    <input type="checkbox">
+                    <input type="checkbox" name="SFx'">
                     <label>SFx5</label>
-                    <input type="checkbox">
+                    <input type="checkbox" name="SFx5">
                     <label>SFx6</label>
-                    <input type="checkbox"></br>
+                    <input type="checkbox" name="SFx6"></br>
                     <label>SFx7</label>
-                    <input type="checkbox">
+                    <input type="checkbox" name="SFx7">
                     <label>SFx8</label>
-                    <input type="checkbox">
+                    <input type="checkbox" name="SFx8">
                     <label>SFx9</label>
-                    <input type="checkbox">
+                    <input type="checkbox" name="SFx9">
                     <label>SFx10</label>
-                    <input type="checkbox">
+                    <input type="checkbox" name="SFx10">
                     <label>SFx11</label>
-                    <input type="checkbox"></br>
+                    <input type="checkbox" name="SFx11"></br>
                     <label>SFx12</label>
-                    <input type="checkbox">
+                    <input type="checkbox" name="SFx12">
                     <label>SFx13</label>
-                    <input type="checkbox">
+                    <input type="checkbox" name="SFx13">
                     <label>SFx14</label>
-                    <input type="checkbox">
+                    <input type="checkbox" name="SFx14">
                     <label>SFx15</label>
-                    <input type="checkbox">
+                    <input type="checkbox" name="SFx15">
                     <label>SFx16</label>
-                    <input type="checkbox"></br>
+                    <input type="checkbox" name="SFx16"></br>
                     <label>SFx17</label>
-                    <input type="checkbox">
+                    <input type="checkbox" name="SFx17">
                     <label>SFx18</label>
-                    <input type="checkbox">
+                    <input type="checkbox" name="SFx18">
                     <label>SFx19</label>
-                    <input type="checkbox">
+                    <input type="checkbox" name="SFx19">
                     <label>SFx20</label>
-                    <input type="checkbox">
+                    <input type="checkbox" name="SFx20">
                     <label>SFx22</label>
-                    <input type="checkbox"></br>
+                    <input type="checkbox" name="SFx22"></br>
                     <label>SFx23</label>
-                    <input type="checkbox">
+                    <input type="checkbox" name="SFx23">
                     <label>SFx24</label>
-                    <input type="checkbox">
+                    <input type="checkbox" name="SFx24">
                     <label>SFx25</label>
-                    <input type="checkbox">
+                    <input type="checkbox" name="SFx25">
                     <label>SFx26</label>
-                    <input type="checkbox">
+                    <input type="checkbox" name="SFx26">
                     <label>SFx32</label>
-                    <input type="checkbox"></br>
+                    <input type="checkbox" name="SFx32"></br>
                     <label>SFx33</label>
-                    <input type="checkbox">
+                    <input type="checkbox" name="SFx33">
                 </div>
                 <button type='submit' class='btnDroits btn-outline-light btn-lg'>Select</button>
             </div>
