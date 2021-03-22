@@ -28,12 +28,12 @@
         </div>
     </nav>
     <div class="recherche_p">
-        <form class="form-inline my-2 my-lg-0">
+        <form class="form-inline my-2 my-lg-0" method='POST' action='home.php'>
             <div class="recherche-barr">
-                <input class="recherche-input" type="search" placeholder="Recherche" aria-label="Search">
-                <a class="recherche-icone">
+                <input class="recherche-input" type="search" placeholder="Recherche" aria-label="Search" name="search">
+                <label class="recherche-icone">
                     <i class="fas fa-search"></i>
-                </a>
+                </label>
             </div>
         </form>
     </div>

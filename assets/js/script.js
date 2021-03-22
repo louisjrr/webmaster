@@ -61,3 +61,9 @@ $(function(){
         window.history.back();
     })
 });
+/*----Submit de la recherche sur home.php----*/
+$(function(){
+    $('.recherche-icone').click(function(){
+        $('.form-inline').submit()
+    })
+})

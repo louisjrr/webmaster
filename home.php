@@ -11,13 +11,18 @@
         <link rel="stylesheet" href="./assets/css/style.css">
         <script src="https://kit.fontawesome.com/0c87a70838.js"></script>
     </head>
+    <?php include "stages.php"?>
     <body>
         <?php include 'header.php'; ?>
         <div class="stock">
-            <div class="stages">
-            <?php include "stages.php"; titre() ?>
+            <div class="stages"> <!-- Affichage en scroll des offres de stage-->
+            <?php 
+            if (isset( $_POST['search'])){
+                research($_POST['search']);
+            }else{
+                titre();}; ?>
             </div>
-            <div class="affichage">
+            <div class="affichage"> <!-- Affichage de l'offre de stage sélectionnée au click-->
             
             </div>
         </div>
