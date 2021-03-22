@@ -23,6 +23,7 @@
  }
  class Admin extends User{
     public $idRole = 1;
+    public $right = "11111111111111111111111111111111111";
 
     function __construct($mail, $password, $Lname, $Fname, $age, $adresse){
        $this->mail = $mail;
@@ -36,6 +37,7 @@
     
  class Tutor extends User{
     public $idRole = 2;
+    public $right = "11111111111100001111111111000001100";
 
     function __construct($mail, $password, $Lname, $Fname, $age, $adresse){
         $this->mail = $mail;
@@ -49,6 +51,7 @@
 
  class Student extends User{
      public $idRole = 3;
+     public $right = "11111111000100000000000000111110010";
 
      function __construct($mail, $password, $Lname, $Fname, $age, $adresse){
          $this->mail = $mail;
@@ -88,7 +91,7 @@
     $response = $query->fetch(PDO::FETCH_NUM);
     echo $response;
     if($response[0] > 0){
-        header("Location:http://localhost/www/webmaster/register.php");
+        header("Location: ./register.php");
         exit;
     }
     
@@ -129,12 +132,12 @@
         $obj->addUser($obj->idRole,$obj->mail,$obj->password,$obj->Lname,$obj->Fname,$obj->age,$obj->adresse, $_POST['campus'], $_POST['promotion']);
         break;
      case "delegate":
-        header("Location:http://localhost/www/webmaster/droits.php");
+        header("Location: ./droits.php");
         exit;
         break;
  }
 
- header("Location: http://localhost/www/webmaster/index.php");
+ header("Location: ./index.php");
  exit;
  
 ?> 
