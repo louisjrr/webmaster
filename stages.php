@@ -14,18 +14,6 @@
             }
         }
     };
-    
-    function description(){
-        include 'database.php';
-        $requestLogin = $db->prepare('SELECT idoffre FROM offres_de_stage WHERE intitule_offre= :titre_stage');
-        $requestLogin->execute(array('titre_stage' => $_POST["Refonte d'un intranet"]));
-        $infoUser = $requestLogin->fetch();
-
-        foreach($infoUser as $n){
-            echo '<p>'.$n["idoffre"].'</p>';
-        }
-    };
-
     function research($value){
         include 'database.php';
         $request = $db->prepare("SELECT intitule_offre,description,identreprise FROM offres_de_stage WHERE intitule_offre LIKE ?");
@@ -40,7 +28,6 @@
             }
         }
     }
-
     function competences(){
         include 'database.php';
         $request = $db->query('SELECT nom_competence FROM competences ORDER BY nom_competence ASC');
@@ -48,5 +35,13 @@
         foreach($infoUser as $n){
             echo '<input type="checkbox" value="'.$n["nom_competence"].'"></input><label>'.$n["nom_competence"].'</label>';
         }
+    }
+    function add($entreprise,$titre_stage, $description_stage,$nb_places){
+        include 'database.php';
+        $request = $db->query("INSERT INTO offres_de_stage (identreprise, intitule_offre, description, nombre_places) SELECT identreprise,'$titre_stage','$description_stage','$nb_places' FROM entreprises where nom_entreprise='$entreprise'");
+    }
+    if(isset($_POST['stage'])){
+        add($_POST['entreprise'],$_POST['titre_stage'],$_POST['description'],$_POST['nb_place']);
+        $_POST['stage']=NULL;
     }
 ?>

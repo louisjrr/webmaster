@@ -1,3 +1,4 @@
+<?php include 'stages.php';?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -15,24 +16,24 @@
     <?php include 'header.php';?>
     <div class="create-stage">
         <h2 class=titre-stage>Add New Internship offer</h2>
-        <form method='POST'>
+        <form method='POST' action='home.php'>
             <fieldset class='form-stage'>
                 <div class="column one">
-                    <input type="text" name="entreprise" placeholder="Nom de l'entreprise">
-                    <input type="text" name="titre_stage" placeholder="Intitulé du post">
-                    <select name="nb_place" id="nb_place">
+                    <input type="text" name="entreprise" placeholder="Nom de l'entreprise" required>
+                    <input type="text" name="titre_stage" placeholder="Intitulé du post" required>
+                    <select name="nb_place" id="nb_place" required>
                         <option value="" disabled selected value>Place(s) disponible(s)</option>
                         <option value="1">1 Place</option>
                         <option value="2">2 Places</option>
                         <option value="3">3 Places</option>
                         <option value="4">4 Places</option>
                     </select>
-                    <input type="submit" value="Valider">
+                    <input name='stage' type="submit" value="Valider">
                 </div>
                 <div class="column two">
-                    <textarea name="description" style="height: 150px;width:500px;resize: none;" placeholder="Description de l'offre"></textarea>
+                    <textarea name="description" style="height: 150px;width:500px;resize: none;" placeholder="Description de l'offre" required></textarea>
                     <div class="listing">
-                        <?php include 'stages.php'; competences();?>
+                        <?php competences();?>
                     </div>
                 </div>
             </fieldset>
