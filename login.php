@@ -44,6 +44,9 @@
             }
             else{
                 if($_POST['password'] == $infoUser['mdp']){
+                    /*$requestCentre = $db->prepare('SELECT idutilisateur,idrole,mail,mdp,nom,prenom,age,adresse,visible FROM utilisateurs WHERE mail = :username');
+                    $requestCentre->execute(array('username' => $_POST['login']));
+                    $infoUserCentre = $requestCentre->fetch();*/
                     session_start();
                     $_SESSION['id'] = $infoUser['idutilisateur'];
                     $_SESSION['idRole'] = $infoUser['idrole'];

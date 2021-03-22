@@ -88,7 +88,7 @@
     $response = $query->fetch(PDO::FETCH_NUM);
     echo $response;
     if($response[0] > 0){
-        header("Location:http://localhost/www/webmaster/register.php");
+        header("Location: ./register.php");
         exit;
     }
     
@@ -129,12 +129,12 @@
         $obj->addUser($obj->idRole,$obj->mail,$obj->password,$obj->Lname,$obj->Fname,$obj->age,$obj->adresse, $_POST['campus'], $_POST['promotion']);
         break;
      case "delegate":
-        header("Location:http://localhost/www/webmaster/droits.php");
+        header("Location: ./droits.php");
         exit;
         break;
  }
 
- header("Location: http://localhost/www/webmaster/index.php");
+ header("Location: ./index.php");
  exit;
  
 ?> 
