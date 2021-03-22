@@ -16,7 +16,11 @@
         <?php include 'header.php'; ?>
         <div class="stock">
             <div class="stages"> <!-- Affichage en scroll des offres de stage-->
-            <?php titre() ?>
+            <?php 
+            if (isset( $_POST['search'])){
+                research($_POST['search']);
+            }else{
+                titre();}; ?>
             </div>
             <div class="affichage"> <!-- Affichage de l'offre de stage sélectionnée au click-->
             
