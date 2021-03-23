@@ -40,7 +40,7 @@
         </div>
     </nav>
         <div class="recherche_p">
-            <form class="form-inline my-2 my-lg-0" method='POST' action='home.php'>
+            <form class="form-inline my-2 my-lg-0" method='POST' action='C_stages.php'>
                 <div class="recherche-barr">
                     <input class="recherche-input" type="search" placeholder="Recherche" aria-label="Search" name="search">
                     <label class="recherche-icone">
@@ -52,13 +52,12 @@
     </header>
         <div class="stock">
             <div class="stages"><!-- Affichage en scroll des offres de stage-->
-            <?php 
-            echo "";
+            <?php
             if (isset( $_POST['search'])){
                 research($_POST['search']);
             }else{
-                //include ;
-                }; ?>
+                echo $conteneur;
+            }; ?>
             </div>
             <div class="affichage"> <!-- Affichage de l'offre de stage sélectionnée au click-->
             

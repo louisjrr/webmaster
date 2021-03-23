@@ -5,22 +5,33 @@
         private $entreprise;
         private $description;
         private $places;
+
+        public function getAllStages($db){
+            $request = $db->query('SELECT intitule_offre,description, nom_entreprise FROM offres_de_stage, entreprises WHERE offres_de_stage.IDENTREPRISE = entreprises.IDENTREPRISE');
+            $getstages = $request->fetchAll();
+            return $getstages;
+        }
+
         public function titre($db){
             $request = $db->query('SELECT intitule_offre FROM offres_de_stage');
             $titre = $request->fetchAll();
+            return $titre;
         }
         public function entreprise($db){
             $request = $db->query('SELECT IDOFFRE, NOM_ENTREPRISE FROM offres_de_stage, entreprises WHERE offres_de_stage.IDENTREPRISE = entreprises.IDENTREPRISE');
             $entreprise = $request->fetchAll();
+            return $entreprise;
         }
         public function description($db){
             $request = $db->query('SELECT description FROM offres_de_stage');
             $description = $request->fetchAll();
+            return $description;
         }
-        public function places($db){
+        /*public function places($db){
             $request = $db->query('SELECT nombres_places FROM offres_de_stage');
             $places = $request->fetchAll();
-        }
+            return $places;
+        }*/
         public function research($value){
             $request = $db->prepare("SELECT intitule_offre,description,identreprise FROM offres_de_stage WHERE intitule_offre LIKE ?");
             $request->execute(array("%$value%"));
