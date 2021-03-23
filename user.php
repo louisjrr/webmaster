@@ -8,7 +8,6 @@
      private $Lname;
      //private $age;
      private $adresse;
-     protected $right;
 
      public function addUser($idRole, $mail, $password, $Lname, $Fname, $age, $adresse, $idCampus, $idPromo){
         include 'database.php';
@@ -23,7 +22,6 @@
  }
  class Admin extends User{
     public $idRole = 1;
-    public $right = "11111111111111111111111111111111111";
 
     function __construct($mail, $password, $Lname, $Fname, $age, $adresse){
        $this->mail = $mail;
@@ -37,7 +35,6 @@
     
  class Tutor extends User{
     public $idRole = 2;
-    public $right = "11111111111100001111111111000001100";
 
     function __construct($mail, $password, $Lname, $Fname, $age, $adresse){
         $this->mail = $mail;
@@ -51,7 +48,6 @@
 
  class Student extends User{
      public $idRole = 3;
-     public $right = "11111111000100000000000000111110010";
 
      function __construct($mail, $password, $Lname, $Fname, $age, $adresse){
          $this->mail = $mail;
@@ -64,10 +60,9 @@
 
  }
  class Delegate extends User{
-    public $idRole = 4;
+     private $right;
 
      function __construct($mail, $password, $Lname, $Fname, $age, $adresse){
-         $this->right = $right;
          $this->mail = $mail;
          $this->password = $password;
          $this->Lname = $Lname;
@@ -75,6 +70,17 @@
          $this->age = $age;
          $this->adresse = $adresse;
         }
+
+     public function addDelegate($mail, $password, $Lname, $Fname, $age, $adresse, $idCampus, $idPromo){
+        include 'database.php';
+        $query = $db->query("INSERT INTO utilisateurs ( mail, mdp, nom, prenom, age, adresse, visible) VALUES ('$mail', '$password', '$Lname', '$Fname', '$age', '$adresse', 1)");
+        $response = $db->query("SELECT MAX(idutilisateur) FROM utilisateurs");
+        $idMax = $response->fetch(PDO::FETCH_NUM);
+        $query = $db->query("INSERT INTO etudier_a (idutilisateur, idcentre) VALUES ('$idMax[0]', '$idCampus')");
+        $response = $db->query("SELECT MAX(idutilisateur) FROM utilisateurs");
+        $idMax = $response->fetch(PDO::FETCH_NUM);
+        $query = $db->query("INSERT INTO faire_partie_ou_encadrer (idutilisateur, idpromotion) VALUES ('$idMax[0]', '$idPromo')");
+    }
  }
 
  function getAge($birthdate) { 
@@ -132,12 +138,20 @@
         $obj->addUser($obj->idRole,$obj->mail,$obj->password,$obj->Lname,$obj->Fname,$obj->age,$obj->adresse, $_POST['campus'], $_POST['promotion']);
         break;
      case "delegate":
-        header("Location: ./droits.php");
-        exit;
+        $age = getAge($_POST['birthdate']);
+        $obj = new Delegate($_POST['mail'],$_POST['password'],$_POST['Lname'],$_POST['Fname'], $age, $_POST['password'],$_POST['city']);
+        $obj->addDelegate($obj->mail,$obj->password,$obj->Lname,$obj->Fname,$obj->age,$obj->adresse, $_POST['campus'], $_POST['promotion']);
         break;
  }
 
- header("Location: ./index.php");
+ if($_POST['role'] == "Delegate"){
+    header("Location: ./droits.php");
+        exit;
+ }
+ else{
+    header("Location: ./index.php");
  exit;
+ }
+
  
 ?> 
