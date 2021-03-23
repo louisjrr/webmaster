@@ -8,7 +8,7 @@
         <title>Home</title>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Fascinate&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="./assets/vendors/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../assets/vendors/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="../assets/css/style.css">
         <script src="https://kit.fontawesome.com/0c87a70838.js"></script>
     </head>
