@@ -8,7 +8,6 @@
      private $Lname;
      //private $age;
      private $adresse;
-     protected $right;
 
      public function addUser($idRole, $mail, $password, $Lname, $Fname, $age, $adresse, $idCampus, $idPromo){
         include 'database.php';
@@ -23,7 +22,6 @@
  }
  class Admin extends User{
     public $idRole = 1;
-    public $right = "11111111111111111111111111111111111";
 
     function __construct($mail, $password, $Lname, $Fname, $age, $adresse){
        $this->mail = $mail;
@@ -37,7 +35,6 @@
     
  class Tutor extends User{
     public $idRole = 2;
-    public $right = "11111111111100001111111111000001100";
 
     function __construct($mail, $password, $Lname, $Fname, $age, $adresse){
         $this->mail = $mail;
@@ -51,7 +48,6 @@
 
  class Student extends User{
      public $idRole = 3;
-     public $right = "11111111000100000000000000111110010";
 
      function __construct($mail, $password, $Lname, $Fname, $age, $adresse){
          $this->mail = $mail;
@@ -64,10 +60,9 @@
 
  }
  class Delegate extends User{
-    public $idRole = 4;
+     private $right;
 
      function __construct($mail, $password, $Lname, $Fname, $age, $adresse){
-         $this->right = $right;
          $this->mail = $mail;
          $this->password = $password;
          $this->Lname = $Lname;
@@ -75,6 +70,17 @@
          $this->age = $age;
          $this->adresse = $adresse;
         }
+
+     public function addDelegate($mail, $password, $Lname, $Fname, $age, $adresse, $idCampus, $idPromo){
+        include 'database.php';
+        $query = $db->query("INSERT INTO utilisateurs ( mail, mdp, nom, prenom, age, adresse, visible) VALUES ('$mail', '$password', '$Lname', '$Fname', '$age', '$adresse', 1)");
+        $response = $db->query("SELECT MAX(idutilisateur) FROM utilisateurs");
+        $idMax = $response->fetch(PDO::FETCH_NUM);
+        $query = $db->query("INSERT INTO etudier_a (idutilisateur, idcentre) VALUES ('$idMax[0]', '$idCampus')");
+        $response = $db->query("SELECT MAX(idutilisateur) FROM utilisateurs");
+        $idMax = $response->fetch(PDO::FETCH_NUM);
+        $query = $db->query("INSERT INTO faire_partie_ou_encadrer (idutilisateur, idpromotion) VALUES ('$idMax[0]', '$idPromo')");
+    }
  }
 
  function getAge($birthdate) { 
@@ -85,59 +91,6 @@
    return $age; 
     }
 
-    /*----Redirection vers la page de connexion si l'adresse mail existe déja----*/ 
-    $testMail = $_POST['mail'];
-    $query = $db->query("SELECT idutilisateur FROM utilisateurs WHERE mail ='$testMail'");
-    $response = $query->fetch(PDO::FETCH_NUM);
-    echo $response;
-    if($response[0] > 0){
-        header("Location: ./register.php");
-        exit;
-    }
-    
 
-
- switch($_POST['promotion']){
-     case "A1":
-        $idPromo = 5;
-        break;
-    case "A2":
-        $idPromo = 5;
-        break;
-    case "A3":
-        $idPromo = 5;
-        break;
-    case "A4":
-        $idPromo = 5;
-        break;
-    case "A5":
-        $idPromo = 5;
-        break;
- }
-
- switch($_POST['role']){
-     case "admin":
-        $age = getAge($_POST['birthdate']);
-        $obj = new Admin($_POST['mail'],$_POST['password'],$_POST['Lname'],$_POST['Fname'], $age, $_POST['password'],$_POST['city']);
-        $obj->addUser($obj->idRole,$obj->mail,$obj->password,$obj->Lname,$obj->Fname,$obj->age,$obj->adresse, $idCampus, $idPromo);
-        break;
-     case "tutor":
-        $age = getAge($_POST['birthdate']);
-        $obj = new Tutor($_POST['mail'],$_POST['password'],$_POST['Lname'],$_POST['Fname'], $age, $_POST['password'],$_POST['city']);
-        $obj->addUser($obj->idRole,$obj->mail,$obj->password,$obj->Lname,$obj->Fname,$obj->age,$obj->adresse, $idCampus, $idPromo);
-        break;
-     case "student":
-        $age = getAge($_POST['birthdate']);
-        $obj = new Student($_POST['mail'],$_POST['password'],$_POST['Lname'],$_POST['Fname'], $age, $_POST['password'],$_POST['city']);
-        $obj->addUser($obj->idRole,$obj->mail,$obj->password,$obj->Lname,$obj->Fname,$obj->age,$obj->adresse, $_POST['campus'], $_POST['promotion']);
-        break;
-     case "delegate":
-        header("Location: ./droits.php");
-        exit;
-        break;
- }
-
- header("Location: ./index.php");
- exit;
  
 ?> 
