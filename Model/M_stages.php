@@ -1,30 +1,23 @@
 <?php
-include '../Controller/C_database.php';
-    class Stages{
+    class Stage{
         
         private $titre;
         private $entreprise;
         private $description;
         private $places;
-        function __construct($titre,$entreprise,$description,$places){
-            $this->titre = $titre;
-            $this->entreprise = $entreprise;
-            $this->description = $description;
-            $this->places = $places;
-        }
-        public function titre(){
+        public function titre($db){
             $request = $db->query('SELECT intitule_offre FROM offres_de_stage');
             $titre = $request->fetchAll();
         }
-        public function entreprise(){
+        public function entreprise($db){
             $request = $db->query('SELECT IDOFFRE, NOM_ENTREPRISE FROM offres_de_stage, entreprises WHERE offres_de_stage.IDENTREPRISE = entreprises.IDENTREPRISE');
             $entreprise = $request->fetchAll();
         }
-        public function description(){
+        public function description($db){
             $request = $db->query('SELECT description FROM offres_de_stage');
             $description = $request->fetchAll();
         }
-        public function places(){
+        public function places($db){
             $request = $db->query('SELECT nombres_places FROM offres_de_stage');
             $places = $request->fetchAll();
         }
@@ -42,7 +35,6 @@ include '../Controller/C_database.php';
             }
         }
         public function competences(){
-            include 'M_database.php';
             $request = $db->query('SELECT nom_competence FROM competences ORDER BY nom_competence ASC');
             $infoUser = $request->fetchAll();
             foreach($infoUser as $n){
@@ -50,7 +42,6 @@ include '../Controller/C_database.php';
             }
         }
         public function add($entreprise,$titre_stage, $description_stage,$nb_places){
-            include 'M_database.php';
             $request = $db->query("INSERT INTO offres_de_stage (identreprise, intitule_offre, description, nombre_places) SELECT identreprise,'$titre_stage','$description_stage','$nb_places' FROM entreprises where nom_entreprise='$entreprise'");
         }
     }

@@ -1,4 +1,3 @@
-<?php include "../Model/M_stages.php"?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -52,12 +51,14 @@
         </div>
     </header>
         <div class="stock">
-            <div class="stages"> <!-- Affichage en scroll des offres de stage-->
+            <div class="stages"><!-- Affichage en scroll des offres de stage-->
             <?php 
+            echo "";
             if (isset( $_POST['search'])){
                 research($_POST['search']);
             }else{
-                titre();}; ?>
+                //include ;
+                }; ?>
             </div>
             <div class="affichage"> <!-- Affichage de l'offre de stage sélectionnée au click-->
             
