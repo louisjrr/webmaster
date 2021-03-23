@@ -48,8 +48,8 @@
                 <div class="col-md-1"> </div> <!-- pour espacer en bootstrap-->
                 <div class="col-md-3">
                     <form method="post">
-                     <button type = "submit" name="infogenerales"  class="infoGeneralesButton">My Profil</button>
-                     <button type = "submit" name="wishlist"  class="infoGeneralesButton">Ma wishlist</button> 
+                        <button type = "submit" name="infogenerales"  class="infoGeneralesButton">My Profil</button>
+                        <button type = "submit" name="wishlist"  class="infoGeneralesButton">Ma wishlist</button> 
                     </form>
                 </div> 
             </div>
