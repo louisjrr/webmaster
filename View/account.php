@@ -43,7 +43,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div id="accountAffiche" class="col-md-8">
-                    <?php include('./php_pur/accountGauche.php'); ?>
+                    <?php include('../Controller/accountPHP.php'); ?>
                 </div>
                 <div class="col-md-1"> </div> <!-- pour espacer en bootstrap-->
                 <div class="col-md-3">
