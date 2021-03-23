@@ -1,4 +1,5 @@
 <?php
+include '../Controller/C_database.php';
     class Stages{
         
         private $titre;
@@ -11,33 +12,23 @@
             $this->description = $description;
             $this->places = $places;
         }
-
         public function titre(){
-            include 'M_database.php';
             $request = $db->query('SELECT intitule_offre FROM offres_de_stage');
             $titre = $request->fetchAll();
         }
         public function entreprise(){
-            include 'M_database.php';
-            $request = $db->query('SELECT identreprise FROM offres_de_stage');
+            $request = $db->query('SELECT IDOFFRE, NOM_ENTREPRISE FROM offres_de_stage, entreprises WHERE offres_de_stage.IDENTREPRISE = entreprises.IDENTREPRISE');
             $entreprise = $request->fetchAll();
         }
         public function description(){
-            include 'M_database.php';
             $request = $db->query('SELECT description FROM offres_de_stage');
-            $result = $request->fetchAll();
-            foreach($result as $n){
-                $request2 = $db->query('SELECT nom_entreprise FROM entreprises WHERE identreprise = '.$n["identreprise"].'');
-                $description = $request2->fetchAll();
-            }
+            $description = $request->fetchAll();
         }
         public function places(){
-            include 'M_database.php';
             $request = $db->query('SELECT nombres_places FROM offres_de_stage');
             $places = $request->fetchAll();
         }
         public function research($value){
-            include 'M_database.php';
             $request = $db->prepare("SELECT intitule_offre,description,identreprise FROM offres_de_stage WHERE intitule_offre LIKE ?");
             $request->execute(array("%$value%"));
             $infoUser = $request->fetchAll();
