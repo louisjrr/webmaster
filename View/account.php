@@ -43,13 +43,14 @@
         <div class="container-fluid">
             <div class="row">
                 <div id="accountAffiche" class="col-md-8">
-                    <?php include('../Controller/accountPHP.php'); ?>
+                    <?php include('../Controller/C_accountPHP.php'); ?>
                 </div>
                 <div class="col-md-1"> </div> <!-- pour espacer en bootstrap-->
                 <div class="col-md-3">
                     <form method="post">
                         <button type = "submit" name="infogenerales"  class="infoGeneralesButton">My Profil</button>
                         <button type = "submit" name="wishlist"  class="infoGeneralesButton">Ma wishlist</button> 
+                        <button type = "submit" name="deconnexion"  class="infoGeneralesButton">deconnexion</button> 
                     </form>
                 </div> 
             </div>
