@@ -1,5 +1,5 @@
 <?php
-    include 'M_user.php';
+    include '../Model/M_user.php';
     /*----Redirection vers la page de connexion si l'adresse mail existe déja----*/ 
     $testMail = $_POST['mail'];
     $query = $db->query("SELECT idutilisateur FROM utilisateurs WHERE mail ='$testMail'");
@@ -14,16 +14,16 @@
 
  switch($_POST['promotion']){
      case "A1":
-        $idPromo = 5;
+        $idPromo = 1;
         break;
     case "A2":
-        $idPromo = 5;
+        $idPromo = 2;
         break;
     case "A3":
-        $idPromo = 5;
+        $idPromo = 3;
         break;
     case "A4":
-        $idPromo = 5;
+        $idPromo = 4;
         break;
     case "A5":
         $idPromo = 5;

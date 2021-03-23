@@ -17,7 +17,7 @@
         <h1 class="titreAccueil">Needs.com</h1>
         <h2 class="slogan">Le site N°1 de recherche de stages</h2>
         <div class="compte">
-            <form class="formInscription" method="post" action="C_user.php">
+            <form class="formInscription" method="post" action="../Controller/C_user.php">
                 <i class="fas fa-arrow-left btnBack"></i>
                 <fieldset>
                     <legend>Register</legend>
