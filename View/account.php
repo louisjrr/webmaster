@@ -49,6 +49,7 @@
                 <div class="col-md-3">
                     <form method="post">
                         <button type = "submit" name="infogenerales"  class="infoGeneralesButton">My Profil</button>
+                        <button type = "submit" name="modifProfil"  class="infoGeneralesButton">modifier mon Profil</button>
                         <button type = "submit" name="wishlist"  class="infoGeneralesButton">Ma wishlist</button> 
                         <button type = "submit" name="deconnexion"  class="infoGeneralesButton">deconnexion</button> 
                     </form>
