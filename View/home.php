@@ -1,3 +1,4 @@
+<?php include "../Model/stages.php"?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -7,13 +8,38 @@
         <title>Home</title>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Fascinate&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="./assets/vendors/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="stylesheet" href="../assets/vendors/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../assets/css/style.css">
         <script src="https://kit.fontawesome.com/0c87a70838.js"></script>
     </head>
-    <?php include "stages.php"?>
     <body>
-        <?php include 'header.php'; ?>
+    <header>
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.php"><img class ="logo"src="../assets/images/logo.png"></a>
+            <div class ="d-md-none mobile" data-toggle="collapse" data-target="#navbarResponsive">
+                <div class = 'bg-dark line1' data-toggle="collapse" data-target="#navbarResponsive"></div>
+                <div class = 'bg-dark line2' data-toggle="collapse" data-target="#navbarResponsive"></div>
+                <div class = 'bg-dark line3' data-toggle="collapse" data-target="#navbarResponsive"></div>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="home.php">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="account.php">Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Avis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
         <div class="recherche_p">
             <form class="form-inline my-2 my-lg-0" method='POST' action='home.php'>
                 <div class="recherche-barr">
@@ -24,6 +50,7 @@
                 </div>
             </form>
         </div>
+    </header>
         <div class="stock">
             <div class="stages"> <!-- Affichage en scroll des offres de stage-->
             <?php 
@@ -36,7 +63,7 @@
             
             </div>
         </div>
-        <script type='text/javascript' src='./assets/vendors/jquery/jquery-ui.min.js'></script>
-        <script type="text/javascript" src="./assets/js/script.js" ></script>
+        <script type='text/javascript' src='../assets/vendors/jquery/jquery-ui.min.js'></script>
+        <script type="text/javascript" src="../assets/js/script.js" ></script>
     </body>
 </html>
