@@ -1,8 +1,7 @@
 <?php
-    
+    include 'database.php';
     
     function titre(){
-        include 'database.php';
         $request = $db->query('SELECT intitule_offre,description,identreprise FROM offres_de_stage');
         $infoUser = $request->fetchAll();
         foreach($infoUser as $n){
@@ -15,7 +14,6 @@
         }
     };
     function research($value){
-        include 'database.php';
         $request = $db->prepare("SELECT intitule_offre,description,identreprise FROM offres_de_stage WHERE intitule_offre LIKE ?");
         $request->execute(array("%$value%"));
         $infoUser = $request->fetchAll();
@@ -29,7 +27,6 @@
         }
     }
     function competences(){
-        include 'database.php';
         $request = $db->query('SELECT nom_competence FROM competences ORDER BY nom_competence ASC');
         $infoUser = $request->fetchAll();
         foreach($infoUser as $n){
