@@ -11,39 +11,16 @@
             $getstages = $request->fetchAll();
             return $getstages;
         }
-
-        public function titre($db){
-            $request = $db->query('SELECT intitule_offre FROM offres_de_stage');
-            $titre = $request->fetchAll();
-            return $titre;
-        }
-        public function entreprise($db){
-            $request = $db->query('SELECT IDOFFRE, NOM_ENTREPRISE FROM offres_de_stage, entreprises WHERE offres_de_stage.IDENTREPRISE = entreprises.IDENTREPRISE');
-            $entreprise = $request->fetchAll();
-            return $entreprise;
-        }
-        public function description($db){
-            $request = $db->query('SELECT description FROM offres_de_stage');
-            $description = $request->fetchAll();
-            return $description;
-        }
         /*public function places($db){
             $request = $db->query('SELECT nombres_places FROM offres_de_stage');
             $places = $request->fetchAll();
             return $places;
         }*/
-        public function research($value){
-            $request = $db->prepare("SELECT intitule_offre,description,identreprise FROM offres_de_stage WHERE intitule_offre LIKE ?");
+        public function research($db,$value){
+            $request = $db->prepare("SELECT intitule_offre,description, nom_entreprise FROM offres_de_stage, entreprises WHERE offres_de_stage.IDENTREPRISE = entreprises.IDENTREPRISE AND intitule_offre LIKE ?");
             $request->execute(array("%$value%"));
             $infoUser = $request->fetchAll();
-            foreach($infoUser as $n){
-                echo '<div class="stage"><h2 class="titre">'.$n["intitule_offre"].'</h2><i class="far fa-heart"></i><p class="description">'.$n['description'].'</p>';
-                $request2 = $db->query('SELECT nom_entreprise FROM entreprises WHERE identreprise = '.$n["identreprise"].'');
-                $nom = $request2->fetchAll();
-                foreach($nom as $m){
-                echo '<br><h5 class="entreprise">'.$m["nom_entreprise"].'</h5></div>';
-                }
-            }
+            return $infoUser;
         }
         public function competences(){
             $request = $db->query('SELECT nom_competence FROM competences ORDER BY nom_competence ASC');

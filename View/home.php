@@ -24,10 +24,10 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="home.php">Home</a>
+                        <a class="nav-link" href="../Controller/C_stages.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="account.php">Account</a>
+                        <a class="nav-link" href="../View/account.php">Account</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Avis</a>
@@ -52,12 +52,7 @@
     </header>
         <div class="stock">
             <div class="stages"><!-- Affichage en scroll des offres de stage-->
-            <?php
-            if (isset( $_POST['search'])){
-                research($_POST['search']);
-            }else{
-                echo $conteneur;
-            }; ?>
+            <?=$conteneur?>
             </div>
             <div class="affichage"> <!-- Affichage de l'offre de stage sélectionnée au click-->
             
