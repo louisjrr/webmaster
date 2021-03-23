@@ -1,17 +1,19 @@
 <?php
- include 'database.php';
+
  abstract class User{
      protected $idRole;
-     private $mail;
-     private $password;
-     private $Fname;
-     private $Lname;
-     //private $age;
-     private $adresse;
+     protected $mail;
+     protected $password;
+     protected $Fname;
+     protected $Lname;
+     protected $age;
+     protected $adresse;
+     public $db;
 
-     public function addUser($idRole, $mail, $password, $Lname, $Fname, $age, $adresse, $idCampus, $idPromo){
-        include 'database.php';
-        $query = $db->query("INSERT INTO utilisateurs (idrole, mail, mdp, nom, prenom, age, adresse, visible) VALUES ('$idRole', '$mail', '$password', '$Lname', '$Fname', '$age', '$adresse', 1)");
+
+     public function addUser($db, $idCampus, $idPromo){
+
+        $query = $db->query("INSERT INTO utilisateurs (idrole, mail, mdp, nom, prenom, age, adresse, visible) VALUES ('$this->idRole', '$this->mail', '$this->password', '$this->Lname', '$this->Fname', '$this->age', '$this->adresse', 1)");
         $response = $db->query("SELECT MAX(idutilisateur) FROM utilisateurs");
         $idMax = $response->fetch(PDO::FETCH_NUM);
         $query = $db->query("INSERT INTO etudier_a (idutilisateur, idcentre) VALUES ('$idMax[0]', '$idCampus')");
@@ -72,7 +74,6 @@
         }
 
      public function addDelegate($mail, $password, $Lname, $Fname, $age, $adresse, $idCampus, $idPromo){
-        include 'database.php';
         $query = $db->query("INSERT INTO utilisateurs ( mail, mdp, nom, prenom, age, adresse, visible) VALUES ('$mail', '$password', '$Lname', '$Fname', '$age', '$adresse', 1)");
         $response = $db->query("SELECT MAX(idutilisateur) FROM utilisateurs");
         $idMax = $response->fetch(PDO::FETCH_NUM);
