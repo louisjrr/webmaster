@@ -11,7 +11,10 @@
         NewInternship();
     });
     Route::add('/Account', function(){
-        echo 'En maintenance';
+        require('View/account.php');
     });
+    Route::add('/ModifAccount', function(){
+        require('View/account.php');
+    },"post");
     Route::run(BASEPATH);
 ?>

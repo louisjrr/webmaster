@@ -1,9 +1,7 @@
 <?php 
-      include '../Controller/C_database.php';
+      include_once './Controller/C_database.php';
       session_start();
       if(isset($_POST['infogenerales'])){
-      
-
             echo  ("<p> prénom:  ".$_SESSION['prenom']." </p></br>");
             echo  ("<p> nom:  ".$_SESSION['nom']." </p></br>");
             echo  ("<p> age:  ".$_SESSION['age']." </p></br>");
@@ -29,7 +27,7 @@
       }
       if(isset($_POST['deconnexion'])){
             session_destroy();
-            header('Location: ../View/login.php');
+            header('Location: ./View/login.php');
             exit;
       }
 
@@ -46,8 +44,7 @@
             $_SESSION['age'] = $NEWinfoUser['age'];
             $_SESSION['adresse'] = $NEWinfoUser['adresse'];
 
-            header('Location: ../View/account.php');
-                    
+            header('Location: ./Account');
             exit();
       }
       //idutilisateur,idrole,mail,mdp,nom,prenom,age,adresse,visible
