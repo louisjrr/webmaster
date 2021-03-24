@@ -73,11 +73,25 @@
          $this->adresse = $adresse;
          $this->right = $right;
         }
-     function addPermission($db){
+        public function addDelegate($db, $idCampus, $idPromo){
+            
+            $query = $db->query("SELECT MAX(idrole) FROM roles");
+            $idRole = $query->fetch(PDO::FETCH_NUM);
+            $query = $db->query("INSERT INTO utilisateurs (idrole ,mail, mdp, nom, prenom, age, adresse, visible) VALUES ('$idRole[0]','$this->mail', '$this->password', '$this->Lname', '$this->Fname', '$this->age', '$this->adresse', 1)");
+            $response = $db->query("SELECT MAX(idutilisateur) FROM utilisateurs");
+            $idMax = $response->fetch(PDO::FETCH_NUM);
+            $query = $db->query("INSERT INTO etudier_a (idutilisateur, idcentre) VALUES ('$idMax[0]', '$idCampus')");
+            $response = $db->query("SELECT MAX(idutilisateur) FROM utilisateurs");
+            $idMax = $response->fetch(PDO::FETCH_NUM);
+            $query = $db->query("INSERT INTO faire_partie_ou_encadrer (idutilisateur, idpromotion) VALUES ('$idMax[0]', '$idPromo')");
+         }
+        
+     function addPermission($db, $right){
         $query = $db->query("INSERT INTO autorisations (autorisations) VALUES ('$right')");
         $response = $db->query("SELECT MAX(idautorisation) FROM autorisations");
         $idMax = $response->fetch(PDO::FETCH_NUM);
-        $query = $db->query("INSERT INTO roles (idautorisation, nom_role) VALUES ('$idMax[0]', Délégué)");
+        $query = $db->query("INSERT INTO roles (idautorisation, nom_role) VALUES ('$idMax[0]', 'Délégué')");
+        
      }
  }
 
