@@ -30,7 +30,7 @@
                         <a class="nav-link" href="Account">Account</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Avis</a>
+                        <a class="nav-link" href="NewInternShip">Avis</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact</a>
@@ -40,7 +40,7 @@
         </div>
     </nav>
         <div class="recherche_p">
-            <form class="form-inline my-2 my-lg-0" method='POST' action='/'>
+            <form class="form-inline my-2 my-lg-0" method='GET'>
                 <div class="recherche-barr">
                     <input class="recherche-input" type="search" placeholder="Recherche" aria-label="Search" name="search">
                     <label class="recherche-icone">
@@ -53,14 +53,13 @@
         <div class="stock">
             <div class="stages"><!-- Affichage en scroll des offres de stage-->
             <?php
-                echo $_POST['stage'];
                 if($issearch){
-                    foreach($res as $n){
-                        echo '<div class="stage"><h2 class="titre">'.$n["intitule_offre"].'</h2><i class="far fa-heart"></i><p class="description">'.$n['description'].'</p><br><h5 class="entreprise">'.$n["nom_entreprise"].'</h5></div>';
-                    }
-                }else{
                     foreach($res as $r){
                         echo '<div class="stage"><h2 class="titre">'.$r["intitule_offre"].'</h2><i class="far fa-heart"></i><p class="description">'.$r['description'].'</p><br><h5 class="entreprise">'.$r["nom_entreprise"].'</h5></div>';
+                    }
+                }else{
+                    foreach($res as $n){
+                        echo '<div class="stage"><h2 class="titre">'.$n["intitule_offre"].'</h2><i class="far fa-heart"></i><p class="description">'.$n['description'].'</p><br><h5 class="entreprise">'.$n["nom_entreprise"].'</h5></div>';
                     }
                 }
             ?>
