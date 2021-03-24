@@ -76,3 +76,17 @@ $(function(){
         }
     })
 })
+/*----affichage des permissions dans register----*/
+
+$(function(){
+    $('.block').hide();
+    $('#permission').change(function(){
+        if($('#permission').val() == "delegate"){
+            $('.block').show();
+        }
+        else{
+            $('.block').hide();
+        }
+    });
+    
+});

@@ -15,7 +15,7 @@
     <header>
         <nav class="navbar navbar-expand-md navbar-light bg-light">
             <div class="container-fluid d-flex flex-row">
-                <a class="navbar-brand" href="index.php"><img class ="logo"src="assets/images/logo.png"></a>
+                <a class="navbar-brand" href="../View/login.php"><img class ="logo"src="../assets/images/logo.png"></a>
                 <div class ="d-md-none mobile" data-toggle="collapse" data-target="#navbarResponsive">
                     <div class = 'bg-dark line1' data-toggle="collapse" data-target="#navbarResponsive"></div>
                     <div class = 'bg-dark line2' data-toggle="collapse" data-target="#navbarResponsive"></div>
@@ -23,11 +23,11 @@
                 </div>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item ">
-                            <a class="nav-link" href="home.php">Home</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../Controller/C_stages.php">Home</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="account.php">Account</a>
+                            <a class="nav-link" href="../View/account.php">Account</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Avis</a>

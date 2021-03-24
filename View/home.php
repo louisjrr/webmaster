@@ -15,7 +15,7 @@
     <header>
     <nav class="navbar navbar-expand-md navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.php"><img class ="logo"src="../assets/images/logo.png"></a>
+            <a class="navbar-brand" href="../View/login.php"><img class ="logo"src="../assets/images/logo.png"></a>
             <div class ="d-md-none mobile" data-toggle="collapse" data-target="#navbarResponsive">
                 <div class = 'bg-dark line1' data-toggle="collapse" data-target="#navbarResponsive"></div>
                 <div class = 'bg-dark line2' data-toggle="collapse" data-target="#navbarResponsive"></div>
@@ -24,10 +24,10 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="home.php">Home</a>
+                        <a class="nav-link" href="../Controller/C_stages.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="account.php">Account</a>
+                        <a class="nav-link" href="../View/account.php">Account</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Avis</a>
@@ -54,10 +54,16 @@
             <div class="stages"><!-- Affichage en scroll des offres de stage-->
             <?php
             if (isset( $_POST['search'])){
-                research($_POST['search']);
+                $search = $stage->research($db,$_POST['search']);
+                foreach($search as $n){
+                    echo '<div class="stage"><h2 class="titre">'.$n["intitule_offre"].'</h2><i class="far fa-heart"></i><p class="description">'.$n['description'].'</p><br><h5 class="entreprise">'.$n["nom_entreprise"].'</h5></div>';
+                }
             }else{
-                echo $conteneur;
-            }; ?>
+                foreach($res as $r){
+                    echo '<div class="stage"><h2 class="titre">'.$r["intitule_offre"].'</h2><i class="far fa-heart"></i><p class="description">'.$r['description'].'</p><br><h5 class="entreprise">'.$r["nom_entreprise"].'</h5></div>';
+                }
+            };
+            ?>
             </div>
             <div class="affichage"> <!-- Affichage de l'offre de stage sélectionnée au click-->
             

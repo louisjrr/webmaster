@@ -276,6 +276,11 @@ a.nav-link:hover:before {
   -o-background-size: cover;
   background-size: cover;
 }
+/*----page d'inscription----*/
+.pageInscription{
+  display: flex;
+  flex-direction: row;
+}
 .block {
   margin: auto 0;
   z-index: 2;

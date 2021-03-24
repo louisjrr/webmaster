@@ -1,4 +1,4 @@
-<?php include 'stages.php';?>
+<?php include '../Model/M_stages.php';?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
