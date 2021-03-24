@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
-
+<?php include('../Controller/C_accountPHP.php'); ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,7 +43,35 @@
         <div class="container-fluid">
             <div class="row">
                 <div id="accountAffiche" class="col-md-8">
-                    <?php include('../Controller/C_accountPHP.php'); ?>
+                    <?php 
+                    if(isset($_POST['infogenerales'])){
+      
+
+                            echo  ("<p> prénom:  ".$_SESSION['prenom']." </p></br>");
+                            echo  ("<p> nom:  ".$_SESSION['nom']." </p></br>");
+                            echo  ("<p> age:  ".$_SESSION['age']." </p></br>");
+                            echo  ("<p> adresse:  ".$_SESSION['adresse']." </p></br>");
+                    }
+                    elseif(isset($_POST['modifProfil'])){
+                            echo  ('<form method="POST">');
+                            echo  ('<p>Prenom</p></br>');
+                            echo  ("<input type='text' name='prenom' value=".$_SESSION['prenom']."></br>");
+                            echo  ('<p>Nom</p></br>');
+                            echo  ("<input type='text' name='nom' value=".$_SESSION['nom']."></br>");
+                            echo  ('<p>Age</p></br>');
+                            echo  ("<input type='text' name='age' value=".$_SESSION['age']."></br>");
+                            echo  ('<p>Adresse</p></br>');
+                            echo  ("<input type='text'  name='adresse' value=".$_SESSION['adresse']."></br>");
+                            echo  ("<button type='submit' name='modifProfilValided'>Valider les changements</button>");
+                    }
+                    else{
+                            echo  ("<p> prénom:  ".$_SESSION['prenom']." </p></br>");
+                            echo  ("<p> nom:  ".$_SESSION['nom']." </p></br>");
+                            echo  ("<p> age:  ".$_SESSION['age']." </p></br>");
+                            echo  ("<p> adresse:  ".$_SESSION['adresse']." </p></br>");
+                    }
+
+                    ?>
                 </div>
                 <div class="col-md-1"> </div> <!-- pour espacer en bootstrap-->
                 <div class="col-md-3">
