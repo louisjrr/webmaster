@@ -44,15 +44,14 @@
             <div class="row">
                 <div id="accountAffiche" class="col-md-8">
                     <?php 
-                    if(isset($_POST['infogenerales'])){
-      
+                    if($mode=="infogenerales"){
 
                             echo  ("<p> prénom:  ".$_SESSION['prenom']." </p></br>");
                             echo  ("<p> nom:  ".$_SESSION['nom']." </p></br>");
                             echo  ("<p> age:  ".$_SESSION['age']." </p></br>");
                             echo  ("<p> adresse:  ".$_SESSION['adresse']." </p></br>");
                     }
-                    elseif(isset($_POST['modifProfil'])){
+                    elseif($mode=="modifProfil"){
                             echo  ('<form method="POST">');
                             echo  ('<p>Prenom</p></br>');
                             echo  ("<input type='text' name='prenom' value=".$_SESSION['prenom']."></br>");

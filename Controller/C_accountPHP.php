@@ -1,7 +1,21 @@
 <?php 
       include_once './Controller/C_database.php';
       session_start();
-      
+      $mode;
+
+      if(isset($_POST['infogenerales'])){
+            $mode="infogenerales";
+      }
+      elseif(isset($_POST['modifProfil'])){
+            $mode="modifProfil";
+      }
+      elseif(isset($_POST['wishlist'])){
+            $mode="Wishlist";
+      }
+      else{
+            $mode="infogenerales";
+      }
+
       if(isset($_POST['deconnexion'])){
             session_destroy();
             header('Location: ./View/login.php');
