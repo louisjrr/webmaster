@@ -10,9 +10,9 @@
         header("Location: ./register.php");
         exit;
     }
-    if($_POST['role'] == "Delegate"){
-        $right = '1';
 
+    function getRight(){
+        $right = '1';
         for($i=2;$i<34;$i++){
             if($_POST['SFx'.$i] == 'on'){
                 $right = $right .'1';
@@ -24,7 +24,12 @@
                 $right = $right . '0';
             }
         }
-     }
+        return $right;
+    }
+    
+    
+
+    
     
     
  switch($_POST['promotion']){
@@ -63,14 +68,16 @@
         break;
      case "delegate":
         $age = getAge($_POST['birthdate']);
+        $right = getRight();
         $obj = new Delegate($_POST['mail'],$_POST['password'],$_POST['Lname'],$_POST['Fname'], $age, $_POST['password'],$_POST['city'], $right);
-        $obj->addUser($db, $_POST['campus'], $_POST['promotion']);
+        $obj->addPermission($db, $right);
+        $obj->addDelegate($db, $_POST['campus'], $_POST['promotion']);
         break;
  }
 
  
 
- header("Location: ../View/index.php");
+ header("Location: ../View/home.php");
  exit;
  
 
