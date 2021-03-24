@@ -77,7 +77,9 @@
             
             $query = $db->query("SELECT MAX(idrole) FROM roles");
             $idRole = $query->fetch(PDO::FETCH_NUM);
-            $query = $db->query("INSERT INTO utilisateurs (idrole ,mail, mdp, nom, prenom, age, adresse, visible) VALUES ('$idRole[0]','$this->mail', '$this->password', '$this->Lname', '$this->Fname', '$this->age', '$this->adresse', 1)");
+            //$query = $db->query("INSERT INTO utilisateurs (idrole ,mail, mdp, nom, prenom, age, adresse, visible) VALUES ('$idRole[0]','$this->mail', '$this->password', '$this->Lname', '$this->Fname', '$this->age', '$this->adresse', 1)");
+            $queryUser = $db->prepare("INSERT INTO utilisateurs (idrole ,mail, mdp, nom, prenom, age, adresse, visible) VALUES (:idRole,:mail,:pass, :Lname', :Fname, :age, :adresse, 1)");
+            $queryUser->execute(array('idrole' => $idRole[0], 'mail' => $this->mail, 'pass' => $this->password, 'Lname' => $this->Lname, 'Fname' => $this->Fname, 'age' => $this->age, 'age' => $this->age, 'adresse' => $this->adresse));
             $response = $db->query("SELECT MAX(idutilisateur) FROM utilisateurs");
             $idMax = $response->fetch(PDO::FETCH_NUM);
             $query = $db->query("INSERT INTO etudier_a (idutilisateur, idcentre) VALUES ('$idMax[0]', '$idCampus')");
