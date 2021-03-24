@@ -1,8 +1,9 @@
 <?php
- include '../Controller/C_database.php';
+ include_once './Controller/C_database.php';
  
     if(isset($_POST['connectLogin'])){
         if($_POST['login'] !=="" && $_POST['password'] !==""){
+            global $db;
             $requestLogin = $db->prepare('SELECT idutilisateur,idrole,mail,mdp,nom,prenom,age,adresse,visible FROM utilisateurs WHERE mail = :username');
             $requestLogin->execute(array('username' => $_POST['login']));
             $infoUser = $requestLogin->fetch();
@@ -26,7 +27,7 @@
                     $_SESSION['adresse'] = $infoUser['adresse'];
                     $_SESSION['visible'] = $infoUser['visible'];
                     echo 'Vous êtes connecté !';
-                    header('Location: ../Controller/C_stages.php');
+                    header('Location: ./Home');
                     
                     exit();
                 }

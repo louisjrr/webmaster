@@ -15,7 +15,7 @@
                         <a class="nav-link" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="account.php">Account</a>
+                        <a class="nav-link" href="Account">Account</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Avis</a>

@@ -4,7 +4,13 @@
 
     define('BASEPATH','/www/webmaster');
 
-    Route::add('/', function() {
+    Route::add('/', function(){
+        require('View/login.php');
+    });
+    Route::add('/InConnection', function(){
+        require('Model/M_login.php');
+    },"post");
+    Route::add('/Home', function() {
         home();
     });
     Route::add('/NewInternShip', function(){
