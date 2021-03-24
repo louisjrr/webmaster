@@ -1,16 +1,13 @@
 <?php
     class Stage{
         
-        private $titre;
-        private $entreprise;
-        private $description;
-        private $places;
 
         public function getAllStages($db){
             $request = $db->query('SELECT intitule_offre,description, nom_entreprise FROM offres_de_stage, entreprises WHERE offres_de_stage.IDENTREPRISE = entreprises.IDENTREPRISE');
             $getstages = $request->fetchAll();
             return $getstages;
         }
+        
         /*public function places($db){
             $request = $db->query('SELECT nombres_places FROM offres_de_stage');
             $places = $request->fetchAll();
@@ -19,8 +16,8 @@
         public function research($db,$value){
             $request = $db->prepare("SELECT intitule_offre,description, nom_entreprise FROM offres_de_stage, entreprises WHERE offres_de_stage.IDENTREPRISE = entreprises.IDENTREPRISE AND intitule_offre LIKE ?");
             $request->execute(array("%$value%"));
-            $infoUser = $request->fetchAll();
-            return $infoUser;
+            $search = $request->fetchAll();
+            return $search;
         }
         public function competences(){
             $request = $db->query('SELECT nom_competence FROM competences ORDER BY nom_competence ASC');

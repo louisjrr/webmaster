@@ -8,7 +8,7 @@
       
       if(isset($_POST['deconnexion'])){
             session_destroy();
-            header('Location: ../View/index.php');
+            header('Location: ../View/login.php');
             exit;
       }
 
