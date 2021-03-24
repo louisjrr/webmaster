@@ -1,6 +1,5 @@
-<?php include '../Model/M_stages.php';?>
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,15 +7,15 @@
         <title>Home</title>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Fascinate&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../assets/vendors/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../assets/css/style.css">
+        <link rel="stylesheet" href="./assets/vendors/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./assets/css/style.css">
         <script src="https://kit.fontawesome.com/0c87a70838.js"></script>
     </head>
     <body>
     <?php include 'header.php';?>
     <div class="create-stage">
         <h2 class=titre-stage>Add New Internship offer</h2>
-        <form method='POST' action='addOffre.php'>
+        <form method='POST' action='/'>
             <fieldset class='form-stage'>
                 <div class="column one">
                     <input type="text" name="entreprise" placeholder="Nom de l'entreprise" required>
@@ -33,12 +32,16 @@
                 <div class="column two">
                     <textarea name="description" style="height: 150px;width:500px;resize: none;" placeholder="Description de l'offre" required></textarea>
                     <div class="listing">
-                        <?php competences();?>
+                        <?php             
+                            foreach($competences as $n){
+                                echo '<input type="checkbox" value="'.$n["nom_competence"].'"></input><label>'.$n["nom_competence"].'</label>';
+                            }
+                        ?>
                     </div>
                 </div>
             </fieldset>
         </form>
     </div>
-    <script type='text/javascript' src='../assets/vendors/jquery/jquery-ui.min.js'></script>
-    <script type="text/javascript" src="../assets/js/script.js" ></script>
+    <script type='text/javascript' src='./assets/vendors/jquery/jquery-ui.min.js'></script>
+    <script type="text/javascript" src="./assets/js/script.js" ></script>
     </body>
