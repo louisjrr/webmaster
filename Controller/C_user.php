@@ -63,8 +63,8 @@
         break;
      case "delegate":
         $age = getAge($_POST['birthdate']);
-        $obj = new Delegate($_POST['mail'],$_POST['password'],$_POST['Lname'],$_POST['Fname'], $age, $_POST['password'],$_POST['city']);
-        $obj->addDelegate($db, $_POST['campus'], $_POST['promotion']);
+        $obj = new Delegate($_POST['mail'],$_POST['password'],$_POST['Lname'],$_POST['Fname'], $age, $_POST['password'],$_POST['city'], $right);
+        $obj->addUser($db, $_POST['campus'], $_POST['promotion']);
         break;
  }
 
