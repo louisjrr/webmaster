@@ -15,7 +15,7 @@
     <header>
     <nav class="navbar navbar-expand-md navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.php"><img class ="logo"src="../assets/images/logo.png"></a>
+            <a class="navbar-brand" href="../View/index.php"><img class ="logo"src="../assets/images/logo.png"></a>
             <div class ="d-md-none mobile" data-toggle="collapse" data-target="#navbarResponsive">
                 <div class = 'bg-dark line1' data-toggle="collapse" data-target="#navbarResponsive"></div>
                 <div class = 'bg-dark line2' data-toggle="collapse" data-target="#navbarResponsive"></div>
@@ -52,7 +52,18 @@
     </header>
         <div class="stock">
             <div class="stages"><!-- Affichage en scroll des offres de stage-->
-            <?=$conteneur?>
+            <?php
+            if (isset( $_POST['search'])){
+                $search = $stage->research($db,$_POST['search']);
+                foreach($search as $n){
+                    echo '<div class="stage"><h2 class="titre">'.$n["intitule_offre"].'</h2><i class="far fa-heart"></i><p class="description">'.$n['description'].'</p><br><h5 class="entreprise">'.$n["nom_entreprise"].'</h5></div>';
+                }
+            }else{
+                foreach($res as $r){
+                    echo '<div class="stage"><h2 class="titre">'.$r["intitule_offre"].'</h2><i class="far fa-heart"></i><p class="description">'.$r['description'].'</p><br><h5 class="entreprise">'.$r["nom_entreprise"].'</h5></div>';
+                }
+            };
+            ?>
             </div>
             <div class="affichage"> <!-- Affichage de l'offre de stage sélectionnée au click-->
             
