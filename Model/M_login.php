@@ -26,7 +26,7 @@
                     $_SESSION['adresse'] = $infoUser['adresse'];
                     $_SESSION['visible'] = $infoUser['visible'];
                     echo 'Vous êtes connecté !';
-                    header('Location: ../View/home.php');
+                    header('Location: ../Controller/C_stages.php');
                     
                     exit();
                 }
