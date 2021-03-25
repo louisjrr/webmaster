@@ -47,7 +47,6 @@
                 <div id="accountAffiche" class="col-md-8">
                     <?php 
                     if($mode=="infogenerales"){
-
                             echo  ("<p> prénom:  ".$_SESSION['prenom']." </p></br>");
                             echo  ("<p> nom:  ".$_SESSION['nom']." </p></br>");
                             echo  ("<p> age:  ".$_SESSION['age']." </p></br>");
@@ -89,5 +88,4 @@
     <p><a href="Register">Create a account</a></p>
     <script type='text/javascript' src='./assets/vendors/jquery/jquery-ui.min.js'></script>
     <script type="text/javascript" src="./assets/js/script.js" ></script>
-    <script type="text/javascript" src="./assets/js/scriptAccount.js" ></script>
 </body>
