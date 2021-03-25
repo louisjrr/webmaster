@@ -15,7 +15,7 @@
     <header>
     <nav class="navbar navbar-expand-md navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="./View/login.php"><img class ="logo"src="./assets/images/logo.png"></a>
+            <a class="navbar-brand" href="/"><img class ="logo"src="./assets/images/logo.png"></a>
             <div class ="d-md-none mobile" data-toggle="collapse" data-target="#navbarResponsive">
                 <div class = 'bg-dark line1' data-toggle="collapse" data-target="#navbarResponsive"></div>
                 <div class = 'bg-dark line2' data-toggle="collapse" data-target="#navbarResponsive"></div>
@@ -40,7 +40,7 @@
         </div>
     </nav>
         <div class="recherche_p">
-            <form class="form-inline my-2 my-lg-0" method='GET'>
+            <form class="form-inline my-2 my-lg-0" method='POST'>
                 <div class="recherche-barr">
                     <input class="recherche-input" type="search" placeholder="Recherche" aria-label="Search" name="search">
                     <label class="recherche-icone">

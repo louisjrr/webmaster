@@ -12,10 +12,37 @@
         <script src="https://kit.fontawesome.com/0c87a70838.js"></script>
     </head>
     <body>
-    <?php include 'header.php';?>
+    <header>
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/"><img class ="logo"src="./assets/images/logo.png"></a>
+            <div class ="d-md-none mobile" data-toggle="collapse" data-target="#navbarResponsive">
+                <div class = 'bg-dark line1' data-toggle="collapse" data-target="#navbarResponsive"></div>
+                <div class = 'bg-dark line2' data-toggle="collapse" data-target="#navbarResponsive"></div>
+                <div class = 'bg-dark line3' data-toggle="collapse" data-target="#navbarResponsive"></div>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Account">Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Avis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </header>
     <div class="create-stage">
         <h2 class=titre-stage>Add New Internship offer</h2>
-        <form method='GET'>
+        <form method='POST'>
             <fieldset class='form-stage'>
                 <div class="column one">
                     <input type="text" name="entreprise" placeholder="Nom de l'entreprise" required>

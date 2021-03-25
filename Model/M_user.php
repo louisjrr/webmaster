@@ -13,9 +13,8 @@
 
      public function addUser($db, $idCampus, $idPromo){
 
-        //$query = $db->query("INSERT INTO utilisateurs (idrole, mail, mdp, nom, prenom, age, adresse, visible) VALUES ('$this->idRole', '$this->mail', '$this->password', '$this->Lname', '$this->Fname', '$this->age', '$this->adresse', 1)");
-        $queryUser = $db->prepare("INSERT INTO utilisateurs (idrole ,mail, mdp, nom, prenom, age, adresse, visible) VALUES (:idRole,:mail,:pass, :Lname', :Fname, :age, :adresse, 1)");
-        $queryUser->execute(array('idrole' => $idRole[0], 'mail' => $this->mail, 'pass' => $this->password, 'Lname' => $this->Lname, 'Fname' => $this->Fname, 'age' => $this->age, 'age' => $this->age, 'adresse' => $this->adresse));
+        $query = $db->prepare("INSERT INTO utilisateurs (idrole, mail, mdp, nom, prenom, age, adresse, visible) VALUES (:idrole, :mail, :mdp, :nom, :prenom, :age, :adresse, 1)");
+        $query->execute(array('idrole'=>$this->idRole,'mail' =>$this->mail, 'mdp'=>$this->password, 'nom'=>$this->Lname, 'prenom'=>$this->Fname, 'age'=>$this->age, 'adresse'=>$this->adresse));
         $response = $db->query("SELECT MAX(idutilisateur) FROM utilisateurs");
         $idMax = $response->fetch(PDO::FETCH_NUM);
         $query = $db->query("INSERT INTO etudier_a (idutilisateur, idcentre) VALUES ('$idMax[0]', '$idCampus')");
@@ -26,7 +25,7 @@
  }
  class Admin extends User{
     public $idRole = 1;
-
+    
     function __construct($mail, $password, $Lname, $Fname, $age, $adresse){
        $this->mail = $mail;
        $this->password = $password;
