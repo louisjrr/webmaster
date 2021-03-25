@@ -231,6 +231,24 @@ i {
           text-decoration: underline #3fdd8f;
 }
 
+.postulate {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.sub_postulate {
+  width: 100px;
+}
+
+input[type="file"] {
+  margin-bottom: 15px;
+}
+
 .create-stage {
   width: 90%;
   margin: 0 auto;

@@ -175,6 +175,16 @@ i {
 .affichage h2 {
   text-decoration: underline $green;
 }
+.postulate {
+  display: flex;
+  flex-direction: column;
+}
+.sub_postulate {
+  width: 100px;
+}
+input[type="file"] {
+  margin-bottom: 15px;
+}
 .create-stage {
   width: 90%;
   margin: 0 auto;
@@ -278,7 +288,7 @@ a.nav-link:hover:before {
   background-size: cover;
 }
 /*----page d'inscription----*/
-.pageInscription{
+.pageInscription {
   display: flex;
   flex-direction: row;
 }
@@ -310,12 +320,12 @@ a.nav-link:hover:before {
   margin-bottom: 30px;
 }
 /*----page addOffre----*/
-.addIntForm{
+.addIntForm {
   background-color: $light;
 }
-.iconPrestige{
+.iconPrestige {
   width: 40px;
 }
-.divInfoGenerales{
+.divInfoGenerales {
   display: flex;
 }

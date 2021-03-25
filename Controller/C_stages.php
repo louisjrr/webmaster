@@ -24,7 +24,11 @@
     }
     function Add($titre, $description, $entreprise){
         global $stage;
-        $stage->wishlist($titre, $description, $entreprise);
+        $stage->addwishlist($titre, $description, $entreprise);
+    }
+    function Remove($titre, $description, $entreprise){
+        global $stage;
+        $stage->removewishlist($titre, $description, $entreprise);
     }
     
 ?>
