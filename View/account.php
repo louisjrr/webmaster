@@ -84,6 +84,7 @@
                             <button type = "submit" name="modifProfil"  class="infoGeneralesButton btn btn-dark">modifier mon Profil</button></br>
                             <button type = "submit" name="wishlist"  class="infoGeneralesButton btn btn-dark">Ma wishlist</button></br> 
                             <button type = "submit" name="deconnexion"  class="infoGeneralesButton btn btn-dark">deconnexion</button></br>
+                            <button type = "submit" name="CreateAccount"  class="infoGeneralesButton btn btn-dark">Create an Account</button></br>
                         </form>
                     </div> 
                 </div>
