@@ -27,7 +27,7 @@
 
                     $requestRole = $db->prepare('SELECT idrole,nom_role FROM role WHERE idrole = :idrole');
                     $requestRole->execute(array('idrole' => $_SESSION['idRole']));
-                    $infoRole = $requestCentre->fetch();
+                    $infoRole = $requestRole->fetch();
 
                     $_SESSION['role'] = $infoRole['nom_role'];
 
