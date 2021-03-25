@@ -48,9 +48,9 @@
                     <?php 
                     if($mode=="infogenerales"){
                             echo  ("<div class='divInfoGenerales'><div class='container'><div class='row'>");
-                            echo  ("<div class='col-lg-3'><img class='iconPrestige' src='".$_SESSION['prestige']."'></div>");
-                            echo  ("<div class='col-lg-2'><p class=> prénom:  ".$_SESSION['prenom']."></p></div>");
-                            echo  ("<div class='col-lg-2'><p> nom: ".$_SESSION['nom']." </p></div>");
+                            echo  ("<div class='col-lg-2'><img class='iconPrestige' src='".$_SESSION['prestige']."'></div>");
+                            echo  ("<div class='col-lg-2'><p class=> prénom: ".$_SESSION['prenom']."</p></div>");
+                            echo  ("<div class='col-lg-3'><p> nom: ".$_SESSION['nom']." </p></div>");
                             echo  ("<div class='col-lg-2'><p> age:  ".$_SESSION['age']." </p> </div>");
                             echo  ("<div class='col-lg-3'><p> adresse:  ".$_SESSION['adresse']." </p></div>");
                             echo  (" </div></div></div>");
