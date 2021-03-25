@@ -47,8 +47,7 @@
                 <div id="accountAffiche" class="col-md-8">
                     <?php 
                     if($mode=="infogenerales"){
-
-                            echo  ("<p> prénom:  ".$_SESSION['prenom']." </p></br>");
+                            echo  ("<p> prénom:  ".$_SESSION['prenom']."<img class='iconPrestige' src='".$_SESSION['prestige']."'> </p></br>");
                             echo  ("<p> nom:  ".$_SESSION['nom']." </p></br>");
                             echo  ("<p> age:  ".$_SESSION['age']." </p></br>");
                             echo  ("<p> adresse:  ".$_SESSION['adresse']." </p></br>");
