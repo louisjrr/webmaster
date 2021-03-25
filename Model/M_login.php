@@ -30,6 +30,15 @@
                     $infoRole = $requestRole->fetch();
 
                     $_SESSION['role'] = $infoRole['nom_role'];
+                    if($_SESSION['role'] == 'Administrateur'){
+                        $_SESSION['prestige'] = '../assets/images/iconRole3.ico';
+                    }
+                    elseif($_SESSION['role'] == 'Pilote'){
+                        $_SESSION['prestige'] = '../assets/images/iconRole2.ico';
+                    }
+                    else{
+                        $_SESSION['prestige'] = '../assets/images/iconRole1.ico';
+                    }
 
                     echo 'Vous êtes connecté !';
                     header('Location: ./Home');
