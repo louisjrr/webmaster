@@ -42,51 +42,54 @@
             </div>
         </nav>
         </header>
-        <div class="container-fluid">
-            <div class="row">
-                <div id="accountAffiche" class="col-md-8">
-                    <?php 
-                    if($mode=="infogenerales"){
-                            echo  ("<div class='divInfoGenerales'><div class='container'><div class='row'>");
-                            echo  ("<div class='col-lg-2'><img class='iconPrestige' src='".$_SESSION['prestige']."'></div>");
-                            echo  ("<div class='col-lg-2'><p class=> prénom: ".$_SESSION['prenom']."</p></div>");
-                            echo  ("<div class='col-lg-3'><p> nom: ".$_SESSION['nom']." </p></div>");
-                            echo  ("<div class='col-lg-2'><p> age:  ".$_SESSION['age']." </p> </div>");
-                            echo  ("<div class='col-lg-3'><p> adresse:  ".$_SESSION['adresse']." </p></div>");
-                            echo  (" </div></div></div>");
-                    }
-                    elseif($mode=="modifProfil"){
-                            echo  ('<form method="POST">');
-                            echo  ('<label for="prenom">Prenom</label>');
-                            echo  ("<input type='text' name='prenom' value=".$_SESSION['prenom'].">");
-                            echo  ('<label for="nom">Nom</label>');
-                            echo  ("<input type='text' name='nom' value=".$_SESSION['nom'].">");
-                            echo  ('<p>Age</p></br>');
-                            echo  ("<input type='text' name='age' value=".$_SESSION['age'].">");
-                            echo  ('<p>Adresse</p></br>');
-                            echo  ("<input type='text'  name='adresse' value=".$_SESSION['adresse'].">");
-                            echo  ("<button type='submit' name='modifProfilValided'>Valider les changements</button>");
-                    }
-                    else{
-                            echo  ("<p> prénom:  ".$_SESSION['prenom']." </p></br>");
-                            echo  ("<p> nom:  ".$_SESSION['nom']." </p></br>");
-                            echo  ("<p> age:  ".$_SESSION['age']." </p></br>");
-                            echo  ("<p> adresse:  ".$_SESSION['adresse']." </p></br>");
-                    }
+        <section class = "pageAccount">
+            <div class="container-fluid">
+                <div class="row">
+                    <div id="accountAffiche" class="col-md-8 bg-light">
+                        <?php 
+                        if($mode=="infogenerales"){
+                                echo  ("<div class='divInfoGenerales'><div class='container'><div class='row'>");
+                                echo  ("<div class='col-lg-2'><img class='iconPrestige' src='".$_SESSION['prestige']."'></div>");
+                                echo  ("<div class='col-lg-2'><p class=> prénom: ".$_SESSION['prenom']."</p></div>");
+                                echo  ("<div class='col-lg-3'><p> nom: ".$_SESSION['nom']." </p></div>");
+                                echo  ("<div class='col-lg-2'><p> age:  ".$_SESSION['age']." </p> </div>");
+                                echo  ("<div class='col-lg-3'><p> adresse:  ".$_SESSION['adresse']." </p></div>");
+                                echo  (" </div></div></div>");
+                        }
+                        elseif($mode=="modifProfil"){
+                                echo  ('<form method="POST">');
+                                echo  ('<label for="prenom">Prenom</label>');
+                                echo  ("<input type='text' name='prenom' value=".$_SESSION['prenom'].">");
+                                echo  ('<label for="nom">Nom</label>');
+                                echo  ("<input type='text' name='nom' value=".$_SESSION['nom'].">");
+                                echo  ('<p>Age</p></br>');
+                                echo  ("<input type='text' name='age' value=".$_SESSION['age'].">");
+                                echo  ('<p>Adresse</p></br>');
+                                echo  ("<input type='text'  name='adresse' value=".$_SESSION['adresse'].">");
+                                echo  ("<button type='submit' name='modifProfilValided'>Valider les changements</button>");
+                        }
+                        else{
+                                echo  ("<p> prénom:  ".$_SESSION['prenom']." </p></br>");
+                                echo  ("<p> nom:  ".$_SESSION['nom']." </p></br>");
+                                echo  ("<p> age:  ".$_SESSION['age']." </p></br>");
+                                echo  ("<p> adresse:  ".$_SESSION['adresse']." </p></br>");
+                        }
 
-                    ?>
+                        ?>
+                    </div>
+                    <div class="col-md-1"> </div> <!-- pour espacer en bootstrap-->
+                    <div class="col-md-3 bg-light accountOption">
+                        <form method="POST" action="ModifAccount" class=".accountForm">
+                            <button type = "submit" name="infogenerales"  class="infoGeneralesButton btn btn-dark">My Profil</button></br>
+                            <button type = "submit" name="modifProfil"  class="infoGeneralesButton btn btn-dark">modifier mon Profil</button></br>
+                            <button type = "submit" name="wishlist"  class="infoGeneralesButton btn btn-dark">Ma wishlist</button></br> 
+                            <button type = "submit" name="deconnexion"  class="infoGeneralesButton btn btn-dark">deconnexion</button></br>
+                        </form>
+                    </div> 
                 </div>
-                <div class="col-md-1"> </div> <!-- pour espacer en bootstrap-->
-                <div class="col-md-3">
-                    <form method="POST" action="ModifAccount">
-                        <button type = "submit" name="infogenerales"  class="infoGeneralesButton">My Profil</button>
-                        <button type = "submit" name="modifProfil"  class="infoGeneralesButton">modifier mon Profil</button>
-                        <button type = "submit" name="wishlist"  class="infoGeneralesButton">Ma wishlist</button> 
-                        <button type = "submit" name="deconnexion"  class="infoGeneralesButton">deconnexion</button> 
-                    </form>
-                </div> 
             </div>
-        </div>
+        </section>
+        
 
     <p><a href="Register">Create a account</a></p>
     <script type='text/javascript' src='./assets/vendors/jquery/jquery-ui.min.js'></script>
