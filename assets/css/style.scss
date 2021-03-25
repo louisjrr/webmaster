@@ -329,3 +329,25 @@ a.nav-link:hover:before {
 .divInfoGenerales {
   display: flex;
 }
+.mobile div {
+  width: 30px;
+  height: 3px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+/*----Page account.php----*/
+.pageAccount {
+  margin-top: 25px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+#accountAffiche,
+.accountOption {
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 0 0.5em rgba(197, 196, 196, 0.7);
+}
+.infoGeneralesButton {
+  margin-top: 20px;
+}
