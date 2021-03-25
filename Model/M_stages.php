@@ -1,11 +1,13 @@
 <?php
     include_once './Controller/C_database.php';
+    include_once './Controller/C_accountPHP.php'; 
 
+    
     class Stage{
         
         public function getAllStages(){
             global $db;
-            $request = $db->query('SELECT intitule_offre,description, nom_entreprise FROM offres_de_stage, entreprises WHERE offres_de_stage.IDENTREPRISE = entreprises.IDENTREPRISE');
+            $request = $db->query('SELECT intitule_offre, description, nom_entreprise FROM offres_de_stage, entreprises WHERE offres_de_stage.IDENTREPRISE = entreprises.IDENTREPRISE AND NOT EXISTS (SELECT IDOFFRE FROM candidatures WHERE IDUTILISATEUR = '.$_SESSION['id'].' AND offres_de_stage.IDOFFRE = candidatures.IDOFFRE) AND NOT EXISTS (SELECT IDOFFRE FROM met_en_wishlist WHERE IDUTILISATEUR = '.$_SESSION['id'].' AND offres_de_stage.IDOFFRE = met_en_wishlist.IDOFFRE);');
             $getstages = $request->fetchAll();
             return $getstages;
         }
@@ -29,8 +31,11 @@
         }*/
         public function add($entreprise,$titre_stage, $description_stage,$nb_places){
             global $db;
-            $request = $db->prepare("INSERT INTO offres_de_stage (identreprise, intitule_offre, description, nombre_places) SELECT identreprise,'$titre_stage','$description_stage','$nb_places' FROM entreprises where nom_entreprise='$entreprise'");
-            $request->execute(array());
+            $request = $db->prepare("INSERT INTO offres_de_stage (identreprise, intitule_offre, description, nombre_places) SELECT identreprise,:titre,:description,:places FROM entreprises where nom_entreprise=:entreprise");
+            $request->execute(array('titre'=>$titre_stage,'description'=>$description_stage,'places'=>$nb_places,'entreprise'=>$entreprise));
+        }
+        public function wishlist(){
+            echo('coucou');
         }
     }
 ?>

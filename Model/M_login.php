@@ -25,7 +25,7 @@
                     $_SESSION['adresse'] = $infoUser['adresse'];
                     $_SESSION['visible'] = $infoUser['visible'];
 
-                    $requestRole = $db->prepare('SELECT idrole,nom_role FROM role WHERE idrole = :idrole');
+                    $requestRole = $db->prepare('SELECT idrole,nom_role FROM roles WHERE idrole = :idrole');
                     $requestRole->execute(array('idrole' => $_SESSION['idRole']));
                     $infoRole = $requestRole->fetch();
 

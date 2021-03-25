@@ -13,6 +13,9 @@
     Route::add('/Home', function() {
         home();
     });
+    Route::add('/Add', function() {
+        Add();
+    });
     Route::add('/Home', function() {
         home();
     },"post");

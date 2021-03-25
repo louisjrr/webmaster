@@ -40,7 +40,8 @@ $(function(){
         $(this).toggleClass('far');
         $(this).toggleClass('fas');
         if($(this).hasClass("fas")){
-            console.log('add to WishList')
+            $(this).load('Add')
+            alert("mis à jour")
         }else{
             console.log('remove of WishList')
         }
