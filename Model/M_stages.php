@@ -1,12 +1,12 @@
 <?php
     include_once './Controller/C_database.php';
-    include_once './Controller/C_accountPHP.php'; 
 
     
     class Stage{
         
         public function getAllStages(){
             global $db;
+            session_start();
             $request = $db->query('SELECT intitule_offre, description, nom_entreprise FROM offres_de_stage, entreprises WHERE offres_de_stage.IDENTREPRISE = entreprises.IDENTREPRISE AND NOT EXISTS (SELECT IDOFFRE FROM candidatures WHERE IDUTILISATEUR = '.$_SESSION['id'].' AND offres_de_stage.IDOFFRE = candidatures.IDOFFRE) AND NOT EXISTS (SELECT IDOFFRE FROM met_en_wishlist WHERE IDUTILISATEUR = '.$_SESSION['id'].' AND offres_de_stage.IDOFFRE = met_en_wishlist.IDOFFRE);');
             $getstages = $request->fetchAll();
             return $getstages;
@@ -35,7 +35,8 @@
             $request->execute(array('titre'=>$titre_stage,'description'=>$description_stage,'places'=>$nb_places,'entreprise'=>$entreprise));
         }
         public function wishlist(){
-            echo('coucou');
+            session_start();
+            $request = $db->query('INSERT INTO met_en_wishlist (idutilisateur, idoffre) SELECT '.$_SESSION["id"].', idoffre FROM offres_de_stage, entreprises WHERE offres_de_stage.identreprise = entreprises.identreprise AND intitule_offre = var AND description = var AND nom_entreprise = var');
         }
     }
 ?>

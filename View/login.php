@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="fr">
-<?php include './Controller/C_login.php'; ?>
+<html lang="en">
+<?php include_once './Controller/C_login.php'; ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
