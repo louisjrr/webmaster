@@ -57,9 +57,9 @@
                     }
                     elseif($mode=="modifProfil"){
                             echo  ('<form method="POST">');
-                            echo  ('<p>Prenom</p></br>');
+                            echo  ('<label for="prenom">Prenom</label>');
                             echo  ("<input type='text' name='prenom' value=".$_SESSION['prenom'].">");
-                            echo  ('<p>Nom</p></br>');
+                            echo  ('<label for="nom">Nom</label>');
                             echo  ("<input type='text' name='nom' value=".$_SESSION['nom'].">");
                             echo  ('<p>Age</p></br>');
                             echo  ("<input type='text' name='age' value=".$_SESSION['age'].">");
