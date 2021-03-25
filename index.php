@@ -13,14 +13,27 @@
     Route::add('/Home', function() {
         home();
     });
+    Route::add('/Home', function() {
+        home();
+    },"post");
     Route::add('/NewInternShip', function(){
         NewInternship();
     });
+    Route::add('/NewInternShip', function(){
+        NewInternship();
+    },"post");
     Route::add('/Account', function(){
         require('View/account.php');
     });
     Route::add('/ModifAccount', function(){
         require('View/account.php');
     },"post");
+    Route::add('/Register', function(){
+        require('View/register.php');
+    });
+    Route::add('/Saving', function(){
+        require('Controller/C_user.php');
+    },"post");
+
     Route::run(BASEPATH);
 ?>
