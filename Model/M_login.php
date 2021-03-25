@@ -14,9 +14,7 @@
             }
             else{
                 if($_POST['password'] == $infoUser['mdp']){
-                    /*$requestCentre = $db->prepare('SELECT idutilisateur,idrole,mail,mdp,nom,prenom,age,adresse,visible FROM utilisateurs WHERE mail = :username');
-                    $requestCentre->execute(array('username' => $_POST['login']));
-                    $infoUserCentre = $requestCentre->fetch();*/
+                    
                     session_start();
                     $_SESSION['id'] = $infoUser['idutilisateur'];
                     $_SESSION['idRole'] = $infoUser['idrole'];
@@ -26,6 +24,13 @@
                     $_SESSION['age'] = $infoUser['age'];
                     $_SESSION['adresse'] = $infoUser['adresse'];
                     $_SESSION['visible'] = $infoUser['visible'];
+
+                    $requestRole = $db->prepare('SELECT idrole,nom_role FROM role WHERE idrole = :idrole');
+                    $requestRole->execute(array('idrole' => $_SESSION['idRole']));
+                    $infoRole = $requestCentre->fetch();
+
+                    $_SESSION['role'] = $infoRole['nom_role'];
+
                     echo 'Vous êtes connecté !';
                     header('Location: ./Home');
                     
