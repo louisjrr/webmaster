@@ -1,5 +1,6 @@
 $green: #3fdd8f;
 $greenHover: #3aa871;
+$light: #f8f9fa;
 
 .bodyConnexion {
   margin: 0;
@@ -307,6 +308,10 @@ a.nav-link:hover:before {
   height: 1px;
   opacity: 50%;
   margin-bottom: 30px;
+}
+/*----page addOffre----*/
+.addIntForm{
+  background-color: $light;
 }
 /*----Partie animation----*/
 

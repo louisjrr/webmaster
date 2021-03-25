@@ -362,6 +362,11 @@ a.nav-link:hover:before {
   margin-bottom: 30px;
 }
 
+/*----page addOffre----*/
+.addIntForm {
+  background-color: #f8f9fa;
+}
+
 /*----Partie animation----*/
 .transitionY {
   transform: translateY(-75px);
