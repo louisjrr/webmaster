@@ -2,16 +2,9 @@
 .bodyConnexion {
   margin: 0;
   height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   background-image: url("../images/bg_1.jpg");
   background-size: cover;
 }
@@ -39,12 +32,8 @@ body h2 {
 
 .compte {
   margin: 40px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 
 .compte button {
@@ -120,15 +109,9 @@ i {
   background-color: #eeeeee;
   border: 1px solid #dddddd;
   padding: 10px 10px 10px 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .recherche-barr {
@@ -150,15 +133,9 @@ i {
   height: 40px;
   width: 40px;
   float: right;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
   color: white;
 }
@@ -168,8 +145,6 @@ i {
 }
 
 .stock {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -198,8 +173,7 @@ i {
 
 .stage:hover {
   border: #3fdd8f 3px solid;
-  -webkit-box-shadow: 0 0 1em rgba(60, 60, 60, 0.7);
-          box-shadow: 0 0 1em rgba(60, 60, 60, 0.7);
+  box-shadow: 0 0 1em rgba(60, 60, 60, 0.7);
 }
 
 .stage i {
@@ -245,13 +219,8 @@ i {
 .form-stage {
   border: solid black;
   height: 80vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
 }
 
 .form-stage input {
@@ -261,13 +230,8 @@ i {
 }
 
 .column {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   margin: 0 auto;
 }
 
@@ -279,7 +243,7 @@ i {
   margin: auto 0;
 }
 
-.two input[name="compétences"] {
+.two input[name=compétences] {
   width: 500px;
   height: 150px;
 }
@@ -306,7 +270,6 @@ a.nav-link:before {
   left: 0;
   background-color: #3aa871;
   visibility: hidden;
-  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
@@ -355,25 +318,16 @@ a.nav-link:hover:before {
 .bodyDroits {
   margin: 0;
   height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   background-image: url("../images/bg_1.jpg");
   background-size: cover;
 }
 
 /*----page d'inscription----*/
 .pageInscription {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
 }
 
 .block {
@@ -418,8 +372,12 @@ a.nav-link:hover:before {
 }
 
 .divInfoGenerales {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
-/*# sourceMappingURL=style.css.map */
+
+.mobile div {
+  width: 30px;
+  height: 3px;
+  margin: 5px;
+  border-radius: 5px;
+}/*# sourceMappingURL=style.css.map */
