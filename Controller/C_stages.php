@@ -22,9 +22,9 @@
         }
         require('./View/addOffre.php');
     }
-    function Add(){
+    function Add($titre, $description, $entreprise){
         global $stage;
-        $stage->wishlist();
+        $stage->wishlist($titre, $description, $entreprise);
     }
     
 ?>

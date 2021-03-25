@@ -34,9 +34,11 @@
             $request = $db->prepare("INSERT INTO offres_de_stage (identreprise, intitule_offre, description, nombre_places) SELECT identreprise,:titre,:description,:places FROM entreprises where nom_entreprise=:entreprise");
             $request->execute(array('titre'=>$titre_stage,'description'=>$description_stage,'places'=>$nb_places,'entreprise'=>$entreprise));
         }
-        public function wishlist(){
+        public function wishlist($titre, $description, $entreprise){
+            global $db;
+            echo $titre.$description.$entreprise;
             session_start();
-            $request = $db->query('INSERT INTO met_en_wishlist (idutilisateur, idoffre) SELECT '.$_SESSION["id"].', idoffre FROM offres_de_stage, entreprises WHERE offres_de_stage.identreprise = entreprises.identreprise AND intitule_offre = var AND description = var AND nom_entreprise = var');
+            $request = $db->query('INSERT INTO met_en_wishlist (idutilisateur, idoffre) SELECT '.$_SESSION["id"].', idoffre FROM offres_de_stage, entreprises WHERE offres_de_stage.identreprise = entreprises.identreprise AND intitule_offre="'.$titre.'" AND description="'.$description.'" AND nom_entreprise="'.$entreprise.'"');
         }
     }
 ?>

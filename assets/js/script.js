@@ -40,14 +40,17 @@ $(function(){
         $(this).toggleClass('far');
         $(this).toggleClass('fas');
         if($(this).hasClass("fas")){
-            $(this).load('Add')
-            alert("mis à jour")
+            $titre = $(this).parent().find('.titre').html();
+            $description = $(this).parent().find('.description').html();
+            $entreprise = $(this).parent().find('.entreprise').html();
+            $.post("Add",{titre : $titre,description : $description,entreprise : $entreprise});
+            alert('mis a jour')
         }else{
             console.log('remove of WishList')
         }
     })
 })
-/*----Wishlist Add and Remove----*/
+/*----Wishlist Add and Remove----*/ 
 $(function(){
     $('.stage').click(function(){
         const titre = $(this).find('.titre').html()

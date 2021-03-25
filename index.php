@@ -14,8 +14,8 @@
         home();
     });
     Route::add('/Add', function() {
-        Add();
-    });
+        Add($_POST["titre"], $_POST["description"], $_POST["entreprise"]);
+    },"post");
     Route::add('/Home', function() {
         home();
     },"post");
