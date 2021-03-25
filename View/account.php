@@ -47,21 +47,24 @@
                 <div id="accountAffiche" class="col-md-8">
                     <?php 
                     if($mode=="infogenerales"){
-                            echo  ("<p> prénom:  ".$_SESSION['prenom']."<img class='iconPrestige' src='".$_SESSION['prestige']."'> </p></br>");
-                            echo  ("<p> nom:  ".$_SESSION['nom']." </p></br>");
-                            echo  ("<p> age:  ".$_SESSION['age']." </p></br>");
-                            echo  ("<p> adresse:  ".$_SESSION['adresse']." </p></br>");
+                            echo  ("<div class='divInfoGenerales'><div class='container'><div class='row'>");
+                            echo  ("<div class='col-lg-3'><img class='iconPrestige' src='".$_SESSION['prestige']."'></div>");
+                            echo  ("<div class='col-lg-2'><p class=> prénom:  ".$_SESSION['prenom']."></p></div>");
+                            echo  ("<div class='col-lg-2'><p> nom: ".$_SESSION['nom']." </p></div>");
+                            echo  ("<div class='col-lg-2'><p> age:  ".$_SESSION['age']." </p> </div>");
+                            echo  ("<div class='col-lg-3'><p> adresse:  ".$_SESSION['adresse']." </p></div>");
+                            echo  (" </div></div></div>");
                     }
                     elseif($mode=="modifProfil"){
                             echo  ('<form method="POST">');
                             echo  ('<p>Prenom</p></br>');
-                            echo  ("<input type='text' name='prenom' value=".$_SESSION['prenom']."></br>");
+                            echo  ("<input type='text' name='prenom' value=".$_SESSION['prenom'].">");
                             echo  ('<p>Nom</p></br>');
-                            echo  ("<input type='text' name='nom' value=".$_SESSION['nom']."></br>");
+                            echo  ("<input type='text' name='nom' value=".$_SESSION['nom'].">");
                             echo  ('<p>Age</p></br>');
-                            echo  ("<input type='text' name='age' value=".$_SESSION['age']."></br>");
+                            echo  ("<input type='text' name='age' value=".$_SESSION['age'].">");
                             echo  ('<p>Adresse</p></br>');
-                            echo  ("<input type='text'  name='adresse' value=".$_SESSION['adresse']."></br>");
+                            echo  ("<input type='text'  name='adresse' value=".$_SESSION['adresse'].">");
                             echo  ("<button type='submit' name='modifProfilValided'>Valider les changements</button>");
                     }
                     else{
