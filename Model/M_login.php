@@ -1,6 +1,6 @@
 <?php
- include_once './Controller/C_database.php';
- 
+    include_once './Controller/C_database.php';
+
     if(isset($_POST['connectLogin'])){
         if($_POST['login'] !=="" && $_POST['password'] !==""){
             global $db;
@@ -51,5 +51,4 @@
             }
         }
     }
-            
 ?>

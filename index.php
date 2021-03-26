@@ -1,11 +1,14 @@
 <?php
     include "route.php";
     include "Controller/C_stages.php";
+    include "Controller/C_user.php";
+    //include "Controller/C_login.php";
+    //include "Controller/C_accountPHP.php";
 
     define('BASEPATH','/www/webmaster');
 
     Route::add('/', function(){
-        require('View/login.php');
+        require('Controller/C_login.php');
     });
     Route::add('/InConnection', function(){
         require('Model/M_login.php');
@@ -41,7 +44,7 @@
         require('View/register.php');
     });
     Route::add('/Saving', function(){
-        require('Controller/C_user.php');
+        Register();
     },"post");
 
     Route::run(BASEPATH);
