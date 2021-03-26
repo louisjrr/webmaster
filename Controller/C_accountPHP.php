@@ -83,6 +83,14 @@
                   break;
             case "Délégué":
                   $delegate = new AccountDelegate();
+                  echo "<script type='text/javascript' src='./assets/vendors/jquery/jquery-ui.min.js'></script>";
+                  for($i=1;$i<36;$i++){
+                        if(in_array("sfx".$i,$_SESSION['tableAutorisation'])){
+                              echo "<script type='text/javascript' src='./assets/js/delegate.js'>sfx'.$i'</script>";
+                        }
+                  }
+                  
+                  
                   break;
       }
 
