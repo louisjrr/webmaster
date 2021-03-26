@@ -43,7 +43,9 @@
                         $infoAutorisations = $queryAutorisations->fetch();
                         $_SESSION['autorisations'] = $infoAutorisations[0];
                         foreach ($_SESSION['autorisations'] as $bit){
-                            if($bit = 1)
+                            if($bit = 1){
+
+                            }
                         }
                         
                     }
