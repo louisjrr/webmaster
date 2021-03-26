@@ -73,7 +73,7 @@
                                 break;
                             case "allPilote":
                                 foreach($showPilote as $plt){
-                                    echo  ("<div class='divInfoGenerales'><div class='container'><div class='row'>");
+                                    echo  ("<div class='container'><div class='row'>");
                                     echo  ("<div class='col-lg-2'><p class=> prénom: ".$plt['PRENOM']." </p></div>");
                                     echo  ("<div class='col-lg-3'><p> nom: ".$plt['NOM']." </p></div>");
                                     echo  ("<div class='col-lg-2'><p> age:  ".$plt['AGE']." </p></div>");
@@ -83,7 +83,7 @@
                                 break;
                             case "allDelegate":
                                 foreach($showDelegate as $dlg){
-                                    echo  ("<div class='divInfoGenerales'><div class='container'><div class='row'>");
+                                    echo  ("<div class='container'><div class='row'>");
                                     echo  ("<div class='col-lg-2'><p class=> prénom: ".$dlg['PRENOM']." </p></div>");
                                     echo  ("<div class='col-lg-3'><p> nom: ".$dlg['NOM']." </p></div>");
                                     echo  ("<div class='col-lg-2'><p> age:  ".$dlg['AGE']." </p></div>");
@@ -93,7 +93,7 @@
                                 break;
                             case "allStudent":
                                 foreach($showStudent as $std){
-                                    echo  ("<div class='divInfoGenerales'><div class='container'><div class='row'>");
+                                    echo  ("<div class='container'><div class='row'>");
                                     echo  ("<div class='col-lg-2'><p class=> prénom: ".$std['PRENOM']." </p></div>");
                                     echo  ("<div class='col-lg-3'><p> nom: ".$std['NOM']." </p></div>");
                                     echo  ("<div class='col-lg-2'><p> age:  ".$std['AGE']." </p></div>");
