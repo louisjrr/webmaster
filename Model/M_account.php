@@ -43,7 +43,7 @@ class accountDelegate extends account{
     function __construct($idRole){
         $this->idRole = $idRole;
     }
-    function afficher(){
+    function afficherDelegate(){
         global $db;
         $query = $db->query("SELECT * FROM utilisateurs WHERE idrole = $idRole > 3");
         $account = $query->fetchAll();
