@@ -72,7 +72,7 @@
                                 echo  (" </div></div></div>");
                                 break;
                             case "allPilote":
-                                foreach($pilote as $plt){
+                                foreach($showPilote as $plt){
                                     echo  ("<div class='divInfoGenerales'><div class='container'><div class='row'>");
                                     echo  ("<div class='col-lg-2'><p class=> prénom: ".$plt['PRENOM']." </p></div>");
                                     echo  ("<div class='col-lg-3'><p> nom: ".$plt['NOM']." </p></div>");
@@ -82,7 +82,7 @@
                                 }
                                 break;
                             case "allDelegate":
-                                foreach($delegate as $dlg){
+                                foreach($showDelegate as $dlg){
                                     echo  ("<div class='divInfoGenerales'><div class='container'><div class='row'>");
                                     echo  ("<div class='col-lg-2'><p class=> prénom: ".$dlg['PRENOM']." </p></div>");
                                     echo  ("<div class='col-lg-3'><p> nom: ".$dlg['NOM']." </p></div>");
@@ -92,7 +92,7 @@
                                 }
                                 break;
                             case "allStudent":
-                                foreach($student as $std){
+                                foreach($showStudent as $std){
                                     echo  ("<div class='divInfoGenerales'><div class='container'><div class='row'>");
                                     echo  ("<div class='col-lg-2'><p class=> prénom: ".$std['PRENOM']." </p></div>");
                                     echo  ("<div class='col-lg-3'><p> nom: ".$std['NOM']." </p></div>");
