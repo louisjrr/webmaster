@@ -29,12 +29,17 @@ abstract class Account{
     }
  
 }
+class AccountAdmin extends account{
+    function __construct($idRole){
+        $this->idRole = $idRole;
+    }
+}
 class AccountPilote extends account{
     function __construct($idRole){
         $this->idRole = $idRole;
     }
 }
-class AccountEtudiant extends account{
+class AccountStudent extends account{
     function __construct($idRole){
         $this->idRole = $idRole;
     }
