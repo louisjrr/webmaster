@@ -46,9 +46,11 @@ Route::add('/Add', function() {
     Route::add('/Register', function(){
         require('View/register.php');
     });
-    Route::add('/Delete', function(){
-        echo("OVH en pleine santé");
-        DeleteAccount( $_POST["nom"], $_POST["prenom"], $_POST["age"]);
+    Route::add('/Unvisible', function(){
+        UnvisibleAccount( $_POST["nom"], $_POST["prenom"], $_POST["age"]);
+    },"post");
+    Route::add('/Visible', function(){
+        VisibleAccount( $_POST["nom"], $_POST["prenom"], $_POST["age"]);
     },"post");
 
     Route::run(BASEPATH);

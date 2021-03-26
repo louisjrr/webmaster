@@ -121,22 +121,16 @@ $(function(){
 })
 /*----supprimer user----*/
 $(function(){
-    $('.fa-eye').click(function(){
+    $('.fas').click(function(){
         $(this).toggleClass('fa-eye');
         $(this).toggleClass('fa-eye-slash');
         $nom = $(this).parent().parent().find('.divNom').find('.nom').html()
         $prenom = $(this).parent().parent().find('.divPrenom').find('.prenom').html()
         $age = $(this).parent().parent().find('.divAge').find('.age').html()
-        $.post("Delete",{nom : $nom, prenom : $prenom, age : $age});
-    })
-})
-$(function(){
-    $('.fa-eye-slash').click(function(){
-        $(this).toggleClass('fa-eye-slash');
-        $(this).toggleClass('fa-eye');
-        $nom = $(this).parent().parent().find('.divNom').find('.nom').html()
-        $prenom = $(this).parent().parent().find('.divPrenom').find('.prenom').html()
-        $age = $(this).parent().parent().find('.divAge').find('.age').html()
-        console.log("coucou je suis barré")
+        if ($(this).hasClass('fa-eye-slash')){
+            $.post("Unvisible",{nom : $nom, prenom : $prenom, age : $age});
+        }else{
+            $.post("Visible",{nom : $nom, prenom : $prenom, age : $age});
+        }
     })
 })

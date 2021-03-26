@@ -69,8 +69,11 @@
         header("Location: Home");
     }
 
-    function DeleteAccount($nom,$prenom,$age){
-        delete($nom,$prenom,$age);
+    function UnvisibleAccount($nom,$prenom,$age){
+        Unvisible($nom,$prenom,$age);
+    }
+    function VisibleAccount($nom,$prenom,$age){
+        Visible($nom,$prenom,$age);
     }
 
 ?>

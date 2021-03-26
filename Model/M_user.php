@@ -113,9 +113,12 @@ function CheckMail(){
     $response = $query->fetch(PDO::FETCH_NUM);
     return $response;
 }
-function delete($nom,$prenom,$age){
+function Unvisible($nom,$prenom,$age){
     global $db;
-    echo("OVH a brulé");
     $query= $db->query('SELECT idutilisateur INTO @id FROM utilisateurs WHERE nom = "'.$nom.'" AND prenom = "'.$prenom.'" AND age = "'.$age.'"; UPDATE utilisateurs SET visible = 0 WHERE idutilisateur = @id');
+}
+function Visible($nom,$prenom,$age){
+    global $db;
+    $query= $db->query('SELECT idutilisateur INTO @id FROM utilisateurs WHERE nom = "'.$nom.'" AND prenom = "'.$prenom.'" AND age = "'.$age.'"; UPDATE utilisateurs SET visible = 1 WHERE idutilisateur = @id');
 }
 ?>
