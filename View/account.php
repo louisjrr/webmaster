@@ -136,7 +136,7 @@
                     <div class="scroll_account">
                         <form method="POST" action="ModifAccount" class="accountForm">
                             <button type = "submit" name="infogenerales"  class="infoGeneralesButton btn btn-dark">My Profil</button>
-                            <button type = "submit" name="modifProfil"  class="infoGeneralesButton btn btn-dark">Modify my profil</button>
+                            <button type = "submit" name="modifProfil"  class="infoGeneralesButton btn btn-dark modifProfil">Modify my profil</button>
                             <button type = "submit" name="wishlist"  class="infoGeneralesButton btn btn-dark">My Wishlist</button> 
                             <button type = "submit" name="allPilote" class="infoGeneralesButton btn btn-dark allPilote">All Pilote</button>
                             <button type = "submit" name="allDelegate" class="infoGeneralesButton btn btn-dark allDelegate">All Delegate</button>

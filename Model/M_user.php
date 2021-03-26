@@ -116,11 +116,11 @@ function CheckMail(){
  
 function getRight(){
     $right = '1';
-    for($i=2;$i<34;$i++){
+    for($i=2;$i<36;$i++){
         if(isset($_POST['SFx'.$i])){
             $right = $right.'1';
         }
-        elseif($i == 21 || $i == 27 || $i == 28 || $i == 29 || $i == 30 || $i == 31){
+        elseif($i == 21 || $i == 27 || $i == 28 || $i == 29 || $i == 30 || $i == 31 || $i == 34 || $i == 35 ){
             $right = $right.'0';
         }
         else{
