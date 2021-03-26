@@ -113,7 +113,8 @@
                                         echo  ("<div class='col-lg-1'><i class='fas fa-user-edit CRUD_student'></i></div>");
                                         echo  ("<div class='col-lg-1'><i class='fas fa-eye-slash CRUD_student'></i></div>");
                                         echo  (" </div></div></div></div>");
-                                    }                                }
+                                    }
+                                }
                                 break;
                             case "allStudent":
                                 foreach($showStudent as $std){
