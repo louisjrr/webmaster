@@ -40,7 +40,7 @@ Route::add('/Add', function() {
     Route::add('/Account', function(){
         require('View/account.php');
     });
-    Route::add('/ModifAccount', function(){
+    Route::add('/Account', function(){
         require('View/account.php');
     },"post");
     Route::add('/Register', function(){

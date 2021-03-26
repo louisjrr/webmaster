@@ -418,32 +418,22 @@ a.nav-link:hover:before {
 }
 .entreprises .entreprise {
   width: 90%;
-  height: 40%;
+  height: 20%;
   margin: 10px auto;
   border-radius: 15px;
   position: relative;
   text-align: center;
   border: black 2px solid;
   color: black;
+  display: flex;
 }
 .entreprises .entreprise:hover {
   border: $green 3px solid;
   box-shadow: 0 0 1em rgba(60, 60, 60, 0.7);
 }
-.entreprises .entreprise i {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  font-size: 20px;
-  color: black;
-}
 .entreprises .entreprise h2 {
   max-width: 85%;
-  margin: 0 auto;
-}
-.entreprises .entreprise p {
-  visibility: hidden;
-  position: absolute;
+  margin: auto;
 }
 .accountAffiche {
   display: flex;
@@ -453,4 +443,39 @@ a.nav-link:hover:before {
   width: 100%;
   display: flex;
   flex-direction: column;
+}
+.scroll_wishlist {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.scroll_wishlist::-webkit-scrollbar {
+  display: none;
+}
+.CRUD_student {
+  color: black;
+}
+.show {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.show::-webkit-scrollbar {
+  display: none;
+}
+.show .case {
+  width: 100%;
+  margin: 10px auto;
+  border-radius: 5px;
+  position: relative;
+  text-align: center;
+  border: black 2px solid;
+  color: black;
+  display: flex;
+}
+.show .case p,
+i {
+  margin: auto;
 }

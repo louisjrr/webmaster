@@ -73,32 +73,38 @@
                                 break;
                             case "allPilote":
                                 foreach($showPilote as $plt){
-                                    echo  ("<div class='container'><div class='row'>");
+                                    echo  ("<div class='show'><div class='case'><div class='container'><div class='row'>");
                                     echo  ("<div class='col-lg-2'><p class=> prénom: ".$plt['PRENOM']." </p></div>");
                                     echo  ("<div class='col-lg-3'><p> nom: ".$plt['NOM']." </p></div>");
                                     echo  ("<div class='col-lg-2'><p> age:  ".$plt['AGE']." </p></div>");
                                     echo  ("<div class='col-lg-3'><p> adresse:  ".$plt['ADRESSE']." </p></div>");
-                                    echo  (" </div></div>");
+                                    echo  ("<div class='col-lg-1'><i class='fas fa-user-edit CRUD_student'></i></div>");
+                                    echo  ("<div class='col-lg-1'><i class='fas fa-times CRUD_student'></i></div>");
+                                    echo  ("</div></div></div></div>");
                                 }
                                 break;
                             case "allDelegate":
                                 foreach($showDelegate as $dlg){
-                                    echo  ("<div class='container'><div class='row'>");
+                                    echo  ("<div class='show'><div class='case'><div class='container'><div class='row'>");
                                     echo  ("<div class='col-lg-2'><p class=> prénom: ".$dlg['PRENOM']." </p></div>");
                                     echo  ("<div class='col-lg-3'><p> nom: ".$dlg['NOM']." </p></div>");
                                     echo  ("<div class='col-lg-2'><p> age:  ".$dlg['AGE']." </p></div>");
                                     echo  ("<div class='col-lg-3'><p> adresse:  ".$dlg['ADRESSE']." </p></div>");
-                                    echo  (" </div></div>");
+                                    echo  ("<div class='col-lg-1'><i class='fas fa-user-edit CRUD_student'></i></div>");
+                                    echo  ("<div class='col-lg-1'><i class='fas fa-times CRUD_student'></i></div>");
+                                    echo  ("</div></div></div></div>");
                                 }
                                 break;
                             case "allStudent":
                                 foreach($showStudent as $std){
-                                    echo  ("<div class='container'><div class='row'>");
+                                    echo  ("<div class='show'><div class='case'><div class='container'><div class='row'>");
                                     echo  ("<div class='col-lg-2'><p class=> prénom: ".$std['PRENOM']." </p></div>");
                                     echo  ("<div class='col-lg-3'><p> nom: ".$std['NOM']." </p></div>");
                                     echo  ("<div class='col-lg-2'><p> age:  ".$std['AGE']." </p></div>");
                                     echo  ("<div class='col-lg-3'><p> adresse:  ".$std['ADRESSE']." </p></div>");
-                                    echo  (" </div></div>");
+                                    echo  ("<div class='col-lg-1'><i class='fas fa-user-edit CRUD_student'></i></div>");
+                                    echo  ("<div class='col-lg-1'><i class='fas fa-times CRUD_student'></i></div>");
+                                    echo  (" </div></div></div></div>");
                                 }
                                 break;
                             case "wishlist":
@@ -110,9 +116,11 @@
                                     return $wishlist;
                                 }
                                 $wishlist=Wishlist();
+                                echo ('<div class="scroll_wishlist">');
                                 foreach($wishlist as $r){
                                     echo ('<div class="wishlist"><h2 class="titre">'.$r["intitule_offre"].'</h2><i class="fas fa-heart"></i><p class="description">'.$r['description'].'</p><br><h5 class="entreprise">'.$r["nom_entreprise"].'</h5></div>');
                                 }
+                                echo ('</div>');
                                 break;
                             case "rate":
                                 function Rate(){
@@ -134,7 +142,7 @@
                     <div class="col-md-1"> </div> <!-- pour espacer en bootstrap-->
                     <div class="col-md-3 bg-light accountOption">
                     <div class="scroll_account">
-                        <form method="POST" action="ModifAccount" class="accountForm">
+                        <form method="POST" action="Account" class="accountForm">
                             <button type = "submit" name="infogenerales"  class="infoGeneralesButton btn btn-dark">My Profil</button>
                             <button type = "submit" name="modifProfil"  class="infoGeneralesButton btn btn-dark modifProfil">Modify my profil</button>
                             <button type = "submit" name="wishlist"  class="infoGeneralesButton btn btn-dark wishlist">My Wishlist</button> 
