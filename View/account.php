@@ -138,10 +138,10 @@
                             <button type = "submit" name="infogenerales"  class="infoGeneralesButton btn btn-dark">My Profil</button>
                             <button type = "submit" name="modifProfil"  class="infoGeneralesButton btn btn-dark">Modify my profil</button>
                             <button type = "submit" name="wishlist"  class="infoGeneralesButton btn btn-dark">My Wishlist</button> 
-                            <button type = "submit" name="allPilote" class="infoGeneralesButton btn btn-dark">All Pilote</button>
-                            <button type = "submit" name="allDelegate" class="infoGeneralesButton btn btn-dark">All Delegate</button>
-                            <button type = "submit" name="allStudent" class="infoGeneralesButton btn btn-dark">All Student</button>
-                            <button type = "submit" name="CreateAccount"  class="infoGeneralesButton btn btn-dark">Create an account</button>
+                            <button type = "submit" name="allPilote" class="infoGeneralesButton btn btn-dark allPilote">All Pilote</button>
+                            <button type = "submit" name="allDelegate" class="infoGeneralesButton btn btn-dark allDelegate">All Delegate</button>
+                            <button type = "submit" name="allStudent" class="infoGeneralesButton btn btn-dark allStudent">All Student</button>
+                            <button type = "submit" name="CreateAccount"  class="infoGeneralesButton btn btn-dark CreateAccount">Create an account</button>
                             <button type = "submit" name="Note_Entreprise"  class="infoGeneralesButton btn btn-dark">Rate a company</button>
                             <button type = "submit" name="deconnexion"  class="infoGeneralesButton btn btn-dark">Deconnexion</button>
                         </form>

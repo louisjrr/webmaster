@@ -68,6 +68,8 @@
                   break;
                   
             case "Pilote":
+                  echo "<script type='text/javascript' src='./assets/vendors/jquery/jquery-ui.min.js'></script>";
+                  echo "<script type='text/javascript' src='./assets/js/pilote.js'></script>";
                   $pilote = new AccountPilote(2);
                   $showStudent = $pilote->afficher(3);
                   $delegate = new AccountDelegate();
@@ -75,7 +77,8 @@
 
                   break;
             case "Etudiant":
-                  echo "<script type='text/javascript' src='./assets/js/autorisation.js'></script>";
+                  echo "<script type='text/javascript' src='./assets/vendors/jquery/jquery-ui.min.js'></script>";
+                  echo "<script type='text/javascript' src='./assets/js/student.js'></script>";
                   break;
             case "Délégué":
                   $delegate = new AccountDelegate();
