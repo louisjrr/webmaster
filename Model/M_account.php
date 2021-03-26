@@ -1,6 +1,6 @@
 <?php
 
-class account{
+abstract class account{
     public function modifProfil($nom, $prenom, $age, $adresse, $id){
         $requestModifProfil = $db->prepare('UPDATE utilisateurs SET nom = :nom, prenom = :prenom, age = :age, adresse = :adresse WHERE idutilisateur = :iduser');
             $requestModifProfil->execute(array('nom' => $nom, 'prenom' => $prenom, 'age' => $age, 'adresse' => $adresse, 'iduser' => $id ));
