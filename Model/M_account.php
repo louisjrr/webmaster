@@ -1,6 +1,6 @@
 <?php
 
-abstract class account{
+abstract class Account{
     protected $idRole;
 
     public function modifProfil($nom, $prenom, $age, $adresse, $id){
@@ -29,17 +29,17 @@ abstract class account{
     }
  
 }
-class accountPilote extends account{
+class AccountPilote extends account{
     function __construct($idRole){
         $this->idRole = $idRole;
     }
 }
-class accountEtudiant extends account{
+class AccountEtudiant extends account{
     function __construct($idRole){
         $this->idRole = $idRole;
     }
 }
-class accountDelegate extends account{
+class AccountDelegate extends account{
     function __construct($idRole){
         $this->idRole = $idRole;
     }
