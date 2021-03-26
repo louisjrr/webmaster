@@ -59,6 +59,7 @@
                                 break;
                             case "modifProfil":
                                 echo  ('<form method="POST">');
+                                echo  ("<div class='divInfoGenerales'><div class='container'><div class='column'>");
                                 echo  ('<label for="prenom">Prenom</label>');
                                 echo  ("<input type='text' name='prenom' value=".$_SESSION['prenom'].">");
                                 echo  ('<label for="nom">Nom</label>');
@@ -68,6 +69,7 @@
                                 echo  ('<p>Adresse</p></br>');
                                 echo  ("<input type='text'  name='adresse' value=".$_SESSION['adresse'].">");
                                 echo  ("<button type='submit' name='modifProfilValided'>Valider les changements</button>");
+                                echo  (" </div></div></div>");
                                 break;
                             case "allPilote":
                                 foreach($pilote as $plt){
@@ -99,6 +101,19 @@
                                     echo  (" </div></div></div>");
                                 }
                                 break;
+                            case "wishlist":
+                                //Mettre dans le model et le controller
+                                function Wishlist(){
+                                    global $db;
+                                    $request= $db->query('SELECT intitule_offre, description, nom_entreprise FROM offres_de_stage, entreprises, met_en_wishlist WHERE met_en_wishlist.idutilisateur = '.$_SESSION["id"].' AND met_en_wishlist.idoffre = offres_de_stage.idoffre AND offres_de_stage.identreprise = entreprises.identreprise');
+                                    $wishlist = $request->fetchAll();
+                                    return $wishlist;
+                                }
+                                $wishlist=Wishlist();
+                                foreach($wishlist as $r){
+                                    echo ('<div class="wishlist"><h2 class="titre">'.$r["intitule_offre"].'</h2><i class="fas fa-heart"></i><p class="description">'.$r['description'].'</p><br><h5 class="entreprise">'.$r["nom_entreprise"].'</h5></div>');
+                                }
+                                break;
                         }
                     
 
@@ -106,16 +121,18 @@
                     </div>
                     <div class="col-md-1"> </div> <!-- pour espacer en bootstrap-->
                     <div class="col-md-3 bg-light accountOption">
-                        <form method="POST" action="ModifAccount" class=".accountForm">
-                            <button type = "submit" name="infogenerales"  class="infoGeneralesButton btn btn-dark">My Profil</button></br>
-                            <button type = "submit" name="modifProfil"  class="infoGeneralesButton btn btn-dark">Modify my profil</button></br>
-                            <button type = "submit" name="wishlist"  class="infoGeneralesButton btn btn-dark">My Wishlist</button></br> 
-                            <button type = "submit" name="deconnexion"  class="infoGeneralesButton btn btn-dark">deconnexion</button></br>
+                    <div class="scroll_account">
+                        <form method="POST" action="ModifAccount" class="accountForm">
+                            <button type = "submit" name="infogenerales"  class="infoGeneralesButton btn btn-dark">My Profil</button>
+                            <button type = "submit" name="modifProfil"  class="infoGeneralesButton btn btn-dark">Modify my profil</button>
+                            <button type = "submit" name="wishlist"  class="infoGeneralesButton btn btn-dark">My Wishlist</button> 
                             <button type = "submit" name="allPilote" class="infoGeneralesButton btn btn-dark">All Pilote</button>
                             <button type = "submit" name="allDelegate" class="infoGeneralesButton btn btn-dark">All Delegate</button>
                             <button type = "submit" name="allStudent" class="infoGeneralesButton btn btn-dark">All Student</button>
-                            <button type = "submit" name="CreateAccount"  class="infoGeneralesButton btn btn-dark">Create an Account</button></br>
+                            <button type = "submit" name="CreateAccount"  class="infoGeneralesButton btn btn-dark">Create an account</button>
+                            <button type = "submit" name="deconnexion"  class="infoGeneralesButton btn btn-dark">Deconnexion</button>
                         </form>
+                    </div>
                     </div> 
                 </div>
             </div>

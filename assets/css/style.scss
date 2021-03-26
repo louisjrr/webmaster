@@ -342,12 +342,56 @@ a.nav-link:hover:before {
   margin-left: 15px;
   margin-right: 15px;
 }
-#accountAffiche, .accountOption {
+#accountAffiche,
+.accountOption {
   border: none;
   border-radius: 6px;
   box-shadow: 0 0 0.5em rgba(197, 196, 196, 0.7);
 }
 .infoGeneralesButton {
   margin-top: 20px;
-  width: 200px;
+}
+.accountForm {
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+.accountForm input {
+  width: 90%;
+  margin: 0 auto;
+}
+.scroll_account {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
+}
+.wishlist {
+  width: 90%;
+  height: 40%;
+  margin: 10px auto;
+  border-radius: 15px;
+  position: relative;
+  text-align: center;
+  border: black 2px solid;
+  color: black;
+}
+.wishlist:hover {
+  border: $green 3px solid;
+  box-shadow: 0 0 1em rgba(60, 60, 60, 0.7);
+}
+.wishlist i {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 20px;
+  color: black;
+}
+.wishlist h2 {
+  max-width: 85%;
+  margin: 0 auto;
+}
+.wishlist p {
+  visibility: hidden;
+  position: absolute;
 }

@@ -16,7 +16,10 @@
     Route::add('/Home', function() {
         home();
     });
-    Route::add('/Add', function() {
+    Route::add('/Saving', function(){
+        Register();
+    },"post");
+Route::add('/Add', function() {
         Add($_POST["titre"], $_POST["description"], $_POST["entreprise"]);
     },"post");
     Route::add('/Remove', function() {
@@ -43,9 +46,6 @@
     Route::add('/Register', function(){
         require('View/register.php');
     });
-    Route::add('/Saving', function(){
-        Register();
-    },"post");
 
     Route::run(BASEPATH);
 ?>

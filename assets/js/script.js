@@ -45,6 +45,9 @@ $(function(){
             $entreprise = $(this).parent().find('.entreprise').html();
             $.post("Add",{titre : $titre,description : $description,entreprise : $entreprise});
         }else{
+            $titre = $(this).parent().find('.titre').html();
+            $description = $(this).parent().find('.description').html();
+            $entreprise = $(this).parent().find('.entreprise').html();
             $.post("Remove",{titre : $titre,description : $description,entreprise : $entreprise});
         }
     })

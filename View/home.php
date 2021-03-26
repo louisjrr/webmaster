@@ -55,11 +55,9 @@
         <div class="stock">
             <div class="stages"><!-- Affichage en scroll des offres de stage-->
             <?php
-
                     foreach($res as $r){
                         echo '<div class="stage"><h2 class="titre">'.$r["intitule_offre"].'</h2><i class="far fa-heart"></i><p class="description">'.$r['description'].'</p><br><h5 class="entreprise">'.$r["nom_entreprise"].'</h5></div>';
                     }
-                
             ?>
             </div>
             <div class="affichage"> <!-- Affichage de l'offre de stage sélectionnée au click-->

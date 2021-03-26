@@ -10,7 +10,7 @@
             $mode="modifProfil";
       }
       elseif(isset($_POST['wishlist'])){
-            $mode="Wishlist";
+            $mode="wishlist";
       }
       elseif(isset($_POST['allPilote'])){
             $mode = "allPilote";
