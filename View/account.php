@@ -139,7 +139,6 @@
         </section>
         
 
-    <p><a href="Register">Create a account</a></p>
     <script type='text/javascript' src='./assets/vendors/jquery/jquery-ui.min.js'></script>
     <script type="text/javascript" src="./assets/js/script.js" ></script>
 </body>

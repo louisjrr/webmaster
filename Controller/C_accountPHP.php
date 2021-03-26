@@ -21,6 +21,10 @@
       elseif(isset($_POST['allStudent'])){
             $mode = "allStudent";
       }
+      elseif(isset($_POST['CreateAccount'])){
+            header('Location: Register');
+            exit;
+      }
       else{
             $mode="infogenerales";
       }
