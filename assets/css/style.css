@@ -435,12 +435,6 @@ a.nav-link:hover:before {
   width: 40px;
 }
 
-.divInfoGenerales {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 .mobile div {
   width: 30px;
   height: 3px;
@@ -455,7 +449,7 @@ a.nav-link:hover:before {
   margin-right: 15px;
 }
 
-#accountAffiche,
+.accountAffiche,
 .accountOption {
   border: none;
   border-radius: 6px;
@@ -523,5 +517,86 @@ a.nav-link:hover:before {
 .wishlist p {
   visibility: hidden;
   position: absolute;
+}
+
+.rating a {
+  float: right;
+  color: #aaa;
+  text-decoration: none;
+  font-size: 3em;
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+}
+
+.rating a:hover,
+.rating a:focus,
+.rating a:hover ~ a,
+.rating a:focus ~ a {
+  color: orange;
+  cursor: pointer;
+}
+
+.entreprises {
+  width: 40%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.entreprises::-webkit-scrollbar {
+  display: none;
+}
+
+.entreprises .entreprise {
+  width: 90%;
+  height: 40%;
+  margin: 10px auto;
+  border-radius: 15px;
+  position: relative;
+  text-align: center;
+  border: black 2px solid;
+  color: black;
+}
+
+.entreprises .entreprise:hover {
+  border: #3fdd8f 3px solid;
+  -webkit-box-shadow: 0 0 1em rgba(60, 60, 60, 0.7);
+          box-shadow: 0 0 1em rgba(60, 60, 60, 0.7);
+}
+
+.entreprises .entreprise i {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 20px;
+  color: black;
+}
+
+.entreprises .entreprise h2 {
+  max-width: 85%;
+  margin: 0 auto;
+}
+
+.entreprises .entreprise p {
+  visibility: hidden;
+  position: absolute;
+}
+
+.accountAffiche {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.affichage_entreprise {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 /*# sourceMappingURL=style.css.map */

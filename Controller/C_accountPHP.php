@@ -21,6 +21,9 @@
       elseif(isset($_POST['allStudent'])){
             $mode = "allStudent";
       }
+      elseif(isset($_POST['Note_Entreprise'])){
+            $mode= "rate";
+      }
       else{
             $mode="infogenerales";
       }
