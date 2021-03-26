@@ -1,6 +1,8 @@
 <?php
 
 abstract class account{
+    protected $idRole;
+
     public function modifProfil($nom, $prenom, $age, $adresse, $id){
             $requestModifProfil = $db->prepare('UPDATE utilisateurs SET nom = :nom, prenom = :prenom, age = :age, adresse = :adresse WHERE idutilisateur = :iduser');
             $requestModifProfil->execute(array('nom' => $nom, 'prenom' => $prenom, 'age' => $age, 'adresse' => $adresse, 'iduser' => $id ));
@@ -18,14 +20,29 @@ abstract class account{
             exit();
     }
 
-    public function afficherPilote(){
-            
+    public function afficher(){
+        global $db;
+
+        $query = $db->query("SELECT * FROM utilisateurs WHERE idrole = '$this->idRole'");
+        $account = $query->fetchAll();
+
     }
  
 }
-
+class accountPilote extends account{
+    function __construct($idRole){
+        $this->idRole = $idRole;
+    }
+}
 class accountEtudiant extends account{
-
+    function __construct($idRole){
+        $this->idRole = $idRole;
+    }
+}
+class accountDelegate extends account{
+    function __construct($idRole){
+        $this->idRole = $idRole;
+    }
 }
 
 ?>

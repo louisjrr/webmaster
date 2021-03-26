@@ -63,15 +63,15 @@
                   $query = $db->query("SELECT * FROM utilisateurs WHERE idrole = 3");
                   $student = $query->fetchAll();
 
-                  //$query = $db->query("SELECT * FROM utilisateurs WHERE idrole = >3");
-                  //$delegate = $query->fetchAll();
+                  $query = $db->query("SELECT * FROM utilisateurs WHERE idrole  >3");
+                  $delegate = $query->fetchAll();
                   break;
                   
             case "Pilote":
                   global $db;
                   $query = $db->query("SELECT * FROM utilisateurs WHERE idrole = 3");
                   $student = $query->fetchAll();
-                  $query = $db->query("SELECT * FROM utilisateurs WHERE idrole = >3");
+                  $query = $db->query("SELECT * FROM utilisateurs WHERE idrole > 3");
                   $delegate = $query->fetchAll();
                   break;
             case "Etudiant":
