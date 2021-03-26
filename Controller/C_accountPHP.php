@@ -60,6 +60,7 @@
 
       switch($_SESSION['role']){
             case "Administrateur":
+                  global $db;
                   $admin = new AccountAdmin(1);
                   $showPilote = $admin->afficher(2);
                   $showStudent = $admin->afficher(3);

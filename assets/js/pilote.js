@@ -3,4 +3,6 @@ $(function(){
     $('.modifProfil').hide();
     $('.wishlist').hide();
     $('.fa-heart').hide();
+    $('.optionAdmin').hide();
+    $('.optionPilote').hide();
 })

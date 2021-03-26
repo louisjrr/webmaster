@@ -27,10 +27,10 @@
                         <div>
                             <label for='permission' class="labelPermission">Choose the permission</label><br>
                             <select id='permission' name='role'>
-                                <option value='student'>student</option>
-                                <option value='delegate'>delegate</option>
-                                <option value='tutor'>tutor</option>
-                                <option value='admin'>admin</option>
+                                <option value='student' class='optionStudent'>student</option>
+                                <option value='delegate' class='optionDelegate'>delegate</option>
+                                <option value='tutor' class='optionPilote'>tutor</option>
+                                <option value='admin' class='optionAdmin'>admin</option>
                             </select><br>
                             <input type="text" placeholder='First name' class='textBox' name='Fname'><br>
                             <input type="text" placeholder='Last name' class='textBox' name='Lname'><br>
@@ -142,5 +142,6 @@
     </div>
     <script type='text/javascript' src='./assets/vendors/jquery/jquery-ui.min.js'></script>
     <script type="text/javascript" src="./assets/js/script.js" ></script>
+    <script type="text/javascript" src="./assets/js/pilote.js" ></script>
 </body>
 </html>
