@@ -145,7 +145,7 @@
                         <form method="POST" action="Account" class="accountForm">
                             <button type = "submit" name="infogenerales"  class="infoGeneralesButton btn btn-dark">My Profil</button>
                             <button type = "submit" name="modifProfil"  class="infoGeneralesButton btn btn-dark modifProfil">Modify my profil</button>
-                            <button type = "submit" name="wishlist"  class="infoGeneralesButton btn btn-dark wishlist">My Wishlist</button> 
+                            <button type = "submit" name="wishlist"  class="infoGeneralesButton btn btn-dark wishlistBtn">My Wishlist</button> 
                             <button type = "submit" name="allPilote" class="infoGeneralesButton btn btn-dark allPilote">All Pilote</button>
                             <button type = "submit" name="allDelegate" class="infoGeneralesButton btn btn-dark allDelegate">All Delegate</button>
                             <button type = "submit" name="allStudent" class="infoGeneralesButton btn btn-dark allStudent">All Student</button>
