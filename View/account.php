@@ -72,8 +72,8 @@
                                 echo  (" </div></div>");
                                 break;
                             case "allPilote":
-                                foreach($pilote as $plt){
-                                    echo  ("<div class='container'><div class='row'>");
+                                foreach($showPilote as $plt){
+                                    echo  ("<div class='divInfoGenerales'><div class='container'><div class='row'>");
                                     echo  ("<div class='col-lg-2'><p class=> prénom: ".$plt['PRENOM']." </p></div>");
                                     echo  ("<div class='col-lg-3'><p> nom: ".$plt['NOM']." </p></div>");
                                     echo  ("<div class='col-lg-2'><p> age:  ".$plt['AGE']." </p></div>");
@@ -82,8 +82,8 @@
                                 }
                                 break;
                             case "allDelegate":
-                                foreach($delegate as $dlg){
-                                    echo  ("<div class='container'><div class='row'>");
+                                foreach($showDelegate as $dlg){
+                                    echo  ("<div class='divInfoGenerales'><div class='container'><div class='row'>");
                                     echo  ("<div class='col-lg-2'><p class=> prénom: ".$dlg['PRENOM']." </p></div>");
                                     echo  ("<div class='col-lg-3'><p> nom: ".$dlg['NOM']." </p></div>");
                                     echo  ("<div class='col-lg-2'><p> age:  ".$dlg['AGE']." </p></div>");
@@ -92,8 +92,8 @@
                                 }
                                 break;
                             case "allStudent":
-                                foreach($student as $std){
-                                    echo  ("<div class='container'><div class='row'>");
+                                foreach($showStudent as $std){
+                                    echo  ("<div class='divInfoGenerales'><div class='container'><div class='row'>");
                                     echo  ("<div class='col-lg-2'><p class=> prénom: ".$std['PRENOM']." </p></div>");
                                     echo  ("<div class='col-lg-3'><p> nom: ".$std['NOM']." </p></div>");
                                     echo  ("<div class='col-lg-2'><p> age:  ".$std['AGE']." </p></div>");
@@ -152,7 +152,6 @@
         </section>
         
 
-    <p><a href="Register">Create a account</a></p>
     <script type='text/javascript' src='./assets/vendors/jquery/jquery-ui.min.js'></script>
     <script type="text/javascript" src="./assets/js/script.js" ></script>
 </body>
