@@ -47,7 +47,8 @@
                 <div class="row">
                     <div id="accountAffiche" class="col-md-8 bg-light">
                         <?php 
-                        if($mode=="infogenerales"){
+                        switch($mode){
+                            case "infogenerales":
                                 echo  ("<div class='divInfoGenerales'><div class='container'><div class='row'>");
                                 echo  ("<div class='col-lg-2'><img class='iconPrestige' src='".$_SESSION['prestige']."'></div>");
                                 echo  ("<div class='col-lg-2'><p class=> prénom: ".$_SESSION['prenom']."</p></div>");
@@ -55,8 +56,8 @@
                                 echo  ("<div class='col-lg-2'><p> age:  ".$_SESSION['age']." </p> </div>");
                                 echo  ("<div class='col-lg-3'><p> adresse:  ".$_SESSION['adresse']." </p></div>");
                                 echo  (" </div></div></div>");
-                        }
-                        elseif($mode=="modifProfil"){
+                                break;
+                            case "modifProfil":
                                 echo  ('<form method="POST">');
                                 echo  ('<label for="prenom">Prenom</label>');
                                 echo  ("<input type='text' name='prenom' value=".$_SESSION['prenom'].">");
@@ -67,13 +68,39 @@
                                 echo  ('<p>Adresse</p></br>');
                                 echo  ("<input type='text'  name='adresse' value=".$_SESSION['adresse'].">");
                                 echo  ("<button type='submit' name='modifProfilValided'>Valider les changements</button>");
+                                break;
+                            case "allPilote":
+                                foreach($pilote as $plt){
+                                    echo  ("<div class='divInfoGenerales'><div class='container'><div class='row'>");
+                                    echo  ("<div class='col-lg-2'><p class=> prénom: ".$plt['PRENOM']." </p></div>");
+                                    echo  ("<div class='col-lg-3'><p> nom: ".$plt['NOM']." </p></div>");
+                                    echo  ("<div class='col-lg-2'><p> age:  ".$plt['AGE']." </p></div>");
+                                    echo  ("<div class='col-lg-3'><p> adresse:  ".$plt['ADRESSE']." </p></div>");
+                                    echo  (" </div></div></div>");
+                                }
+                                break;
+                            case "allDelegate":
+                                foreach($delegate as $dlg){
+                                    echo  ("<div class='divInfoGenerales'><div class='container'><div class='row'>");
+                                    echo  ("<div class='col-lg-2'><p class=> prénom: ".$dlg['PRENOM']." </p></div>");
+                                    echo  ("<div class='col-lg-3'><p> nom: ".$dlg['NOM']." </p></div>");
+                                    echo  ("<div class='col-lg-2'><p> age:  ".$dlg['AGE']." </p></div>");
+                                    echo  ("<div class='col-lg-3'><p> adresse:  ".$dlg['ADRESSE']." </p></div>");
+                                    echo  (" </div></div></div>");
+                                }
+                                break;
+                            case "allStudent":
+                                foreach($student as $std){
+                                    echo  ("<div class='divInfoGenerales'><div class='container'><div class='row'>");
+                                    echo  ("<div class='col-lg-2'><p class=> prénom: ".$std['PRENOM']." </p></div>");
+                                    echo  ("<div class='col-lg-3'><p> nom: ".$std['NOM']." </p></div>");
+                                    echo  ("<div class='col-lg-2'><p> age:  ".$std['AGE']." </p></div>");
+                                    echo  ("<div class='col-lg-3'><p> adresse:  ".$std['ADRESSE']." </p></div>");
+                                    echo  (" </div></div></div>");
+                                }
+                                break;
                         }
-                        else{
-                                echo  ("<p> prénom:  ".$_SESSION['prenom']." </p></br>");
-                                echo  ("<p> nom:  ".$_SESSION['nom']." </p></br>");
-                                echo  ("<p> age:  ".$_SESSION['age']." </p></br>");
-                                echo  ("<p> adresse:  ".$_SESSION['adresse']." </p></br>");
-                        }
+                    
 
                         ?>
                     </div>
@@ -81,9 +108,12 @@
                     <div class="col-md-3 bg-light accountOption">
                         <form method="POST" action="ModifAccount" class=".accountForm">
                             <button type = "submit" name="infogenerales"  class="infoGeneralesButton btn btn-dark">My Profil</button></br>
-                            <button type = "submit" name="modifProfil"  class="infoGeneralesButton btn btn-dark">modifier mon Profil</button></br>
-                            <button type = "submit" name="wishlist"  class="infoGeneralesButton btn btn-dark">Ma wishlist</button></br> 
+                            <button type = "submit" name="modifProfil"  class="infoGeneralesButton btn btn-dark">Modify my profil</button></br>
+                            <button type = "submit" name="wishlist"  class="infoGeneralesButton btn btn-dark">My Wishlist</button></br> 
                             <button type = "submit" name="deconnexion"  class="infoGeneralesButton btn btn-dark">deconnexion</button></br>
+                            <button type = "submit" name="allPilote" class="infoGeneralesButton btn btn-dark">All Pilote</button>
+                            <button type = "submit" name="allDelegate" class="infoGeneralesButton btn btn-dark">All Delegate</button>
+                            <button type = "submit" name="allStudent" class="infoGeneralesButton btn btn-dark">All Student</button>
                             <button type = "submit" name="CreateAccount"  class="infoGeneralesButton btn btn-dark">Create an Account</button></br>
                         </form>
                     </div> 

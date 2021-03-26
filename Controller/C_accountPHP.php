@@ -12,6 +12,15 @@
       elseif(isset($_POST['wishlist'])){
             $mode="Wishlist";
       }
+      elseif(isset($_POST['allPilote'])){
+            $mode = "allPilote";
+      }
+      elseif(isset($_POST['allDelgate'])){
+            $mode = "allDelegate";
+      }
+      elseif(isset($_POST['allStudent'])){
+            $mode = "allStudent";
+      }
       else{
             $mode="infogenerales";
       }
@@ -40,5 +49,36 @@
             exit();
       }
       //idutilisateur,idrole,mail,mdp,nom,prenom,age,adresse,visible
+
+      switch($_SESSION['role']){
+            case "Administrateur":
+                  global $db;
+                  $query = $db->query("SELECT * FROM utilisateurs WHERE idrole = 2");
+                  $pilote = $query->fetchAll();
+
+                  $query = $db->query("SELECT * FROM utilisateurs WHERE idrole = 3");
+                  $student = $query->fetchAll();
+
+                  //$query = $db->query("SELECT * FROM utilisateurs WHERE idrole = >3");
+                  //$delegate = $query->fetchAll();
+                  break;
+                  
+            case "Pilote":
+                  global $db;
+                  $query = $db->query("SELECT * FROM utilisateurs WHERE idrole = 3");
+                  $student = $query->fetchAll();
+                  $query = $db->query("SELECT * FROM utilisateurs WHERE idrole = >3");
+                  $delegate = $query->fetchAll();
+                  break;
+            case "Etudiant":
+                  global $db;
+                  $query = $db->query("SELECT * FROM utilisateurs WHERE idrole = 2");
+                  $pilote = $query->fetchAll();
+                  break;
+            case "Délégué":
+                  global $db;
+                  //fonction de vérification des droits de délégué
+                  break;
+      }
 
 ?>
