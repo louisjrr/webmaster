@@ -113,20 +113,9 @@ function CheckMail(){
     $response = $query->fetch(PDO::FETCH_NUM);
     return $response;
 }
- 
-function getRight(){
-    $right = '1';
-    for($i=2;$i<36;$i++){
-        if(isset($_POST['SFx'.$i])){
-            $right = $right.'1';
-        }
-        elseif($i == 21 || $i == 27 || $i == 28 || $i == 29 || $i == 30 || $i == 31 || $i == 34 || $i == 35 ){
-            $right = $right.'0';
-        }
-        else{
-            $right = $right.'0';
-        }
-    }
-    return $right;
+function delete($nom,$prenom,$age){
+    global $db;
+    echo("OVH a brulé");
+    $query= $db->query('SELECT idutilisateur INTO @id FROM utilisateurs WHERE nom = "'.$nom.'" AND prenom = "'.$prenom.'" AND age = "'.$age.'"; UPDATE utilisateurs SET visible = 0 WHERE idutilisateur = @id');
 }
-?> 
+?>

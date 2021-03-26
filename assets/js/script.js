@@ -113,3 +113,30 @@ $(function(){
         $('.affichage_entreprise').html("<h2>" + entreprise + "</h2><div class='rating'><a href='#5' title='Donner 5 étoiles'>☆</a><a href='#4' title='Donner 4 étoiles'>☆</a><a href='#3' title='Donner 3 étoiles'>☆</a><a href='#2' title='Donner 2 étoiles'>☆</a><a href='#1' title='Donner 1 étoile'>☆</a></div><input class='rate' type=submit>")
     })
 })
+/*----Modifier user----*/
+$(function(){
+    $('.fa-user-edit').click(function(){
+
+    })
+})
+/*----supprimer user----*/
+$(function(){
+    $('.fa-eye').click(function(){
+        $(this).toggleClass('fa-eye');
+        $(this).toggleClass('fa-eye-slash');
+        $nom = $(this).parent().parent().find('.divNom').find('.nom').html()
+        $prenom = $(this).parent().parent().find('.divPrenom').find('.prenom').html()
+        $age = $(this).parent().parent().find('.divAge').find('.age').html()
+        $.post("Delete",{nom : $nom, prenom : $prenom, age : $age});
+    })
+})
+$(function(){
+    $('.fa-eye-slash').click(function(){
+        $(this).toggleClass('fa-eye-slash');
+        $(this).toggleClass('fa-eye');
+        $nom = $(this).parent().parent().find('.divNom').find('.nom').html()
+        $prenom = $(this).parent().parent().find('.divPrenom').find('.prenom').html()
+        $age = $(this).parent().parent().find('.divAge').find('.age').html()
+        console.log("coucou je suis barré")
+    })
+})

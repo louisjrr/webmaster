@@ -45,13 +45,13 @@
         <section class = "pageAccount">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-8 bg-light accountAffiche">
+                        <div class="col-md-8 bg-light accountAffiche">
                         <?php 
                         switch($mode){
                             case "infogenerales":
                                 echo  ("<div class='container'><div class='row'>");
                                 echo  ("<div class='col-lg-2'><img class='iconPrestige' src='".$_SESSION['prestige']."'></div>");
-                                echo  ("<div class='col-lg-2'><p class=> prénom: ".$_SESSION['prenom']."</p></div>");
+                                echo  ("<div class='col-lg-2'><p> prénom: ".$_SESSION['prenom']."</p></div>");
                                 echo  ("<div class='col-lg-3'><p> nom: ".$_SESSION['nom']." </p></div>");
                                 echo  ("<div class='col-lg-2'><p> age:  ".$_SESSION['age']." </p> </div>");
                                 echo  ("<div class='col-lg-3'><p> adresse:  ".$_SESSION['adresse']." </p></div>");
@@ -74,37 +74,49 @@
                             case "allPilote":
                                 foreach($showPilote as $plt){
                                     echo  ("<div class='show'><div class='case'><div class='container'><div class='row'>");
-                                    echo  ("<div class='col-lg-2'><p class=> prénom: ".$plt['PRENOM']." </p></div>");
-                                    echo  ("<div class='col-lg-3'><p> nom: ".$plt['NOM']." </p></div>");
-                                    echo  ("<div class='col-lg-2'><p> age:  ".$plt['AGE']." </p></div>");
-                                    echo  ("<div class='col-lg-3'><p> adresse:  ".$plt['ADRESSE']." </p></div>");
+                                    echo  ("<div class='col-lg-2 divPrenom'><h6>prénom:</h6> <p class='prenom'>".$plt['PRENOM']." </p></div>");
+                                    echo  ("<div class='col-lg-3 divNom'><h6>nom:</h6> <p class='nom'>".$plt['NOM']." </p></div>");
+                                    echo  ("<div class='col-lg-2 divAge'><h6>age:</h6>  <p class ='age'>".$plt['AGE']." </p></div>");
+                                    echo  ("<div class='col-lg-3'><h6>adresse:</h6>  <p>".$plt['ADRESSE']." </p></div>");
                                     echo  ("<div class='col-lg-1'><i class='fas fa-user-edit CRUD_student'></i></div>");
-                                    echo  ("<div class='col-lg-1'><i class='fas fa-times CRUD_student'></i></div>");
+                                    echo  ("<div class='col-lg-1'><i class='fas fa-eye CRUD_student'></i></div>");
                                     echo  ("</div></div></div></div>");
                                 }
                                 break;
                             case "allDelegate":
                                 foreach($showDelegate as $dlg){
                                     echo  ("<div class='show'><div class='case'><div class='container'><div class='row'>");
-                                    echo  ("<div class='col-lg-2'><p class=> prénom: ".$dlg['PRENOM']." </p></div>");
-                                    echo  ("<div class='col-lg-3'><p> nom: ".$dlg['NOM']." </p></div>");
-                                    echo  ("<div class='col-lg-2'><p> age:  ".$dlg['AGE']." </p></div>");
-                                    echo  ("<div class='col-lg-3'><p> adresse:  ".$dlg['ADRESSE']." </p></div>");
+                                    echo  ("<div class='col-lg-2 divPrenom'><h6>prénom:</h6> <p class='prenom'>".$dlg['PRENOM']." </p></div>");
+                                    echo  ("<div class='col-lg-3 divNom'><h6>nom:</h6> <p class='nom'>".$dlg['NOM']." </p></div>");
+                                    echo  ("<div class='col-lg-2 divAge'><h6>age:</h6>  <p class ='age'>".$dlg['AGE']." </p></div>");
+                                    echo  ("<div class='col-lg-3'><h6>adresse:</h6>  <p>".$dlg['ADRESSE']." </p></div>");
                                     echo  ("<div class='col-lg-1'><i class='fas fa-user-edit CRUD_student'></i></div>");
-                                    echo  ("<div class='col-lg-1'><i class='fas fa-times CRUD_student'></i></div>");
+                                    echo  ("<div class='col-lg-1'><i class='fas fa-eye CRUD_student'></i></div>");
                                     echo  ("</div></div></div></div>");
                                 }
                                 break;
                             case "allStudent":
                                 foreach($showStudent as $std){
+                                    if($std['VISIBLE']==1){
                                     echo  ("<div class='show'><div class='case'><div class='container'><div class='row'>");
-                                    echo  ("<div class='col-lg-2'><p class=> prénom: ".$std['PRENOM']." </p></div>");
-                                    echo  ("<div class='col-lg-3'><p> nom: ".$std['NOM']." </p></div>");
-                                    echo  ("<div class='col-lg-2'><p> age:  ".$std['AGE']." </p></div>");
-                                    echo  ("<div class='col-lg-3'><p> adresse:  ".$std['ADRESSE']." </p></div>");
+                                    echo  ("<div class='col-lg-2 divPrenom'><h6>prénom:</h6> <p class='prenom'>".$std['PRENOM']." </p></div>");
+                                    echo  ("<div class='col-lg-3 divNom'><h6>nom:</h6> <p class='nom'>".$std['NOM']." </p></div>");
+                                    echo  ("<div class='col-lg-2 divAge'><h6>age:</h6>  <p class ='age'>".$std['AGE']." </p></div>");
+                                    echo  ("<div class='col-lg-3'><h6>adresse:</h6>  <p>".$std['ADRESSE']." </p></div>");
                                     echo  ("<div class='col-lg-1'><i class='fas fa-user-edit CRUD_student'></i></div>");
-                                    echo  ("<div class='col-lg-1'><i class='fas fa-times CRUD_student'></i></div>");
+                                    echo  ("<div class='col-lg-1'><i class='fas fa-eye CRUD_student'></i></div>");
                                     echo  (" </div></div></div></div>");
+                                }else{
+                                    echo  ("<div class='show'><div class='case'><div class='container'><div class='row'>");
+                                    echo  ("<div class='col-lg-2 divPrenom'><h6>prénom:</h6> <p class='prenom'>".$std['PRENOM']." </p></div>");
+                                    echo  ("<div class='col-lg-3 divNom'><h6>nom:</h6> <p class='nom'>".$std['NOM']." </p></div>");
+                                    echo  ("<div class='col-lg-2 divAge'><h6>age:</h6>  <p class ='age'>".$std['AGE']." </p></div>");
+                                    echo  ("<div class='col-lg-3'><h6>adresse:</h6>  <p>".$std['ADRESSE']." </p></div>");
+                                    echo  ("<div class='col-lg-1'><i class='fas fa-user-edit CRUD_student'></i></div>");
+                                    echo  ("<div class='col-lg-1'><i class='fas fa-eye-slash CRUD_student'></i></div>");
+                                    echo  (" </div></div></div></div>");
+                                }
+
                                 }
                                 break;
                             case "wishlist":
