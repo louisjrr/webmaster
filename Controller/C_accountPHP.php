@@ -1,5 +1,6 @@
 <?php 
       include_once './Controller/C_database.php';
+      include './Model/M_account.php';
       session_start();
       $mode;
 
@@ -20,6 +21,9 @@
       }
       elseif(isset($_POST['allStudent'])){
             $mode = "allStudent";
+      }
+      elseif(isset($_POST['Note_Entreprise'])){
+            $mode= "rate";
       }
       elseif(isset($_POST['CreateAccount'])){
             header('Location: Register');
@@ -56,32 +60,28 @@
 
       switch($_SESSION['role']){
             case "Administrateur":
-                  global $db;
-                  $query = $db->query("SELECT * FROM utilisateurs WHERE idrole = 2");
-                  $pilote = $query->fetchAll();
-
-                  $query = $db->query("SELECT * FROM utilisateurs WHERE idrole = 3");
-                  $student = $query->fetchAll();
-
-                  $query = $db->query("SELECT * FROM utilisateurs WHERE idrole  >3");
-                  $delegate = $query->fetchAll();
+                  $admin = new AccountAdmin(1);
+                  $showPilote = $admin->afficher(2);
+                  $showStudent = $admin->afficher(3);
+                  $delegate = new AccountDelegate();
+                  $showDelegate = $delegate->afficherDelegate();
                   break;
                   
             case "Pilote":
-                  global $db;
-                  $query = $db->query("SELECT * FROM utilisateurs WHERE idrole = 3");
-                  $student = $query->fetchAll();
-                  $query = $db->query("SELECT * FROM utilisateurs WHERE idrole > 3");
-                  $delegate = $query->fetchAll();
+                  echo "<script type='text/javascript' src='./assets/vendors/jquery/jquery-ui.min.js'></script>";
+                  echo "<script type='text/javascript' src='./assets/js/pilote.js'></script>";
+                  $pilote = new AccountPilote(2);
+                  $showStudent = $pilote->afficher(3);
+                  $delegate = new AccountDelegate();
+                  $showDelegate = $delegate->afficherDelegate();
+
                   break;
             case "Etudiant":
-                  global $db;
-                  $query = $db->query("SELECT * FROM utilisateurs WHERE idrole = 2");
-                  $pilote = $query->fetchAll();
+                  echo "<script type='text/javascript' src='./assets/vendors/jquery/jquery-ui.min.js'></script>";
+                  echo "<script type='text/javascript' src='./assets/js/student.js'></script>";
                   break;
             case "Délégué":
-                  global $db;
-                  //fonction de vérification des droits de délégué
+                  $delegate = new AccountDelegate();
                   break;
       }
 

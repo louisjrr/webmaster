@@ -45,21 +45,21 @@
         <section class = "pageAccount">
             <div class="container-fluid">
                 <div class="row">
-                    <div id="accountAffiche" class="col-md-8 bg-light">
+                    <div class="col-md-8 bg-light accountAffiche">
                         <?php 
                         switch($mode){
                             case "infogenerales":
-                                echo  ("<div class='divInfoGenerales'><div class='container'><div class='row'>");
+                                echo  ("<div class='container'><div class='row'>");
                                 echo  ("<div class='col-lg-2'><img class='iconPrestige' src='".$_SESSION['prestige']."'></div>");
                                 echo  ("<div class='col-lg-2'><p class=> prénom: ".$_SESSION['prenom']."</p></div>");
                                 echo  ("<div class='col-lg-3'><p> nom: ".$_SESSION['nom']." </p></div>");
                                 echo  ("<div class='col-lg-2'><p> age:  ".$_SESSION['age']." </p> </div>");
                                 echo  ("<div class='col-lg-3'><p> adresse:  ".$_SESSION['adresse']." </p></div>");
-                                echo  (" </div></div></div>");
+                                echo  (" </div></div>");
                                 break;
                             case "modifProfil":
                                 echo  ('<form method="POST">');
-                                echo  ("<div class='divInfoGenerales'><div class='container'><div class='column'>");
+                                echo  ("<div class='container'><div class='column'>");
                                 echo  ('<label for="prenom">Prenom</label>');
                                 echo  ("<input type='text' name='prenom' value=".$_SESSION['prenom'].">");
                                 echo  ('<label for="nom">Nom</label>');
@@ -69,36 +69,36 @@
                                 echo  ('<p>Adresse</p></br>');
                                 echo  ("<input type='text'  name='adresse' value=".$_SESSION['adresse'].">");
                                 echo  ("<button type='submit' name='modifProfilValided'>Valider les changements</button>");
-                                echo  (" </div></div></div>");
+                                echo  (" </div></div>");
                                 break;
                             case "allPilote":
-                                foreach($pilote as $plt){
-                                    echo  ("<div class='divInfoGenerales'><div class='container'><div class='row'>");
+                                foreach($showPilote as $plt){
+                                    echo  ("<div class='container'><div class='row'>");
                                     echo  ("<div class='col-lg-2'><p class=> prénom: ".$plt['PRENOM']." </p></div>");
                                     echo  ("<div class='col-lg-3'><p> nom: ".$plt['NOM']." </p></div>");
                                     echo  ("<div class='col-lg-2'><p> age:  ".$plt['AGE']." </p></div>");
                                     echo  ("<div class='col-lg-3'><p> adresse:  ".$plt['ADRESSE']." </p></div>");
-                                    echo  (" </div></div></div>");
+                                    echo  (" </div></div>");
                                 }
                                 break;
                             case "allDelegate":
-                                foreach($delegate as $dlg){
-                                    echo  ("<div class='divInfoGenerales'><div class='container'><div class='row'>");
+                                foreach($showDelegate as $dlg){
+                                    echo  ("<div class='container'><div class='row'>");
                                     echo  ("<div class='col-lg-2'><p class=> prénom: ".$dlg['PRENOM']." </p></div>");
                                     echo  ("<div class='col-lg-3'><p> nom: ".$dlg['NOM']." </p></div>");
                                     echo  ("<div class='col-lg-2'><p> age:  ".$dlg['AGE']." </p></div>");
                                     echo  ("<div class='col-lg-3'><p> adresse:  ".$dlg['ADRESSE']." </p></div>");
-                                    echo  (" </div></div></div>");
+                                    echo  (" </div></div>");
                                 }
                                 break;
                             case "allStudent":
-                                foreach($student as $std){
-                                    echo  ("<div class='divInfoGenerales'><div class='container'><div class='row'>");
+                                foreach($showStudent as $std){
+                                    echo  ("<div class='container'><div class='row'>");
                                     echo  ("<div class='col-lg-2'><p class=> prénom: ".$std['PRENOM']." </p></div>");
                                     echo  ("<div class='col-lg-3'><p> nom: ".$std['NOM']." </p></div>");
                                     echo  ("<div class='col-lg-2'><p> age:  ".$std['AGE']." </p></div>");
                                     echo  ("<div class='col-lg-3'><p> adresse:  ".$std['ADRESSE']." </p></div>");
-                                    echo  (" </div></div></div>");
+                                    echo  (" </div></div>");
                                 }
                                 break;
                             case "wishlist":
@@ -114,9 +114,21 @@
                                     echo ('<div class="wishlist"><h2 class="titre">'.$r["intitule_offre"].'</h2><i class="fas fa-heart"></i><p class="description">'.$r['description'].'</p><br><h5 class="entreprise">'.$r["nom_entreprise"].'</h5></div>');
                                 }
                                 break;
+                            case "rate":
+                                function Rate(){
+                                    global $db;
+                                    $request= $db->query('SELECT nom_entreprise FROM entreprises');
+                                    $entreprise = $request->fetchAll();
+                                    return $entreprise;
+                                }
+                                $entreprise=Rate();
+                                echo "<div class='entreprises'>";
+                                foreach($entreprise as $ent){
+                                    echo '<div class="entreprise"><h2 class="nom_entreprise">'.$ent["nom_entreprise"].'</h2></div>';
+                                }
+                                echo "</div><div class='affichage_entreprise'></div>";
+                                break;
                         }
-                    
-
                         ?>
                     </div>
                     <div class="col-md-1"> </div> <!-- pour espacer en bootstrap-->
@@ -126,10 +138,11 @@
                             <button type = "submit" name="infogenerales"  class="infoGeneralesButton btn btn-dark">My Profil</button>
                             <button type = "submit" name="modifProfil"  class="infoGeneralesButton btn btn-dark">Modify my profil</button>
                             <button type = "submit" name="wishlist"  class="infoGeneralesButton btn btn-dark">My Wishlist</button> 
-                            <button type = "submit" name="allPilote" class="infoGeneralesButton btn btn-dark">All Pilote</button>
-                            <button type = "submit" name="allDelegate" class="infoGeneralesButton btn btn-dark">All Delegate</button>
-                            <button type = "submit" name="allStudent" class="infoGeneralesButton btn btn-dark">All Student</button>
-                            <button type = "submit" name="CreateAccount"  class="infoGeneralesButton btn btn-dark">Create an account</button>
+                            <button type = "submit" name="allPilote" class="infoGeneralesButton btn btn-dark allPilote">All Pilote</button>
+                            <button type = "submit" name="allDelegate" class="infoGeneralesButton btn btn-dark allDelegate">All Delegate</button>
+                            <button type = "submit" name="allStudent" class="infoGeneralesButton btn btn-dark allStudent">All Student</button>
+                            <button type = "submit" name="CreateAccount"  class="infoGeneralesButton btn btn-dark CreateAccount">Create an account</button>
+                            <button type = "submit" name="Note_Entreprise"  class="infoGeneralesButton btn btn-dark">Rate a company</button>
                             <button type = "submit" name="deconnexion"  class="infoGeneralesButton btn btn-dark">Deconnexion</button>
                         </form>
                     </div>

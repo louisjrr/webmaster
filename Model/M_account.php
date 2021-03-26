@@ -20,12 +20,11 @@ abstract class Account{
             exit();
     }
 
-    public function afficher(){
+    public function afficher($idRole){
         global $db;
-
-        $query = $db->query("SELECT * FROM utilisateurs WHERE idrole = '$this->idRole'");
+        $query = $db->query("SELECT * FROM utilisateurs WHERE idrole = '$idRole'");
         $account = $query->fetchAll();
-
+        return $account;
     }
  
 }
@@ -45,14 +44,12 @@ class AccountStudent extends account{
     }
 }
 class AccountDelegate extends account{
-    function __construct($idRole){
-        $this->idRole = $idRole;
-    }
+
     function afficherDelegate(){
         global $db;
-        $query = $db->query("SELECT * FROM utilisateurs WHERE idrole = $idRole > 3");
+        $query = $db->query("SELECT * FROM utilisateurs WHERE idrole > 3");
         $account = $query->fetchAll();
-
+        return $account;
     }
 }
 

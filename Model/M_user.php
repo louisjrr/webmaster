@@ -121,7 +121,7 @@ function getRight(){
             $right = $right.'1';
         }
         elseif($i == 21 || $i == 27 || $i == 28 || $i == 29 || $i == 30 || $i == 31){
-            continue;
+            $right = $right.'0';
         }
         else{
             $right = $right.'0';
