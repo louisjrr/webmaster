@@ -64,12 +64,12 @@
                                 echo  ("<input type='text' name='prenom' value=".$_SESSION['prenom'].">");
                                 echo  ('<label for="nom">Nom</label>');
                                 echo  ("<input type='text' name='nom' value=".$_SESSION['nom'].">");
-                                echo  ('<p>Age</p></br>');
+                                echo  ('<p>Age</p>');
                                 echo  ("<input type='text' name='age' value=".$_SESSION['age'].">");
-                                echo  ('<p>Adresse</p></br>');
+                                echo  ('<p>Adresse</p>');
                                 echo  ("<input type='text'  name='adresse' value=".$_SESSION['adresse'].">");
                                 echo  ("<button type='submit' name='modifProfilValided'>Valider les changements</button>");
-                                echo  (" </div></div>");
+                                echo  ("</div></div></form>");
                                 break;
                             case "allPilote":
                                 foreach($showPilote as $plt){
