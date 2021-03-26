@@ -36,6 +36,9 @@
                     elseif($_SESSION['role'] == 'Pilote'){
                         $_SESSION['prestige'] = './assets/images/iconRole2.ico';
                     }
+                    elseif($_SESSION['role'] == 'Délegué'){
+
+                    }
                     else{
                         $_SESSION['prestige'] = './assets/images/iconRole1.ico';
                     }
@@ -50,5 +53,6 @@
                 }
             }
         }
+        
     }
 ?>
