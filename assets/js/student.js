@@ -4,4 +4,6 @@ $(function(){
     $('.allStudent').hide();
     $('.modifProfil').hide();
     $('.CreateAccount').hide();
+    $('.CreateInternship').hide();
+    $('.CreateCompany').hide();
 })

@@ -29,6 +29,12 @@
             header('Location: Register');
             exit;
       }
+      elseif(isset($_POST['CreateCompany'])){
+            $mode="CreateCompany";
+      }
+      elseif(isset($_POST['CreateInternship'])){
+            header('Location: NewInternShip');
+      }
       else{
             $mode="infogenerales";
       }
