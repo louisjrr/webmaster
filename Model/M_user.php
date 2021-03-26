@@ -1,5 +1,5 @@
 <?php
-
+    include_once './Controller/C_database.php';
  abstract class User{
      protected $idRole;
      protected $mail;
@@ -11,8 +11,8 @@
      public $db;
 
 
-     public function addUser($db, $idCampus, $idPromo){
-
+     public function addUser($idCampus, $idPromo){
+        global $db;
         $query = $db->prepare("INSERT INTO utilisateurs (idrole, mail, mdp, nom, prenom, age, adresse, visible) VALUES (:idrole, :mail, :mdp, :nom, :prenom, :age, :adresse, 1)");
         $query->execute(array('idrole'=>$this->idRole,'mail' =>$this->mail, 'mdp'=>$this->password, 'nom'=>$this->Lname, 'prenom'=>$this->Fname, 'age'=>$this->age, 'adresse'=>$this->adresse));
         $response = $db->query("SELECT MAX(idutilisateur) FROM utilisateurs");
@@ -74,13 +74,13 @@
          $this->adresse = $adresse;
          $this->right = $right;
         }
-        public function addDelegate($db, $idCampus, $idPromo){
-            
+        public function addDelegate( $idCampus, $idPromo){
+            global $db;
             $query = $db->query("SELECT MAX(idrole) FROM roles");
             $idRole = $query->fetch(PDO::FETCH_NUM);
-            //$query = $db->query("INSERT INTO utilisateurs (idrole ,mail, mdp, nom, prenom, age, adresse, visible) VALUES ('$idRole[0]','$this->mail', '$this->password', '$this->Lname', '$this->Fname', '$this->age', '$this->adresse', 1)");
-            $queryUser = $db->prepare("INSERT INTO utilisateurs (idrole ,mail, mdp, nom, prenom, age, adresse, visible) VALUES (:idRole,:mail,:pass, :Lname', :Fname, :age, :adresse, 1)");
-            $queryUser->execute(array('idrole' => $idRole[0], 'mail' => $this->mail, 'pass' => $this->password, 'Lname' => $this->Lname, 'Fname' => $this->Fname, 'age' => $this->age, 'age' => $this->age, 'adresse' => $this->adresse));
+            $query = $db->query("INSERT INTO utilisateurs (idrole ,mail, mdp, nom, prenom, age, adresse, visible) VALUES ('$idRole[0]','$this->mail', '$this->password', '$this->Lname', '$this->Fname', '$this->age', '$this->adresse', 1)");
+            //$queryUser = $db->prepare("INSERT INTO utilisateurs (idrole ,mail, mdp, nom, prenom, age, adresse, visible) VALUES (:idRole,:mail,:pass, :Lname', :Fname, :age, :adresse, 1)");
+            //$queryUser->execute(array('idRole' => $idRole[0], 'mail' => $this->mail, 'pass' => $this->password, 'Lname' => $this->Lname, 'Fname' => $this->Fname, 'age' => $this->age, 'adresse' => $this->adresse));
             $response = $db->query("SELECT MAX(idutilisateur) FROM utilisateurs");
             $idMax = $response->fetch(PDO::FETCH_NUM);
             $query = $db->query("INSERT INTO etudier_a (idutilisateur, idcentre) VALUES ('$idMax[0]', '$idCampus')");
@@ -89,7 +89,8 @@
             $query = $db->query("INSERT INTO faire_partie_ou_encadrer (idutilisateur, idpromotion) VALUES ('$idMax[0]', '$idPromo')");
          }
         
-     function addPermission($db, $right){
+     function addPermission( $right){
+         global $db;
         $query = $db->query("INSERT INTO autorisations (autorisations) VALUES ('$right')");
         $response = $db->query("SELECT MAX(idautorisation) FROM autorisations");
         $idMax = $response->fetch(PDO::FETCH_NUM);
@@ -105,7 +106,27 @@
    } 
    return $age; 
     }
-
-
+function CheckMail(){
+    $testMail = $_POST['mail'];
+    global $db;
+    $query = $db->query("SELECT idutilisateur FROM utilisateurs WHERE mail ='$testMail'");
+    $response = $query->fetch(PDO::FETCH_NUM);
+    return $response;
+}
  
+function getRight(){
+    $right = '1';
+    for($i=2;$i<34;$i++){
+        if(isset($_POST['SFx'.$i])){
+            $right = $right.'1';
+        }
+        elseif($i == 21 || $i == 27 || $i == 28 || $i == 29 || $i == 30 || $i == 31){
+            continue;
+        }
+        else{
+            $right = $right.'0';
+        }
+    }
+    return $right;
+}
 ?> 

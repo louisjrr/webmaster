@@ -4,11 +4,9 @@
     function home(){
         global $stage;
         $res = $stage->getAllStages();
-        $issearch = false;
         if (isset( $_POST['search'])){
             $stage-> intitule_offre = $_POST['search'];
             $res = $stage->research();
-            $issearch = true;
         };
         //$res_places = $stage->places($db);
         require('./View/home.php');
