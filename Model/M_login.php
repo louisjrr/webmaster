@@ -41,11 +41,12 @@
                         $queryAutorisations = $db->prepare("SELECT CONVERT(autorisations USING utf8) FROM autorisations, utilisateurs, roles WHERE idutilisateur = :idUser AND utilisateurs.idrole = roles.idrole AND roles.idautorisation = autorisations.idautorisation;");
                         $queryAutorisations->execute(array('idUser' => $_SESSION["id"])); 
                         $infoAutorisations = $queryAutorisations->fetch();
-                        $_SESSION['autorisations'] = $infoAutorisations[0];
-                        foreach ($_SESSION['autorisations'] as $bit){
-                            if($bit = 1){
+                        $autorisationString = $infoAutorisations[0];
+                        $_SESSION['tableAutorisation'] = array();
 
-                            }
+                        for ($i = 1; $i<36; $i++){
+                                $_SESSION['tableAutorisation']= array('sfx'.$i => $autorisationString[$i]);
+                                
                         }
                         
                     }
