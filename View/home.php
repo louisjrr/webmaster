@@ -66,6 +66,11 @@
         </div>
         <script type='text/javascript' src='./assets/vendors/jquery/jquery-ui.min.js'></script>
         <script type="text/javascript" src="./assets/js/script.js" ></script>
-        <script type="text/javascript" src="./assets/js/pilote.js" ></script>
+        <?php
+            if($_SESSION['role'] == "Pilote"){
+                echo "<script type='text/javascript' src='./assets/js/pilote.js' ></script>";
+            }
+        ?>
+        
     </body>
 </html>
