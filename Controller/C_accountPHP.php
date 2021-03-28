@@ -110,7 +110,6 @@
                         $user = new AccountAdmin($_SESSION['idRole']);
                         $user->noterEntreprise($_SESSION['id'], $note, $com, $identreprise);
                         break;
-                        
                   case "Pilote":
                         $user = new AccountPilote($_SESSION['idRole']);
                         $user->noterEntreprise($_SESSION['id'], $note, $com, $identreprise);
