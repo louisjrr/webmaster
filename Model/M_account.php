@@ -54,7 +54,7 @@ class AccountStudent extends account{
 }
 class AccountDelegate extends account{
 
-    function afficherDelegate(){
+    public function afficherDelegate(){
         global $db;
         $query = $db->query("SELECT * FROM utilisateurs WHERE idrole > 3");
         $account = $query->fetchAll();

@@ -16,7 +16,7 @@
       elseif(isset($_POST['allPilote'])){
             $mode = "allPilote";
       }
-      elseif(isset($_POST['allDelgate'])){
+      elseif(isset($_POST['allDelegate'])){
             $mode = "allDelegate";
       }
       elseif(isset($_POST['allStudent'])){
@@ -90,13 +90,22 @@
             case "Délégué":
                   $delegate = new AccountDelegate();
                   echo "<script type='text/javascript' src='./assets/vendors/jquery/jquery-ui.min.js'></script>";
+                  echo "<script type='text/javascript' src='./assets/js/delegate.js'></script>";
                   for($i=1;$i<36;$i++){
                         if(in_array("sfx".$i,$_SESSION['tableAutorisation'])){
-                              echo "<script type='text/javascript' src='./assets/js/delegate.js'>sfx'.$i'</script>";
+                              echo "<script>    
+                                    function include(file) {      
+                                          var script  = document.createElement('script');
+                                          script.src  = file;
+                                          script.type = 'text/javascript';
+                                          script.defer = true;
+                                          document.getElementsByTagName('head').item(0).appendChild(script); 
+                                    }
+                                    include('.assets/js/delegate.js');
+                                    sfx17();
+                              </script>";
                         }
                   }
-                  
-                  
                   break;
       }
 
