@@ -633,4 +633,13 @@ a.nav-link:hover:before {
 i {
   margin: auto;
 }
+
+.comInput {
+  width: 100%;
+  height: 300px;
+}
+
+.divCommentaire {
+  width: 100%;
+}
 /*# sourceMappingURL=style.css.map */
