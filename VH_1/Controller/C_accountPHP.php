@@ -75,8 +75,8 @@
                   break;
                   
             case "Pilote":
-                  echo "<script type='text/javascript' src='./assets/vendors/jquery/jquery-ui.min.js'></script>";
-                  echo "<script type='text/javascript' src='./assets/js/pilote.js'></script>";
+                  echo "<script type='text/javascript' src='http://www.needsassets.com/vendors/jquery/jquery-ui.min.js'></script>";
+                  echo "<script type='text/javascript' src='http://www.needsassets.com/js/pilote.js'></script>";
                   $pilote = new AccountPilote(2);
                   $showStudent = $pilote->afficher(3);
                   $delegate = new AccountDelegate();
@@ -84,13 +84,13 @@
 
                   break;
             case "Etudiant":
-                  echo "<script type='text/javascript' src='./assets/vendors/jquery/jquery-ui.min.js'></script>";
-                  echo "<script type='text/javascript' src='./assets/js/student.js'></script>";
+                  echo "<script type='text/javascript' src='http://www.needsassets.com/vendors/jquery/jquery-ui.min.js'></script>";
+                  echo "<script type='text/javascript' src='http://www.needsassets.com/js/student.js'></script>";
                   break;
             case "Délégué":
                   $delegate = new AccountDelegate();
-                  echo "<script type='text/javascript' src='./assets/vendors/jquery/jquery-ui.min.js'></script>";
-                  echo "<script type='text/javascript' src='./assets/js/delegate.js'></script>";
+                  echo "<script type='text/javascript' src='http://www.needsassets.com/vendors/jquery/jquery-ui.min.js'></script>";
+                  echo "<script type='text/javascript' src='http://www.needsassets.com/js/delegate.js'></script>";
                   for($i=1;$i<36;$i++){
                         if(in_array("sfx".$i,$_SESSION['tableAutorisation'])){
                               echo "<script>    
@@ -101,7 +101,7 @@
                                           script.defer = true;
                                           document.getElementsByTagName('head').item(0).appendChild(script); 
                                     }
-                                    include('.assets/js/delegate.js');
+                                    include('http://www.needsassets.com/js/delegate.js');
                                     sfx17();
                               </script>";
                         }
