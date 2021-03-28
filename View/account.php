@@ -64,12 +64,12 @@
                                 echo  ("<input type='text' name='prenom' value=".$_SESSION['prenom'].">");
                                 echo  ('<label for="nom">Nom</label>');
                                 echo  ("<input type='text' name='nom' value=".$_SESSION['nom'].">");
-                                echo  ('<p>Age</p></br>');
+                                echo  ('<p>Age</p>');
                                 echo  ("<input type='text' name='age' value=".$_SESSION['age'].">");
-                                echo  ('<p>Adresse</p></br>');
+                                echo  ('<p>Adresse</p>');
                                 echo  ("<input type='text'  name='adresse' value=".$_SESSION['adresse'].">");
                                 echo  ("<button type='submit' name='modifProfilValided'>Valider les changements</button>");
-                                echo  (" </div></div>");
+                                echo  ("</div></div></form>");
                                 break;
                             case "allPilote":
                                 foreach($showPilote as $plt){
@@ -113,7 +113,8 @@
                                         echo  ("<div class='col-lg-1'><i class='fas fa-user-edit CRUD_student'></i></div>");
                                         echo  ("<div class='col-lg-1'><i class='fas fa-eye-slash CRUD_student'></i></div>");
                                         echo  (" </div></div></div></div>");
-                                    }                                }
+                                    }
+                                }
                                 break;
                             case "allStudent":
                                 foreach($showStudent as $std){
@@ -157,7 +158,7 @@
                             case "rate":
                                 function Rate(){
                                     global $db;
-                                    $request= $db->query('SELECT nom_entreprise FROM entreprises');
+                                    $request= $db->query('SELECT nom_entreprise,identreprise FROM entreprises');
                                     $entreprise = $request->fetchAll();
                                     return $entreprise;
                                 }
@@ -165,6 +166,7 @@
                                 echo "<div class='entreprises'>";
                                 foreach($entreprise as $ent){
                                     echo '<div class="entreprise"><h2 class="nom_entreprise">'.$ent["nom_entreprise"].'</h2></div>';
+                                    echo '<p class="identreprise">'.$ent["identreprise"].'</p>';
                                 }
                                 echo "</div><div class='affichage_entreprise'></div>";
                                 break;

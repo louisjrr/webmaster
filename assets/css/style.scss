@@ -346,6 +346,9 @@ a.nav-link:hover:before {
   border-radius: 6px;
   box-shadow: 0 0 0.5em rgba(197, 196, 196, 0.7);
 }
+.accountAffiche {
+  flex-direction: column;
+}
 .infoGeneralesButton {
   margin-top: 20px;
 }
@@ -458,8 +461,6 @@ a.nav-link:hover:before {
   color: black;
 }
 .show {
-  width: 100%;
-  height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -479,4 +480,11 @@ a.nav-link:hover:before {
 .show .case p,
 i {
   margin: auto;
+}
+.comInput{
+  width: 100%;
+  height: 300px;
+}
+.divCommentaire{
+  width: 100%;
 }

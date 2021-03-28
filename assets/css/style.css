@@ -405,6 +405,13 @@ a.nav-link:hover:before {
   box-shadow: 0 0 0.5em rgba(197, 196, 196, 0.7);
 }
 
+.accountAffiche {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 .infoGeneralesButton {
   margin-top: 20px;
 }
@@ -538,8 +545,6 @@ a.nav-link:hover:before {
 }
 
 .show {
-  width: 100%;
-  height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -562,4 +567,14 @@ a.nav-link:hover:before {
 .show .case p,
 i {
   margin: auto;
-}/*# sourceMappingURL=style.css.map */
+}
+
+.comInput {
+  width: 100%;
+  height: 300px;
+}
+
+.divCommentaire {
+  width: 100%;
+}
+/*# sourceMappingURL=style.css.map */

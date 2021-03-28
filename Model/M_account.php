@@ -4,6 +4,7 @@ abstract class Account{
     protected $idRole;
 
     public function modifProfil($nom, $prenom, $age, $adresse, $id){
+            global $db;
             $requestModifProfil = $db->prepare('UPDATE utilisateurs SET nom = :nom, prenom = :prenom, age = :age, adresse = :adresse WHERE idutilisateur = :iduser');
             $requestModifProfil->execute(array('nom' => $nom, 'prenom' => $prenom, 'age' => $age, 'adresse' => $adresse, 'iduser' => $id ));
 
@@ -25,6 +26,13 @@ abstract class Account{
         $query = $db->query("SELECT * FROM utilisateurs WHERE idrole = '$idRole'");
         $account = $query->fetchAll();
         return $account;
+    }
+
+    public function noterEntreprise($idUser, $note, $com, $identreprise){
+        global $db;
+        $queryNote = $db->prepare("INSERT INTO evaluations (identreprise, idutilisateur, note, commentaire) VALUES (:idEntreprise, :idUser, :note, :com)");
+        $queryNote->execute(array('idEntreprise'=>$identreprise,'idUser'=> $idUser, 'note'=>$note, 'com'=>$com ));
+        echo ("tout est ok frr");
     }
  
 }

@@ -109,10 +109,38 @@ $(function(){
 /*----Affichage complet de l'entreprise----*/ 
 $(function(){
     $('.entreprise').click(function(){
-        const entreprise = $(this).find('.nom_entreprise').html()
-        $('.affichage_entreprise').html("<h2>" + entreprise + "</h2><div class='rating'><a href='#5' title='Donner 5 étoiles'>☆</a><a href='#4' title='Donner 4 étoiles'>☆</a><a href='#3' title='Donner 3 étoiles'>☆</a><a href='#2' title='Donner 2 étoiles'>☆</a><a href='#1' title='Donner 1 étoile'>☆</a></div><input class='rate' type=submit>")
+        const entreprise = $(this).find('.nom_entreprise').html();
+        const identreprise = $(this).find('.identreprise').html();
+        $('.affichage_entreprise').html("<form method ='post'><h2>" + entreprise + "<input type='hidden' id='idNote' name='note' value='' /><input type='hidden' id='idEntreprise' name='identreprise' value='"+identreprise+"' /> </h2><div class='rating'><a id='star5' href='#5' title='Donner 5 étoiles'>☆</a><a id='star4' href='#4' title='Donner 4 étoiles'>☆</a><a id='star3' href='#3' title='Donner 3 étoiles'>☆</a><a id='star2' href='#2' title='Donner 2 étoiles'>☆</a><a id='star1' href='#1' title='Donner 1 étoile'>☆</a></div><div class = 'divCommentaire'><input type='text' name = 'commentaire' class='comInput' placeholder='laissez un commentaire!'></input></div><input class='rate'name='envoiNote' type=submit> </form>");
     })
 })
+$(function(){
+    $('#star1').click(function(){
+        $('#idNote').val(1);
+    })
+})
+$(function(){
+    $('#star2').click(function(){
+        $('#idNote').val(2);
+    })
+})
+$(function(){
+    $('#star3').click(function(){
+        $('#idNote').val(3);
+    })
+})
+$(function(){
+    $('#star4').click(function(){
+        $('#idNote').val(4);
+    })
+})
+$(function(){
+    $('#star5').click(function(){
+        $('#idNote').val(5);
+    })
+})
+
+
 /*----Modifier user----*/
 $(function(){
     $('.fa-user-edit').click(function(){
