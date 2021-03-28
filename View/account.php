@@ -74,7 +74,7 @@
                             case "allPilote":
                                 foreach($showPilote as $plt){
                                     if($plt['VISIBLE']==1){
-                                        echo  ("<div class='show'><div class='case'><div class='container'><div class='row'>");
+                                        echo  ("<div class='show container-fluid'><div class='case'><div class='container'><div class='row'>");
                                         echo  ("<div class='col-lg-2 divPrenom'><h6>prénom:</h6> <p class='prenom'>".$plt['PRENOM']." </p></div>");
                                         echo  ("<div class='col-lg-3 divNom'><h6>nom:</h6> <p class='nom'>".$plt['NOM']." </p></div>");
                                         echo  ("<div class='col-lg-2 divAge'><h6>age:</h6>  <p class ='age'>".$plt['AGE']." </p></div>");
