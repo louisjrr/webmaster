@@ -437,6 +437,7 @@ a.nav-link:hover:before {
 }
 .accountAffiche {
   display: flex;
+  flex-direction: column;
 }
 .affichage_entreprise {
   height: 100%;
