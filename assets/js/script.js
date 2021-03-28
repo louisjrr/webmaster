@@ -111,12 +111,13 @@ $(function(){
     $('.entreprise').click(function(){
         const entreprise = $(this).find('.nom_entreprise').html();
         const identreprise = $(this).find('.identreprise').html();
-        $('.affichage_entreprise').html("<form method ='post'><h2>" + entreprise + "<input type='hidden' id='idNote' name='note' value='' /><input type='hidden' id='idEntreprise' name='identreprise' value='"+identreprise+"' /> </h2><div class='rating'><a id='star5' href='#5' title='Donner 5 étoiles'>☆</a><a id='star4' href='#4' title='Donner 4 étoiles'>☆</a><a id='star3' href='#3' title='Donner 3 étoiles'>☆</a><a id='star2' href='#2' title='Donner 2 étoiles'>☆</a><a id='star1' href='#1' title='Donner 1 étoile'>☆</a></div><div class = 'divCommentaire'><input type='text' name = 'commentaire' class='comInput' placeholder='laissez un commentaire!'></input></div><input class='rate'name='envoiNote' type=submit> </form>");
+        $('.affichage_entreprise').html("<form method ='post'><h2>" + entreprise + "<input type='hidden' id='idNote' name='note' value='' /><input type='hidden' id='idEntreprise' name='identreprise' value='"+identreprise+"'/> </h2><div class='rating'><input name='stars' id='e5' type='radio' value ='5'></a><label for='e5'>☆</label><input name='stars' id='e4' type='radio' value ='4'></a><label for='e4'>☆</label><input name='stars' id='e3' type='radio' value ='3'></a><label for='e3'>☆</label><input name='stars' id='e2' type='radio' value ='2'></a><label for='e2'>☆</label><input name='stars' id='e1' type='radio' value ='1'></a><label for='e1'>☆</label></div><div class = 'divCommentaire'><input type='text' name = 'commentaire' class='comInput' placeholder='laissez un commentaire!'></input></div><input class='rate'name='envoiNote' type=submit> </form>");
     })
 })
 $(function(){
     $('#star1').click(function(){
         $('#idNote').val(1);
+        alert('1etoile!!!');
     })
 })
 $(function(){

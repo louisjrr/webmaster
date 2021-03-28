@@ -165,8 +165,7 @@
                                 $entreprise=Rate();
                                 echo "<div class='entreprises'>";
                                 foreach($entreprise as $ent){
-                                    echo '<div class="entreprise"><h2 class="nom_entreprise">'.$ent["nom_entreprise"].'</h2></div>';
-                                    echo '<p class="identreprise">'.$ent["identreprise"].'</p>';
+                                    echo '<div class="entreprise"><h2 class="nom_entreprise">'.$ent["nom_entreprise"].'</h2><p class="identreprise">'.$ent["identreprise"].'</p></div>';
                                 }
                                 echo "</div><div class='affichage_entreprise'></div>";
                                 break;

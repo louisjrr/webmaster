@@ -32,7 +32,8 @@ abstract class Account{
         global $db;
         $queryNote = $db->prepare("INSERT INTO evaluations (identreprise, idutilisateur, note, commentaire) VALUES (:idEntreprise, :idUser, :note, :com)");
         $queryNote->execute(array('idEntreprise'=>$identreprise,'idUser'=> $idUser, 'note'=>$note, 'com'=>$com ));
-        echo ("tout est ok frr");
+        header('Location: ./Account');
+        exit();
     }
  
 }

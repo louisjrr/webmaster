@@ -102,7 +102,7 @@
 
       //notation entreprise:
       if(isset($_POST['envoiNote'])){
-            $note = $_POST['note'];
+            $note = $_POST['stars'];
             $com = $_POST['commentaire'];
             $identreprise = $_POST['identreprise'];
             switch($_SESSION['role']){
