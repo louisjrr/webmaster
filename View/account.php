@@ -158,7 +158,7 @@
                             case "rate":
                                 function Rate(){
                                     global $db;
-                                    $request= $db->query('SELECT nom_entreprise FROM entreprises');
+                                    $request= $db->query('SELECT nom_entreprise,identreprise FROM entreprises');
                                     $entreprise = $request->fetchAll();
                                     return $entreprise;
                                 }
@@ -166,6 +166,7 @@
                                 echo "<div class='entreprises'>";
                                 foreach($entreprise as $ent){
                                     echo '<div class="entreprise"><h2 class="nom_entreprise">'.$ent["nom_entreprise"].'</h2></div>';
+                                    echo '<p class="identreprise">'.$ent["identreprise"].'</p>';
                                 }
                                 echo "</div><div class='affichage_entreprise'></div>";
                                 break;

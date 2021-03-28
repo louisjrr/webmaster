@@ -100,4 +100,29 @@
                   break;
       }
 
+      //notation entreprise:
+      if(isset($_POST['envoiNote'])){
+            $note = $_POST['note'];
+            $com = $_POST['commentaire'];
+            $identreprise = $_POST['identreprise'];
+            switch($_SESSION['role']){
+                  case "Administrateur":
+                        $user = new AccountAdmin($_SESSION['idRole']);
+                        $user->noterEntreprise($_SESSION['id'], $note, $com, $identreprise);
+                        break;
+                  case "Pilote":
+                        $user = new AccountPilote($_SESSION['idRole']);
+                        $user->noterEntreprise($_SESSION['id'], $note, $com, $identreprise);
+                        break;
+                  case "Etudiant":
+                        $user = new AccountStudent($_SESSION['idRole']);
+                        $user->noterEntreprise($_SESSION['id'], $note, $com, $identreprise);
+                        break;
+                  case "Délégué":
+                        $user = new AccountDelegate($_SESSION['idRole']);
+                        $user->noterEntreprise($_SESSION['id'], $note, $com, $identreprise);
+                        break;
+            }
+      }
+
 ?>
