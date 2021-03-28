@@ -84,25 +84,27 @@
 
                   break;
             case "Etudiant":
-                  echo "<script type='text/javascript' src='http://www.needsassets.com/vendors/jquery/jquery-ui.min.js'></script>";
-                  echo "<script type='text/javascript' src='http://www.needsassets.com/js/student.js'></script>";
+                  echo "<script type='text/javascript' src='http://www.NeedsAssets.com/vendors/jquery/jquery-ui.min.js'></script>";
+                  echo "<script type='text/javascript' src='http://www.NeedsAssets.com/js/student.js'></script>";
                   break;
             case "Délégué":
                   $delegate = new AccountDelegate();
-                  echo "<script type='text/javascript' src='http://www.needsassets.com/vendors/jquery/jquery-ui.min.js'></script>";
-                  echo "<script type='text/javascript' src='http://www.needsassets.com/js/delegate.js'></script>";
+                  echo "<script type='text/javascript' src='http://www.NeedsAssets.com/vendors/jquery/jquery-ui.min.js'></script>";
+                  echo "<script type='text/javascript' src='http://www.NeedsAssets.com/js/delegate.js'></script>";
                   for($i=1;$i<36;$i++){
                         if(in_array("sfx".$i,$_SESSION['tableAutorisation'])){
-                              echo "<script>    
-                                    function include(file) {      
-                                          var script  = document.createElement('script');
-                                          script.src  = file;
-                                          script.type = 'text/javascript';
-                                          script.defer = true;
-                                          document.getElementsByTagName('head').item(0).appendChild(script); 
-                                    }
-                                    include('http://www.needsassets.com/js/delegate.js');
+                              echo "<script type='module'>    
+                                    import { sfx17 } from 'http://www.NeedsAssets.com/js/delegate.js';
                                     sfx17();
+                                    /*$.ajax({
+                                          url: 'http://www.NeedsAssets.com/js/delegate.js',
+                                          type: 'GET',
+                                          dataType: 'script',
+                                    })
+                                    .done(function(script) {
+                                          console.log(script);
+                                          sfx17();
+                                    })*/
                               </script>";
                         }
                   }

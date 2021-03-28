@@ -13,9 +13,13 @@ $(function(){
     function sfx14(){}
     function sfx15(){}
     function sfx16(){}
+
     function sfx17(){
         $('.allDelegate').hide();
     }
+
+    export { sfx17 };
+
     function sfx18(){}
     function sfx19(){}
     function sfx20(){}
