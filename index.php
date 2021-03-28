@@ -5,7 +5,7 @@
     //include "Controller/C_login.php";
     //include "Controller/C_accountPHP.php";
 
-    define('BASEPATH','/www/webmaster');
+    define('BASEPATH','');
 
     Route::add('/', function(){
         require('Controller/C_login.php');
