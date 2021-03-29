@@ -2,7 +2,7 @@
 <html lang="en">
 <?php 
 include('./Controller/C_Verif_Autorisations.php');
-sfx16VerifHome();
+sfx8VerifHome();
 ?>
     <head>
         <meta charset="UTF-8">

@@ -1,5 +1,7 @@
 <?php
-session_start();
+if(!isset($_SESSION)){
+    session_start();
+}
 function noStudent(){
     switch($_SESSION['idRole']):
         case 3:
@@ -21,10 +23,10 @@ function noStudentNoPilote(){
         
 }
 
-function sfx16VerifHome(){
+function sfx8VerifHome(){
     switch($_SESSION['role']):
         case 'Délégué':
-            if (!in_array("sfx16", $_SESSION['tableAutorisation'])){
+            if (!in_array("sfx8", $_SESSION['tableAutorisation'])){
                 header("Location: Account");
             }
             break;
