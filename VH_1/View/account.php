@@ -145,7 +145,7 @@
                                 //Mettre dans le model et le controller
                                 function Wishlist(){
                                     global $db;
-                                    $request= $db->query('SELECT intitule_offre, description, nom_entreprise FROM offres_de_stage, entreprises, met_en_wishlist WHERE met_en_wishlist.idutilisateur = '.$_SESSION["id"].' AND met_en_wishlist.idoffre = offres_de_stage.idoffre AND offres_de_stage.identreprise = entreprises.identreprise');
+                                    $request= $db->query('SELECT intitule_offre, description, nom_entreprise FROM offres_de_stage, entreprises, met_en_wishlist WHERE met_en_wishlist.idutilisateur = '.$_SESSION["id"].' AND met_en_wishlist.idoffre = offres_de_stage.idoffre AND offres_de_stage.identreprise = entreprises.identreprise AND NOT EXISTS (SELECT IDOFFRE FROM candidatures WHERE IDUTILISATEUR = '.$_SESSION['id'].' AND offres_de_stage.IDOFFRE = candidatures.IDOFFRE)');
                                     $wishlist = $request->fetchAll();
                                     return $wishlist;
                                 }
@@ -164,6 +164,7 @@
                                     return $postulate;
                                 }
                                 $postulate=showPostulate();
+                                echo '<div class="scroll_application">';
                                 foreach($postulate as $p){
                                     switch($p['etat_avancement']){
                                         case(1):
@@ -198,6 +199,7 @@
                                     }
                                     echo '<div class="wishlist"><h2 class="titre">'.$p["intitule_offre"].'</h2><p class="description">'.$p['description'].'</p><h5 class="entreprise">'.$p["nom_entreprise"].'</h5><h5>Avancement de la candidature : '.$load.' </h5><div class="loadAvancement"><div class="Avancement'.$p['etat_avancement'].'"></div></div><h5>'.$state.'</h5></div>';
                                 }
+                                echo '</div>';
                                 break;
                             case "rate":
                                 function Rate(){
