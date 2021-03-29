@@ -61,40 +61,11 @@
             ?>
             </div>
             <div class="affichage"> <!-- Affichage de l'offre de stage sélectionnée au click-->
-            <?php
-                if (isset($_POST["sub_postulate"])){
-                    $maxsize= 10000000;
-                    $ValidExt= '.pdf';
-                    if($_FILES["cv"]['error']>0){
-                        echo 'une erreur est survenu lors du transfert';
-                        die;
-                    }
-                    $sizeFile = $_FILES["cv"]['size'];
-                    if($sizeFile>$maxsize){
-                        echo"la taille du ficher est supérieure à la taille maximum";
-                        die;
-                    }
-                    $fileName = $_FILES['cv']['name'];
-                    $fileExt = '.'. strtolower(substr(strrchr($fileName,'.'),1));
-                    if($fileExt != $ValidExt){
-                        echo "L'extension du fichier n'est pas acceptée";
-                        die;
-                    }
-                    $tmpName = $_FILES['cv']['tmp_name'];
-                    $uniqueName = md5(uniqid(rand, true));
-                    $fileName = "../VH_2/Uploaded_files/".$uniqueName.$fileExt;
-                    $result = move_uploaded_file($tmpName,$fileName);
-                    if($result){
-                        echo " transfert effectué";
-                        die;
-                    }
-
-                }
-            ?>
+                    
             </div>
         </div>
-        <script type='text/javascript' src='http://www.NeedsAssets.com//vendors/jquery/jquery-ui.min.js'></script>
-        <script type="text/javascript" src="http://www.NeedsAssets.com//js/script.js" ></script>
+        <script type='text/javascript' src='http://www.NeedsAssets.com/vendors/jquery/jquery-ui.min.js'></script>
+        <script type="text/javascript" src="http://www.NeedsAssets.com/js/script.js" ></script>
         <?php
             if($_SESSION['role'] == "Pilote"){
                 echo "<script type='text/javascript' src='http://www.NeedsAssets.com/js/pilote.js' ></script>";
