@@ -66,7 +66,7 @@
                 $obj->addDelegate($_POST['campus'], $_POST['promotion']);
                 break;
         }
-        header("Location: Home");
+       // header("Location: Home");
     }
 
     function UnvisibleAccount($nom,$prenom,$age){
