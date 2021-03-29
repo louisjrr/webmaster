@@ -375,6 +375,11 @@ a.nav-link:hover:before {
   margin-bottom: 30px;
 }
 
+.checkbox {
+  display: flex;
+  flex-direction: column;
+}
+
 /*----page addOffre----*/
 .addIntForm {
   background-color: #f8f9fa;

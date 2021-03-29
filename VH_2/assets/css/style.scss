@@ -319,6 +319,10 @@ a.nav-link:hover:before {
   opacity: 50%;
   margin-bottom: 30px;
 }
+.checkbox{
+  display: flex;
+  flex-direction: column;
+}
 /*----page addOffre----*/
 .addIntForm {
   background-color: $light;
@@ -513,3 +517,4 @@ i {
 .divCommentaire {
   width: 100%;
 }
+

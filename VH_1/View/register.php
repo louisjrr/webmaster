@@ -81,59 +81,111 @@ noStudent();
                         <div class="block">
                             <h3>Delegate permission :</h3>
                             <hr>
-                            <div class="checkbox">
-                                <label>SFx2</label>
-                                <input type="checkbox" name="SFx2">
-                                <label>SFx3</label>
-                                <input type="checkbox" name="SFx3">
-                                <label>SFx4</label>
-                                <input type="checkbox" name="SFx4">
-                                <label>SFx5</label>
-                                <input type="checkbox" name="SFx5">
-                                <label>SFx6</label>
-                                <input type="checkbox" name="SFx6"></br>
-                                <label>SFx7</label>
-                                <input type="checkbox" name="SFx7">
-                                <label>SFx8</label>
-                                <input type="checkbox" name="SFx8">
-                                <label>SFx9</label>
-                                <input type="checkbox" name="SFx9">
-                                <label>SFx10</label>
-                                <input type="checkbox" name="SFx10">
-                                <label>SFx11</label>
-                                <input type="checkbox" name="SFx11"></br>
-                                <label>SFx12</label>
-                                <input type="checkbox" name="SFx12">
-                                <label>SFx13</label>
-                                <input type="checkbox" name="SFx13">
-                                <label>SFx14</label>
-                                <input type="checkbox" name="SFx14">
-                                <label>SFx15</label>
-                                <input type="checkbox" name="SFx15">
-                                <label>SFx16</label>
-                                <input type="checkbox" name="SFx16"></br>
-                                <label>SFx17</label>
-                                <input type="checkbox" name="SFx17">
-                                <label>SFx18</label>
-                                <input type="checkbox" name="SFx18">
-                                <label>SFx19</label>
-                                <input type="checkbox" name="SFx19">
-                                <label>SFx20</label>
-                                <input type="checkbox" name="SFx20">
-                                <label>SFx22</label>
-                                <input type="checkbox" name="SFx22"></br>
-                                <label>SFx23</label>
-                                <input type="checkbox" name="SFx23">
-                                <label>SFx24</label>
-                                <input type="checkbox" name="SFx24">
-                                <label>SFx25</label>
-                                <input type="checkbox" name="SFx25">
-                                <label>SFx26</label>
-                                <input type="checkbox" name="SFx26">
-                                <label>SFx32</label>
-                                <input type="checkbox" name="SFx32"></br>
-                                <label>SFx33</label>
-                                <input type="checkbox" name="SFx33">
+                            <div class="checkbox listing">
+                                <div class="labin">
+                                    <label>SFx2 - Rechercher une entreprise</label>
+                                    <input type="checkbox" name="SFx2">
+                                </div>
+                                <div class="labin">
+                                    <label>SFx3 - Créer un entreprise</label>
+                                    <input type="checkbox" name="SFx3">
+                                </div>
+                                <div class="labin">
+                                    <label>SFx4 - Modifier une entreprise</label>
+                                    <input type="checkbox" name="SFx4">
+                                </div>
+                                <div class="labin">
+                                    <label>SFx5 - Evaluer une entreprise</label>
+                                    <input type="checkbox" name="SFx5">
+                                </div>
+                                <div class="labin">
+                                    <label>SFx6 - Supprimer une entreprise</label>
+                                    <input type="checkbox" name="SFx6">
+                                </div>
+                                <div class="labin">
+                                    <label>SFx7 - Consulter les stats des entreprises</label>
+                                    <input type="checkbox" name="SFx7">
+                                </div>
+                                <div class="labin">
+                                    <label>SFx8 - Rechercher une offre</label>
+                                    <input type="checkbox" name="SFx8">
+                                </div>
+                                <div class="labin">
+                                    <label>SFx9 - Créer une offre</label>
+                                    <input type="checkbox" name="SFx9">
+                                </div>
+                                <div class="labin">
+                                    <label>SFx10 - Modifier une offre</label>
+                                    <input type="checkbox" name="SFx10">
+                                </div>
+                                <div class="labin">
+                                    <label>SFx11 - Supprimer une offre</label>
+                                    <input type="checkbox" name="SFx11">
+                                </div>
+                                <div class="labin">
+                                    <label>SFx12 - Consulter les stats des offres</label>
+                                    <input type="checkbox" name="SFx12">
+                                </div>
+                                <div class="labin">
+                                    <label>SFx13 - Rechercher un compte pilote</label>
+                                    <input type="checkbox" name="SFx13">
+                                </div>
+                                <div class="labin">
+                                    <label>SFx14 - Créer un compte pilote</label>
+                                    <input type="checkbox" name="SFx14">
+                                </div>
+                                <div class="labin">
+                                    <label>SFx15 - Modifier un compte pilote</label>
+                                    <input type="checkbox" name="SFx15">
+                                </div>
+                                <div class="labin">
+                                    <label>SFx16 - Supprimer un compte pilote</label>
+                                    <input type="checkbox" name="SFx16">
+                                </div>
+                                <div class="labin">
+                                    <label>SFx17 - Rechercher un compte délégué</label>
+                                    <input type="checkbox" name="SFx17">
+                                </div>
+                                <div class="labin">
+                                    <label>SFx18 - Créer un compte délégué</label>
+                                    <input type="checkbox" name="SFx18">
+                                </div>
+                                <div class="labin">
+                                    <label>SFx19 - Modifier un compte délégué</label>
+                                    <input type="checkbox" name="SFx19">
+                                </div>
+                                <div class="labin">
+                                    <label>SFx20 - Supprimer un compte délégué</label>
+                                    <input type="checkbox" name="SFx20">
+                                </div>
+                                <div class="labin">
+                                    <label>SFx22 - Rechercher un compte étudiant</label>
+                                    <input type="checkbox" name="SFx22">
+                                </div>
+                                <div class="labin">
+                                    <label>SFx23 - Créer un compte étudiant</label>
+                                    <input type="checkbox" name="SFx23">
+                                </div>
+                                <div class="labin">
+                                    <label>SFx24 - Modifier un compte étudiant</label>
+                                    <input type="checkbox" name="SFx24">
+                                </div>
+                                <div class="labin">
+                                    <label>SFx25 - Supprimer un compte étudiant</label>
+                                    <input type="checkbox" name="SFx25">
+                                </div>
+                                <div class="labin">
+                                    <label>SFx26 - Consulter les stats des étudiants</label>
+                                    <input type="checkbox" name="SFx26">
+                                </div>
+                                <div class="labin">
+                                    <label>SFx32 - Informer de l'avancement de la candidature step 3</label>
+                                    <input type="checkbox" name="SFx32">
+                                </div>
+                                <div class="labin">
+                                    <label>SFx33 - Informer de l'avancement de la candidature step 4</label>
+                                    <input type="checkbox" name="SFx33">
+                                </div>                                
                             </div>
                         </div>
                     </section>
@@ -149,6 +201,26 @@ noStudent();
     <?php
         if($_SESSION['role'] == "Pilote"){
             echo "<script type='text/javascript' src='http://www.NeedsAssets.com/js/pilote.js' ></script>";
+        }
+        elseif($_SESSION['role'] == "Délégué"){
+            for($i=1;$i<36;$i++){
+                if(in_array("sfx".$i,$_SESSION['tableAutorisation'])){
+                      //il a le droit $i
+                }
+                else{
+                      echo "<script type='module'>    
+                            $.ajax({
+                                  url: 'http://www.NeedsAssets.com/js/delegate.js',
+                                  type: 'POST',
+                                  dataType: 'script',
+                            })
+                            .done(function(script) {
+                                  console.log(script);
+                                  sfx".$i."();
+                            })
+                      </script>";
+                }
+          }
         }
     ?>
 </body>

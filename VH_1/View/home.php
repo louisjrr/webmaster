@@ -70,6 +70,9 @@
             if($_SESSION['role'] == "Pilote"){
                 echo "<script type='text/javascript' src='http://www.NeedsAssets.com/js/pilote.js' ></script>";
             }
+            if($_SESSION['role'] == "Délégué"){
+                echo "<script type='text/javascript' src='http://www.NeedsAssets.com/js/delegate.js' ></script>";
+            }
         ?>
         
     </body>
