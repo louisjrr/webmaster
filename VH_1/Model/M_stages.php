@@ -9,6 +9,11 @@
             session_start();
             $request = $db->query('SELECT idoffre, intitule_offre, description, nom_entreprise FROM offres_de_stage, entreprises WHERE offres_de_stage.IDENTREPRISE = entreprises.IDENTREPRISE AND NOT EXISTS (SELECT IDOFFRE FROM candidatures WHERE IDUTILISATEUR = '.$_SESSION['id'].' AND offres_de_stage.IDOFFRE = candidatures.IDOFFRE) AND NOT EXISTS (SELECT IDOFFRE FROM met_en_wishlist WHERE IDUTILISATEUR = '.$_SESSION['id'].' AND offres_de_stage.IDOFFRE = met_en_wishlist.IDOFFRE);');
             $getstages = $request->fetchAll();
+            //$request = $db->query('SELECT nom_competence FROM competences, requerir WHERE competences.idcompetence = requerir.idcompetence AND idoffre = 43');
+            //$getAllCompetences = $request->fetchAll();
+            //foreach($getAllCompetences as $gac){
+            //    echo $gac["nom_competence"];
+            //}
             return $getstages;
         }
         public function research(){
@@ -62,6 +67,12 @@
             session_start();
             $request = $db->query('INSERT INTO candidatures (idoffre, idutilisateur, etat_avancement, statut, cv, ldm) SELECT idoffre, '.$_SESSION["id"].', 1, 1, "'.$cv.'", "'.$ldm.'" FROM offres_de_stage, entreprises WHERE offres_de_stage.identreprise = entreprises.identreprise AND intitule_offre = "'.$_SESSION["titre"].'" AND description = "'.$_SESSION["description"].'" AND nom_entreprise = "'.$_SESSION["entreprise"].'";');
             
+        }
+        public function getCompany(){
+            global $db;
+            $request= $db->query('SELECT nom_entreprise,identreprise FROM entreprises');
+            $entreprise = $request->fetchAll();
+            return $entreprise;
         }
     }
 ?>
