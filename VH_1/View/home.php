@@ -55,12 +55,43 @@ sfx8VerifHome();
                 </div>
             </form>
         </div>
+        <div class="filter">
+            <form class="filterForm" method="post">
+                <select name="competences" id="competences_select">
+                    <option value="">--Skills--</option>
+                    <?php
+                        foreach($skills as $ski){
+                            echo '<option value='.$ski["nom_competence"].'>'.$ski["nom_competence"].'</option>';
+                        }
+                    ?>
+                </select>
+                <select name="entreprise" id="entreprise_select">
+                    <option value="">--Company--</option>
+                    <?php
+                        foreach($company as $com){
+                            echo '<option value='.$com["nom_entreprise"].'>'.$com["nom_entreprise"].'</option>';
+                        }
+                    ?>
+                </select>
+                <select name="localite" id="localite_select">
+                    <option value="">--City--</option>
+                </select>
+                <select name="nbrPlace" id="nbrPlace_select">
+                    <option value="">--Numbers of place--</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </form>
+            
+        </div>
     </header>
         <div class="stock">
             <div class="stages"><!-- Affichage en scroll des offres de stage-->
             <?php
                     foreach($res as $r){
-                        echo '<div class="stage"><h2 class="titre">'.$r["intitule_offre"].'</h2><i class="far fa-heart"></i><p class="description">'.$r['description'].'</p><br><h5 class="entreprise">'.$r["nom_entreprise"].'</h5></div>';
+                        echo '<div class="stage"><h2 class="titre">'.$r["intitule_offre"].'</h2><i class="far fa-heart"></i><p class="description">'.$r['description'].'</p><br><h5 class="entreprise">'.$r["nom_entreprise"].'</h5><p class="idOffreStage">'.$r["idoffre"].'</p></div>';
                     }
             ?>
             </div>
@@ -81,3 +112,4 @@ sfx8VerifHome();
         
     </body>
 </html>
+

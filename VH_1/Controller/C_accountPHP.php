@@ -95,7 +95,12 @@
                         header('Access-Control-Allow-Origin: https://needs.com');
                         //exit;
                   }
+                  global $db;
+                  $admin = new AccountAdmin(1);
+                  $showPilote = $admin->afficher(2);
+                  $showStudent = $admin->afficher(3);
                   $delegate = new AccountDelegate();
+                  $showDelegate = $delegate->afficherDelegate();
                   echo "<script type='text/javascript' src='http://www.NeedsAssets.com/vendors/jquery/jquery-ui.min.js'></script>";
                   echo "<script type='text/javascript' src='http://www.NeedsAssets.com/js/delegate.js'></script>";
                   for($i=1;$i<36;$i++){

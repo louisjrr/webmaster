@@ -8,6 +8,8 @@
             $stage-> intitule_offre = $_POST['search'];
             $res = $stage->research();
         };
+        $skills = $stage->competences();
+        $company = $stage->getCompany();
         //$res_places = $stage->places($db);
         require('./View/home.php');
     }
@@ -80,4 +82,24 @@
             $_SESSION['description']= $description;
             $_SESSION['entreprise']= $entreprise;
         }
+
+    function detailOffre($idOffre, $idUser){
+        global $db;
+        $queryDetail = $db->prepare("CALL afficher(:idOffre, :idUser");
+        $queryDetail->execute(array('idOffre'=>$idOffre, 'idUser'=> $idUser));
+        $table = $queryDetail->fetch();
+        return $table;
+    }
+
+    /*$tableDetail = detailOffre($idoffre, $iduser);
+    for ($i=0; $i = (count($tableDetail)-3);$i++){
+        $echo($tableDetail['nom_competence'.$i].'  ');
+    }*/
+    function AfficherCompetences($idOffre){
+        $tableDetail = detailOffre($idOffre, $_SESSION['id']); 
+        for ($i=0; $i = (count($tableDetail)-3);$i++){ 
+            $echo($tableDetail['nom_competence'.$i].' ');
+         } 
+    }
+    
 ?>
