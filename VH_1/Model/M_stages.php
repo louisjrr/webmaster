@@ -33,6 +33,19 @@
             global $db;
             $request = $db->prepare("INSERT INTO offres_de_stage (identreprise, intitule_offre, description, nombre_places) SELECT identreprise,:titre,:description,:places FROM entreprises where nom_entreprise=:entreprise");
             $request->execute(array('titre'=>$titre_stage,'description'=>$description_stage,'places'=>$nb_places,'entreprise'=>$entreprise));
+            $result= $db->lastInsertId();
+            $request= $db->query("SELECT COUNT(idcompetence) FROM competences");
+            $i = $request->fetch(PDO::FETCH_NUM);
+            return array($i, $result);
+        }
+        public function addCompt($i, $id){
+            echo "il y a :".$i."compétences!!";
+            echo "je suis la";
+            global $db;
+            $competence = $_POST['comp'.$i];
+            echo $competence;
+            $request = $db->query('INSERT INTO requerir(idcompetence, idoffre) SELECT idcompetence,'.$id.' FROM competences WHERE nom_competence="'.$competence.'"');
+
         }
         public function addwishlist($titre, $description, $entreprise){
             global $db;

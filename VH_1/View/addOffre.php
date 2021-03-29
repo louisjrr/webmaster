@@ -68,8 +68,10 @@ sfx9VerifAddOffre();
                         <textarea name="description" style="height: 150px;width:500px;resize: none;" placeholder="Description de l'offre" required></textarea>
                         <div class="listing">
                             <?php             
+                                $i=1;
                                 foreach($competences as $n){
-                                    echo '<input type="checkbox" value="'.$n["nom_competence"].'"></input><label>'.$n["nom_competence"].'</label>';
+                                    echo '<input type="checkbox" name="comp'.$i.'" value="'.$n["nom_competence"].'"></input><label>'.$n["nom_competence"].'</label>';
+                                    $i++;
                                 }
                             ?>
                         </div>
