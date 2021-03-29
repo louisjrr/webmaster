@@ -87,7 +87,7 @@ noStudent();
                                 <label>SFx3</label>
                                 <input type="checkbox" name="SFx3">
                                 <label>SFx4</label>
-                                <input type="checkbox" name="SFx'">
+                                <input type="checkbox" name="SFx4">
                                 <label>SFx5</label>
                                 <input type="checkbox" name="SFx5">
                                 <label>SFx6</label>
