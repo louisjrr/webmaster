@@ -2,13 +2,13 @@
     include "route.php";
     include "Controller/C_stages.php";
     include "Controller/C_user.php";
-    //include "Controller/C_login.php";
+    include "Controller/C_login.php";
     //include "Controller/C_accountPHP.php";
 
     define('BASEPATH','');
 
     Route::add('/', function(){
-        require('Controller/C_login.php');
+        login();
     });
     Route::add('/InConnection', function(){
         require('Model/M_login.php');

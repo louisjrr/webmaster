@@ -13,10 +13,17 @@
     }
     function NewInternship(){
         global $stage;
-        $competences=$stage->competences();
+        $competences= $stage->competences();
         if(isset($_POST['stage'])){
-            $stage->add($_POST['entreprise'],$_POST['titre_stage'],$_POST['description'],$_POST['nb_place']);
-            header('Location:http://localhost/www/webmaster/');
+            $j = $stage->add($_POST['entreprise'],$_POST['titre_stage'],$_POST['description'],$_POST['nb_place']);
+            echo 'nbcomptences : '.$j[0][0].', id :'.$j[1];
+            for($i=0;$i<=$j[0][0];$i++){
+                if(isset($_POST['comp'.$i])){
+                    $stage->addCompt($i,$j[1]);
+                    echo"coucou";
+                }
+            }
+            //header('Location:http://www.needs.com');
         }
         require('./View/addOffre.php');
     }

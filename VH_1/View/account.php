@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <?php include('./Controller/C_accountPHP.php'); ?>
 <head>
     <meta charset="UTF-8">
@@ -74,7 +74,7 @@
                             case "allPilote":
                                 foreach($showPilote as $plt){
                                     if($plt['VISIBLE']==1){
-                                        echo  ("<div class='show container-fluid'><div class='case'><div class='container'><div class='row'>");
+                                        echo  ("<div class='show'><div class='case'><div class='container'><div class='row'>");
                                         echo  ("<div class='col-lg-2 divPrenom'><h6>prénom:</h6> <p class='prenom'>".$plt['PRENOM']." </p></div>");
                                         echo  ("<div class='col-lg-3 divNom'><h6>nom:</h6> <p class='nom'>".$plt['NOM']." </p></div>");
                                         echo  ("<div class='col-lg-2 divAge'><h6>age:</h6>  <p class ='age'>".$plt['AGE']." </p></div>");
@@ -91,7 +91,8 @@
                                         echo  ("<div class='col-lg-1'><i class='fas fa-user-edit CRUD_student'></i></div>");
                                         echo  ("<div class='col-lg-1'><i class='fas fa-eye-slash CRUD_student'></i></div>");
                                         echo  (" </div></div></div></div>");
-                                    }                                }
+                                    }
+                                }
                                 break;
                             case "allDelegate":
                                 foreach($showDelegate as $dlg){
@@ -155,6 +156,18 @@
                                 }
                                 echo ('</div>');
                                 break;
+                            case "postulate":
+                                function showPostulate(){
+                                    global $db;
+                                    $request= $db->query('SELECT intitule_offre, description, nom_entreprise, etat_avancement, statut FROM candidatures, entreprises, offres_de_stage WHERE idutilisateur = '.$_SESSION["id"].' AND offres_de_stage.identreprise = entreprises.identreprise AND candidatures.idoffre = offres_de_stage.idoffre');
+                                    $postulate = $request->fetchAll();
+                                    return $postulate;
+                                }
+                                $postulate=showPostulate();
+                                foreach($postulate as $p){
+                                    echo $p['intitule_offre'].$p['description'].$p['nom_entreprise'].$p['etat_avancement'].$p['statut'];
+                                }
+                                break;
                             case "rate":
                                 function Rate(){
                                     global $db;
@@ -179,6 +192,7 @@
                             <button type = "submit" name="infogenerales"  class="infoGeneralesButton btn btn-dark">My Profil</button>
                             <button type = "submit" name="modifProfil"  class="infoGeneralesButton btn btn-dark modifProfil">Modify my profil</button>
                             <button type = "submit" name="wishlist"  class="infoGeneralesButton btn btn-dark wishlistBtn">My Wishlist</button> 
+                            <button type = "submit" name="Postulate"  class="infoGeneralesButton btn btn-dark postulateBtn">My applications</button> 
                             <button type = "submit" name="allPilote" class="infoGeneralesButton btn btn-dark allPilote">All Pilote</button>
                             <button type = "submit" name="allDelegate" class="infoGeneralesButton btn btn-dark allDelegate">All Delegate</button>
                             <button type = "submit" name="allStudent" class="infoGeneralesButton btn btn-dark allStudent">All Student</button>

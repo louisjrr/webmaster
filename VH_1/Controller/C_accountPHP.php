@@ -35,6 +35,9 @@
       elseif(isset($_POST['CreateInternship'])){
             header('Location: NewInternShip');
       }
+      elseif(isset($_POST['Postulate'])){
+            $mode="postulate";
+      }
       else{
             $mode="infogenerales";
       }
