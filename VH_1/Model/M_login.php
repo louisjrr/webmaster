@@ -44,9 +44,9 @@
                         $autorisationString = $infoAutorisations[0];
                         $_SESSION['tableAutorisation'] = array();
 
-                        for ($i = 1; $i<36; $i++){
+                        for ($i = 0; $i<35; $i++){
                             if($autorisationString[$i] == "1"){
-                                array_push($_SESSION['tableAutorisation'], 'sfx'.$i);
+                                array_push($_SESSION['tableAutorisation'], 'sfx'.($i+1));
                             }
                         }
                         

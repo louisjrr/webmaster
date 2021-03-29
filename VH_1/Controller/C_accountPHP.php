@@ -60,7 +60,7 @@
             $_SESSION['adresse'] = $NEWinfoUser['adresse'];
 
             header('Location: ./Account');
-            exit;
+            exit();
       }
       //idutilisateur,idrole,mail,mdp,nom,prenom,age,adresse,visible
 
@@ -88,33 +88,27 @@
                   echo "<script type='text/javascript' src='http://www.NeedsAssets.com/js/student.js'></script>";
                   break;
             case "Délégué":
-                  if(1==1){
-                        header('Access-Control-Allow-Origin: https://needs.com');
-                        //exit;
-                  }
                   $delegate = new AccountDelegate();
                   echo "<script type='text/javascript' src='http://www.NeedsAssets.com/vendors/jquery/jquery-ui.min.js'></script>";
                   echo "<script type='text/javascript' src='http://www.NeedsAssets.com/js/delegate.js'></script>";
                   for($i=1;$i<36;$i++){
                         if(in_array("sfx".$i,$_SESSION['tableAutorisation'])){
-                              //il a le droit $i
-                        }
-                        else{
                               echo "<script type='module'>    
-                                    $.ajax({
+                                    import { sfx17 } from 'http://www.NeedsAssets.com/js/delegate.js';
+                                    sfx17();
+                                    /*$.ajax({
                                           url: 'http://www.NeedsAssets.com/js/delegate.js',
-                                          type: 'POST',
+                                          type: 'GET',
                                           dataType: 'script',
                                     })
                                     .done(function(script) {
                                           console.log(script);
-                                          sfx".$i."();
-                                    })
+                                          sfx17();
+                                    })*/
                               </script>";
                         }
                   }
                   break;
-                              
       }
 
       //notation entreprise:
@@ -138,6 +132,29 @@
                   case "Délégué":
                         $user = new AccountDelegate($_SESSION['idRole']);
                         $user->noterEntreprise($_SESSION['id'], $note, $com, $identreprise);
+                        break;
+            }
+      }
+
+      //Ajout entreprise
+      if(isset($_POST['addCompany'])){
+            $nomEntreprise = $_POST['nomentreprise'];
+            switch($_SESSION['role']){
+                  case "Administrateur":
+                        $user = new AccountAdmin($_SESSION['idRole']);
+                        $user->AjouterEntreprise($nomEntreprise);
+                        break;
+                  case "Pilote":
+                        $user = new AccountPilote($_SESSION['idRole']);
+                        $user->AjouterEntreprise($nomEntreprise);
+                        break;
+                  case "Etudiant":
+                        $user = new AccountStudent($_SESSION['idRole']);
+                        $user->AjouterEntreprise($nomEntreprise);
+                        break;
+                  case "Délégué":
+                        $user = new AccountDelegate($_SESSION['idRole']);
+                        $user->AjouterEntreprise($nomEntreprise);
                         break;
             }
       }
