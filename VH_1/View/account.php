@@ -150,11 +150,11 @@
                                     return $wishlist;
                                 }
                                 $wishlist=Wishlist();
-                                echo ('<div class="scroll_wishlist">');
+                                echo ('<div style="display:flex; height:100%;"><div class="scroll_wishlist">');
                                 foreach($wishlist as $r){
                                     echo ('<div class="wishlist"><h2 class="titre">'.$r["intitule_offre"].'</h2><i class="fas fa-heart"></i><p class="description">'.$r['description'].'</p><br><h5 class="entreprise">'.$r["nom_entreprise"].'</h5></div>');
                                 }
-                                echo ('</div>');
+                                echo ('</div><div class="scroll_wishlist"><div class="affichage_wishlist"></div></div></div>');
                                 break;
                             case "postulate":
                                 function showPostulate(){
@@ -165,7 +165,38 @@
                                 }
                                 $postulate=showPostulate();
                                 foreach($postulate as $p){
-                                    echo '<div class="wishlist"><h2 class="titre">'.$p["intitule_offre"].'</h2><i class="fas fa-heart"></i><p class="description">'.$p['description'].'</p><br><h5 class="entreprise">'.$p["nom_entreprise"].'</h5><h5>avancement de la candidature : '.$p['etat_avancement'].'</h5><h5>'.$p['statut'].'</h5></div>';
+                                    switch($p['etat_avancement']){
+                                        case(1):
+                                            $load = "CV et Lettre de motivation envoyés" ;
+                                            break;
+                                        case(2):
+                                            $load = "Réponse de l'entreprise" ;
+                                            break;
+                                        case(3):
+                                            $load = "Fiche de validation reçue" ;
+                                            break;
+                                        case(4):
+                                            $load = "Fiche de validation signée par le pilote" ;
+                                            break;
+                                        case(5):
+                                            $load = "Convention envoyée à l'entreprise" ;
+                                            break;
+                                        case(6):
+                                            $load = "Convention signée par l'entreprise" ;
+                                            break;
+                                    }
+                                    switch($p['statut']){
+                                        case(1):
+                                            $state = "En Cours" ;
+                                            break;
+                                        case(2):
+                                            $state = "Refusée" ;
+                                            break;
+                                        case(3):
+                                            $state = "Stage Terminé" ;
+                                            break;
+                                    }
+                                    echo '<div class="wishlist"><h2 class="titre">'.$p["intitule_offre"].'</h2><p class="description">'.$p['description'].'</p><h5 class="entreprise">'.$p["nom_entreprise"].'</h5><h5>Avancement de la candidature : '.$load.' </h5><div class="loadAvancement"><div class="Avancement'.$p['etat_avancement'].'"></div></div><h5>'.$state.'</h5></div>';
                                 }
                                 break;
                             case "rate":
@@ -198,13 +229,13 @@
                     <div class="col-md-3 bg-light accountOption">
                     <div class="scroll_account">
                         <form method="POST" action="Account" class="accountForm">
-                            <button type = "submit" name="infogenerales"  class="infoGeneralesButton btn btn-dark">My Profil</button>
-                            <button type = "submit" name="modifProfil"  class="infoGeneralesButton btn btn-dark modifProfil">Modify my profil</button>
+                            <button type = "submit" name="infogenerales"  class="infoGeneralesButton btn btn-dark">My Profile</button>
+                            <button type = "submit" name="modifProfil"  class="infoGeneralesButton btn btn-dark modifProfil">Edit my Profile</button>
                             <button type = "submit" name="wishlist"  class="infoGeneralesButton btn btn-dark wishlistBtn">My Wishlist</button> 
-                            <button type = "submit" name="Postulate"  class="infoGeneralesButton btn btn-dark postulateBtn">My applications</button> 
-                            <button type = "submit" name="allPilote" class="infoGeneralesButton btn btn-dark allPilote">All Pilote</button>
-                            <button type = "submit" name="allDelegate" class="infoGeneralesButton btn btn-dark allDelegate">All Delegate</button>
-                            <button type = "submit" name="allStudent" class="infoGeneralesButton btn btn-dark allStudent">All Student</button>
+                            <button type = "submit" name="Postulate"  class="infoGeneralesButton btn btn-dark postulateBtn">My Applications</button> 
+                            <button type = "submit" name="allPilote" class="infoGeneralesButton btn btn-dark allPilote">show Pilotes</button>
+                            <button type = "submit" name="allDelegate" class="infoGeneralesButton btn btn-dark allDelegate">show Tutors</button>
+                            <button type = "submit" name="allStudent" class="infoGeneralesButton btn btn-dark allStudent">show Students</button>
                             <button type = "submit" name="CreateAccount"  class="infoGeneralesButton btn btn-dark CreateAccount">Create an account</button>
                             <button type = "submit" name="CreateCompany"  class="infoGeneralesButton btn btn-dark CreateCompany">Create a company</button>
                             <button type = "submit" name="CreateInternship"  class="infoGeneralesButton btn btn-dark CreateInternship">Create an internship</button>
