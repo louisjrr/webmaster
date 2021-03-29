@@ -58,8 +58,10 @@ $(function(){
         const titre = $(this).find('.titre').html()
         const description = $(this).find('.description').html()
         const entreprise = $(this).find('.entreprise').html()
+        const idOffre = $(this).find('.idOffreStage').html()
         $('.affichage').html("<h2>" + titre + "</h2><br><h4>Stage proposé par : "+ entreprise +"</h4><br><p>"+ description +"</p><form method='post' enctype='multipart/form-data' action='Postulate'><h4>Merci d'ajouter ton CV et ta lettre de motivation ci-dessous :</h4><label>Mon CV :</label><input type='file' name='cv' required><label>Ma lettre de Motivation :</label><input type='file' name='motiv' required><input class='sub_postulate' name='sub_postulate' type=submit></form>")
         $.post("stagesession",{titre : titre,description : description,entreprise : entreprise});
+        $.post("stageCompetences",{idOffre : idOffre});
     })
 })
 /*----Bouton de retour en arrière----*/
