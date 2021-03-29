@@ -44,11 +44,10 @@
             session_start();
             $request = $db->query('DELETE FROM met_en_wishlist WHERE idutilisateur = '.$_SESSION["id"].' AND idoffre IN (SELECT idoffre FROM offres_de_stage, entreprises WHERE offres_de_stage.identreprise = entreprises.identreprise AND intitule_offre = "'.$titre.'" AND description = "'.$description.'" AND nom_entreprise = "'.$entreprise.'")');
         }
-        public function Postulate($titre, $description, $entreprise){
+        public function Postulate($cv, $ldm){
             global $db;
             session_start();
-            echo $titre.$description.$entreprise.$_GET['cv'].$_GET['motiv'];
-            $request = $db->query('INSERT INTO candidatures (idoffre, idutilisateur, etat_avancement, statut, cv, ldm) SELECT idoffre, '.$_SESSION["id"].', 1, 1, '.$_GET["cv"].', '.$_GET["motiv"].' FROM offres_de_stage, entreprises WHERE offres_de_stage.identreprise = entreprises.identreprise AND intitule_offre = "'.$titre.'" AND description = "'.$description.'" AND nom_entreprise = "'.$entreprise.'";');
+            $request = $db->query('INSERT INTO candidatures (idoffre, idutilisateur, etat_avancement, statut, cv, ldm) SELECT idoffre, '.$_SESSION["id"].', 1, 1, "'.$cv.'", "'.$ldm.'" FROM offres_de_stage, entreprises WHERE offres_de_stage.identreprise = entreprises.identreprise AND intitule_offre = "'.$_SESSION["titre"].'" AND description = "'.$_SESSION["description"].'" AND nom_entreprise = "'.$_SESSION["entreprise"].'";');
             
         }
     }
