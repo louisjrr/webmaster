@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php 
+include('./Controller/C_Verif_Autorisations.php');
+sfx8VerifHome();
+?>
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -69,6 +73,9 @@
         <?php
             if($_SESSION['role'] == "Pilote"){
                 echo "<script type='text/javascript' src='http://www.NeedsAssets.com/js/pilote.js' ></script>";
+            }
+            if($_SESSION['role'] == "Délégué"){
+                echo "<script type='text/javascript' src='http://www.NeedsAssets.com/js/delegate.js' ></script>";
             }
         ?>
         

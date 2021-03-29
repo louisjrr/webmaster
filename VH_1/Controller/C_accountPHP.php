@@ -139,4 +139,27 @@
             }
       }
 
+      //Ajout entreprise
+      if(isset($_POST['addCompany'])){
+            $nomEntreprise = $_POST['nomentreprise'];
+            switch($_SESSION['role']){
+                  case "Administrateur":
+                        $user = new AccountAdmin($_SESSION['idRole']);
+                        $user->AjouterEntreprise($nomEntreprise);
+                        break;
+                  case "Pilote":
+                        $user = new AccountPilote($_SESSION['idRole']);
+                        $user->AjouterEntreprise($nomEntreprise);
+                        break;
+                  case "Etudiant":
+                        $user = new AccountStudent($_SESSION['idRole']);
+                        $user->AjouterEntreprise($nomEntreprise);
+                        break;
+                  case "Délégué":
+                        $user = new AccountDelegate($_SESSION['idRole']);
+                        $user->AjouterEntreprise($nomEntreprise);
+                        break;
+            }
+      }
+
 ?>

@@ -3,6 +3,7 @@
 <?php 
 include('./Controller/C_Verif_Autorisations.php');
 noStudent();
+sfx9VerifAddOffre();
 ?>
     <head>
         <meta charset="UTF-8">

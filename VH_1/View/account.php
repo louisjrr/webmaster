@@ -79,8 +79,8 @@
                                         echo  ("<div class='col-lg-3 divNom'><h6>nom:</h6> <p class='nom'>".$plt['NOM']." </p></div>");
                                         echo  ("<div class='col-lg-2 divAge'><h6>age:</h6>  <p class ='age'>".$plt['AGE']." </p></div>");
                                         echo  ("<div class='col-lg-3'><h6>adresse:</h6>  <p>".$plt['ADRESSE']." </p></div>");
-                                        echo  ("<div class='col-lg-1'><i class='fas fa-user-edit CRUD_student'></i></div>");
-                                        echo  ("<div class='col-lg-1'><i class='fas fa-eye CRUD_student'></i></div>");
+                                        echo  ("<div class='col-lg-1'><i class='fas fa-user-edit CRUD_student editPilote'></i></div>");
+                                        echo  ("<div class='col-lg-1'><i class='fas fa-eye CRUD_student eyePilote'></i></div>");
                                         echo  (" </div></div></div></div>");
                                     }else{
                                         echo  ("<div class='show'><div class='case'><div class='container'><div class='row'>");
@@ -88,8 +88,8 @@
                                         echo  ("<div class='col-lg-3 divNom'><h6>nom:</h6> <p class='nom'>".$plt['NOM']." </p></div>");
                                         echo  ("<div class='col-lg-2 divAge'><h6>age:</h6>  <p class ='age'>".$plt['AGE']." </p></div>");
                                         echo  ("<div class='col-lg-3'><h6>adresse:</h6>  <p>".$plt['ADRESSE']." </p></div>");
-                                        echo  ("<div class='col-lg-1'><i class='fas fa-user-edit CRUD_student'></i></div>");
-                                        echo  ("<div class='col-lg-1'><i class='fas fa-eye-slash CRUD_student'></i></div>");
+                                        echo  ("<div class='col-lg-1'><i class='fas fa-user-edit CRUD_student editPilote'></i></div>");
+                                        echo  ("<div class='col-lg-1'><i class='fas fa-eye-slash CRUD_student eyePilote'></i></div>");
                                         echo  (" </div></div></div></div>");
                                     }
                                 }
@@ -102,8 +102,8 @@
                                         echo  ("<div class='col-lg-3 divNom'><h6>nom:</h6> <p class='nom'>".$dlg['NOM']." </p></div>");
                                         echo  ("<div class='col-lg-2 divAge'><h6>age:</h6>  <p class ='age'>".$dlg['AGE']." </p></div>");
                                         echo  ("<div class='col-lg-3'><h6>adresse:</h6>  <p>".$dlg['ADRESSE']." </p></div>");
-                                        echo  ("<div class='col-lg-1'><i class='fas fa-user-edit CRUD_student'></i></div>");
-                                        echo  ("<div class='col-lg-1'><i class='fas fa-eye CRUD_student'></i></div>");
+                                        echo  ("<div class='col-lg-1'><i class='fas fa-user-edit CRUD_student editDelegate'></i></div>");
+                                        echo  ("<div class='col-lg-1'><i class='fas fa-eye CRUD_student eyeDelegate'></i></div>");
                                         echo  (" </div></div></div></div>");
                                     }else{
                                         echo  ("<div class='show'><div class='case'><div class='container'><div class='row'>");
@@ -125,8 +125,8 @@
                                     echo  ("<div class='col-lg-3 divNom'><h6>nom:</h6> <p class='nom'>".$std['NOM']." </p></div>");
                                     echo  ("<div class='col-lg-2 divAge'><h6>age:</h6>  <p class ='age'>".$std['AGE']." </p></div>");
                                     echo  ("<div class='col-lg-3'><h6>adresse:</h6>  <p>".$std['ADRESSE']." </p></div>");
-                                    echo  ("<div class='col-lg-1'><i class='fas fa-user-edit CRUD_student'></i></div>");
-                                    echo  ("<div class='col-lg-1'><i class='fas fa-eye CRUD_student'></i></div>");
+                                    echo  ("<div class='col-lg-1'><i class='fas fa-user-edit CRUD_student editStudent'></i></div>");
+                                    echo  ("<div class='col-lg-1'><i class='fas fa-eye CRUD_student eyeStudent'></i></div>");
                                     echo  (" </div></div></div></div>");
                                 }else{
                                     echo  ("<div class='show'><div class='case'><div class='container'><div class='row'>");
@@ -134,8 +134,8 @@
                                     echo  ("<div class='col-lg-3 divNom'><h6>nom:</h6> <p class='nom'>".$std['NOM']." </p></div>");
                                     echo  ("<div class='col-lg-2 divAge'><h6>age:</h6>  <p class ='age'>".$std['AGE']." </p></div>");
                                     echo  ("<div class='col-lg-3'><h6>adresse:</h6>  <p>".$std['ADRESSE']." </p></div>");
-                                    echo  ("<div class='col-lg-1'><i class='fas fa-user-edit CRUD_student'></i></div>");
-                                    echo  ("<div class='col-lg-1'><i class='fas fa-eye-slash CRUD_student'></i></div>");
+                                    echo  ("<div class='col-lg-1'><i class='fas fa-user-edit CRUD_student editStudent'></i></div>");
+                                    echo  ("<div class='col-lg-1'><i class='fas fa-eye-slash CRUD_student eyeStudent'></i></div>");
                                     echo  (" </div></div></div></div>");
                                 }
 
@@ -182,6 +182,15 @@
                                 }
                                 echo "</div><div class='affichage_entreprise'></div>";
                                 break;
+
+                                case "CreateCompany":
+                                    echo("<div><form method = 'post'>");
+                                    echo("<label>nom de l'entreprise</label>");
+                                    echo("<input type='text' name='nomentreprise' placeholder='nom entreprise'></input>");
+                                    echo("<button type'submit' name='addCompany'>Valider</button>");
+                                    echo("</div></form>");
+                                
+                                break;
                         }
                         ?>
                     </div>
@@ -199,7 +208,7 @@
                             <button type = "submit" name="CreateAccount"  class="infoGeneralesButton btn btn-dark CreateAccount">Create an account</button>
                             <button type = "submit" name="CreateCompany"  class="infoGeneralesButton btn btn-dark CreateCompany">Create a company</button>
                             <button type = "submit" name="CreateInternship"  class="infoGeneralesButton btn btn-dark CreateInternship">Create an internship</button>
-                            <button type = "submit" name="Note_Entreprise"  class="infoGeneralesButton btn btn-dark">Rate a company</button>
+                            <button type = "submit" name="Note_Entreprise"  class="infoGeneralesButton btn btn-dark rateCompany">Rate a company</button>
                             <button type = "submit" name="deconnexion"  class="infoGeneralesButton btn btn-dark">Deconnexion</button>
                         </form>
                     </div>
@@ -208,7 +217,6 @@
             </div>
         </section>
         
-
     <script type='text/javascript' src='http://www.NeedsAssets.com/vendors/jquery/jquery-ui.min.js'></script>
     <script type="text/javascript" src="http://www.NeedsAssets.com/js/script.js" ></script>
 </body>
