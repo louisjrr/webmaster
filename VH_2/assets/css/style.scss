@@ -319,7 +319,7 @@ a.nav-link:hover:before {
   opacity: 50%;
   margin-bottom: 30px;
 }
-.checkbox{
+.checkbox {
   display: flex;
   flex-direction: column;
 }
@@ -328,9 +328,35 @@ a.nav-link:hover:before {
   background-color: $light;
 }
 .iconPrestige {
-  width: 40px;
+  width: 70px;
+  background: white;
+  float: right;
 }
-
+.infoProfil {
+  color: $greenHover;
+  border-bottom: solid $green;
+  margin: auto 0;
+}
+.infogenerales {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.formModifProfil {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.inputModifProfil {
+  width: auto;
+  margin: auto 0;
+}
+.labelModifProfil {
+  color: $greenHover;
+  width: auto;
+  font-size: 25px;
+  border-bottom: solid $green;
+}
 .mobile div {
   width: 30px;
   height: 3px;
@@ -402,26 +428,24 @@ a.nav-link:hover:before {
 }
 
 .rating {
-  float: right;
-  width: 226px;
   margin: 0 auto 1em;
   font-size: 45px;
-  overflow:hidden;
+  overflow: hidden;
 }
 .rating input {
-float: right;
-opacity: 0;
-position: absolute;
+  float: right;
+  opacity: 0;
+  position: absolute;
 }
 .rating a,
 .rating label {
-  float:right;
+  float: right;
   color: #aaa;
   text-decoration: none;
-  -webkit-transition: color .4s;
-  -moz-transition: color .4s;
-  -o-transition: color .4s;
-  transition: color .4s;
+  -webkit-transition: color 0.4s;
+  -moz-transition: color 0.4s;
+  -o-transition: color 0.4s;
+  transition: color 0.4s;
 }
 .rating label:hover ~ label,
 .rating input:focus ~ label,
@@ -429,7 +453,7 @@ position: absolute;
 .rating a:hover,
 .rating a:hover ~ a,
 .rating a:focus,
-.rating a:focus ~ a		{
+.rating a:focus ~ a {
   color: orange;
   cursor: pointer;
 }
@@ -437,7 +461,7 @@ position: absolute;
   direction: rtl;
 }
 .rating2 a {
-  float:none
+  float: none;
 }
 .entreprises {
   width: 40%;
@@ -467,6 +491,9 @@ position: absolute;
   max-width: 85%;
   margin: auto;
 }
+.identreprise {
+  visibility: hidden;
+}
 .accountAffiche {
   display: flex;
   flex-direction: column;
@@ -477,6 +504,11 @@ position: absolute;
   display: flex;
   flex-direction: column;
 }
+.affichage_entreprise h2 {
+  color: $greenHover;
+  border-bottom: solid $green;
+  margin-bottom: 10px;
+}
 .scroll_wishlist {
   width: 100%;
   height: 100%;
@@ -486,7 +518,7 @@ position: absolute;
 .scroll_wishlist::-webkit-scrollbar {
   display: none;
 }
-.CRUD_student {
+.CRUD {
   color: black;
 }
 .show {
@@ -517,4 +549,3 @@ i {
 .divCommentaire {
   width: 100%;
 }
-

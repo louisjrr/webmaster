@@ -91,29 +91,34 @@
                   echo "<script type='text/javascript' src='http://www.NeedsAssets.com/js/student.js'></script>";
                   break;
             case "Délégué":
+                  if(1==1){
+                        header('Access-Control-Allow-Origin: https://needs.com');
+                        //exit;
+                  }
                   $delegate = new AccountDelegate();
                   echo "<script type='text/javascript' src='http://www.NeedsAssets.com/vendors/jquery/jquery-ui.min.js'></script>";
                   echo "<script type='text/javascript' src='http://www.NeedsAssets.com/js/delegate.js'></script>";
                   for($i=1;$i<36;$i++){
                         if(in_array("sfx".$i,$_SESSION['tableAutorisation'])){
+                              //il a le droit $i
+                        }
+                        else{
                               echo "<script type='module'>    
-                                    import { sfx17 } from 'http://www.NeedsAssets.com/js/delegate.js';
-                                    sfx17();
-                                    /*$.ajax({
+                                    $.ajax({
                                           url: 'http://www.NeedsAssets.com/js/delegate.js',
-                                          type: 'GET',
+                                          type: 'POST',
                                           dataType: 'script',
                                     })
                                     .done(function(script) {
                                           console.log(script);
-                                          sfx17();
-                                    })*/
+                                          sfx".$i."();
+                                    })
                               </script>";
                         }
                   }
                   break;
+                              
       }
-
       //notation entreprise:
       if(isset($_POST['envoiNote'])){
             $note = $_POST['stars'];

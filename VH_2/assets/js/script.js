@@ -102,7 +102,7 @@ $(function(){
     $('.entreprise').click(function(){
         const entreprise = $(this).find('.nom_entreprise').html();
         const identreprise = $(this).find('.identreprise').html();
-        $('.affichage_entreprise').html("<form method ='post'><h2>" + entreprise + "<input type='hidden' id='idNote' name='note' value='' /><input type='hidden' id='idEntreprise' name='identreprise' value='"+identreprise+"'/> </h2><div class='rating'><input name='stars' id='e5' type='radio' value ='5'></a><label for='e5'>☆</label><input name='stars' id='e4' type='radio' value ='4'></a><label for='e4'>☆</label><input name='stars' id='e3' type='radio' value ='3'></a><label for='e3'>☆</label><input name='stars' id='e2' type='radio' value ='2'></a><label for='e2'>☆</label><input name='stars' id='e1' type='radio' value ='1'></a><label for='e1'>☆</label></div><div class = 'divCommentaire'><input type='text' name = 'commentaire' class='comInput' placeholder='laissez un commentaire!'></input></div><input class='rate'name='envoiNote' type=submit> </form>");
+        $('.affichage_entreprise').html("<form method ='post' class='affichage_entreprise'><h2>" + entreprise + "</h2><textarea name='commentaire' style='height: 90%;width:100%;resize: none;' placeholder='Commentary' required></textarea><input type='hidden' id='idNote' name='note' value='' /><input type='hidden' id='idEntreprise' name='identreprise' value='"+identreprise+"'/> <div class='rating'><input name='stars' id='e5' type='radio' value ='5'></a><label for='e5'>☆</label><input name='stars' id='e4' type='radio' value ='4'></a><label for='e4'>☆</label><input name='stars' id='e3' type='radio' value ='3'></a><label for='e3'>☆</label><input name='stars' id='e2' type='radio' value ='2'></a><label for='e2'>☆</label><input name='stars' id='e1' type='radio' value ='1'></a><label for='e1'>☆</label></div><input class='rate'name='envoiNote' type=submit> </form>");
     })
 })
 $(function(){
@@ -141,7 +141,7 @@ $(function(){
 })
 /*----supprimer user----*/
 $(function(){
-    $('.fas').click(function(){
+    $('.eye').click(function(){
         $(this).toggleClass('fa-eye');
         $(this).toggleClass('fa-eye-slash');
         $nom = $(this).parent().parent().find('.divNom').find('.nom').html()
