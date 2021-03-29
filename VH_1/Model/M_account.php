@@ -35,6 +35,13 @@ abstract class Account{
         header('Location: ./Account');
         exit();
     }
+    public function AjouterEntreprise($nomEntreprise){
+        global $db;
+        $queryEntreprise = $db->prepare("INSERT INTO entreprises (nom_entreprise, visible) VALUES (:nomentreprise, 1)");
+        $queryEntreprise->execute(array('nomentreprise'=>$nomEntreprise));
+        header('Location: ./Account');
+        exit();
+    }
  
 }
 class AccountAdmin extends account{

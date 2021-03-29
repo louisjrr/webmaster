@@ -169,6 +169,15 @@
                                 }
                                 echo "</div><div class='affichage_entreprise'></div>";
                                 break;
+
+                                case "CreateCompany":
+                                    echo("<div><form method = 'post'>");
+                                    echo("<label>nom de l'entreprise</label>");
+                                    echo("<input type='text' name='nomentreprise' placeholder='nom entreprise'></input>");
+                                    echo("<button type'submit' name='addCompany'>Valider</button>");
+                                    echo("</div></form>");
+                                
+                                break;
                         }
                         ?>
                     </div>
