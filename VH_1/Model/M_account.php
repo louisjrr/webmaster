@@ -48,10 +48,25 @@ class AccountAdmin extends account{
     function __construct($idRole){
         $this->idRole = $idRole;
     }
+    function modifierOffre($nbPlace, $intitule, $descr, $idoffre){
+        global $db;
+        $queryUpdateOffre = $db->prepare("UPDATE offres_de_stage SET nombre_places = :nbplaces, intitule_offre = :intitule, description = :descr WHERE idoffre = :idoffre");
+        $queryUpdateOffre->execute(array('nbplaces'=>$nbPlace,'intitule'=>$intitule, 'descr'=>$descr, 'idoffre'=>$idoffre));
+        header('Location: ./Account');
+        exit();
+    }
 }
 class AccountPilote extends account{
     function __construct($idRole){
         $this->idRole = $idRole;
+    }
+
+    function modifierOffre($nbPlace, $intitule, $descr, $idoffre){
+        global $db;
+        $queryUpdateOffre = $db->prepare("UPDATE offres_de_stage SET nombre_places = :nbplaces, intitule_offre = :intitule, description = :descr WHERE idoffre = :idoffre");
+        $queryUpdateOffre->execute(array('nbplaces'=>$nbPlace,'intitule'=>$intitule, 'descr'=>$descr, 'idoffre'=>$idoffre));
+        header('Location: ./Account');
+        exit();
     }
 }
 class AccountStudent extends account{
@@ -66,6 +81,14 @@ class AccountDelegate extends account{
         $query = $db->query("SELECT * FROM utilisateurs WHERE idrole > 3");
         $account = $query->fetchAll();
         return $account;
+    }
+
+    function modifierOffre($nbPlace, $intitule, $descr, $idoffre){
+        global $db;
+        $queryUpdateOffre = $db->prepare("UPDATE offres_de_stage SET nombre_places = :nbplaces, intitule_offre = :intitule, description = :descr WHERE idoffre = :idoffre");
+        $queryUpdateOffre->execute(array('nbplaces'=>$nbPlace,'intitule'=>$intitule, 'descr'=>$descr, 'idoffre'=>$idoffre));
+        header('Location: ./Account');
+        exit();
     }
 }
 
