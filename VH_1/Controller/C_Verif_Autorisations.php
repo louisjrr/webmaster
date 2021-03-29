@@ -21,4 +21,15 @@ function noStudentNoPilote(){
         
 }
 
+function sfx16VerifHome(){
+    switch($_SESSION['role']):
+        case 'Délégué':
+            if (!in_array("sfx16", $_SESSION['tableAutorisation'])){
+                header("Location: Account");
+            }
+            break;
+
+        endswitch;
+}
+
 ?>
