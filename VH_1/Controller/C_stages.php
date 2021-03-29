@@ -28,5 +28,49 @@
         global $stage;
         $stage->removewishlist($titre, $description, $entreprise);
     }
-    
+    function postulate(){
+        global $stage;
+        if (isset($_POST["sub_postulate"])){
+            $CVName = "";
+            $LDMName = "";
+            $maxsize= 10000000;
+            $ValidExt= '.pdf';
+            if($_FILES["cv"]['error']>0){
+                echo 'une erreur est survenu lors du transfert';
+                die;
+            }
+            $sizeFile = $_FILES["cv"]['size'];
+            if($sizeFile>$maxsize){
+                echo"la taille du ficher est supérieure à la taille maximum";
+                die;
+            }
+            $CVName = $_FILES['cv']['name'];
+            $LDMName = $_FILES['cv']['name'];
+            $CVExt = '.'. strtolower(substr(strrchr($CVName,'.'),1));
+            $LDMExt = '.'. strtolower(substr(strrchr($LDMName,'.'),1));
+
+            if($CVExt != $ValidExt){
+                echo "L'extension du fichier n'est pas acceptée";
+                die;
+            }
+            $tmpCVName = $_FILES['cv']['tmp_name'];
+            $tmpLDMName = $_FILES['motiv']['tmp_name'];
+            $uniqueNameCV = md5(uniqid(rand(), true));
+            $uniqueNameLDM = md5(uniqid(rand(), true));
+            $CVName = "../VH_2/Uploaded_files/".$uniqueNameCV.$CVExt;
+            echo $CVName;
+            $LDMName = "../VH_2/Uploaded_files/".$uniqueNameLDM.$LDMExt;
+            $CVresult = move_uploaded_file($tmpCVName,$CVName);
+            $LDMresult = move_uploaded_file($tmpLDMName,$LDMName);
+        
+        $stage->Postulate($CVName, $LDMName);
+        }
+        header("Location:Home");
+    }
+    function stage($titre, $description, $entreprise){
+            session_start();
+            $_SESSION['titre']= $titre;
+            $_SESSION['description']= $description;
+            $_SESSION['entreprise']= $entreprise;
+        }
 ?>

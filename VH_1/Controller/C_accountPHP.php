@@ -75,8 +75,8 @@
                   break;
                   
             case "Pilote":
-                  echo "<script type='text/javascript' src='http://www.NeedsAssets.com/vendors/jquery/jquery-ui.min.js'></script>";
-                  echo "<script type='text/javascript' src='http://www.NeedsAssets.com/js/pilote.js'></script>";
+                  echo "<script type='text/javascript' src='http://www.needsassets.com/vendors/jquery/jquery-ui.min.js'></script>";
+                  echo "<script type='text/javascript' src='http://www.needsassets.com/js/pilote.js'></script>";
                   $pilote = new AccountPilote(2);
                   $showStudent = $pilote->afficher(3);
                   $delegate = new AccountDelegate();

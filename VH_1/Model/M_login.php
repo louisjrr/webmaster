@@ -52,7 +52,7 @@
                         
                     }
                     else{
-                        $_SESSION['prestige'] = './assets/images/iconRole1.ico';
+                        $_SESSION['prestige'] = 'http://www.NeedsAssets.com/images/iconRole1.ico';
                     }
 
                     echo 'Vous êtes connecté !';
@@ -67,4 +67,5 @@
         }
         
     }
+    
 ?>

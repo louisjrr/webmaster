@@ -61,11 +61,11 @@
             ?>
             </div>
             <div class="affichage"> <!-- Affichage de l'offre de stage sélectionnée au click-->
-            
+                    
             </div>
         </div>
-        <script type='text/javascript' src='http://www.NeedsAssets.com//vendors/jquery/jquery-ui.min.js'></script>
-        <script type="text/javascript" src="http://www.NeedsAssets.com//js/script.js" ></script>
+        <script type='text/javascript' src='http://www.NeedsAssets.com/vendors/jquery/jquery-ui.min.js'></script>
+        <script type="text/javascript" src="http://www.NeedsAssets.com/js/script.js" ></script>
         <?php
             if($_SESSION['role'] == "Pilote"){
                 echo "<script type='text/javascript' src='http://www.NeedsAssets.com/js/pilote.js' ></script>";

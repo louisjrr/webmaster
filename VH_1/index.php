@@ -19,15 +19,19 @@
     Route::add('/Saving', function(){
         Register();
     },"post");
-Route::add('/Add', function() {
+    Route::add('/Add', function() {
         Add($_POST["titre"], $_POST["description"], $_POST["entreprise"]);
     },"post");
     Route::add('/Remove', function() {
         Remove($_POST["titre"], $_POST["description"], $_POST["entreprise"]);
     },"post");
     Route::add('/Postulate', function() {
-        Postulate($_POST["titre"], $_POST["description"], $_POST["entreprise"]);
+        postulate();
     },"post");
+    Route::add('/stagesession', function() {
+        stage($_POST["titre"], $_POST["description"], $_POST["entreprise"]);
+    },"post");
+
     Route::add('/Home', function() {
         home();
     },"post");

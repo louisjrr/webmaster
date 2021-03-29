@@ -58,19 +58,10 @@ $(function(){
         const titre = $(this).find('.titre').html()
         const description = $(this).find('.description').html()
         const entreprise = $(this).find('.entreprise').html()
-        $('.affichage').html("<h2>" + titre + "</h2><br><h4>Stage proposé par : "+ entreprise +"</h4><br><p>"+ description +"</p><br><br><h4>Merci d'ajouter ton CV et ta lettre de motivation ci-dessous :</h4><label>Mon CV :</label><input type='file' name='cv' required><label>Ma lettre de Motivation :</label><input type='file' name='motiv' required><input class='sub_postulate' type=submit>")
+        $('.affichage').html("<h2>" + titre + "</h2><br><h4>Stage proposé par : "+ entreprise +"</h4><br><p>"+ description +"</p><form method='post' enctype='multipart/form-data' action='Postulate'><h4>Merci d'ajouter ton CV et ta lettre de motivation ci-dessous :</h4><label>Mon CV :</label><input type='file' name='cv' required><label>Ma lettre de Motivation :</label><input type='file' name='motiv' required><input class='sub_postulate' name='sub_postulate' type=submit></form>")
+        $.post("stagesession",{titre : titre,description : description,entreprise : entreprise});
     })
 })
-/*----Post des valeur de l'offre de stage----A MODIFIER*/
-$(function(){
-    $('.sub_postulate').click(function(){
-        alert('coucou')
-        $titre = $('.affichage').find('.titre').html()
-        $description = $('.affichage').find('.description').html()
-        $entreprise = $('.affichage').find('.entreprise').html()
-        $.post("Postulate",{titre : $titre,description : $description,entreprise : $entreprise});
-    })
-});
 /*----Bouton de retour en arrière----*/
 $(function(){
     $('.btnBack').click(function(){
