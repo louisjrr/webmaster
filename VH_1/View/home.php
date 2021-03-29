@@ -56,32 +56,35 @@ sfx8VerifHome();
             </form>
         </div>
         <div class="filter">
-            <select name="competences" id="competences_select">
-                <option value="">--Skills--</option>
-                <?php
-                    foreach($skills as $ski){
-                        echo '<option value='.$ski["nom_competence"].'>'.$ski["nom_competence"].'</option>';
-                    }
-                ?>
-            </select>
-            <select name="entreprise" id="entreprise_select">
-                <option value="">--Company--</option>
-                <?php
-                    foreach($company as $com){
-                        echo '<option value='.$com["nom_entreprise"].'>'.$com["nom_entreprise"].'</option>';
-                    }
-                ?>
-            </select>
-            <select name="localite" id="localite_select">
-                <option value="">--City--</option>
-            </select>
-            <select name="nbrPlace" id="nbrPlace_select">
-                <option value="">--Numbers of place--</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-            </select>
+            <form class="filterForm" method="post">
+                <select name="competences" id="competences_select">
+                    <option value="">--Skills--</option>
+                    <?php
+                        foreach($skills as $ski){
+                            echo '<option value='.$ski["nom_competence"].'>'.$ski["nom_competence"].'</option>';
+                        }
+                    ?>
+                </select>
+                <select name="entreprise" id="entreprise_select">
+                    <option value="">--Company--</option>
+                    <?php
+                        foreach($company as $com){
+                            echo '<option value='.$com["nom_entreprise"].'>'.$com["nom_entreprise"].'</option>';
+                        }
+                    ?>
+                </select>
+                <select name="localite" id="localite_select">
+                    <option value="">--City--</option>
+                </select>
+                <select name="nbrPlace" id="nbrPlace_select">
+                    <option value="">--Numbers of place--</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </form>
+            
         </div>
     </header>
         <div class="stock">
