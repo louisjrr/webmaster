@@ -8,6 +8,8 @@
             $stage-> intitule_offre = $_POST['search'];
             $res = $stage->research();
         };
+        $skills = $stage->competences();
+        $company = $stage->getCompany();
         //$res_places = $stage->places($db);
         require('./View/home.php');
     }

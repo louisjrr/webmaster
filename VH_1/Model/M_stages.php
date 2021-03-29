@@ -68,5 +68,11 @@
             $request = $db->query('INSERT INTO candidatures (idoffre, idutilisateur, etat_avancement, statut, cv, ldm) SELECT idoffre, '.$_SESSION["id"].', 1, 1, "'.$cv.'", "'.$ldm.'" FROM offres_de_stage, entreprises WHERE offres_de_stage.identreprise = entreprises.identreprise AND intitule_offre = "'.$_SESSION["titre"].'" AND description = "'.$_SESSION["description"].'" AND nom_entreprise = "'.$_SESSION["entreprise"].'";');
             
         }
+        public function getCompany(){
+            global $db;
+            $request= $db->query('SELECT nom_entreprise,identreprise FROM entreprises');
+            $entreprise = $request->fetchAll();
+            return $entreprise;
+        }
     }
 ?>

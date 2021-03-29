@@ -109,6 +109,7 @@ i {
 .recherche_p {
   background-color: #eeeeee;
   border: 1px solid #dddddd;
+  border-bottom: none;
   padding: 10px 10px 10px 10px;
   display: flex;
   justify-content: center;
@@ -644,4 +645,21 @@ i {
 
 .divCommentaire {
   width: 100%;
+}
+
+/*----home filter----*/
+.filter {
+  display: flex;
+  justify-content: space-around;
+  background-color: #eeeeee;
+  border: 1px solid #dddddd;
+  border-top: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.filter select {
+  padding: 3px 1px 3px 1px;
+  border-color: #3fdd8f;
+  border-radius: 3px;
 }/*# sourceMappingURL=style.css.map */
