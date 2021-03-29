@@ -34,4 +34,15 @@ function sfx8VerifHome(){
         endswitch;
 }
 
+function sfx9VerifAddOffre(){
+    switch($_SESSION['role']):
+        case 'Délégué':
+            if (!in_array("sfx9", $_SESSION['tableAutorisation'])){
+                header("Location: Account");
+            }
+            break;
+
+        endswitch;
+}
+
 ?>
