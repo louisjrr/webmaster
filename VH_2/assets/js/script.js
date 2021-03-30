@@ -1,8 +1,4 @@
-if('serviceWorker' in navigator){
-    navigator.serviceWorker.register('ServiceWorker.js')
-    .then( (sw) => console.log('Le Service Worker a été enregistrer', sw))
-    .catch((err) => console.log('Le Service Worker est introuvable !!!', err));
-}
+
 /*----Apparition de la page de connexion----*/
 $('.formConnexion').hide();
 $(function(){
@@ -88,6 +84,7 @@ $(function(){
 $(function(){
     $('.recherche-icone').click(function(){
         $('.form-inline').submit()
+        $('.filterForm').submit()
     })
 })
 /*----Ajout d'une compétence dans offre de stage----*/
@@ -171,18 +168,5 @@ $(function(){
     })
 })
 
-/*----API ZipCode for City filter----*/
-/*for(i=27100; i<28000; i++){
-    $.ajax({
-        url: 'http://api.zippopotam.us/FR/' + i,
-        type: 'POST',
-        dataType: 'json',
-        data: {param1: 'value'},
-    })
-    .done(function(response) {
-        for(var i=0; i<response.places.length; i++){
-            $('#localite_data').append("<option value='" + response.places[i]["place name"] + "'>");
-        }
-    })
-}*/
+
 

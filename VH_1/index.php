@@ -1,4 +1,5 @@
 <link rel="manifest" href="manifest.json">
+<script type="text/javascript" src="installSW.js"></script>
 <?php
     include "config.php";
     include "route.php";
