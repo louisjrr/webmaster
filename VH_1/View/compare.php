@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php 
-include('../Controller/C_Verif_Autorisations.php');
-include '../config.php';
+include('./Controller/C_Verif_Autorisations.php');
+include './config.php';
 sfx8VerifHome();
 ?>
     <head>
@@ -50,24 +50,26 @@ sfx8VerifHome();
     </header>
     <div class="containCompare">
         <div class="compareItem">
-            <h2>Offre de stage N°1</h2>
+            <h2 class="Nstage">Offre de stage N°1</h2>
+                <div class="compareScroll">
             <?php
-                foreach($ as $){
-                    echo '';
+                foreach($Offres as $o){
+                    echo '<div class="Offre"><h2 class="titre">'.$o["intitule_offre"].'</h2><p class="description">'.$o['description'].'</p><br><h5 class="entreprise">'.$o["nom_entreprise"].'</h5><p class="idCompetence">'.AfficherCompetences($o["idoffre"]).'</p></div>';
                 }
             ?>
+                </div>
         </div>
         <div class="compareItem">
-            <h2>Offre de stage N°2</h2>
+            <h2 class="Nstage">Offre de stage N°2</h2>
+                <div class="compareScroll">
             <?php
-                foreach($ as $){
-                    echo '';
+                foreach($Offres as $o){
+                    echo '<div class="Offre"><h2 class="titre">'.$o["intitule_offre"].'</h2><p class="description">'.$o['description'].'</p><br><h5 class="entreprise">'.$o["nom_entreprise"].'</h5><p class="idCompetence">'.AfficherCompetences($o["idoffre"]).'</p></div>';
                 }
             ?>
+                </div>
         </div>
     </div>
-
-
-
-
+    <script type='text/javascript' src=<?=$URLStaticFiles?>vendors/jquery/jquery-ui.min.js></script>
+    <script type="text/javascript" src=<?=$URLStaticFiles?>js/script.js></script>
     </body>

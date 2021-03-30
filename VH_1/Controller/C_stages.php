@@ -141,5 +141,9 @@
         } 
         return $StringReturn;
     }
-    
+    function compare(){
+        global $stage;
+        $Offres = $stage->getAllStages();
+        require './View/compare.php';
+    }
 ?>

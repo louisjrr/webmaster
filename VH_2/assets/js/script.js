@@ -167,6 +167,22 @@ $(function(){
         }
     })
 })
-
+/*----Affichage complet du stage----*/ 
+$(function(){
+    $('.Offre').click(function(){
+        const parent = $(this).parent()
+        const titre = $(this).find('.titre').html()
+        const description = $(this).find('.description').html()
+        const entreprise = $(this).find('.entreprise').html()
+        const Competences = $(this).find('.idCompetence').html()
+        if(parent.children($('.Offre')).hasClass('select')){
+            parent.children($('.Offre')).removeClass('select')
+            $(this).addClass('select')
+        }
+        else{
+            $(this).addClass('select')
+        }
+    })
+})
 
 

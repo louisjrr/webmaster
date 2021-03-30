@@ -73,9 +73,9 @@ noStudent();
                             <select id='promotion' name='promotion'>
                                 <option value="1">A1</option>
                                 <option value="2">A2</option>
-                                <option value="A3">A3</option>
-                                <option value="A4">A4</option>
-                                <option value="A5">A5</option>
+                                <option value="3">A3</option>
+                                <option value="4">A4</option>
+                                <option value="5">A5</option>
                             </select></br></br>
                         </div>
                         <div class="block">

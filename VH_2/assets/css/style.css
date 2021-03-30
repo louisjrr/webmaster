@@ -200,8 +200,47 @@ i {
   height: 85vh;
 }
 
+.compareItem .Nstage {
+  color: #3aa871;
+  border-bottom: solid #3fdd8f;
+}
+
 .compareItem * {
   text-align: center;
+}
+
+.compareScroll {
+  width: 100%;
+  height: 90%;
+  margin-top: 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.compareScroll::-webkit-scrollbar {
+  display: none;
+}
+
+.Offre {
+  width: 90%;
+  height: 40%;
+  margin: 10px auto;
+  border-radius: 15px;
+  position: relative;
+  text-align: center;
+  border: black 2px solid;
+  color: black;
+}
+
+.Offre p {
+  visibility: hidden;
+  position: absolute;
+}
+
+.select {
+  border: #3fdd8f 3px solid;
+  -webkit-box-shadow: 0 0 1em rgba(60, 60, 60, 0.7);
+          box-shadow: 0 0 1em rgba(60, 60, 60, 0.7);
 }
 
 .stage {
