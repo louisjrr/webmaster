@@ -5,6 +5,7 @@
     include "Controller/C_stages.php";
     include "Controller/C_user.php";
     include "Controller/C_login.php";
+    include "Controller/C_notifs.php";
     //include "Controller/C_accountPHP.php";
 
     define('BASEPATH','');
@@ -60,6 +61,13 @@
     },"post");
     Route::add('/Visible', function(){
         VisibleAccount( $_POST["nom"], $_POST["prenom"], $_POST["age"]);
+    },"post");
+
+    Route::add('/Notifs', function(){
+       afficherNotifs();
+    });
+    Route::add('/Notifs', function(){
+        afficherNotifs();
     },"post");
 
     Route::run(BASEPATH);
