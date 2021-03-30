@@ -53,7 +53,26 @@ sfx9VerifAddOffre();
             <form method='POST' class="addIntForm">
                 <fieldset class='form-stage'>
                     <div class="column one">
-                        <input type="text" name="entreprise" placeholder="Nom de l'entreprise" required>
+                        <select list="entreprise" name="entreprise" required>
+                        <datalist id="entreprise">
+                            <option disabled selected value>\/ ---- Choose a Company ---- \/</option>
+                            <?php
+                                foreach ($company as $c){
+                                    echo'<option name="'.$c['nom_entreprise'].'" value="'.$c['nom_entreprise'].'">'.$c['nom_entreprise'].'</option>';
+                                }
+                            ?>
+                        </datalist>
+                        </select>
+                        <select list="centre" name="Centre" required>
+                        <datalist id="centre">
+                            <option disabled selected value>\/ ----- Choose a Campus ----- \/</option>
+                            <?php
+                                foreach ($company as $c){
+                                    echo'<option name="'.$c['nom_entreprise'].'" value="'.$c['nom_entreprise'].'">'.$c['nom_entreprise'].'</option>';
+                                }
+                            ?>
+                        </datalist>
+                        </select>
                         <input type="text" name="titre_stage" placeholder="Intitulé du post" required>
                         <select name="nb_place" id="nb_place" required>
                             <option value="" disabled selected value>Place(s) disponible(s)</option>
