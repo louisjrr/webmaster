@@ -21,9 +21,11 @@
         padding-right: 0px;
         padding-left: 0px;
         width: 110px;
+        margin-top: 5px;
     }
-    .filterForm{
+    .filter{
         text-align: center;
+        flex-direction: column;
     }
     .stages{
         width: 50%;
