@@ -80,10 +80,14 @@
             $campus = $request->fetchAll();
             return $campus;
         }
-        public function researchFilter(){
+        public function filterCompetence(){
             global $db;
-            //$request = $db->query("");
-            //$filter = $request->fetch();
+            $request = $db->query("SELECT idcompetence FROM competences WHERE nom_competence = '$this->nom_competence'");
+            $idComp = $request->fetch(PDO::FETCH_NUM);
+            return $idComp[0];
+        }
+        public function researchFilterComp(){
+            global $db;
         }
     }
 ?>
