@@ -41,7 +41,7 @@ sfx8VerifHome();
                         <a class="nav-link" href="NewInternShip">Avis</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="Compare">Contact</a>
                     </li>
                 </ul>
             </div>
