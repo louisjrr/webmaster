@@ -65,10 +65,10 @@
     },"post");
 
     Route::add('/Notifs', function(){
-       afficherNotifs();
+        notifications();
     });
     Route::add('/Notifs', function(){
-        afficherNotifs();
+        notifications();
     },"post");
 
     Route::run(BASEPATH);
