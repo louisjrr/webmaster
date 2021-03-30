@@ -63,7 +63,9 @@
     Route::add('/Visible', function(){
         VisibleAccount( $_POST["nom"], $_POST["prenom"], $_POST["age"]);
     },"post");
-
+    Route::add('/Compare', function(){
+        compare();
+    });
     Route::add('/Notifs', function(){
         notifications();
     });

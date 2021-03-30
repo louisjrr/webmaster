@@ -1,1 +1,33 @@
-/* No CSS *//*# sourceMappingURL=responsive.css.map */
+@media screen and (max-width: 576px) {
+  /*----page register----*/
+  .block {
+    padding-top: 5px;
+    padding-left: 0px;
+    -webkit-padding-end: 0px;
+            padding-inline-end: 0px;
+    width: 400px;
+  }
+
+  .labin {
+    width: 350px;
+  }
+}
+@media screen and (max-width: 768px) {
+  /*----page register----*/
+  .bodyConnexion {
+    overflow-y: visible;
+    overflow-x: hidden;
+  }
+
+  .pageInscription {
+    flex-direction: column;
+  }
+
+  .shadow {
+    height: 170%;
+  }
+
+  .block {
+    margin-bottom: 20px;
+  }
+}/*# sourceMappingURL=responsive.css.map */
