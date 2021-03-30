@@ -9,7 +9,11 @@
             $res = $stage->research();
         };
         $skills = $stage->competences();
+        if(isset($_POST['competences'])){
+            $stage->nom_competence = $_POST['competences'];
+        }
         $company = $stage->getCompany();
+        $campus = $stage->getCampus();
         //$res_places = $stage->places($db);
         require('./View/home.php');
     }

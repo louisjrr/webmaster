@@ -74,5 +74,20 @@
             $entreprise = $request->fetchAll();
             return $entreprise;
         }
+        public function getCampus(){
+            global $db;
+            $request = $db->query('SELECT nom_centre FROM centres');
+            $campus = $request->fetchAll();
+            return $campus;
+        }
+        public function filterCompetence(){
+            global $db;
+            $request = $db->query("SELECT idcompetence FROM competences WHERE nom_competence = '$this->nom_competence'");
+            $idComp = $request->fetch(PDO::FETCH_NUM);
+            return $idComp[0];
+        }
+        public function researchFilterComp(){
+            global $db;
+        }
     }
 ?>

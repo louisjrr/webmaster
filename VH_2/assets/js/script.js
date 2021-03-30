@@ -170,3 +170,19 @@ $(function(){
         }
     })
 })
+
+/*----API ZipCode for City filter----*/
+/*for(i=27100; i<28000; i++){
+    $.ajax({
+        url: 'http://api.zippopotam.us/FR/' + i,
+        type: 'POST',
+        dataType: 'json',
+        data: {param1: 'value'},
+    })
+    .done(function(response) {
+        for(var i=0; i<response.places.length; i++){
+            $('#localite_data').append("<option value='" + response.places[i]["place name"] + "'>");
+        }
+    })
+}*/
+

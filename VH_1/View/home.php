@@ -73,8 +73,13 @@ sfx8VerifHome();
                         }
                     ?>
                 </select>
-                <select name="localite" id="localite_select">
+                <select name="localite" id="localite_data">
                     <option value="">--City--</option>
+                    <?php
+                        foreach($campus as $cam){
+                            echo '<option value='.$cam["nom_centre"].'>'.$cam["nom_centre"].'</option>';
+                        }
+                    ?>
                 </select>
                 <select name="nbrPlace" id="nbrPlace_select">
                     <option value="">--Numbers of place--</option>
