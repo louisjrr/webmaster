@@ -164,8 +164,6 @@ i {
 }
 
 .containCompare {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -214,8 +212,12 @@ i {
 
 .select {
   border: #3fdd8f 3px solid;
-  -webkit-box-shadow: 0 0 1em rgba(60, 60, 60, 0.7);
-          box-shadow: 0 0 1em rgba(60, 60, 60, 0.7);
+  box-shadow: 0 0 1em rgba(60, 60, 60, 0.7);
+}
+
+.form-inline {
+  display: flex;
+  flex-direction: column;
 }
 
 .stage {
@@ -784,8 +786,6 @@ i {
   display: flex;
   justify-content: space-around;
   background-color: #eeeeee;
-  border: 1px solid #dddddd;
-  border-top: none;
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -794,9 +794,9 @@ i {
   padding: 3px 1px 3px 1px;
   border-color: #3fdd8f;
   border-radius: 3px;
+  margin-left: 5px;
 }
 
 .alertLight {
   background-color: #d2d2d2;
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

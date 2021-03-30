@@ -10,10 +10,6 @@
         session_start();
         $debut = 'SELECT offres_de_stage.idoffre, intitule_offre, description, nom_entreprise, nom_centre, nom_promotion FROM offres_de_stage, competences, entreprises, requerir, centres, promotions, prendre_place_a, s_adresser_a WHERE offres_de_stage.identreprise = entreprises.identreprise AND NOT EXISTS (SELECT IDOFFRE FROM candidatures WHERE IDUTILISATEUR = '.$_SESSION['id'].' AND offres_de_stage.IDOFFRE = candidatures.IDOFFRE) AND NOT EXISTS (SELECT IDOFFRE FROM met_en_wishlist WHERE IDUTILISATEUR = '.$_SESSION['id'].' AND offres_de_stage.IDOFFRE = met_en_wishlist.IDOFFRE) AND prendre_place_a.idcentre = centres.idcentre AND prendre_place_a.idoffre = offres_de_stage.idoffre AND s_adresser_a.idpromotion = promotions.idpromotion AND s_adresser_a.idoffre = offres_de_stage.idoffre';
 
-        if (isset( $_POST['search'])){
-            $stage-> intitule_offre = $_POST['search'];
-            $res = $stage->research();
-        }
         if(isset($_POST['entreprise'])){
             if($_POST['entreprise'] != ""){
                 $nom_entreprise = $_POST['entreprise'];
@@ -40,7 +36,13 @@
                 $nb_place = ' AND nombre_places = "'.$nb.'"';
                 $debut = $debut.$nb_place;
             }
+            
         };
+        if (isset($_POST["search"])){
+            $intitule = $_POST['search'];
+            $intitule_offre = ' AND UPPER(intitule_offre) LIKE UPPER("%'.$intitule.'%")';
+            $debut = $debut.$intitule_offre;
+        }
         $debut = $debut.' GROUP BY offres_de_stage.idoffre'; 
         $res = $stage->filter($debut);
         

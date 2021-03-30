@@ -55,34 +55,34 @@ sfx8VerifHome();
                         <i class="fas fa-search"></i>
                     </label>
                 </div>
-            </form>
-        </div>
         <div class="filter">
-            <form class="filterForm" method="POST">
+            <div>
                 <select name="competences" id="competences_select">
-                    <option value="">--Skills--</option>
-                    <?php
-                        foreach($skills as $ski){
-                            echo '<option value='.$ski["nom_competence"].'>'.$ski["nom_competence"].'</option>';
-                        }
-                    ?>
-                </select>
-                <select name="entreprise" id="entreprise_select">
-                    <option value="">--Company--</option>
-                    <?php
-                        foreach($company as $com){
-                            echo '<option value='.$com["nom_entreprise"].'>'.$com["nom_entreprise"].'</option>';
-                        }
-                    ?>
-                </select>
-                <select name="localite" id="localite_data">
-                    <option value="">--City--</option>
-                    <?php
-                        foreach($campus as $cam){
-                            echo '<option value='.$cam["nom_centre"].'>'.$cam["nom_centre"].'</option>';
-                        }
-                    ?>
-                </select>
+                        <option value="">--Skills--</option>
+                        <?php
+                            foreach($skills as $ski){
+                                echo '<option value='.$ski["nom_competence"].'>'.$ski["nom_competence"].'</option>';
+                            }
+                        ?>
+                    </select>
+                    <select name="entreprise" id="entreprise_select">
+                        <option value="">--Company--</option>
+                        <?php
+                            foreach($company as $com){
+                                echo '<option value='.$com["nom_entreprise"].'>'.$com["nom_entreprise"].'</option>';
+                            }
+                        ?>
+                    </select>
+                    <select name="localite" id="localite_data">
+                        <option value="">--City--</option>
+                        <?php
+                            foreach($campus as $cam){
+                                echo '<option value='.$cam["nom_centre"].'>'.$cam["nom_centre"].'</option>';
+                            }
+                        ?>
+                    </select>
+            </div>
+            <div>
                 <select name="promo" id="promo_select">
                     <option value="">--Promotion--</option>
                     <option value="A1">A1</option>
@@ -98,8 +98,11 @@ sfx8VerifHome();
                     <option value="3">3</option>
                     <option value="4">4</option>
                 </select>
+            </div>
+                
+                
             </form>
-            
+            </div>
         </div>
     </header>
         <div class="stock">

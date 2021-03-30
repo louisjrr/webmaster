@@ -184,6 +184,10 @@ i {
   border: $green 3px solid;
   box-shadow: 0 0 1em rgba(60, 60, 60, 0.7);
 }
+.form-inline {
+  display: flex;
+  flex-direction: column;
+}
 .stage {
   width: 90%;
   height: 40%;
@@ -666,8 +670,6 @@ i {
   display: flex;
   justify-content: space-around;
   background-color: #eeeeee;
-  border: 1px solid #dddddd;
-  border-top: none;
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -675,7 +677,8 @@ i {
   padding: 3px 1px 3px 1px;
   border-color: $green;
   border-radius: 3px;
+  margin-left: 5px;
 }
-.alertLight{
-  background-color: rgb(210,210,210);
+.alertLight {
+  background-color: rgb(210, 210, 210);
 }
