@@ -84,7 +84,6 @@ $(function(){
 $(function(){
     $('.recherche-icone').click(function(){
         $('.form-inline').submit()
-        $('.filterForm').submit()
     })
 })
 /*----Ajout d'une compétence dans offre de stage----*/

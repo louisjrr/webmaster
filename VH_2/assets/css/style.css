@@ -2,9 +2,16 @@
 .bodyConnexion {
   margin: 0;
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-image: url("../images/bg_1.jpg");
   background-size: cover;
   overflow-y: hidden;
@@ -34,8 +41,12 @@ body h2 {
 
 .compte {
   margin: 40px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .compte button {
@@ -112,9 +123,15 @@ i {
   border: 1px solid #dddddd;
   border-bottom: none;
   padding: 10px 10px 10px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .recherche-barr {
@@ -136,9 +153,15 @@ i {
   height: 40px;
   width: 40px;
   float: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-radius: 50%;
   color: white;
 }
@@ -148,6 +171,8 @@ i {
 }
 
 .stock {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -218,6 +243,16 @@ i {
           box-shadow: 0 0 1em rgba(60, 60, 60, 0.7);
 }
 
+.form-inline {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 .stage {
   width: 90%;
   height: 40%;
@@ -231,7 +266,8 @@ i {
 
 .stage:hover {
   border: #3fdd8f 3px solid;
-  box-shadow: 0 0 1em rgba(60, 60, 60, 0.7);
+  -webkit-box-shadow: 0 0 1em rgba(60, 60, 60, 0.7);
+          box-shadow: 0 0 1em rgba(60, 60, 60, 0.7);
 }
 
 .stage i {
@@ -264,15 +300,20 @@ i {
 }
 
 .postulate {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .sub_postulate {
   width: 100px;
 }
 
-input[type=file] {
+input[type="file"] {
   margin-bottom: 15px;
 }
 
@@ -289,8 +330,13 @@ input[type=file] {
 .form-stage {
   border: solid black;
   height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .form-stage input {
@@ -300,8 +346,13 @@ input[type=file] {
 }
 
 .column {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin: 0 auto;
 }
 
@@ -309,7 +360,7 @@ input[type=file] {
   margin: auto 0;
 }
 
-.two input[name=compétences] {
+.two input[name="compétences"] {
   width: 500px;
   height: 150px;
 }
@@ -336,6 +387,7 @@ a.nav-link:before {
   left: 0;
   background-color: #3aa871;
   visibility: hidden;
+  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
@@ -384,16 +436,25 @@ a.nav-link:hover:before {
 .bodyDroits {
   margin: 0;
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-image: url("../images/bg_1.jpg");
   background-size: cover;
 }
 
 /*----page d'inscription----*/
 .pageInscription {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .block {
@@ -429,8 +490,13 @@ a.nav-link:hover:before {
 }
 
 .checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 /*----page addOffre----*/
@@ -451,14 +517,24 @@ a.nav-link:hover:before {
 }
 
 .infogenerales {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   height: 100%;
 }
 
 .formModifProfil {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   height: 100%;
 }
 
@@ -492,11 +568,15 @@ a.nav-link:hover:before {
 .accountOption {
   border: none;
   border-radius: 6px;
-  box-shadow: 0 0 0.5em rgba(197, 196, 196, 0.7);
+  -webkit-box-shadow: 0 0 0.5em rgba(197, 196, 196, 0.7);
+          box-shadow: 0 0 0.5em rgba(197, 196, 196, 0.7);
 }
 
 .accountAffiche {
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .infoGeneralesButton {
@@ -506,8 +586,13 @@ a.nav-link:hover:before {
 .accountForm {
   margin: 0 auto;
   width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .accountForm input {
@@ -534,7 +619,8 @@ a.nav-link:hover:before {
 
 .wishlist:hover {
   border: #3fdd8f 3px solid;
-  box-shadow: 0 0 1em rgba(60, 60, 60, 0.7);
+  -webkit-box-shadow: 0 0 1em rgba(60, 60, 60, 0.7);
+          box-shadow: 0 0 1em rgba(60, 60, 60, 0.7);
 }
 
 .wishlist i {
@@ -577,6 +663,7 @@ a.nav-link:hover:before {
   float: right;
   color: #aaa;
   text-decoration: none;
+  -webkit-transition: color 0.4s;
   transition: color 0.4s;
 }
 
@@ -681,12 +768,15 @@ a.nav-link:hover:before {
   text-align: center;
   border: black 2px solid;
   color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 .entreprises .entreprise:hover {
   border: #3fdd8f 3px solid;
-  box-shadow: 0 0 1em rgba(60, 60, 60, 0.7);
+  -webkit-box-shadow: 0 0 1em rgba(60, 60, 60, 0.7);
+          box-shadow: 0 0 1em rgba(60, 60, 60, 0.7);
 }
 
 .entreprises .entreprise h2 {
@@ -699,15 +789,25 @@ a.nav-link:hover:before {
 }
 
 .accountAffiche {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .affichage_entreprise {
   height: 100%;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .affichage_entreprise h2 {
@@ -721,6 +821,8 @@ a.nav-link:hover:before {
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -733,8 +835,13 @@ a.nav-link:hover:before {
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .scroll_application::-webkit-scrollbar {
@@ -762,6 +869,8 @@ a.nav-link:hover:before {
   text-align: center;
   border: black 2px solid;
   color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -781,8 +890,11 @@ i {
 
 /*----home filter----*/
 .filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   background-color: #eeeeee;
   border: 1px solid #dddddd;
   border-top: none;

@@ -55,10 +55,7 @@ sfx8VerifHome();
                         <i class="fas fa-search"></i>
                     </label>
                 </div>
-            </form>
-        </div>
         <div class="filter">
-            <form class="filterForm" method="POST">
                 <select name="competences" id="competences_select">
                     <option value="">--Skills--</option>
                     <?php
@@ -99,7 +96,7 @@ sfx8VerifHome();
                     <option value="4">4</option>
                 </select>
             </form>
-            
+            </div>
         </div>
     </header>
         <div class="stock">
