@@ -1,9 +1,9 @@
 <?php
-
         function connect(){
+            include 'config.php';
             try
             {
-                $db = new PDO('mysql:host=localhost;dbname=webmaster;charset=utf8', 'root', '');
+                $db = new PDO('mysql:host=localhost;dbname='.$DatabaseName.';charset='.$charset.'', $UserName, $UserPassword);
             }
             catch (Exception $e)
             {

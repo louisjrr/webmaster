@@ -21,16 +21,16 @@
         global $stage;
         $competences= $stage->competences();
         $company =$stage->getCompany();
+        $campus =$stage->getCampus();
+        $promos = $stage->getPromos();
         if(isset($_POST['stage'])){
-            $j = $stage->add($_POST['entreprise'],$_POST['titre_stage'],$_POST['description'],$_POST['nb_place']);
-            echo 'nbcomptences : '.$j[0][0].', id :'.$j[1];
+            $j = $stage->add($_POST['entreprise'],$_POST['titre_stage'],$_POST['description'],$_POST['nb_place'],$_POST['Centre'],$_POST['Promos']);
             for($i=0;$i<=$j[0][0];$i++){
                 if(isset($_POST['comp'.$i])){
                     $stage->addCompt($i,$j[1]);
-                    echo"coucou";
                 }
             }
-            //header('Location:http://www.needs.com');
+            header('Location:http://www.needs.com');
         }
         require('./View/addOffre.php');
     }

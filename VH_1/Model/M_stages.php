@@ -34,11 +34,15 @@
             $places = $request->fetchAll();
             return $places;
         }*/
-        public function add($entreprise,$titre_stage, $description_stage,$nb_places){
+        public function add($entreprise,$titre_stage, $description_stage,$nb_places,$centre,$promotion){
             global $db;
             $request = $db->prepare("INSERT INTO offres_de_stage (identreprise, intitule_offre, description, nombre_places) SELECT identreprise,:titre,:description,:places FROM entreprises where nom_entreprise=:entreprise");
             $request->execute(array('titre'=>$titre_stage,'description'=>$description_stage,'places'=>$nb_places,'entreprise'=>$entreprise));
             $result= $db->lastInsertId();
+            $centre = $db->query('INSERT INTO prendre_place_a(idcentre, idoffre) SELECT idcentre,'.$result.' FROM centres WHERE nom_centre="'.$centre.'"');
+            $rescentre = $centre->fetchAll();
+            $promo = $db->query('INSERT INTO s_adresser_a(idpromotion, idoffre) SELECT idpromotion,'.$result.' FROM promotions WHERE nom_promotion="'.$promotion.'"');
+            $respromo = $promo->fetchAll();
             $request= $db->query("SELECT COUNT(idcompetence) FROM competences");
             $i = $request->fetch(PDO::FETCH_NUM);
             return array($i, $result);
@@ -50,6 +54,9 @@
             $competence = $_POST['comp'.$i];
             echo $competence;
             $request = $db->query('INSERT INTO requerir(idcompetence, idoffre) SELECT idcompetence,'.$id.' FROM competences WHERE nom_competence="'.$competence.'"');
+
+        }
+        public function addCampus(){
 
         }
         public function addwishlist($titre, $description, $entreprise){
@@ -79,6 +86,12 @@
             $request = $db->query('SELECT nom_centre FROM centres');
             $campus = $request->fetchAll();
             return $campus;
+        }
+        public function getPromos(){
+            global $db;
+            $request = $db->query('SELECT nom_promotion FROM promotions');
+            $promos = $request->fetchAll();
+            return $promos;
         }
         public function filterCompetence(){
             global $db;

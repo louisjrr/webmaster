@@ -178,7 +178,7 @@ i {
 
 .stages {
   width: 40%;
-  height: 75vh;
+  height: 70vh;
   margin-top: 20px;
   overflow-y: auto;
   overflow-x: hidden;
@@ -225,7 +225,7 @@ i {
 
 .affichage {
   width: 60%;
-  height: 75vh;
+  height: 69vh;
   margin: 20px;
 }
 
@@ -260,7 +260,6 @@ input[type="file"] {
 .titre-stage {
   -webkit-text-decoration: underline #3fdd8f;
           text-decoration: underline #3fdd8f;
-  margin-bottom: 20px;
 }
 
 .form-stage {
@@ -292,11 +291,7 @@ input[type="file"] {
   margin: 0 auto;
 }
 
-.column input {
-  margin: auto 0;
-}
-
-.column textarea {
+.column * {
   margin: auto 0;
 }
 
@@ -761,6 +756,8 @@ a.nav-link:hover:before {
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 

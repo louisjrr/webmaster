@@ -1,13 +1,13 @@
 <link rel="manifest" href="manifest.json">
 <?php
-    
+    include "config.php";
     include "route.php";
     include "Controller/C_stages.php";
     include "Controller/C_user.php";
     include "Controller/C_login.php";
     //include "Controller/C_accountPHP.php";
 
-    define('BASEPATH','');
+    define('BASEPATH', '');
 
     Route::add('/', function(){
         login();
