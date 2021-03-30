@@ -53,8 +53,37 @@ sfx9VerifAddOffre();
             <form method='POST' class="addIntForm">
                 <fieldset class='form-stage'>
                     <div class="column one">
-                        <input type="text" name="entreprise" placeholder="Nom de l'entreprise" required>
-                        <input type="text" name="titre_stage" placeholder="Intitulé du post" required>
+                        <input type="text" name="titre_stage" placeholder="Intitulé du post" required autocomplete="off">
+                        <select list="entreprise" name="entreprise" required>
+                        <datalist id="entreprise">
+                            <option disabled selected value>\/ ---- Choose a Company ---- \/</option>
+                            <?php
+                                foreach ($company as $c){
+                                    echo'<option name="'.$c['nom_entreprise'].'" value="'.$c['nom_entreprise'].'">'.$c['nom_entreprise'].'</option>';
+                                }
+                            ?>
+                        </datalist>
+                        </select>
+                        <select list="centre" name="Centre" required>
+                        <datalist id="centre">
+                            <option disabled selected value>\/ ----- Choose a Campus ----- \/</option>
+                            <?php
+                                foreach ($campus as $c){
+                                    echo'<option name="'.$c['nom_centre'].'" value="'.$c['nom_centre'].'">'.$c['nom_centre'].'</option>';
+                                }
+                            ?>
+                        </datalist>
+                        </select>
+                        <select list="Promos" name="Promos" required>
+                        <datalist id="Promos">
+                            <option disabled selected value>\/ -- Choose a Promotion --- \/</option>
+                            <?php
+                                foreach ($promos as $c){
+                                    echo'<option name="'.$c['nom_promotion'].'" value="'.$c['nom_promotion'].'">'.$c['nom_promotion'].'</option>';
+                                }
+                            ?>
+                        </datalist>
+                        </select>
                         <select name="nb_place" id="nb_place" required>
                             <option value="" disabled selected value>Place(s) disponible(s)</option>
                             <option value="1">1 Place</option>
@@ -81,6 +110,6 @@ sfx9VerifAddOffre();
         </div>
     </section>
     
-    <script type='text/javascript' src='http://www.NeedsAssets.com/vendors/jquery/jquery-ui.min.js'></script>
-    <script type="text/javascript" src="http://www.NeedsAssets.com/js/script.js" ></script>
+    <script type='text/javascript' src=<?=$URLStaticFiles?>vendors/jquery/jquery-ui.min.js></script>
+    <script type="text/javascript" src=<?=$URLStaticFiles?>js/script.js ></script>
     </body>
