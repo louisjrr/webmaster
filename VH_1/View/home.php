@@ -51,7 +51,7 @@ sfx8VerifHome();
             <form class="form-inline my-2 my-lg-0" method='POST'>
                 <div class="recherche-barr">
                     <input class="recherche-input" type="search" placeholder="Recherche" aria-label="Search" name="search">
-                    <label class="recherche-icone">
+                    <label class="recherche-icone" name="validSearch">
                         <i class="fas fa-search"></i>
                     </label>
                 </div>
@@ -82,6 +82,14 @@ sfx8VerifHome();
                             echo '<option value='.$cam["nom_centre"].'>'.$cam["nom_centre"].'</option>';
                         }
                     ?>
+                </select>
+                <select name="promo" id="promo_select">
+                    <option value="">--Promotion--</option>
+                    <option value="A1">A1</option>
+                    <option value="A2">A2</option>
+                    <option value="A3">A3</option>
+                    <option value="A4">A4</option>
+                    <option value="A5">A5</option>
                 </select>
                 <select name="nbrPlace" id="nbrPlace_select">
                     <option value="">--Numbers of place--</option>

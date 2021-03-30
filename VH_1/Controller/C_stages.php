@@ -3,18 +3,49 @@
     $stage = new Stage();
     function home(){
         global $stage;
-        $res = $stage->getAllStages();
+        //$res = $stage->getAllStages();
+        $skills = $stage->competences();
+        $company = $stage->getCompany();
+        $campus = $stage->getCampus();
+
+        $debut = 'SELECT offres_de_stage.idoffre, intitule_offre, description, nom_entreprise, nom_centre, nom_promotion FROM offres_de_stage, competences, entreprises, requerir, centres, promotions, prendre_place_a, s_adresser_a WHERE offres_de_stage.identreprise = entreprises.identreprise AND prendre_place_a.idcentre = centres.idcentre AND prendre_place_a.idoffre = offres_de_stage.idoffre AND s_adresser_a.idpromotion = promotions.idpromotion AND s_adresser_a.idoffre = offres_de_stage.idoffre';
+
         if (isset( $_POST['search'])){
             $stage-> intitule_offre = $_POST['search'];
             $res = $stage->research();
-        };
-        $skills = $stage->competences();
-        if(isset($_POST['competences'])){
-            $stage->nom_competence = $_POST['competences'];
-            $res =  $stage->filterCompetence();
         }
-        $company = $stage->getCompany();
-        $campus = $stage->getCampus();
+        if(isset($_POST['entreprise'])){
+            if($_POST['entreprise'] != ""){
+                $nom_entreprise = $_POST['entreprise'];
+                $entreprise = ' AND nom_entreprise = "'.$nom_entreprise.'"';
+                $debut = $debut.$entreprise;
+            }
+            if($_POST['competences'] != ""){
+                $nom_competence = $_POST['competences'];
+                $competence = ' AND offres_de_stage.idoffre = requerir.idoffre AND requerir.idcompetence = competences.idcompetence AND nom_competence = "'.$nom_competence.'"';
+                $debut = $debut.$competence;
+            }
+            if($_POST['localite'] != ""){
+                $campus = $_POST['localite'];
+                $centre = ' AND nom_centre = "'.$campus.'"';
+                $debut = $debut.$centre;
+            }
+            if($_POST['promo'] != ""){
+                $promotion = $_POST['promo'];
+                $promo = ' AND nom_promotion = "'.$promotion.'"';
+                $debut = $debut.$promo;
+            }
+            if($_POST['nbrPlace'] != ""){
+                $nb = $_POST['nbrPlace'];
+                $nb_place = ' AND nombre_places = "'.$nb.'"';
+                $debut = $debut.$nb_place;
+            }
+                 
+        };
+        $debut = $debut.' GROUP BY offres_de_stage.idoffre'; 
+        $res = $stage->filter($debut);
+        
+        
         //$res_places = $stage->places($db);
         require('./View/home.php');
     }

@@ -93,9 +93,9 @@
             $promos = $request->fetchAll();
             return $promos;
         }
-        public function filterCompetence(){
+        public function filter($debut){
             global $db;
-            $request = $db->query("SELECT offres_de_stage.idoffre, intitule_offre, description, nom_entreprise FROM offres_de_stage, requerir, competences, entreprises WHERE offres_de_stage.identreprise = entreprises.identreprise AND offres_de_stage.idoffre = requerir.idoffre AND requerir.idcompetence = competences.idcompetence AND nom_competence = '$this->nom_competence'");
+            $request = $db->query($debut);
             $idOffre = $request->fetchAll();
             return $idOffre;
         }
