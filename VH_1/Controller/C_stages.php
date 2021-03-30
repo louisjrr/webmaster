@@ -10,6 +10,7 @@
         };
         $skills = $stage->competences();
         $company = $stage->getCompany();
+        $campus = $stage->getCampus();
         //$res_places = $stage->places($db);
         require('./View/home.php');
     }

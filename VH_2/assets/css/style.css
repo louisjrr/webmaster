@@ -671,8 +671,6 @@ a.nav-link:hover:before {
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 

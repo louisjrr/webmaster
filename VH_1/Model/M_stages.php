@@ -74,5 +74,16 @@
             $entreprise = $request->fetchAll();
             return $entreprise;
         }
+        public function getCampus(){
+            global $db;
+            $request = $db->query('SELECT nom_centre FROM centres');
+            $campus = $request->fetchAll();
+            return $campus;
+        }
+        public function researchFilter(){
+            global $db;
+            //$request = $db->query("");
+            //$filter = $request->fetch();
+        }
     }
 ?>
