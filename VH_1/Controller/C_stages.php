@@ -21,6 +21,7 @@
     function NewInternship(){
         global $stage;
         $competences= $stage->competences();
+        $company =$stage->getCompany();
         if(isset($_POST['stage'])){
             $j = $stage->add($_POST['entreprise'],$_POST['titre_stage'],$_POST['description'],$_POST['nb_place']);
             echo 'nbcomptences : '.$j[0][0].', id :'.$j[1];
