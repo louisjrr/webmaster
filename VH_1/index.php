@@ -1,4 +1,6 @@
+<link rel="manifest" href="manifest.json">
 <?php
+    
     include "route.php";
     include "Controller/C_stages.php";
     include "Controller/C_user.php";
