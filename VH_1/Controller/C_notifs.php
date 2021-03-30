@@ -1,8 +1,9 @@
 <?php
 include './Model/M_notifs.php';
-    session_start();
+
     
     function afficherNotifs(){
+        session_start();
         $user = new UserNotif;
         $Notifs = $user->getNotifs($_SESSION['id']);
         foreach($Notifs as $notif){
@@ -14,7 +15,7 @@ include './Model/M_notifs.php';
                     echo("</div>");
                  }
                  elseif($notif['vue'] == 1){
-                    echo("<div class='alert alert-secondary'>");
+                    echo("<div class='alert alertLight'>");
                     echo("<h2>Offre: ".$user->getoffre($notif['idcandidature'])."</h2>");
                     echo("<p>".$notif['contenu']."</p>");
                     echo("</div>");
@@ -22,6 +23,9 @@ include './Model/M_notifs.php';
 
                  echo("</div>");
         }
+    }
+    function notifications(){
         require './View/notifs.php';
     }
+
 ?>

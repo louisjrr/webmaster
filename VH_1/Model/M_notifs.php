@@ -7,10 +7,11 @@ class UserNotif{
         $table = $queryNotif->fetchAll();
         return $table;
     }
-    public function getOffre($iCandidature){
-        $queryCandid = $db->prepare("SELECT idoffre, intitule_offre FROM offres_de_stage WHERE idoffre = :idcand");
+    public function getOffre($idCandidature){
+        global $db;
+        $queryCandid = $db->prepare("SELECT idoffre, intitule_offre FROM offres_de_stage WHERE idoffre = (SELECT idoffre FROM candidatures WHERE idcandidature = :idcand)");
         $queryCandid->execute(array('idcand'=> $idCandidature));
-        $result = $queryNotif->fetchAll();
+        $result = $queryCandid->fetch();
         $name = $result['intitule_offre'];
         return $name;
     }

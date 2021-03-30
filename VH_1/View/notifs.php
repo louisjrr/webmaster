@@ -43,7 +43,7 @@
     </header>
     <section>
         <div>
-
+            <?php afficherNotifs(); ?>
         </div>
     </section>
 </body>
