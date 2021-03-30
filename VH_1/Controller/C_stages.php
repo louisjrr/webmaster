@@ -86,7 +86,7 @@
 
     function detailOffre($idOffre, $idUser){
         global $db;
-        $queryDetail = $db->prepare("CALL afficher(:idOffre, :idUser");
+        $queryDetail = $db->prepare("CALL afficher(:idOffre, :idUser)");
         $queryDetail->execute(array('idOffre'=>$idOffre, 'idUser'=> $idUser));
         $table = $queryDetail->fetch();
         return $table;
@@ -97,10 +97,12 @@
         $echo($tableDetail['nom_competence'.$i].'  ');
     }*/
     function AfficherCompetences($idOffre){
+        $StringReturn = "";
         $tableDetail = detailOffre($idOffre, $_SESSION['id']); 
-        for ($i=0; $i = (count($tableDetail)-3);$i++){ 
-            $echo($tableDetail['nom_competence'.$i].' ');
+        for ($i=0; $i < (count($tableDetail)-6);$i+=2){ 
+            $StringReturn = $StringReturn.$tableDetail['nom_competence'.$i/2].' / ';
          } 
+        return $StringReturn;
     }
     
 ?>
