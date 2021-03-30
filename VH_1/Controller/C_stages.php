@@ -11,6 +11,7 @@
         $skills = $stage->competences();
         if(isset($_POST['competences'])){
             $stage->nom_competence = $_POST['competences'];
+            $res =  $stage->filterCompetence();
         }
         $company = $stage->getCompany();
         $campus = $stage->getCampus();

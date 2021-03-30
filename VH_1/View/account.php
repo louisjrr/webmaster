@@ -17,7 +17,7 @@
     <header>
         <nav class="navbar navbar-expand-md navbar-light bg-light">
             <div class="container-fluid d-flex flex-row">
-                <a class="navbar-brand" href="/"><img class ="logo"src="http://www.NeedsAssets.com/images/logo.png"></a>
+                <a class="navbar-brand" href="/"><img class ="logo"src="http://www.NeedsAssets.com/images/logo.png" alt="needs"></a>
                 <div class ="d-md-none mobile" data-toggle="collapse" data-target="#navbarResponsive">
                     <div class = 'bg-dark line1' data-toggle="collapse" data-target="#navbarResponsive"></div>
                     <div class = 'bg-dark line2' data-toggle="collapse" data-target="#navbarResponsive"></div>

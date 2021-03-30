@@ -82,9 +82,9 @@
         }
         public function filterCompetence(){
             global $db;
-            $request = $db->query("SELECT idcompetence FROM competences WHERE nom_competence = '$this->nom_competence'");
-            $idComp = $request->fetch(PDO::FETCH_NUM);
-            return $idComp[0];
+            $request = $db->query("SELECT offres_de_stage.idoffre, intitule_offre, description, nom_entreprise FROM offres_de_stage, requerir, competences, entreprises WHERE offres_de_stage.identreprise = entreprises.identreprise AND offres_de_stage.idoffre = requerir.idoffre AND requerir.idcompetence = competences.idcompetence AND nom_competence = '$this->nom_competence'");
+            $idOffre = $request->fetchAll();
+            return $idOffre;
         }
         public function researchFilterComp(){
             global $db;
