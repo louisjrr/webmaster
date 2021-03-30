@@ -1,7 +1,5 @@
 @media screen and (max-width: (576px)) {
-    /*----page register----*/
-    
-    
+    /*----Register----*/ 
     .block{
         padding-top: 5px;
         padding-left: 0px;
@@ -10,6 +8,31 @@
     }
     .labin{
         width: 350px;
+    }
+    .btnBack{
+        margin-left: 20px;
+    }
+
+    /*----Home----*/
+    .recherche-input{
+        width: 290px;
+    }
+    .filter select{
+        padding-right: 0px;
+        padding-left: 0px;
+        width: 110px;
+    }
+    .filterForm{
+        text-align: center;
+    }
+    .stages{
+        width: 50%;
+    }
+    .stage h2{
+        font-size: 1.25em;
+    }
+    .stage h5{
+        font-size: 1em;
     }
     
 }
