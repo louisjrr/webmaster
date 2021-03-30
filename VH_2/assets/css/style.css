@@ -188,6 +188,22 @@ i {
   display: none;
 }
 
+.containCompare {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.compareItem {
+  margin: 0 auto;
+  width: 45%;
+  height: 85vh;
+}
+
+.compareItem * {
+  text-align: center;
+}
+
 .stage {
   width: 90%;
   height: 40%;

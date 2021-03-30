@@ -18,7 +18,7 @@
         }
         public function research(){
             global $db;
-            $request = $db->prepare("SELECT idoffre, intitule_offre, description, nom_entreprise FROM offres_de_stage, entreprises WHERE offres_de_stage.IDENTREPRISE = entreprises.IDENTREPRISE AND intitule_offre LIKE ?");
+            $request = $db->prepare("SELECT idoffre, intitule_offre, description, nom_entreprise FROM offres_de_stage, entreprises WHERE offres_de_stage.IDENTREPRISE = entreprises.IDENTREPRISE AND UPPER(intitule_offre) LIKE UPPER(?) AND NOT EXISTS (SELECT IDOFFRE FROM candidatures WHERE IDUTILISATEUR = ".$_SESSION['id']." AND offres_de_stage.IDOFFRE = candidatures.IDOFFRE) AND NOT EXISTS (SELECT IDOFFRE FROM met_en_wishlist WHERE IDUTILISATEUR = ".$_SESSION['id']." AND offres_de_stage.IDOFFRE = met_en_wishlist.IDOFFRE);");
             $request->execute(array("%".$this->intitule_offre."%"));
             $search = $request->fetchAll();
             return $search;
