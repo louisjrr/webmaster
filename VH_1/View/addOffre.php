@@ -2,6 +2,7 @@
 <html lang="en">
 <?php 
 include('./Controller/C_Verif_Autorisations.php');
+include 'config.php';
 noStudent();
 sfx9VerifAddOffre();
 ?>

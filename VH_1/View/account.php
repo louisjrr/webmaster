@@ -238,8 +238,8 @@ include 'config.php'
                             <button type = "submit" name="modifProfil"  class="infoGeneralesButton btn btn-dark modifProfil">Edit my Profile</button>
                             <button type = "submit" name="wishlist"  class="infoGeneralesButton btn btn-dark wishlistBtn">My Wishlist</button> 
                             <button type = "submit" name="Postulate"  class="infoGeneralesButton btn btn-dark postulateBtn">My Applications</button> 
-                            <button type = "submit" name="allPilote" class="infoGeneralesButton btn btn-dark allPilote">show Pilotes</button>
-                            <button type = "submit" name="allDelegate" class="infoGeneralesButton btn btn-dark allDelegate">show Tutors</button>
+                            <button type = "submit" name="allPilote" class="infoGeneralesButton btn btn-dark allPilote">show Tutors</button>
+                            <button type = "submit" name="allDelegate" class="infoGeneralesButton btn btn-dark allDelegate">show Delegates</button>
                             <button type = "submit" name="allStudent" class="infoGeneralesButton btn btn-dark allStudent">show Students</button>
                             <button type = "submit" name="CreateAccount"  class="infoGeneralesButton btn btn-dark CreateAccount">Create an account</button>
                             <button type = "submit" name="CreateCompany"  class="infoGeneralesButton btn btn-dark CreateCompany">Create a company</button>
