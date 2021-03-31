@@ -1,5 +1,6 @@
 <?php
     include_once './Controller/C_database.php';
+    include 'config.php';
 
     if(isset($_POST['connectLogin'])){
         if($_POST['login'] !=="" && $_POST['password'] !==""){
@@ -31,13 +32,13 @@
 
                     $_SESSION['role'] = $infoRole['nom_role'];
                     if($_SESSION['role'] == 'Administrateur'){
-                        $_SESSION['prestige'] = 'http://www.NeedsAssets.com/images/iconRole3.ico';
+                        $_SESSION['prestige'] = $URLStaticFiles.'images/iconRole3.ico';
                     }
                     elseif($_SESSION['role'] == 'Pilote'){
-                        $_SESSION['prestige'] = 'http://www.NeedsAssets.com/images/iconRole2.ico';
+                        $_SESSION['prestige'] = $URLStaticFiles.'images/iconRole2.ico';
                     }
                     elseif($_SESSION['role'] == 'Délégué'){
-                        $_SESSION['prestige'] = 'http://www.NeedsAssets.com/images/iconRole1.ico';
+                        $_SESSION['prestige'] = $URLStaticFiles.'images/iconRole1.ico';
                         $queryAutorisations = $db->prepare("SELECT CONVERT(autorisations USING utf8) FROM autorisations, utilisateurs, roles WHERE idutilisateur = :idUser AND utilisateurs.idrole = roles.idrole AND roles.idautorisation = autorisations.idautorisation;");
                         $queryAutorisations->execute(array('idUser' => $_SESSION["id"])); 
                         $infoAutorisations = $queryAutorisations->fetch();
@@ -52,7 +53,7 @@
                         
                     }
                     else{
-                        $_SESSION['prestige'] = 'http://www.NeedsAssets.com/images/iconRole1.ico';
+                        $_SESSION['prestige'] = $URLStaticFiles.'images/iconRole1.ico';
                     }
 
                     echo 'Vous êtes connecté !';
