@@ -67,6 +67,7 @@
         compare();
     });
     Route::add('/Notifs', function(){
+        resetPage();
         notifications();
     });
     Route::add('/Notifs', function(){
@@ -75,6 +76,15 @@
     Route::add('/notifVue', function(){
         vueSurNotif($_POST['idNotif']);
     },"post");
+    Route::add('/pagePlus', function(){
+        nextPage();
+    },"post");
+    Route::add('/pageMoins', function(){
+        previousPage();
+    },"post");
 
+    Route::add('/pageReset', function(){
+        resetPage();
+    },"post");
     Route::run(BASEPATH);
 ?>

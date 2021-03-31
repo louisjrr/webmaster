@@ -47,8 +47,17 @@
     </nav>
     </header>
     <section>
-        <div>
+        <div class = "touteLesNotifs">
             <?php afficherNotifs(); ?>
+            <div class="infoNotifs">
+                <h6>page:</h6>
+                <p class = "numPage"> <?php wichPage(); ?> </p>
+                <div class = "previousnext">
+                    <div class="infoNotifButton pageMoins" name="pageMoins"><h6>Previous Page</h6></div>
+                    <div class="infoNotifButton pagePlus"  name="pagePlus"><h6>Next page</h6></div>
+                </div>
+                <div type ="submit" class="infoNotifButton pageReset"  name="pageReset"><h6>Return Page 1</h6></div>
+            </div>
         </div>
     </section>
     <script type='text/javascript' src=<?=$URLStaticFiles?>vendors/jquery/jquery-ui.min.js></script>
