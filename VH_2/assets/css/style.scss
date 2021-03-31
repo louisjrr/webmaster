@@ -705,6 +705,7 @@ i {
   cursor: pointer;
   background-color: $green;
   width: 90px;
+}
 /*----create a company----*/
 .companyForm{
   display: flex;
@@ -743,6 +744,7 @@ i {
 }
 .pageReset{
   margin: 0 auto;
+}
 .companyForm button:hover{
   background-color: $greenHover;
   color: white;

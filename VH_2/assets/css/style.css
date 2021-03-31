@@ -796,7 +796,6 @@ a.nav-link:hover:before {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  flex-direction: column;
   overflow-y: auto;
 }
 
@@ -826,13 +825,18 @@ a.nav-link:hover:before {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .scroll_wishlist_affichage {
   width: 50%;
   height: 100%;
   overflow-y: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -845,8 +849,13 @@ a.nav-link:hover:before {
 }
 
 .blockWishlist {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .scroll_application {
@@ -937,10 +946,17 @@ i {
   cursor: pointer;
   background-color: #3fdd8f;
   width: 90px;
+}
+
 /*----create a company----*/
 .companyForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin-top: 15px;
 }
 
@@ -989,7 +1005,7 @@ i {
 .pageReset {
   margin: 0 auto;
 }
-/*# sourceMappingURL=style.css.map */
+
 .companyForm button:hover {
   background-color: #3aa871;
   color: white;
@@ -1005,7 +1021,8 @@ i {
   margin-top: 10px;
   border: none;
   border-radius: 3px;
-  box-shadow: 0 0 1em #aaa;
+  -webkit-box-shadow: 0 0 1em #aaa;
+          box-shadow: 0 0 1em #aaa;
 }
 
 .form-stage select {
@@ -1038,4 +1055,5 @@ i {
 .inputModifProfilValider:hover {
   background-color: #3aa871;
   color: white;
-}/*# sourceMappingURL=style.css.map */
+}
+/*# sourceMappingURL=style.css.map */
