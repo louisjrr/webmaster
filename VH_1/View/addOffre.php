@@ -2,6 +2,7 @@
 <html lang="en">
 <?php 
 include('./Controller/C_Verif_Autorisations.php');
+include 'config.php';
 noStudent();
 sfx9VerifAddOffre();
 ?>
@@ -41,6 +42,9 @@ sfx9VerifAddOffre();
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Notifs"><img class ="cloche" src=<?=$URLStaticFiles.cloche(); ?>></a>
                     </li>
                 </ul>
             </div>

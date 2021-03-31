@@ -1,9 +1,10 @@
 <?php
 include './Model/M_notifs.php';
 
-    
     function afficherNotifs(){
+        if(!isset($_SESSION)){
         session_start();
+        }
         $user = new UserNotif;
         $Notifs = $user->getNotifs($_SESSION['id']);
         foreach($Notifs as $notif){
@@ -34,4 +35,27 @@ include './Model/M_notifs.php';
         $user->voirNotif($idNotif);
     }
 
+    function cloche(){
+        if(!isset($_SESSION)){
+            session_start();
+            }
+        $location = "";
+        $notifications = 0;
+        $user = new UserNotif;
+        $Notifs = $user->getNotifs($_SESSION['id']);
+        foreach($Notifs as $notif){
+            if($notif['vue'] == 1){
+            }
+            elseif($notif['vue'] == 0){
+                $notifications++;
+            }
+        }
+        if($notifications > 0){
+            $location = "images/notif.png";
+        }
+        elseif($notifications == 0){
+            $location = "images/no_notif.png";
+        }
+        return $location;
+    }
 ?>

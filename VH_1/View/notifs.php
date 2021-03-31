@@ -17,11 +17,12 @@
     <header>
     <nav class="navbar navbar-expand-md navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/"><img class ="logo"src="http://www.NeedsAssets.com/images/logo.png"></a>
+            <a class="navbar-brand" href="/"><img class ="logo"src=<?=$URLStaticFiles?>images/logo.png></a>
             <div class ="d-md-none mobile" data-toggle="collapse" data-target="#navbarResponsive">
                 <div class = 'bg-dark line1' data-toggle="collapse" data-target="#navbarResponsive"></div>
                 <div class = 'bg-dark line2' data-toggle="collapse" data-target="#navbarResponsive"></div>
                 <div class = 'bg-dark line3' data-toggle="collapse" data-target="#navbarResponsive"></div>
+
             </div>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
@@ -35,7 +36,10 @@
                         <a class="nav-link" href="NewInternShip">Avis</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="Compare">Compare</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Notifs"><img class ="cloche" src=<?=$URLStaticFiles.cloche(); ?>></a>
                     </li>
                 </ul>
             </div>
