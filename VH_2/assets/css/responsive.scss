@@ -30,14 +30,7 @@
     .stages{
         height: 60vh;
     }
-    .stage h2{
-        width: 500px;
-        font-size: 1.25em;
-        
-    }
-    .stage h5{
-        font-size: 1em;
-    }
+    
     
 }
 @media screen and (max-width: (768px)) {
@@ -56,13 +49,21 @@
         margin-bottom: 20px;
     }
     /*----Home----*/
+    .stage h2{
+        width: 500px;
+        font-size: 1.25em;
+        
+    }
+    .stage h5{
+        font-size: 1em;
+    }
     .stock{
         display: flex;
         flex-direction: column;
     }
     .stages{
         width: 100%;
-        
+        height: 60vh;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
