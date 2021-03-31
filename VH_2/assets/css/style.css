@@ -703,6 +703,7 @@ a.nav-link:hover:before {
 .accountAffiche {
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
 }
 
 .affichage_entreprise {
@@ -724,10 +725,27 @@ a.nav-link:hover:before {
   overflow-y: auto;
   overflow-x: hidden;
   display: flex;
+  flex-direction: column;
+}
+
+.scroll_wishlist_affichage {
+  width: 50%;
+  height: 100%;
+  overflow-y: auto;
+  display: flex;
+}
+
+.scroll_wishlist_affichage::-webkit-scrollbar {
+  display: none;
 }
 
 .scroll_wishlist::-webkit-scrollbar {
   display: none;
+}
+
+.blockWishlist {
+  display: flex;
+  flex-direction: row;
 }
 
 .scroll_application {
@@ -745,11 +763,6 @@ a.nav-link:hover:before {
 
 .CRUD {
   color: black;
-}
-
-.show {
-  overflow-y: auto;
-  overflow-x: hidden;
 }
 
 .show::-webkit-scrollbar {
@@ -803,4 +816,42 @@ i {
 
 .cloche {
   width: 30px;
+}
+
+/*----create a company----*/
+.companyForm {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+.companyTitle {
+  margin-bottom: 100px;
+  -webkit-text-decoration: underline #3fdd8f;
+          text-decoration: underline #3fdd8f;
+}
+
+.companyForm input {
+  width: 60%;
+  border-radius: 3px;
+  border: #3fdd8f 2px solid;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.companyForm button {
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 20%;
+  background-color: #3fdd8f;
+  border: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 3px;
+}
+
+.companyForm button:hover {
+  background-color: #3aa871;
+  color: white;
 }/*# sourceMappingURL=style.css.map */

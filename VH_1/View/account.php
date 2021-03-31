@@ -148,6 +148,7 @@ include 'config.php'
                                 }
                                 break;
                             case "wishlist":
+                                echo ('<div class="blockWishlist">');
                                 //Mettre dans le model et le controller
                                 function Wishlist(){
                                     global $db;
@@ -156,11 +157,12 @@ include 'config.php'
                                     return $wishlist;
                                 }
                                 $wishlist=Wishlist();
-                                echo ('<div style="display:flex; height:100%;"><div class="scroll_wishlist">');
+                                echo ('<div class="scroll_wishlist">');
                                 foreach($wishlist as $r){
                                     echo ('<div class="wishlist"><h2 class="titre">'.$r["intitule_offre"].'</h2><i class="fas fa-heart"></i><p class="description">'.$r['description'].'</p><br><h5 class="entreprise">'.$r["nom_entreprise"].'</h5></div>');
                                 }
-                                echo ('</div><div class="scroll_wishlist"><div class="affichage_wishlist"></div></div></div>');
+                                echo ('</div><div class="scroll_wishlist_affichage"><div class="affichage_wishlist"></div></div></div>');
+                                //echo ('</div>');
                                 break;
                             case "postulate":
                                 function showPostulate(){
@@ -223,9 +225,9 @@ include 'config.php'
                                 break;
 
                                 case "CreateCompany":
-                                    echo("<div><form method = 'post'>");
-                                    echo("<label>nom de l'entreprise</label>");
-                                    echo("<input type='text' name='nomentreprise' placeholder='nom entreprise'></input>");
+                                    echo("<div><form method = 'post' class='companyForm'>");
+                                    echo("<h2 class='companyTitle'>Add a company :</h2>");
+                                    echo("<input type='text' name='nomentreprise' placeholder='Company name'></input>");
                                     echo("<button type'submit' name='addCompany'>Valider</button>");
                                     echo("</div></form>");
                                 
