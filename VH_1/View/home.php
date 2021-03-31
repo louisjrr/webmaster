@@ -19,7 +19,7 @@ sfx8VerifHome();
         <link rel="stylesheet" href=<?=$URLStaticFiles?>css/animation.css>
         <script src="https://kit.fontawesome.com/0c87a70838.js"></script>
     </head>
-    <body>
+    <body class="homeBody">
     <header>
     <nav class="navbar navbar-expand-md navbar-light bg-light">
         <div class="container-fluid">
@@ -43,6 +43,9 @@ sfx8VerifHome();
                     <li class="nav-item">
                         <a class="nav-link" href="Compare">Compare</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Notifs"><img class ="cloche" src=<?=$URLStaticFiles.cloche(); ?>></a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -56,30 +59,33 @@ sfx8VerifHome();
                     </label>
                 </div>
         <div class="filter">
+            <div>
                 <select name="competences" id="competences_select">
-                    <option value="">--Skills--</option>
-                    <?php
-                        foreach($skills as $ski){
-                            echo '<option value='.$ski["nom_competence"].'>'.$ski["nom_competence"].'</option>';
-                        }
-                    ?>
-                </select>
-                <select name="entreprise" id="entreprise_select">
-                    <option value="">--Company--</option>
-                    <?php
-                        foreach($company as $com){
-                            echo '<option value='.$com["nom_entreprise"].'>'.$com["nom_entreprise"].'</option>';
-                        }
-                    ?>
-                </select>
-                <select name="localite" id="localite_data">
-                    <option value="">--City--</option>
-                    <?php
-                        foreach($campus as $cam){
-                            echo '<option value='.$cam["nom_centre"].'>'.$cam["nom_centre"].'</option>';
-                        }
-                    ?>
-                </select>
+                        <option value="">--Skills--</option>
+                        <?php
+                            foreach($skills as $ski){
+                                echo '<option value='.$ski["nom_competence"].'>'.$ski["nom_competence"].'</option>';
+                            }
+                        ?>
+                    </select>
+                    <select name="entreprise" id="entreprise_select">
+                        <option value="">--Company--</option>
+                        <?php
+                            foreach($company as $com){
+                                echo '<option value='.$com["nom_entreprise"].'>'.$com["nom_entreprise"].'</option>';
+                            }
+                        ?>
+                    </select>
+                    <select name="localite" id="localite_data">
+                        <option value="">--City--</option>
+                        <?php
+                            foreach($campus as $cam){
+                                echo '<option value='.$cam["nom_centre"].'>'.$cam["nom_centre"].'</option>';
+                            }
+                        ?>
+                    </select>
+            </div>
+            <div>
                 <select name="promo" id="promo_select">
                     <option value="">--Promotion--</option>
                     <option value="A1">A1</option>
@@ -95,6 +101,9 @@ sfx8VerifHome();
                     <option value="3">3</option>
                     <option value="4">4</option>
                 </select>
+            </div>
+                
+                
             </form>
             </div>
         </div>

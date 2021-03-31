@@ -670,8 +670,6 @@ i {
   display: flex;
   justify-content: space-around;
   background-color: #eeeeee;
-  border: 1px solid #dddddd;
-  border-top: none;
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -679,7 +677,11 @@ i {
   padding: 3px 1px 3px 1px;
   border-color: $green;
   border-radius: 3px;
+  margin-left: 5px;
 }
 .alertLight {
   background-color: rgb(210, 210, 210);
+}
+.cloche{
+  width: 30px;
 }

@@ -43,6 +43,9 @@ sfx8VerifHome();
                     <li class="nav-item active">
                         <a class="nav-link" href="Compare">Compare</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Notifs"><img class ="cloche" src=<?=$URLStaticFiles.cloche(); ?>></a>
+                    </li>
                 </ul>
             </div>
         </div>
