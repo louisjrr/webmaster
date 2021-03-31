@@ -697,6 +697,15 @@ i {
 .cloche{
   width: 30px;
 }
+.infoNotifs{
+  text-align: center;
+  
+}
+.infoNotifButton{
+  cursor: pointer;
+  background-color: $green;
+  width: 90px;
+}
 /*----create a company----*/
 .companyForm{
   display: flex;
@@ -724,6 +733,17 @@ i {
   padding-top: 5px;
   padding-bottom: 5px;
   border-radius: 3px;
+}
+.infoNotifButton:hover{
+  background-color: $greenHover;
+}
+.previousnext{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.pageReset{
+  margin: 0 auto;
 }
 .companyForm button:hover{
   background-color: $greenHover;
