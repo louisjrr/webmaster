@@ -74,7 +74,7 @@ include 'config.php'
                                 echo  ("<input class='inputModifProfil' type='text' name='age' value=".$_SESSION['age'].">");
                                 echo  ('<label class="labelModifProfil" for="adresse">Address : </label>');
                                 echo  ("<input class='inputModifProfil' type='text'  name='adresse' value=".$_SESSION['adresse'].">");
-                                echo  ("<button type='submit' class='inputModifProfil' name='modifProfilValided'>Valider les changements</button>");
+                                echo  ("<button type='submit' class='inputModifProfil inputModifProfilValider' name='modifProfilValided'>Valider les changements</button>");
                                 echo  ("</div></form>");
                                 break;
                             case "allPilote":
@@ -148,6 +148,7 @@ include 'config.php'
                                 }
                                 break;
                             case "wishlist":
+                                echo ('<div class="blockWishlist">');
                                 //Mettre dans le model et le controller
                                 function Wishlist(){
                                     global $db;
@@ -156,11 +157,12 @@ include 'config.php'
                                     return $wishlist;
                                 }
                                 $wishlist=Wishlist();
-                                echo ('<div style="display:flex; height:100%;"><div class="scroll_wishlist">');
+                                echo ('<div class="scroll_wishlist">');
                                 foreach($wishlist as $r){
                                     echo ('<div class="wishlist"><h2 class="titre">'.$r["intitule_offre"].'</h2><i class="fas fa-heart"></i><p class="description">'.$r['description'].'</p><br><h5 class="entreprise">'.$r["nom_entreprise"].'</h5></div>');
                                 }
-                                echo ('</div><div class="scroll_wishlist"><div class="affichage_wishlist"></div></div></div>');
+                                echo ('</div><div class="scroll_wishlist_affichage"><div class="affichage_wishlist"></div></div></div>');
+                                //echo ('</div>');
                                 break;
                             case "postulate":
                                 function showPostulate(){
@@ -215,7 +217,7 @@ include 'config.php'
                                     return $entreprise;
                                 }
                                 $entreprise=Rate();
-                                echo "<div style='display:flex; height:100%;'><div class='entreprises'>";
+                                echo "<div class='divEntreprise'><div class='entreprises'>";
                                 foreach($entreprise as $ent){
                                     echo '<div class="entreprise"><h2 class="nom_entreprise">'.$ent["nom_entreprise"].'</h2><p class="identreprise">'.$ent["identreprise"].'</p></div>';
                                 }
@@ -223,9 +225,9 @@ include 'config.php'
                                 break;
 
                                 case "CreateCompany":
-                                    echo("<div><form method = 'post'>");
-                                    echo("<label>nom de l'entreprise</label>");
-                                    echo("<input type='text' name='nomentreprise' placeholder='nom entreprise'></input>");
+                                    echo("<div><form method = 'post' class='companyForm'>");
+                                    echo("<h2 class='companyTitle'>Add a company :</h2>");
+                                    echo("<input type='text' name='nomentreprise' placeholder='Company name'></input>");
                                     echo("<button type'submit' name='addCompany'>Valider</button>");
                                     echo("</div></form>");
                                 

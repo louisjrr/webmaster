@@ -70,7 +70,7 @@
         overflow-x: auto;
     }
     .stage{
-        width: 450px;
+        width: 400px;
         height: 30vh;
         margin-left: 5px;
         margin-right: 5px;
@@ -83,6 +83,77 @@
     .homeBody{
         overflow-x: hidden;
     }
+    /*----Account----*/
+    .accountAffiche{
+        margin-bottom: 20px;
+    }
+    .blockWishlist{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        
+    }
+    .scroll_Wishlist{
+        width: 800px;
+        height: 60%;
+        display: flex;
+        flex-direction: row;
+        overflow-y: hidden;
+        overflow-x: auto;
+    }
+    .scroll_wishlist h2{
+        font-size: 1.25em;
+    }
+    .scroll_wishlist h5{
+        font-size: 1em;
+    }
+    .wishlist{
+        height: 60%;
+        width: 340px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .scroll_wishlist_affichage{
+        margin-top: -25px;
+        width: 100%;
+    }
+    /*----account->newintership----*/
+    .form-stage{
+        flex-direction: column;
+        height: 800px;
+    }
+    .form-stage select{
+        margin-bottom: 15px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-radius: 3px;
+    }
+    .descriptionStage{
+        width: 290px;
+        margin-left: 5%;
+    }
+    .listingCompetence{
+        margin-top: 30px;
+        height: 30vh;
+        width: 500px;
+        margin-left: -100px;
+    }
+
+    /*----Account -> Rate a company----*/
+    .nom_entreprise{
+        font-size: 1em;
+    }
+    .entreprises .entreprise{
+        width: 100%;
+    }
+    .affichage_entreprise{
+        margin-left: 5px;
+    }
+    .affichage_entreprise h2{
+        font-size: 1.7em;
+    }
+    
+    
 
 }
 @media screen and (max-width: (992px)) {
