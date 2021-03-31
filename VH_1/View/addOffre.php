@@ -13,17 +13,17 @@ sfx9VerifAddOffre();
         <title>Home</title>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Fascinate&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="http://www.NeedsAssets.com/vendors/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="http://www.NeedsAssets.com/css/style.css">
-        <link rel="stylesheet" href="http://www.NeedsAssets.com/css/responsive.css">
-        <link rel="stylesheet" href="http://www.NeedsAssets.com/css/animation.css">
+        <link rel="stylesheet" href=<?=$URLStaticFiles?>vendors/bootstrap/css/bootstrap.min.css>
+        <link rel="stylesheet" href=<?=$URLStaticFiles?>css/style.css>
+        <link rel="stylesheet" href=<?=$URLStaticFiles?>css/responsive.css>
+        <link rel="stylesheet" href=<?=$URLStaticFiles?>css/animation.css>
         <script src="https://kit.fontawesome.com/0c87a70838.js"></script>
     </head>
     <body>
     <header>
     <nav class="navbar navbar-expand-md navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/"><img class ="logo"src="http://www.NeedsAssets.com/images/logo.png"></a>
+            <a class="navbar-brand" href="/"><img class ="logo" src=<?=$URLStaticFiles?>images/logo.png></a>
             <div class ="d-md-none mobile" data-toggle="collapse" data-target="#navbarResponsive">
                 <div class = 'bg-dark line1' data-toggle="collapse" data-target="#navbarResponsive"></div>
                 <div class = 'bg-dark line2' data-toggle="collapse" data-target="#navbarResponsive"></div>

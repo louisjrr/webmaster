@@ -1,5 +1,4 @@
 <link rel="manifest" href="manifest.json">
-<script type="text/javascript" src="installSW.js"></script>
 <?php
     include "config.php";
     include "route.php";
@@ -9,7 +8,7 @@
     include "Controller/C_notifs.php";
     //include "Controller/C_accountPHP.php";
 
-    define('BASEPATH', '');
+    define('BASEPATH', '/');
 
     Route::add('/', function(){
         login();
@@ -88,3 +87,4 @@
 
     Route::run(BASEPATH);
 ?>
+<script type="text/javascript" src="installSW.js"></script>

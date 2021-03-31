@@ -734,8 +734,15 @@ i {
   padding-bottom: 5px;
   border-radius: 3px;
 }
+/*----Page Notif----*/
 .infoNotifButton:hover{
   background-color: $greenHover;
+  color: white;
+}
+.infoNotifButton{
+  padding: 5px 5px 5px 5px;
+  border-radius: 3px;
+  border: none;
 }
 .previousnext{
   display: flex;
@@ -744,6 +751,9 @@ i {
 }
 .pageReset{
   margin: 0 auto;
+}
+.pageNotif{
+  margin-top: 20px;
 }
 .companyForm button:hover{
   background-color: $greenHover;
