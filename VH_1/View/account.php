@@ -217,7 +217,7 @@ include 'config.php'
                                     return $entreprise;
                                 }
                                 $entreprise=Rate();
-                                echo "<div class='divEntreprise><div class='entreprises'>";
+                                echo "<div class='divEntreprise'><div class='entreprises'>";
                                 foreach($entreprise as $ent){
                                     echo '<div class="entreprise"><h2 class="nom_entreprise">'.$ent["nom_entreprise"].'</h2><p class="identreprise">'.$ent["identreprise"].'</p></div>';
                                 }

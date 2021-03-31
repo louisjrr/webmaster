@@ -787,8 +787,9 @@ i {
   background-color: $greenHover;
   color: white;
 }
-.divEntreprises{
+.divEntreprise{
   display: flex;
+  flex-direction: row;
   height: 100%;
 }
 .rate{
