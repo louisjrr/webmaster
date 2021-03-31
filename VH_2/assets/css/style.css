@@ -861,8 +861,16 @@ i {
   border-radius: 3px;
 }
 
+/*----Page Notif----*/
 .infoNotifButton:hover {
   background-color: #3aa871;
+  color: white;
+}
+
+.infoNotifButton {
+  padding: 5px 5px 5px 5px;
+  border-radius: 3px;
+  border: none;
 }
 
 .previousnext {
@@ -873,6 +881,10 @@ i {
 
 .pageReset {
   margin: 0 auto;
+}
+
+.pageNotif {
+  margin-top: 20px;
 }
 
 .companyForm button:hover {

@@ -46,7 +46,7 @@
         </div>
     </nav>
     </header>
-    <section>
+    <section class="pageNotif">
         <div class = "touteLesNotifs">
             <?php afficherNotifs(); ?>
             <div class="infoNotifs">
@@ -62,5 +62,6 @@
     </section>
     <script type='text/javascript' src=<?=$URLStaticFiles?>vendors/jquery/jquery-ui.min.js></script>
     <script type='text/javascript' src=<?=$URLStaticFiles?>js/notifs.js></script>
+    <script type='text/javascript' src=<?=$URLStaticFiles?>js/script.js></script>
 </body>
 </html>
