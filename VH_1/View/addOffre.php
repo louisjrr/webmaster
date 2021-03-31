@@ -95,11 +95,11 @@ sfx9VerifAddOffre();
                             <option value="3">3 Places</option>
                             <option value="4">4 Places</option>
                         </select>
-                        <input name='stage' type="submit" value="Valider">
+                        <input class="btnAddOffre btnAddOver" name='stage' type="submit" value="Valider">
                     </div>
                     <div class="column two">
-                        <textarea name="description" style="height: 150px;width:500px;resize: none;" placeholder="Description de l'offre" required></textarea>
-                        <div class="listing">
+                        <textarea class='descriptionStage' name="description" placeholder="Description de l'offre" required></textarea>
+                        <div class="listing listingCompetence">
                             <?php             
                                 $i=1;
                                 foreach($competences as $n){
@@ -109,6 +109,7 @@ sfx9VerifAddOffre();
                             ?>
                         </div>
                     </div>
+                    <input class="btnAddOffre btnAddUnder" name='stage' type="submit" value="Valider">
                 </fieldset>
             </form>
         </div>

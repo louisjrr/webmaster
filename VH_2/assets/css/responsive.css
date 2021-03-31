@@ -136,4 +136,29 @@
     margin-top: -25px;
     width: 100%;
   }
+
+  /*----account->newintership----*/
+  .form-stage {
+    flex-direction: column;
+    height: 800px;
+  }
+
+  .form-stage select {
+    margin-bottom: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 3px;
+  }
+
+  .descriptionStage {
+    width: 290px;
+    margin-left: 5%;
+  }
+
+  .listingCompetence {
+    margin-top: 30px;
+    height: 30vh;
+    width: 500px;
+    margin-left: -100px;
+  }
 }/*# sourceMappingURL=responsive.css.map */

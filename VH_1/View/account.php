@@ -74,7 +74,7 @@ include 'config.php'
                                 echo  ("<input class='inputModifProfil' type='text' name='age' value=".$_SESSION['age'].">");
                                 echo  ('<label class="labelModifProfil" for="adresse">Address : </label>');
                                 echo  ("<input class='inputModifProfil' type='text'  name='adresse' value=".$_SESSION['adresse'].">");
-                                echo  ("<button type='submit' class='inputModifProfil' name='modifProfilValided'>Valider les changements</button>");
+                                echo  ("<button type='submit' class='inputModifProfil inputModifProfilValider' name='modifProfilValided'>Valider les changements</button>");
                                 echo  ("</div></form>");
                                 break;
                             case "allPilote":

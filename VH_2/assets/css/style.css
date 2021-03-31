@@ -854,4 +854,49 @@ i {
 .companyForm button:hover {
   background-color: #3aa871;
   color: white;
+}
+
+.descriptionStage {
+  height: 150px;
+  width: 500px;
+  resize: none;
+}
+
+.form-stage {
+  margin-top: 10px;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 0 1em #aaa;
+}
+
+.form-stage select {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 3px;
+}
+
+.btnAddOffre {
+  background-color: #3fdd8f;
+  border: none;
+  border-radius: 3px;
+}
+
+.btnAddOffre:hover {
+  background-color: #3aa871;
+  color: white;
+}
+
+.inputModifProfilValider {
+  width: 50%;
+  margin: 0 auto;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  border-radius: 3px;
+  border: none;
+  background-color: #3fdd8f;
+}
+
+.inputModifProfilValider:hover {
+  background-color: #3aa871;
+  color: white;
 }/*# sourceMappingURL=style.css.map */
