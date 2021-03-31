@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php include 'config.php' ?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -46,5 +47,7 @@
             <?php afficherNotifs(); ?>
         </div>
     </section>
+    <script type='text/javascript' src=<?=$URLStaticFiles?>vendors/jquery/jquery-ui.min.js></script>
+    <script type='text/javascript' src=<?=$URLStaticFiles?>js/notifs.js></script>
 </body>
 </html>

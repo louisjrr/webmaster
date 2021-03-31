@@ -2,7 +2,7 @@
 class UserNotif{
     public function getNotifs($idUser){
         global $db;
-        $queryNotif = $db->prepare("SELECT idnotification, idcandidature, contenu, vue FROM notifications WHERE idutilisateur = :iduser");
+        $queryNotif = $db->prepare("SELECT idnotification, idcandidature, contenu, vue FROM notifications WHERE idutilisateur = :iduser ORDER BY vue ASC");
         $queryNotif->execute(array('iduser'=> $idUser));
         $table = $queryNotif->fetchAll();
         return $table;
@@ -14,6 +14,12 @@ class UserNotif{
         $result = $queryCandid->fetch();
         $name = $result['intitule_offre'];
         return $name;
+    }
+    
+    public function voirNotif($idNotif){
+        global $db;
+        $queryVu = $db->prepare('UPDATE notifications SET vue = 1 WHERE idnotification = :idnotif');
+        $queryVu->execute(array('idnotif'=>$idNotif));
     }
 }
 

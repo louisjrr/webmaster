@@ -9,7 +9,8 @@ include './Model/M_notifs.php';
         foreach($Notifs as $notif){
             echo("<div class='container'>");
                 if($notif['vue'] == 0){
-                    echo("<div class='alert alert-primary'>");
+                    echo("<div class='alert alert-primary notification'>");
+                    echo("<p class='idNotification'>".$notif['idnotification']."</p>");
                     echo("<h2>Offre: ".$user->getoffre($notif['idcandidature'])."</h2>");
                     echo("<p>".$notif['contenu']."</p>");
                     echo("</div>");
@@ -26,6 +27,11 @@ include './Model/M_notifs.php';
     }
     function notifications(){
         require './View/notifs.php';
+    }
+
+    function vueSurNotif($idNotif){
+        $user = new UserNotif;
+        $user->voirNotif($idNotif);
     }
 
 ?>
