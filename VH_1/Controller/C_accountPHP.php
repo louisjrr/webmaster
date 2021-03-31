@@ -1,6 +1,7 @@
 <?php 
       include_once './Controller/C_database.php';
       include './Model/M_account.php';
+      include 'config.php';
       session_start();
       $mode;
 
@@ -78,8 +79,8 @@
                   break;
                   
             case "Pilote":
-                  echo "<script type='text/javascript' src='http://www.needsassets.com/vendors/jquery/jquery-ui.min.js'></script>";
-                  echo "<script type='text/javascript' src='http://www.needsassets.com/js/pilote.js'></script>";
+                  echo "<script type='text/javascript' src='".$URLStaticFiles."vendors/jquery/jquery-ui.min.js'></script>";
+                  echo "<script type='text/javascript' src='".$URLStaticFiles."js/pilote.js'></script>";
                   $pilote = new AccountPilote(2);
                   $showStudent = $pilote->afficher(3);
                   $delegate = new AccountDelegate();
@@ -87,8 +88,8 @@
 
                   break;
             case "Etudiant":
-                  echo "<script type='text/javascript' src='http://www.NeedsAssets.com/vendors/jquery/jquery-ui.min.js'></script>";
-                  echo "<script type='text/javascript' src='http://www.NeedsAssets.com/js/student.js'></script>";
+                  echo "<script type='text/javascript' src='".$URLStaticFiles."vendors/jquery/jquery-ui.min.js'></script>";
+                  echo "<script type='text/javascript' src='".$URLStaticFiles."js/student.js'></script>";
                   break;
             case "Délégué":
                   if(1==1){
@@ -101,8 +102,8 @@
                   $showStudent = $admin->afficher(3);
                   $delegate = new AccountDelegate();
                   $showDelegate = $delegate->afficherDelegate();
-                  echo "<script type='text/javascript' src='http://www.NeedsAssets.com/vendors/jquery/jquery-ui.min.js'></script>";
-                  echo "<script type='text/javascript' src='http://www.NeedsAssets.com/js/delegate.js'></script>";
+                  echo "<script type='text/javascript' src='".$URLStaticFiles."vendors/jquery/jquery-ui.min.js'></script>";
+                  echo "<script type='text/javascript' src='".$URLStaticFiles."js/delegate.js'></script>";
                   for($i=1;$i<36;$i++){
                         if(in_array("sfx".$i,$_SESSION['tableAutorisation'])){
                               //il a le droit $i
@@ -110,7 +111,7 @@
                         else{
                               echo "<script type='module'>    
                                     $.ajax({
-                                          url: 'http://www.NeedsAssets.com/js/delegate.js',
+                                          url: '".$URLStaticFiles."js/delegate.js',
                                           type: 'POST',
                                           dataType: 'script',
                                     })
