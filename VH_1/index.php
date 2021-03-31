@@ -72,6 +72,9 @@
     Route::add('/Notifs', function(){
         notifications();
     },"post");
+    Route::add('/notifVue', function(){
+        vueSurNotif($_POST['idNotif']);
+    },"post");
 
     Route::run(BASEPATH);
 ?>
