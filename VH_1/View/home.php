@@ -19,7 +19,7 @@ sfx8VerifHome();
         <link rel="stylesheet" href=<?=$URLStaticFiles?>css/animation.css>
         <script src="https://kit.fontawesome.com/0c87a70838.js"></script>
     </head>
-    <body>
+    <body class="homeBody">
     <header>
     <nav class="navbar navbar-expand-md navbar-light bg-light">
         <div class="container-fluid">

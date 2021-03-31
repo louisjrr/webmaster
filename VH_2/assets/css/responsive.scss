@@ -28,10 +28,12 @@
         flex-direction: column;
     }
     .stages{
-        width: 50%;
+        height: 60vh;
     }
     .stage h2{
+        width: 500px;
         font-size: 1.25em;
+        
     }
     .stage h5{
         font-size: 1em;
@@ -52,6 +54,34 @@
     }
     .block{
         margin-bottom: 20px;
+    }
+    /*----Home----*/
+    .stock{
+        display: flex;
+        flex-direction: column;
+    }
+    .stages{
+        width: 100%;
+        
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        overflow-y: hidden;
+        overflow-x: auto;
+    }
+    .stage{
+        width: 450px;
+        height: 30vh;
+        margin-left: 5px;
+        margin-right: 5px;
+        padding: 5px 5px 5px 5px;
+    }
+    .affichage{
+        width: 90%;
+        margin-top: -100px;
+    }
+    .homeBody{
+        overflow-x: hidden;
     }
 
 }
