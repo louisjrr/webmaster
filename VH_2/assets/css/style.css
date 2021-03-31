@@ -899,4 +899,24 @@ i {
 .inputModifProfilValider:hover {
   background-color: #3aa871;
   color: white;
+}
+
+.divEntreprises {
+  display: flex;
+  height: 100%;
+}
+
+.rate {
+  background-color: #3fdd8f;
+  border: none;
+  border-radius: 3px;
+  width: 40%;
+  margin: 0 auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.rate:hover {
+  background-color: #3aa871;
+  color: white;
 }/*# sourceMappingURL=style.css.map */
