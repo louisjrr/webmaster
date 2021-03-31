@@ -67,7 +67,6 @@
         compare();
     });
     Route::add('/Notifs', function(){
-        resetPage();
         notifications();
     });
     Route::add('/Notifs', function(){
@@ -86,5 +85,6 @@
     Route::add('/pageReset', function(){
         resetPage();
     },"post");
+
     Route::run(BASEPATH);
 ?>
