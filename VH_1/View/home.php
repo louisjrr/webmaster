@@ -122,6 +122,7 @@ sfx8VerifHome();
         </div>
         <script type='text/javascript' src=<?=$URLStaticFiles?>vendors/jquery/jquery-ui.min.js></script>
         <script type="text/javascript" src=<?=$URLStaticFiles?>js/script.js></script>
+        <script type="text/javascript" src="./installSW.js"></script>
         <?php
             if($_SESSION['role'] == "Pilote"){
                 echo "<script type='text/javascript' src=<?=$URLStaticFiles?>js/pilote.js></script>";

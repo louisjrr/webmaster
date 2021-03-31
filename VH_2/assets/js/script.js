@@ -184,3 +184,14 @@ $(function(){
     })
 })
 
+/*----Affichage du bouton valider en dessous du form responsive----*/
+$(function(){
+        if($(window).width() < 769){
+            $('.btnAddOver').hide()
+            $('.btnAddUnder').show()
+        }
+        else{
+            $('.btnAddOver').show()
+            $('.btnAddUnder').hide()
+        }
+})
