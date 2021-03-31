@@ -134,7 +134,7 @@
   }
   .wishlist {
     height: 60%;
-    width: 400px;
+    width: 340px;
     margin-left: 5px;
     margin-right: 5px;
   }
@@ -166,21 +166,18 @@
     width: 500px;
     margin-left: -100px;
   }
-
   /*----Account -> Rate a company----*/
   .nom_entreprise {
     font-size: 1em;
   }
-
   .entreprises .entreprise {
     width: 100%;
   }
-
   .affichage_entreprise {
     margin-left: 5px;
   }
-
   .affichage_entreprise h2 {
     font-size: 1.7em;
   }
-}/*# sourceMappingURL=responsive.css.map */
+}
+/*# sourceMappingURL=responsive.css.map */
