@@ -26,8 +26,8 @@ include 'config.php';
                 <i class="fas fa-arrow-left"></i>
                 <fieldset>
                     <legend>Connexion</legend>
-                    <input type="text" id="login" name="login" placeholder="Identifiant"><br>
-                    <input type="password" id="password" name="password" placeholder="Mot de passe"><br>
+                    <input type="text" id="login" name="login" placeholder="Identifiant" required autocomplete="off"><br>
+                    <input type="password" id="password" name="password" placeholder="Mot de passe" required autocomplete="off"><br>
                     <button type="submit" class="btn btn-outline-light btn-lg btnConnexionF" name="connectLogin" >Connexion</button>
                 </fieldset>
             </form><br>
