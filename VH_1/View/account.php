@@ -35,9 +35,6 @@ include 'config.php'
                             <a class="nav-link" href="Account">Account</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="NewInternShip">Avis</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="Compare">Compare</a>
                         </li>
                         <li class="nav-item">

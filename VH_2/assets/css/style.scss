@@ -219,7 +219,7 @@ i {
 }
 .affichage {
   width: 60%;
-  height: 69vh;
+  height: 65vh;
   margin: 20px;
 }
 .affichage h2 {
@@ -445,7 +445,6 @@ a.nav-link:hover:before {
 }
 .wishlist {
   width: 90%;
-  height: 40%;
   margin: 10px auto;
   border-radius: 15px;
   position: relative;
@@ -622,7 +621,7 @@ a.nav-link:hover:before {
   display: flex;
   flex-direction: column;
 }
-.scroll_wishlist_affichage{
+.scroll_wishlist_affichage {
   width: 50%;
   height: 100%;
   overflow-y: auto;
@@ -635,7 +634,7 @@ a.nav-link:hover:before {
 .scroll_wishlist::-webkit-scrollbar {
   display: none;
 }
-.blockWishlist{
+.blockWishlist {
   display: flex;
   flex-direction: row;
 }
@@ -694,29 +693,28 @@ i {
 .alertLight {
   background-color: rgb(210, 210, 210);
 }
-.cloche{
+.cloche {
   width: 30px;
 }
-.infoNotifs{
+.infoNotifs {
   text-align: center;
-  
 }
-.infoNotifButton{
+.infoNotifButton {
   cursor: pointer;
   background-color: $green;
   width: 90px;
 }
 /*----create a company----*/
-.companyForm{
+.companyForm {
   display: flex;
   flex-direction: column;
   margin-top: 15px;
 }
-.companyTitle{
+.companyTitle {
   margin-bottom: 100px;
   text-decoration: underline $green;
 }
-.companyForm input{
+.companyForm input {
   width: 60%;
   border-radius: 3px;
   border: $green 2px solid;
@@ -724,7 +722,7 @@ i {
   margin-bottom: 30px;
   text-align: center;
 }
-.companyForm button{
+.companyForm button {
   margin: 0 auto;
   margin-top: 20px;
   width: 20%;
@@ -735,56 +733,56 @@ i {
   border-radius: 3px;
 }
 /*----Page Notif----*/
-.infoNotifButton:hover{
+.infoNotifButton:hover {
   background-color: $greenHover;
   color: white;
 }
-.infoNotifButton{
+.infoNotifButton {
   padding: 5px 5px 5px 5px;
   border-radius: 3px;
   border: none;
 }
-.previousnext{
+.previousnext {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
-.pageReset{
+.pageReset {
   margin: 0 auto;
 }
-.pageNotif{
+.pageNotif {
   margin-top: 20px;
 }
-.companyForm button:hover{
+.companyForm button:hover {
   background-color: $greenHover;
   color: white;
 }
-.descriptionStage{
+.descriptionStage {
   height: 150px;
   width: 500px;
   resize: none;
 }
-.form-stage{
+.form-stage {
   margin-top: 10px;
   border: none;
   border-radius: 3px;
   box-shadow: 0 0 1em #aaa;
 }
-.form-stage select{
+.form-stage select {
   padding-top: 5px;
   padding-bottom: 5px;
   border-radius: 3px;
 }
-.btnAddOffre{
+.btnAddOffre {
   background-color: $green;
   border: none;
   border-radius: 3px;
 }
-.btnAddOffre:hover{
+.btnAddOffre:hover {
   background-color: $greenHover;
   color: white;
 }
-.inputModifProfilValider{
+.inputModifProfilValider {
   width: 50%;
   margin: 0 auto;
   padding-bottom: 5px;
@@ -793,16 +791,16 @@ i {
   border: none;
   background-color: $green;
 }
-.inputModifProfilValider:hover{
+.inputModifProfilValider:hover {
   background-color: $greenHover;
   color: white;
 }
-.divEntreprise{
+.divEntreprise {
   display: flex;
   flex-direction: row;
   height: 100%;
 }
-.rate{
+.rate {
   background-color: $green;
   border: none;
   border-radius: 3px;
@@ -811,7 +809,7 @@ i {
   padding-top: 5px;
   padding-bottom: 5px;
 }
-.rate:hover{
+.rate:hover {
   background-color: $greenHover;
   color: white;
 }

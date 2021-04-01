@@ -63,7 +63,7 @@
                     $stage->addCompt($i,$j[1]);
                 }
             }
-            header('Location:http://www.needs.com');
+            header('Location:https://needs.com');
         }
         require('./View/addOffre.php');
     }

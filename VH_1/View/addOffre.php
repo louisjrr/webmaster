@@ -38,10 +38,7 @@ sfx9VerifAddOffre();
                         <a class="nav-link" href="Account">Account</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Avis</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="Compare">Compare</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="Notifs"><img class ="cloche" src=<?=$URLStaticFiles.cloche(); ?>></a>

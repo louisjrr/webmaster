@@ -6,7 +6,6 @@
     include "Controller/C_user.php";
     include "Controller/C_login.php";
     include "Controller/C_notifs.php";
-    //include "Controller/C_accountPHP.php";
 
     define('BASEPATH', '/');
 
@@ -37,7 +36,6 @@
     Route::add('/stageCompetences', function() {
         stage($_POST["idOffre"]);
     },"post");
-
     Route::add('/Home', function() {
         home();
     },"post");
@@ -81,7 +79,6 @@
     Route::add('/pageMoins', function(){
         previousPage();
     },"post");
-
     Route::add('/pageReset', function(){
         resetPage();
     },"post");
